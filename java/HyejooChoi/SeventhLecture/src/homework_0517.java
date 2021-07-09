@@ -56,7 +56,10 @@ public class homework_0517 {
         System.out.print("강아지 몸무게 입력 : ");
         dog.weight = scan.nextInt();
 
+        // 자바 내부에 버퍼에 엔터가 남아있어서 버그발생
+        // 강제로 엔터를 뺴주는 작업을 아래와 같이 하면 해결이 됨
         System.out.print("강아지 종 입력: ");
+        scan.nextLine();
         dog.species = scan.nextLine();
 
         System.out.printf("당신의 강아지 이름은 : %s, 나이 : %d, 몸무게 : %d, 종 : %s\n",

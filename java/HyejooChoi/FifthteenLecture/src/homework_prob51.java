@@ -6,6 +6,7 @@
 //물건을 구매하면 구매한 물품이 판매 리스트에 보인다.
 //목록 보기는 단순히 현재 소지한 물건 리스트만 보여준다.
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -17,11 +18,10 @@ import java.util.Scanner;
     4. 팔린 목록,장바구니(ArrayList) : 물품을 구매해야지만 값이 추가됨 .add()
     5. 물건 판매시 상점소지금 +=가격, 고객소지금-=가격
 */
-class store {
-    Scanner scan;
+class Store {
 
 
-    public store() {
+    public Store() {
 
     }
 
@@ -30,4 +30,7 @@ class store {
 }
 
 public class homework_prob51 {
+    public static void main(String[] args) {
+
+    }
 }
