@@ -15,7 +15,7 @@ export default {
         }
     },
     methods: {
-        addMonster () {
+        addMonster () {            
             if (this.newMonsterElement !== '') {
                 var value = this.newMonsterElement && this.newMonsterElement.trim()
                 console.log('addMonster')
