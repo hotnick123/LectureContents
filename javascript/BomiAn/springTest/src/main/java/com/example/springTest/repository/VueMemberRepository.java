@@ -15,13 +15,13 @@ import java.util.List;
 
 @Slf4j
 @Repository
-public class MemberRepository {
+public class VueMemberRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public void create(Member member) throws Exception {
-        String query = "insert into member (id, pw) values (?, ?)";
+        String query = "insert into vuemember (id, pw) values (?, ?)";
 
         jdbcTemplate.update(query, member.getId(), member.getPw());
     }

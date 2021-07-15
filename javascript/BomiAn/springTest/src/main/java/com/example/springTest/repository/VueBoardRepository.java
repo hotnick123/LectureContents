@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Repository
-public class BoardRepository {
+public class VueBoardRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -22,7 +22,7 @@ public class BoardRepository {
         // insert into board: DB에 있는 board 테이블에 값을 집어넣겠다.
         // (title, content, writer): board 테이블 내에 있는 컬럼들임
         // values (?, ?, ?): 뭔가 값을 넣을것인데 아직 미정이란 뜻
-        String query = "insert into board (title, content, writer) values (?, ?, ?)";
+        String query = "insert into vueboard (title, content, writer) values (?, ?, ?)";
 
         // jdbcTemplate.update(): 이것을 통해 실제 DB상의 값을 갱신함
         // query: 구동시킬 DB의 쿼리
@@ -34,7 +34,7 @@ public class BoardRepository {
         // RowMapper를 통해 얻은 행을 하나씩 List에 집어넣으니
         // results엔 DB에서 얻어온 행 정보들이 들어있다.
         List<Board> results = jdbcTemplate.query(
-                "select board_no, title, content, writer, reg_date from board " +
+                "select board_no, title, content, writer, reg_date from vueboard " +
                         "where board_no > 0 order by board_no desc",
                 // Row: 행
                 // 여러개의 Column(열)들이 행 1개에 포함되어 있음

@@ -2,16 +2,17 @@ package com.example.springTest.service;
 
 import com.example.springTest.entity.Member;
 import com.example.springTest.repository.MemberRepository;
+import com.example.springTest.repository.VueMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class MemberServiceImpl implements MemberService {
+public class VueMemberServiceImpl implements VueMemberService {
 
     @Autowired
-    private MemberRepository repository;
+    private VueMemberRepository repository;
 
     @Override
     public void register(Member board) throws Exception {
