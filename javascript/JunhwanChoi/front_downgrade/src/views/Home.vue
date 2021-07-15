@@ -5,22 +5,27 @@
                     class="nav-link"
                     active-class="active">
                 Home
-            </router-link><br><br>
+            </router-link>
             <router-link :to="{ name: 'Test' }"
                     class="nav-link"
                     active-class="active">
                 Test
-            </router-link><br><br>
+            </router-link>
             <router-link :to="{ name: 'Todo' }"
                     class="nav-link"
                     active-class="active">
-                Todo-List
-            </router-link><br><br>
+                Todo
+            </router-link>
             <router-link :to="{ name: 'Homework' }"
                     class="nav-link"
                     active-class="active">
                 Homework
-            </router-link><br><br>
+            </router-link>
+            <router-link :to="{ name: 'BoardListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                BoardListPage
+            </router-link>
         </div>
     </div>
 </template>
