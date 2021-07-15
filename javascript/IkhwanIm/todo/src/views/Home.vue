@@ -11,15 +11,20 @@
                    active-class="active">
         Test
       </router-link>
-      <router-link :to="{ name:'Todo'}"
+      <router-link :to="{ name: 'Todo' }"
                    class="nav-link"
                    active-class="active">
         Todo
       </router-link>
-      <router-link :to="{ name:'Homework'}"
+      <router-link :to="{ name: 'Homework' }"
                    class="nav-link"
                    active-class="active">
         Homework
+      </router-link>
+      <router-link :to="{ name: 'BoardListPage' }"
+                   class="nav-link"
+                   active-class="active">
+        BoardListPage
       </router-link>
     </div>
   </div>
