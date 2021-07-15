@@ -33,6 +33,7 @@ export default {
         const targetTodoItem = state.todoItems[targetIndex]
         state.todoItems.splice(targetIndex, 1, { ...targetTodoItem, content })
     },
+
     [SET_EDITTING_ID] (state, id) {
         state.editingId = id
     },
@@ -43,7 +44,7 @@ export default {
         state.todoItems = []
     },
     [TOGGLE_TODO_STATUS] (state, id) {
-        //형재 todoItems 배열에서 id로 들어온 todoItem을 찾는다.
+        //현재 todoItems 배열에서 id로 들어온 todoItem을 찾는다.
         const filtered = state.todoItems.filter(todoItem => {
             return todoItem.id === id
         })
