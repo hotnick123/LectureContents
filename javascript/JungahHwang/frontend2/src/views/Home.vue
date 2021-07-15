@@ -20,6 +20,10 @@
       class="nav-link" 
       active-class="active">Quiz
     </router-link>
+    <router-link :to="{ name: 'BoardListPage' }" 
+      class="nav-link" 
+      active-class="active">BoardListPage
+    </router-link>
   </div>
 </template>
 

@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Test from '../views/Test.vue'
 import Todo from '../views/Todo.vue'
 import Quiz from '../views/Quiz.vue'
+import BoardListPage from '../views/BoardListPage.vue'
+import BoardRegisterPage from '../views/BoardRegisterPage.vue'
 
 Vue.use(VueRouter)
 
@@ -30,6 +32,20 @@ const routes = [
     path: '/quiz',
     name: 'Quiz',
     component: Quiz
+  },
+  {
+    path: '/board',
+    name: 'BoardListPage',
+    components: {
+      default: BoardListPage
+    } 
+  },
+  {
+    path: '/board/create',
+    name: 'BoardRegisterPage',
+    components: {
+      default: BoardRegisterPage
+    } 
   }
   
 ]
