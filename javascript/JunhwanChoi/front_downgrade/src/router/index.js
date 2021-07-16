@@ -9,6 +9,9 @@ import Homework from '../views/Homework.vue'
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
 
+// game
+import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -45,7 +48,14 @@ const routes = [
     components: {
       default: BoardRegisterPage
     }
-  }
+  },
+  {
+    path: '/member/create',
+    name: 'GameMemberRegisterPage',
+    components: {
+      default: GameMemberRegisterPage
+    }
+  },
 ]
 
 const router = new VueRouter({
