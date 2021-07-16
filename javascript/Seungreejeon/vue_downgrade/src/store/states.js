@@ -7,6 +7,9 @@ export default {
     // 몬스터
     monsterElements: [],
     nextMonsterId: 1,
-    randomFromSpring: 0
+    randomFromSpring: 0,
 
+    //
+    boards: [],
+    board: null
 }

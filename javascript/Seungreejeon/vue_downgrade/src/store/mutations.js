@@ -13,7 +13,10 @@ import {
     // 몬스터
     ADD_MANY_MONSTER,
     ADD_MONSTER,
-    DEATH
+    DEATH,
+
+    FETCH_BOARD_LIST,
+    FETCH_BOARD
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -73,13 +76,18 @@ export default {
 
     },
 
-
     [SUCCESS_GEN_RAND_NUM] (state, payload) {
         console.log('payload =' + payload)
         state.randomFromSpring = payload
     },
     [FAIL_GEN_RAND_NUM] () {
         console.log("통신에러!")
+    },
+   // 게시판
+   [FETCH_BOARD_LIST] (state, boards) {
+    state.boards = boards;
+    },
+    [FETCH_BOARD] (state, board ) {
+        state.board = board;
     }
-
 }
