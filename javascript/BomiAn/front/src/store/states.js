@@ -8,6 +8,9 @@ export default {
   monsterElements: [],
   nextMonsterId: 1,
 
-  randomFromSpring: 0
+  randomFromSpring: 0,
+// 게시판
+  boards: [],
+  board: null
 
 }

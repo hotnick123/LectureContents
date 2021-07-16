@@ -12,8 +12,11 @@ import {
   ADD_MANY_MONSTER,
   DEATH,
 
-FAIL_GEN_RAND_NUM,
- SUCCESS_GEN_RAND_NUM
+  FAIL_GEN_RAND_NUM,
+  SUCCESS_GEN_RAND_NUM,
+
+  FETCH_BOARD_LIST,
+  FETCH_BOARD
 
 } from './mutation-types'
 
@@ -78,5 +81,12 @@ export default {
   },
   [FAIL_GEN_RAND_NUM] () {
       console.log('통신 에러!')
+  },
+  //게시판
+  [FETCH_BOARD_LIST] (state, boards) {
+    state.boards = boards;
+  },
+  [FETCH_BOARD] (state, board) {
+    state.board = board
   }
 }

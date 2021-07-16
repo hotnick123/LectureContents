@@ -73,7 +73,7 @@ public class VueBoardRepository {
 
     public Board read (Integer boardNo) throws Exception {
         List<Board> results = jdbcTemplate.query(
-                "select board_no, title, content, writer, reg_date from board where board_no = ?",
+                "select board_no, title, content, writer, reg_date from vueboard where board_no = ?",
                 new RowMapper<Board>() {
                     @Override
                     public Board mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -91,7 +91,6 @@ public class VueBoardRepository {
 
         return results.isEmpty() ? null : results.get(0);
     }
-
     public void delete(Integer boardNo) throws Exception {
         String query = "delete from board where board_no = ?";
 

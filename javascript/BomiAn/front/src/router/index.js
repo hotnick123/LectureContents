@@ -12,6 +12,7 @@ import BoardRegisterPage from  '@/views/BoardRegisterPage.vue'
 //member
 import MemberListPage from '@/views/MemberListPage.vue'
 import MemberRegisterPage from '@/views/MemberRegisterPage.vue'
+import BoardReadPage from '@/views/BoardReadPage.vue'
 
 Vue.use(VueRouter)
 
@@ -63,7 +64,17 @@ const routes = [
     components: {
       default: MemberRegisterPage
     }
-  }
+  },
+  {
+    path: '/board/:boardNo',
+    name: 'BoardReadPage',
+    components: {
+      default: BoardReadPage
+    },
+    props: {
+      default: true
+    }
+  },
 ]
 
 const router = new VueRouter({

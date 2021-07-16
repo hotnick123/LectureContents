@@ -1,3 +1,4 @@
+
 import {
   // TODO
   ADD_TODO,
@@ -9,9 +10,12 @@ import {
   ADD_MONSTER,
   ADD_MANY_MONSTER,
   DEATH,
- // 스프링 랜덤 데이터 통신
- SUCCESS_GEN_RAND_NUM,
- FAIL_GEN_RAND_NUM
+  // 스프링 랜덤 데이터 통신
+  SUCCESS_GEN_RAND_NUM,
+  FAIL_GEN_RAND_NUM,
+  // 게시판
+  FETCH_BOARD_LIST,
+  FETCH_BOARD
 } from './mutation-types'
 
 import axios from 'axios'
@@ -47,7 +51,7 @@ export default {
       context.commit(ADD_MONSTER, payload)
   },
   addManyMonster (context, payload) {
-    context.commit(ADD_MANY_MONSTER, payload)
+      context.commit(ADD_MANY_MONSTER, payload)
   },
   death ({ commit }, payload) {
       commit(DEATH, payload)
@@ -68,6 +72,19 @@ export default {
               })
               .catch((res) => {
                   commit(FAIL_GEN_RAND_NUM, res)
+              })
+  },
+  // 게시판
+  fetchBoardList ({ commit }) {
+      return axios.get('http://localhost:7777/vueboard/lists')
+              .then((res) => {
+                  commit(FETCH_BOARD_LIST, res.data)
+              })
+  },
+  fetchBoard ({ commit }, boardNo) {
+      return axios.get(`http://localhost:7777/vueboard/${boardNo}`)
+              .then((res) => {
+                  commit(FETCH_BOARD, res.data)
               })
   }
 }

@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @Controller
 @RequestMapping("/vueboard")
@@ -28,4 +30,17 @@ public class VueBoardController {
 
         return new ResponseEntity<>(board, HttpStatus.OK);
     }
+
+    @GetMapping("/lists")
+    public ResponseEntity<List<Board>> getLists () throws Exception {
+        log.info("getLists() " + service.list());
+        return new ResponseEntity<>(service.list(), HttpStatus.OK);
+    }
+
+    @GetMapping("/{boardNo}")
+    public ResponseEntity<Board> read(@PathVariable("boardNo") Integer boardNo) throws Exception {
+        Board board = service.read(boardNo);
+        return new ResponseEntity<>(board, HttpStatus.OK);
+    }
+
 }
