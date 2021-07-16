@@ -9,15 +9,14 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class SignUp {
-
-    private int memberListNo;
-    private String ID;
-    private String PW;
+public class Member {
+    private int memberNo;
+    private String id;
+    private String pw;
     private String name;
-    private int birthMonth;
     private int birthDay;
+    private String address;
+    private String party;
     private String comment;
     private Date regDate;
-    //ssss
 }

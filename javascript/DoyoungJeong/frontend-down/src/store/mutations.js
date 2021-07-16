@@ -36,6 +36,9 @@ export default {
         const targetTodoItem = state.todoItems[targetIndex]
         state.todoItems.splice(targetIndex, 1, { ...targetTodoItem, content })
         //targetIndex번호의 항을 하나 지우고 targetTodoItem을 밀어내고 content를 그 항에 넣는다.. 맞나?
+        //targetTodoItem의 자리부터 content를 넣는다는 뜻이다.
+        //...의 뜻은? 뒤에 남아있는 것들 전부 다!를 뜻하는 것이다. 여러개를 지울 떄 ...이 필요하다.
+        //하나만 지울때는 그냥 content만 써도 된다.
     },
     [SET_EDITTING_ID] (state, id) {
         state.editingId = id

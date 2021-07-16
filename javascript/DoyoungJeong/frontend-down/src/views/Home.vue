@@ -21,6 +21,16 @@
                     active-class="active">
                 Prob82
             </router-link>
+            <router-link :to="{ name: 'BoardListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                BoardListPage
+            </router-link>
+            <router-link :to="{ name: 'MemberListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                MemberListPage
+            </router-link>
         </div>
         <div>
             <!-- <button v-on:click="addManyMonster">몬스터 100마리 리젠</button>-->

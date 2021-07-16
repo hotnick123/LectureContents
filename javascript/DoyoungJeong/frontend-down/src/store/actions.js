@@ -44,6 +44,7 @@ export default {
             .then((res) => {
                 commit(SUCCESS_GEN_RAN_NUM, parseInt(res.data.ranNumber))
                 //localhost:7777에서 받은 ranNumber값을 int로 변환해 mutation에 있는 SUCCESS_GEN으로 넘긴다.
+                //commit은 mutation에 있는 메소드로 가란 뜻. import로 mutation에 있는 메소드를 받아왔기 때문임.
             })
             .catch((res) => {
                 commit(FAIL_GEN_RAN_NUM, res)

@@ -29,7 +29,7 @@ export default {
     },
     computed: {
         isEditing() {
-            return this.MonsterElem === this.editingId
+            return this.MonsterElem.id === this.editingId
         } //이부분 잘 모르겠다..
     },
     methods: {

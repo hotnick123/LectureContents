@@ -11,6 +11,10 @@
             v-on:killMonster="onkillMonster"  
             v-on:editName="onEditName">
         </monster-list>
+        <summon-monsters>
+            v-on:summonManyMonster="onSummonManyMonster"
+        </summon-monsters>
+
     </div>
 </template>
 
@@ -20,6 +24,7 @@ import FantasyWorld from '../components/prob82/FantasyWorld.vue'
 import AttackMonster from '../components/prob82/AttackMonster.vue'
 import MonsterList from '../components/prob82/MonsterList.vue'
 import MonsterInput from '../components/prob82/MonsterInput.vue'
+import SummonMonsters from '../components/prob82/SummonMonsters.vue'
 import { mapActions } from 'vuex'
 
 export default {
@@ -28,7 +33,8 @@ export default {
         'fantasy-world': FantasyWorld,
         'attack-monster': AttackMonster,
         'monster-list': MonsterList,
-        'monster-input': MonsterInput
+        'monster-input': MonsterInput,
+        'summon-monsters': SummonMonsters
     },
     data() {
         return {
@@ -57,6 +63,9 @@ export default {
             const monsterElement = { name }
             this.addMonster(monsterElement)
             this.save()
+        },
+        onSummonManyMonster() {
+            
         }
     }
 }
