@@ -21,6 +21,16 @@
                     active-class="active">
                 Homework
             </router-link>
+             <router-link :to="{ name: 'BoardListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                BoardListPage
+            </router-link>
+            <router-link :to="{ name: 'SignupPage' }"
+                    class="nav-link"
+                    active-class="active">
+                SignupPage
+            </router-link>
         </div>
     </div>
 </template>
