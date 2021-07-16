@@ -1,3 +1,4 @@
+  
 import {
     // TODO
     ADD_TODO,
@@ -81,7 +82,7 @@ export default {
                 })
     },
     fetchBoard ({ commit }, boardNo) {
-        return axios.get(`http://localhost:7777/boards/${boardNo}`)
+        return axios.get(`http://localhost:7777/vueboard/${boardNo}`)
                 .then((res) => {
                     commit(FETCH_BOARD, res.data)
                 })

@@ -1,11 +1,15 @@
 package com.example.demo.controller.board;
 
+import com.example.demo.entity.Board;
 import com.example.demo.service.BoardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Slf4j
@@ -36,5 +40,12 @@ public class SeventhController {
         model.addAttribute("msg", "삭제가 완료되었습니다!");
 
         return "board/fourth/success";
+    }
+
+    @GetMapping("/{boardNo}")
+    public ResponseEntity<Board> read(@PathVariable("boardNo") Integer boardNo) throws Exception {
+        Board board = service.read(boardNo);
+
+        return new ResponseEntity<Board>(board, HttpStatus.OK);
     }
 }

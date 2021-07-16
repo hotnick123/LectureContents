@@ -8,25 +8,22 @@ import {
     CLEAR_ALL,
     TOGGLE_TODO_STATUS,
     // 몬스터
+    ADD_MANY_MONSTER,
     ADD_MONSTER,
     DEATH,
-    ADD_MANY_MONSTER,
     // 스프링 랜덤 데이터 통신
     SUCCESS_GEN_RAND_NUM,
     FAIL_GEN_RAND_NUM,
     // 게시판
     FETCH_BOARD_LIST,
     FETCH_BOARD
-
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
 export default {
     [ADD_TODO] (state, payload) {
         const { content } = payload
-        //state.todoitem에 저 값을 push!
         state.todoItems.push({ id: state.nextTodoId, content, done: false })
-        //state의 TodoId 값 1 증가
         state.nextTodoId++
     },
     [REMOVE_TODO] (state, id) {
@@ -70,8 +67,7 @@ export default {
     },
     [ADD_MONSTER] (state, payload) {
         const { name } = payload
-        var randHp = Math.floor(Math.random() * 5000) + 1
-        state.monsterElements.push({ monsterId: state.nextMonsterId, name, hp: randHp })
+        state.monsterElements.push({ monsterId: state.nextMonsterId, name })
         state.nextMonsterId++
     },
     [DEATH] (state, monsterId) {

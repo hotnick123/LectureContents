@@ -13,7 +13,6 @@ import BoardReadPage from '@/views/BoardReadPage.vue'
 // game
 import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -52,13 +51,6 @@ const routes = [
     }
   },
   {
-    path: '/member/create',
-    name: 'GameMemberRegisterPage',
-    components: {
-      default: GameMemberRegisterPage
-    }
-  },
-  {
     path: '/board/:boardNo',
     name: 'BoardReadPage',
     components: {
@@ -66,6 +58,13 @@ const routes = [
     },
     props: {
       default: true
+    }
+  },
+  {
+    path: '/member/create',
+    name: 'GameMemberRegisterPage',
+    components: {
+      default: GameMemberRegisterPage
     }
   }
 ]
@@ -76,4 +75,4 @@ const router = new VueRouter({
   routes
 })
 
-export default router
+export default router 
