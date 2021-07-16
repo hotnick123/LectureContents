@@ -9,22 +9,19 @@ import {
     ADD_MONSTER,
     ADD_MANY_MONSTER,
     DEATH,
-    //스프링 랜덤 데이터 통신
+    // 스프링 랜덤 데이터 통신
     SUCCESS_GEN_RAND_NUM,
-    FAIL_GEN_RAND_NUM
-
+    FAIL_GEN_RAND_NUM,
+    // 게시판
+    FETCH_BOARD_LIST,
+    FETCH_BOARD
 } from './mutation-types'
 
-// npm install axios --save-dev
 import axios from 'axios'
 
 // 보통 action에서 처리하는 것은 비동기 처리를 함
-
-//payload 는 todoitem
 export default {
-    //commit하면? muataion으로 간다
     addTodo (context, payload) {
-        
         context.commit(ADD_TODO, payload)
     },
     save ({ state }) {
@@ -48,12 +45,13 @@ export default {
     toggleTodoStatus ({ commit }, id) {
         commit(TOGGLE_TODO_STATUS, id)
     },
+    // 판타지 온라인
     addMonster (context, payload) {
         context.commit(ADD_MONSTER, payload)
     },
     addManyMonster (context, payload) {
         context.commit(ADD_MANY_MONSTER, payload)
-    },    
+    },
     death ({ commit }, payload) {
         commit(DEATH, payload)
     },
@@ -73,6 +71,19 @@ export default {
                 })
                 .catch((res) => {
                     commit(FAIL_GEN_RAND_NUM, res)
+                })
+    },
+    // 게시판
+    fetchBoardList ({ commit }) {
+        return axios.get('http://localhost:7777/vueboard/lists')
+                .then((res) => {
+                    commit(FETCH_BOARD_LIST, res.data)
+                })
+    },
+    fetchBoard ({ commit }, boardNo) {
+        return axios.get(`http://localhost:7777/boards/${boardNo}`)
+                .then((res) => {
+                    commit(FETCH_BOARD, res.data)
                 })
     }
 }
