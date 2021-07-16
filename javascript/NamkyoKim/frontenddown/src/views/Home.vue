@@ -16,10 +16,20 @@
                     active-class="active">
                 Todo
             </router-link>
-             <router-link :to="{ name: 'Homework' }"
+            <router-link :to="{ name: 'Homework' }"
                     class="nav-link"
                     active-class="active">
                 Homework
+            </router-link>
+            <router-link :to="{ name: 'BoardListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                BoardListPage
+            </router-link>
+            <router-link :to="{ name: 'MemberListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                회원가입페이지
             </router-link>
         </div>
     </div>

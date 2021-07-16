@@ -10,6 +10,7 @@ import {
     TOGGLE_TODO_STATUS,
     // 몬스터
     ADD_MONSTER,
+    ADD_MANY_MONSTER,
     DEATH,
     // 스프링 랜던 데이터 통신
     SUCCESS_GEN_RAND_NUM,
@@ -59,6 +60,13 @@ export default {
         const { name } = payload
         state.monsterElements.push({ monsterId: state.nextMonsterId, name })
         state.nextMonsterId++
+    },
+    [ADD_MANY_MONSTER](state, payload) {
+        
+        for(var i = 0; i < payload.length; i++) {
+            state.monsterElements.push(payload[i])
+            state.nextMonsterId++
+        }
     },
     [DEATH] (state, monsterId) {
         const targetIndex = state.monsterElements.findIndex(v => v.monsterId === monsterId)
