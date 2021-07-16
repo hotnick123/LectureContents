@@ -38,6 +38,8 @@ export default {
         const targetIndex = state.todoItems.findIndex(v => v.id === id)
         const targetTodoItem = state.todoItems[targetIndex]
         // ...은 뒤에있는거 마져 붙인다는 의미. 따라서 splice에서 빼진만큼 content가 채워짐
+        //    (하나를 빼고 내용을 채워넣어라. ...targetTodoItem이 들어간 이유는 빠진 자리에 내용을 채워넣기 위함임.)
+        // state.todoItems.spice(targetIndex, 1, { content })와 동일하게 볼 수 있지만, 중간에 있던 값을 수정할 때는 다르게 작동됨.
         state.todoItems.splice(targetIndex, 1, { ...targetTodoItem, content })
     },
     [SET_EDITTING_ID] (state, id) {

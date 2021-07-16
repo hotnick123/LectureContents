@@ -5,6 +5,11 @@ import Test from '../views/Test.vue'
 import Todo from '../views/Todo.vue'
 import Homework from '../views/Homework.vue'
 
+// board
+// ..은 상위폴더를 의미 @는 src폴더를 의미
+import BoardListPage from '@/views/BoardListPage.vue'
+import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -27,6 +32,20 @@ const routes = [
     path: '/homework',
     name: 'Homework',
     component: Homework
+  },
+  {
+    path: '/board',
+    name: 'BoardListPage',
+    components: {
+      default: BoardListPage
+    }
+  },
+  {
+    path: '/board/create',
+    name: 'BoardRegisterPage',
+    components: {
+      default: BoardRegisterPage
+    }
   }
 ]
 
@@ -36,4 +55,4 @@ const router = new VueRouter({
   routes
 })
 
-export default router 
+export default router

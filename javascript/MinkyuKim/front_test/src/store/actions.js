@@ -80,7 +80,7 @@ export default {
                     // 생성된 random 데이터는 res에 들어가게됨. randNumber는 entity의 변수인 randNumber를 의미함.
                     .then((res) => { 
                         // commit을 하면 mutation에 있는 SUCCESS_GEN_RAND_NUM으로 넘어가게됨.
-                        // parseInt도 마찬가지
+                        // parseInt 값으로
                         commit(SUCCESS_GEN_RAND_NUM, parseInt(res.data.randNumber))
                     })
                     .catch((res) => {
