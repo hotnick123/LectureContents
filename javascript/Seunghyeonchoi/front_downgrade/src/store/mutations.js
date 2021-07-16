@@ -10,10 +10,13 @@ import {
     // 몬스터
     ADD_MONSTER,
     DEATH,
+    ADD_MANY_MONSTER,
     // 스프링 랜덤 데이터 통신
     SUCCESS_GEN_RAND_NUM,
     FAIL_GEN_RAND_NUM,
-    ADD_MANY_MONSTER
+    // 게시판
+    FETCH_BOARD_LIST,
+    FETCH_BOARD
 
 } from './mutation-types'
 
@@ -82,5 +85,12 @@ export default {
     },
     [FAIL_GEN_RAND_NUM] () {
         console.log('통신 에러!')
+    },
+    // 게시판
+    [FETCH_BOARD_LIST] (state, boards) {
+        state.boards = boards;
+    },
+    [FETCH_BOARD] (state, board) {
+        state.board = board
     }
 }

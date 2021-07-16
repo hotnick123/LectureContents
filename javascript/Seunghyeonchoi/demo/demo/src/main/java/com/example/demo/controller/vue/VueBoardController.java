@@ -1,6 +1,5 @@
 package com.example.demo.controller.vue;
 
-
 import com.example.demo.entity.Board;
 import com.example.demo.service.VueBoardService;
 import lombok.extern.slf4j.Slf4j;
@@ -8,12 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -31,5 +29,12 @@ public class VueBoardController {
         service.register(board);
 
         return new ResponseEntity<>(board, HttpStatus.OK);
+    }
+
+    @GetMapping("/lists")
+    public ResponseEntity<List<Board>> getLists () throws Exception {
+        log.info("getLists(): " + service.list());
+
+        return new ResponseEntity<>(service.list(), HttpStatus.OK);
     }
 }
