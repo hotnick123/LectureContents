@@ -9,6 +9,7 @@ import Homework from '../views/Homework.vue'
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
 import MemberRegisterPage from "../views/MemberRegisterPage";
+import BoardReadPage from "../views/BoardReadPage";
 
 Vue.use(VueRouter)
 
@@ -48,12 +49,23 @@ const routes = [
     }
   },
   {
+    path: '/board/:boardNo',
+    name: 'BoardReadPage',
+    components: {
+      default: BoardReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
     path: '/member/create',
     name: 'MemberRegisterPage',
     components: {
       default: MemberRegisterPage
   }
 },
+
 ]
 
 const router = new VueRouter({
