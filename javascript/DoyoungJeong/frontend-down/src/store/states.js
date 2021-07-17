@@ -7,7 +7,13 @@ export default {
     monsterElements: [],
     nextMonsterId: 1,
 
-    randomFromSpring: 0
+    randomFromSpring: 0,
+
+    boards: [],
+    board: null,
+
+    members: [],
+    member: null
 }
 
 //이곳 state는 크리티컬 섹션이다.

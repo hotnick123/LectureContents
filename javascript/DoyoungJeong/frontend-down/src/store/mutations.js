@@ -12,7 +12,13 @@ import {
     EDIT_NAME,
 
     SUCCESS_GEN_RAN_NUM,
-    FAIL_GEN_RAN_NUM
+    FAIL_GEN_RAN_NUM,
+    
+    FETCH_BOARD_LIST,
+    FETCH_BOARD,
+
+    FETCH_MEMBER_LIST,
+    FETCH_MEMBER
 } from './mutation-types'
 
 export default {
@@ -86,7 +92,21 @@ export default {
     },
     [FAIL_GEN_RAN_NUM] () {
         console.log('Connection ERROR!')
-    }
+    },
+
+    [FETCH_BOARD_LIST] (state, boards) {
+        state.boards = boards
+    },
+    [FETCH_BOARD] (state, board) {
+        state.board = board
+    },
+
+    [FETCH_MEMBER_LIST] (state, members) {
+        state.members = members
+    },
+    [FETCH_MEMBER] (state, member) {
+        state.member = member
+    },
 
 }
 

@@ -12,3 +12,9 @@ export const CLEAR_ALL = 'CLEAR_ALL'
 
 export const SUCCESS_GEN_RAN_NUM = 'SUCCESS_GEN_RAN_NUM'
 export const FAIL_GEN_RAN_NUM = 'FAIL_GEN_RAN_NUM'
+
+export const FETCH_BOARD_LIST = 'FETCH_BOARD_LIST'
+export const FETCH_BOARD = 'FETCH_BOARD'
+
+export const FETCH_MEMBER_LIST = 'FETCH_MEMBER_LIST'
+export const FETCH_MEMBER = 'FETCH_MEMBER'

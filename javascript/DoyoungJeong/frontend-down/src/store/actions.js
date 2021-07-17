@@ -9,7 +9,13 @@ import {
     EDIT_NAME,
     CLEAR_ALL,
     SUCCESS_GEN_RAN_NUM,
-    FAIL_GEN_RAN_NUM
+    FAIL_GEN_RAN_NUM,
+
+    FETCH_BOARD_LIST,
+    FETCH_BOARD,
+
+    FETCH_MEMBER_LIST,
+    FETCH_MEMBER
 } from './mutation-types'
 
 import axios from 'axios'
@@ -62,9 +68,38 @@ export default {
         commit(EDIT_NAME, payload)
     },
     clearAll(context) {
-        context.commit(CLEAR_ALL)
+        context.commit(CLEAR_ALL) 
+    },
+
+    fetchBoardList ({ commit }) { //commit의 뜻은 mutation하는것
+        return axios.get('http://localhost:7777/vueboard/list')
+            .then((res) => {
+                commit(FETCH_BOARD_LIST, res.data)
+            })
+    },
+    fetchBoard ({ commit }, boardNo) {
+        return axios.get(`http://localhost:7777/vueboard/${boardNo}`) //인자를 받을 때는 ``를 사용한다.
+            .then((res) => {
+                commit(FETCH_BOARD, res.data)
+                //res는 불러온 서버에서 불러온 데이터
+                //res데이터를 mutation에 있는 FETCH_BOARD 메소드로 전송
+            })
+    },
+
+    fetchMemberList ({ commit }) {
+        return axios.get('http://localhost:7777/vuemember/list')
+        .then((res) => {
+            commit(FETCH_MEMBER_LIST, res.data)
+        })
+    },
+    fetchMember ({ commit }, memberNo) {
+        return axios.get(`http://localhost:7777/vuemember/${memberNo}`)
+            .then((res) => {
+                commit(FETCH_MEMBER, res.data)
+            })
     }
 }
+
 
 //action에 있는 것들은 비동기처리 - 대충 보여져도 된다면 action에
 //mutation에 있는 것들은 동기처리 - 무결성이 중요하다면 mutation에
