@@ -1,0 +1,36 @@
+<template>
+    <div align="center">
+        <h2>게시물 작성</h2>
+        <board-register-form @submit="onSubmit"/>
+    </div>
+</template>
+
+<script>
+
+import BoardRegisterForm from '@/components/board/BoardRegisterForm.vue'
+//@는 src root파일을 의미한다. ..는 뭐였지?
+import axios from 'axios'
+
+export default {
+    name: 'BoardRegisterPage',
+    components: {
+        'board-register-form': BoardRegisterForm     
+    },
+    methods: {
+        onSubmit(payload) {
+            const { title, writer, content } = payload
+            axios.post('http://localhost:7777/vueboard/register', { title, writer, content })
+            .then(res => {
+                alert('등록 성공' + res)
+                // this.$router.push({
+                //     name: 'BoardReadPage',
+                //     params: 
+                //})
+            })
+            .catch(res => {
+                alert(res.response.data.message)
+            })
+        }
+    }
+}
+</script>
