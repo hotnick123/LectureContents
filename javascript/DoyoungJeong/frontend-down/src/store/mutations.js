@@ -9,7 +9,10 @@ import {
 
     KILL_MONSTER,
     ADD_MONSTER,
+    SUMMON_MANY_MONSTERS,
     EDIT_NAME,
+    CLEAR_ALL_MONSTER,
+    TOGGLE_MONSTER_STATUS,
 
     SUCCESS_GEN_RAN_NUM,
     FAIL_GEN_RAN_NUM,
@@ -72,18 +75,38 @@ export default {
 
     [ADD_MONSTER] (state, payload) {
         const { name } = payload
-        state.monsterElements.push({ monsterId: state.nextMonsterId, name })
+        state.monsterElements.push({ monsterId: state.nextMonsterId, name, done: false })
+        console.log('nextMonsterId: ' + state.nextMonsterId)
         state.nextMonsterId++
+    },
+    [SUMMON_MANY_MONSTERS] (state, payload) { //숙제부분
+        for(var i=0; i<payload.length; i++) {
+            state.monsterElements.push({ monsterId: state.nextMonsterId, name: payload[i].name, hp: payload[i].hp })
+            console.log('nextMonsterId: ' + state.nextMonsterId)
+            state.nextMonsterId++
+        }
     },
     [KILL_MONSTER] (state, monsterId) {
         const targetIndex = state.monsterElements.findIndex(v => v.monsterId === monsterId)
         state.monsterElements.splice(targetIndex, 1)
     },
     [EDIT_NAME] (state, payload) {
-        const { monsterId, content } = payload
+        const { monsterId, name } = payload
         const targetIndex = state.monsterElements.findIndex(v => v.monsterId === monsterId)
         const targetMonsterElem = state.monsterElements[targetIndex]
-        state.monsterElements.splice(targetIndex, 1, { ...targetMonsterElem, content })
+        state.monsterElements.splice(targetIndex, 1, { ...targetMonsterElem, name })
+    },
+    [CLEAR_ALL_MONSTER] (state) {
+        state.monsterElements = []
+    },
+    [TOGGLE_MONSTER_STATUS] (state, monsterId) {
+        const filtered = state.monsterElements.filter(monsterElem => {
+            return monsterElem.monsterId === monsterId
+        })
+
+        filtered.forEach(monsterElem => {
+            monsterElem.done = !monsterElem.done
+        })
     },
 
     [SUCCESS_GEN_RAN_NUM] (state, payload) {

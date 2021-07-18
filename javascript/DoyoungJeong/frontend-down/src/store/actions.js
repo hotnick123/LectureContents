@@ -2,12 +2,16 @@ import {
     ADD_TODO,
     REMOVE_TODO,
     EDIT_TODO,
+    CLEAR_ALL,
     TOGGLE_TODO_STATUS,
 
     KILL_MONSTER,
     ADD_MONSTER,
+    SUMMON_MANY_MONSTERS,
     EDIT_NAME,
-    CLEAR_ALL,
+    TOGGLE_MONSTER_STATUS,
+    CLEAR_ALL_MONSTER,
+
     SUCCESS_GEN_RAN_NUM,
     FAIL_GEN_RAN_NUM,
 
@@ -39,6 +43,9 @@ export default {
     editTodo ({ commit }, payload) {
         commit(EDIT_TODO, payload)
     },
+    clearAll(context) {
+        context.commit(CLEAR_ALL) 
+    },
     toggleTodoStatus ({ commit }, payload) {
         commit(TOGGLE_TODO_STATUS, payload) //payload -> id
     },
@@ -61,14 +68,20 @@ export default {
     addMonster ({ commit }, payload) {
         commit(ADD_MONSTER, payload)
     },
+    summonManyMonsters ({ commit }, payload) {
+        commit(SUMMON_MANY_MONSTERS, payload)
+    },
     killMonster ({ commit }, payload) {
         commit(KILL_MONSTER, payload)
     },
     editName ({ commit }, payload) {
         commit(EDIT_NAME, payload)
     },
-    clearAll(context) {
-        context.commit(CLEAR_ALL) 
+    clearAllMonster(context) {
+        context.commit(CLEAR_ALL_MONSTER) 
+    },
+    toggleMonsterStatus({ commit }, payload) {
+        commit(TOGGLE_MONSTER_STATUS, payload)
     },
 
     fetchBoardList ({ commit }) { //commit의 뜻은 mutation하는것
