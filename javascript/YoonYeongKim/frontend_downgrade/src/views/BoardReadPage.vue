@@ -12,14 +12,13 @@
         <router-link :to="{ name: 'BoardListPage' }">
             게시물 보기
         </router-link>
+        <board-list :boards="boards"/>
     </div>
 </template>
 
 <script>
-
 import BoardRead from '@/components/board/BoardRead.vue'
 import { mapState, mapActions } from 'vuex'
-
 export default {
     name: 'BoardReadPage',
     props: {
@@ -47,5 +46,4 @@ export default {
         }
     }
 }
-
-</script>
+</script> 
