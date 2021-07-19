@@ -108,4 +108,17 @@ public class VueMemberRepository {
 
         return results.isEmpty() ? null : results.get(0);
     }
+
+    public void delete(Integer memberNo) throws Exception {
+        String query = "delete from vuemember where member_no = ?";
+
+        jdbcTemplate.update(query, memberNo);
+    }
+
+    public void update(VueMember member) throws Exception {
+        String query = "update vuemember set id = ?, pw = ?, name = ?, birthday = ?, address = ?, party = ?, comment = ? where member_no = ?";
+
+        jdbcTemplate.update(query, member.getId(), member.getPw(), member.getName(), member.getBirthDay(), member.getAddress(),
+                member.getParty(), member.getComment(), member.getMemberNo());
+    }
 }

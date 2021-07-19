@@ -46,4 +46,22 @@ public class VueMemberController {
 
         return new ResponseEntity<VueMember>(member, HttpStatus.OK);
     }
+
+    @PutMapping("/{memberNo}")
+    //PutMapping???  클라이언트에서 axios.put으로 쐈으니 PutMapping으로 받아야한다!
+    public ResponseEntity<VueMember> modify(@PathVariable("memberNo") Integer memberNo, @Validated @RequestBody VueMember member) throws Exception {
+        //@Validated @RequestBody Board board --> !클라이언트에서 전송된 title, content를 JSON의 형태인 board로 인자로 받겠다는 뜻이다!
+
+        member.setMemberNo(memberNo);
+        service.modify(member);
+
+        return new ResponseEntity<>(member, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{memberNo}")
+    public ResponseEntity<Void> remove(@PathVariable("memberNo") Integer memberNo) throws Exception {
+        service.remove(memberNo);
+
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
 }

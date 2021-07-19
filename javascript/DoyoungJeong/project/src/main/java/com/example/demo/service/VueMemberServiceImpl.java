@@ -32,4 +32,14 @@ public class VueMemberServiceImpl implements VueMemberService {
     public VueMember read(Integer memberNo) throws Exception {
         return repository.read(memberNo);
     }
+
+    @Override
+    public void modify(VueMember member) throws Exception {
+        repository.update(member);
+    }
+
+    @Override
+    public void remove(Integer member) throws Exception {
+        repository.delete(member);
+    }
 }
