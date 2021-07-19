@@ -36,6 +36,13 @@
       >
         BoardListPage
       </router-link>
+            <router-link
+        :to="{ name: 'GameMemberRegisterPage' }"
+        class="nav-link"
+        active-class="active"
+      >
+        GameMemberRegisterPage
+      </router-link>
     </div>
   </div>
 </template>
@@ -43,6 +50,8 @@
 <script>
 export default {
   name: "Home",
-  components: {},
+  components: {
+    
+  },
 };
 </script>

@@ -7,7 +7,11 @@ import Homework from '../views/Homework.vue'
 // board
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
+import BoardReadPage from '@/views/BoardReadPage.vue'
 // import는 ? 라이브러리(vue에선 컴포넌트) 추가
+
+// game
+import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 
 Vue.use(VueRouter)
 
@@ -49,6 +53,23 @@ const routes = [
       default: BoardRegisterPage
     } 
   },
+  {
+    path: '/board/:boardNo',
+    name: 'BoardReadPage',
+    components: {
+      default: BoardReadPage
+    } ,
+    props: {
+      default: true
+    }
+  },
+  {
+      path: '/member/create',
+      name: 'GameMemberRegisterPage',
+      components: {
+        default: GameMemberRegisterPage
+      },
+}
 ]
 
 const router = new VueRouter({
