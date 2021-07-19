@@ -1,6 +1,5 @@
 <template>
     <div align="center">
-        <h2>회원가입</h2>
         <game-member-register-form @submit="onSubmit"/>
     </div>
 </template>

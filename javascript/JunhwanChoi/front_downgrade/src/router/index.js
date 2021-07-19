@@ -8,6 +8,7 @@ import Homework from '../views/Homework.vue'
 // board
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
+import BoardReadPage from '@/views/BoardReadPage.vue'
 
 // game
 import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
@@ -50,12 +51,22 @@ const routes = [
     }
   },
   {
+    path: '/board/:boardNo',
+    name: 'BoardReadPage',
+    components: {
+      default: BoardReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
     path: '/member/create',
     name: 'GameMemberRegisterPage',
     components: {
       default: GameMemberRegisterPage
     }
-  },
+  }
 ]
 
 const router = new VueRouter({

@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="onSubmit">
         <h3>게시물 작성 형태</h3>
-        <table>
+        <table border="1">
             <tr>
                 <td>제목</td>
                 <td><input type="text" v-model="title"></td>
