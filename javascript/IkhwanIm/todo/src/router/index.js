@@ -8,8 +8,11 @@ import Homework from '../views/Homework.vue'
 // board
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
-import MemberRegisterPage from "../views/MemberRegisterPage";
 import BoardReadPage from "../views/BoardReadPage";
+import BoardModifyPage from "../views/BoardModifyPage";
+
+//game
+import MemberRegisterPage from "../views/MemberRegisterPage";
 
 Vue.use(VueRouter)
 
@@ -64,7 +67,17 @@ const routes = [
     components: {
       default: MemberRegisterPage
   }
-},
+  },
+  {
+    path: '/board/:boardNo/edit',
+    name: 'BoardModifyPage',
+    components: {
+      default: BoardModifyPage
+    },
+    props: {
+      default: true
+    }
+  },
 
 ]
 
