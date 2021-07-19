@@ -8,10 +8,10 @@ import Homework from '../views/Homework.vue'
 // board
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
+import BoardReadPage from '@/views/BoardReadPage.vue'
 
-//member
-import MemberListPage from '@/views/MemberListPage.vue'
-import MemberJoinPage from '@/views/MemberJoinPage.vue'
+// game
+import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 
 Vue.use(VueRouter)
 
@@ -51,17 +51,20 @@ const routes = [
     }
   },
   {
-    path: '/member',
-    name: 'MemberListPage',
+    path: '/board/:boardNo',
+    name: 'BoardReadPage',
     components: {
-      default: MemberListPage
+      default: BoardReadPage
+    },
+    props: {
+      default: true
     }
   },
   {
     path: '/member/create',
-    name: 'MemberJoinPage',
+    name: 'GameMemberRegisterPage',
     components: {
-      default: MemberJoinPage
+      default: GameMemberRegisterPage
     }
   },
 ]

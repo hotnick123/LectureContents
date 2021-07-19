@@ -15,17 +15,16 @@ import java.util.List;
 
 @Slf4j
 @Repository
-public class MemberRepository {
+public class VueMemberRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public void create(Member member) throws Exception {
-        String query = "insert into member (user_id, user_pass, name, sex, phone_no, dateOfBirth) values " +
-                "(?, ?, ?, ?, ?, ?)";
+        String query = "insert into vuemember (id, pw) values " +
+                "(?, ?)";
 
-        jdbcTemplate.update(query, member.getId(), member.getPw(), member.getName(),
-                member.getSex(), member.getPhoneNo(), member.getBirth());
+        jdbcTemplate.update(query, member.getId(), member.getPw());
     }
 
     public List<Member>list() throws Exception{
