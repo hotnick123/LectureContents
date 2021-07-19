@@ -1,3 +1,4 @@
+// 컨트롤러 역할
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
@@ -6,11 +7,12 @@ import Todo from '../views/Todo.vue'
 import Homework from '../views/Homework.vue'
 
 // board
-import BoardListPage from '../views/BoardListPage.vue'
-import BoardRegisterPage from '../views/BoardRegisterPage.vue'
-// member
-import MemberListPage from '../views/MemberListPage.vue'
-import MemberRegisterPage from '../views/MemberRegisterPage.vue'
+import BoardListPage from '@/views/BoardListPage.vue'
+import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
+import BoardReadPage from '@/views/BoardReadPage.vue'
+
+// game
+import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 
 Vue.use(VueRouter)
 
@@ -50,17 +52,20 @@ const routes = [
     }
   },
   {
-    path: '/member',
-    name: 'MemberListPage',
+    path: '/board/:boardNo',
+    name: 'BoardReadPage',
     components: {
-      default: MemberListPage
+      default: BoardReadPage
+    },
+    props: {
+      default: true
     }
   },
   {
-    path: '/member/signUp',
-    name: 'MemberRegisterPage',
+    path: '/member/create',
+    name: 'GameMemberRegisterPage',
     components: {
-      default: MemberRegisterPage
+      default: GameMemberRegisterPage
     }
   }
 ]

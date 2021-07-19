@@ -4,19 +4,27 @@
         <router-link :to="{ name: 'BoardRegisterPage' }">
             게시물 작성
         </router-link>
-        <!-- <board-list/> -->
+        <board-list :boards="boards"/>
     </div>
 </template>
 
 <script>
-
-
+import BoardList from '@/components/board/BoardList.vue'
+import { mapState, mapActions } from 'vuex'
 export default {
     name: 'BoardListPage',
     components: {
-        
+        BoardList
     },
+    // 실제 값에 변경이 발생할때 동작함
     computed: {
+        ...mapState(['boards'])
+    },
+    mounted () {
+        this.fetchBoardList()
+    },
+    methods: {
+        ...mapActions(['fetchBoardList'])
     }
 }
 </script>
