@@ -25,7 +25,7 @@ public class Controller0715VueBoard {
 
     @PostMapping("/register")
     public ResponseEntity<Board> register(@Validated @RequestBody Board board) throws Exception {
-        log.info("post register request fro vue");
+        log.info("post register request from vue");
 
         service.register(board);
 
@@ -44,6 +44,24 @@ public class Controller0715VueBoard {
         Board board = service.read(boardNo);
 
         return new ResponseEntity<Board>(board, HttpStatus.OK);
+    }
+
+    @PutMapping("/{boardNo}")
+    public ResponseEntity<Board> modify(@PathVariable("boardNo") Integer boardNo,
+                                        @Validated @RequestBody Board board) throws Exception{
+
+        board.setBoardNo(boardNo);
+
+        service.modify(board);
+
+        return new ResponseEntity<>(board, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{boardNo}")
+    public ResponseEntity<Void> remove(@PathVariable("boardNo") Integer boardNo) throws Exception {
+        service.remove(boardNo);
+
+        return  new ResponseEntity<Void>(HttpStatus.OK);
     }
 }
 

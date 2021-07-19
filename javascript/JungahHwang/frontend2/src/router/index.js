@@ -12,6 +12,7 @@ import MonsterSignupPage from '../views/MonsterSignupPage.vue'
 import BoardListPage from '../views/BoardListPage.vue'
 import BoardRegisterPage from '../views/BoardRegisterPage.vue'
 import BoardReadPage from '@/views/BoardReadPage'
+import BoardModifyPage from '@/views/BoardModifyPage'
 
 Vue.use(VueRouter)
 
@@ -71,6 +72,17 @@ const routes = [
     components: {
       default: BoardReadPage
     },
+    props: {
+      default: true
+    } 
+  },
+  {
+    path: '/board/:boardNo/edit',
+    name: 'BoardModifyPage',
+    components: {
+      default: BoardModifyPage
+    },
+    // 라우터 파라미터를 props에 자동으로 설정하게 서포트
     props: {
       default: true
     } 

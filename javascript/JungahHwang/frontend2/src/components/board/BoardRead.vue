@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>게시물 보기</h3>
     <table>
       <tr>
         <td>번호</td>
