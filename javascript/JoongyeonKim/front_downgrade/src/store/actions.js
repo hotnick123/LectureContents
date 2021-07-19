@@ -12,7 +12,15 @@ import {
     ADD_MANY_MONSTER,
     //spring과 랜덤 데이터 통신
     SUCCESS_GEN_RAND_NUM,
-    FAIL_GEN_RAND_NUM
+    FAIL_GEN_RAND_NUM,
+
+    //게시판
+    FETCH_BOARD_LIST,
+    FETCH_BOARD,
+
+    //상품
+    FETCH_PRODUCT_LIST,
+    FETCH_PRODUCT 
     
 } from './mutation-types'
 
@@ -72,5 +80,33 @@ export default {
                 .catch((res) => {
                     commit(FAIL_GEN_RAND_NUM, res)
                 })
-    }
+    },
+    // 게시판
+    fetchBoardList ({commit}) {
+        return axios.get('http://localhost:8888/vueboard/lists')
+            .then((res) =>{
+                commit(FETCH_BOARD_LIST, res.data)
+            })
+    },
+    fetchBoard({ commit }, boardNo) {
+        return axios.get(`http://localhost:8888/vueboard/${boardNo}`)
+        .then((res) => {
+            commit(FETCH_BOARD, res.data)
+        })
+    },
+
+    // 게시판
+    fetchProductList ({commit}) {
+        return axios.get('http://localhost:8888/vueproduct/productlists')
+            .then((res) =>{
+                commit(FETCH_PRODUCT_LIST, res.data)
+            })
+    },
+    fetchProduct({ commit }, productNo) {
+        return axios.get(`http://localhost:8888/vueproduct/${productNo}`)
+        .then((res) => {
+            commit(FETCH_PRODUCT, res.data)
+        })
+    },
+
 }

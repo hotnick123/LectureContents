@@ -13,14 +13,14 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Repository
-public class ProductRepository {
+public class VueProductRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public void create(Product product) {
 
-        String query = "insert into product (name, price, description, writer) values (?, ?, ?, ?)";
+        String query = "insert into vueproduct (name, price, description, writer) values (?, ?, ?, ?)";
 
         jdbcTemplate.update(query, product.getName(), product.getPrice(), product.getDescription(), product.getWriter());
     }
@@ -28,7 +28,7 @@ public class ProductRepository {
     public List<Product> productlist() throws Exception {
 
         List<Product> results = jdbcTemplate.query(
-                "select product_no, name, price, description, writer, reg_date from product " +
+                "select product_no, name, price, description, writer, reg_date from vueproduct " +
                         "where product_no > 0 order by product_no desc",
 
                 new RowMapper<Product>() {
@@ -56,7 +56,7 @@ public class ProductRepository {
 
     public Product productread (Integer productNo) throws Exception {
         List<Product> results = jdbcTemplate.query(
-                "select product_no, name, price, description, writer, reg_date from product where product_no = ?",
+                "select product_no, name, price, description, writer, reg_date from vueproduct where product_no = ?",
                 new RowMapper<Product>() {
                     @Override
                     public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -74,11 +74,5 @@ public class ProductRepository {
                 }, productNo);
 
         return results.isEmpty() ? null : results.get(0);
-    }
-
-    public void delete(Integer productNo) throws Exception{
-        String query = "delete from product where product_no=?";
-
-        jdbcTemplate.update(query, productNo);
     }
 }

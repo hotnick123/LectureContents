@@ -1,28 +1,28 @@
 <template>
     <div align="center">
-        <h2>판타지온라인</h2>
-        <member-register-form @submit="onSubmit"/>
+        <h2>상품 등록</h2>
+        <product-register-form @submit="onSubmit"/>
     </div>
 </template>
 
 <script>
-import MemberRegisterForm from '@/components/member/MemberRegisterForm.vue'
+import ProductRegisterForm from '@/components/product/ProductRegisterForm.vue'
 import axios from 'axios'
 export default {
-    name: 'MemberRegisterPage',
+    name: 'ProductRegisterPage',
     components: {
-        MemberRegisterForm
+        ProductRegisterForm
     },
     methods: {
         onSubmit (payload) {
-            const {id, pw } = payload
-            axios.post('http://localhost:8888/vuemember/register', {id, pw })
+            const { name, price, writer, description } = payload
+            axios.post('http://localhost:8888/vueproduct/productregister', { name, price, writer, description })
                     .then(res => {
                         alert('등록 성공! - ' + res)
                         /*
                         this.$router.push({
-                            name: 'MemberReadPage',
-                            params: { memberNo: res.data.memberNo.toString() }
+                            name: 'BoardReadPage',
+                            params: { boardNo: res.data.boardNo.toString() }
                         })
                         */
                     })

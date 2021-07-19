@@ -1,31 +1,31 @@
 <template>
-    <div id="board">
+    <div id="product">
         <h2>Vue + Spring 게시판 구현</h2>
-        <router-link :to="{ name: 'BoardRegisterPage' }">
+        <router-link :to="{ name: 'ProductRegisterPage' }">
             게시물 작성
         </router-link>
-        <board-list :boards="boards"/>
+        <product-list :products="products"/>
     </div>
 </template>
 
 <script>
 
-import BoardList from '@/components/board/BoardList.vue'
+import ProductList from '@/components/product/ProductList.vue'
 import { mapState, mapActions } from 'vuex'
 
 export default {
-    name: 'BoardListPage',
+    name: 'ProductListPage',
     components: {
-        BoardList
+        ProductList
     },
     computed: {
         ...mapState(['boards'])
     },
     mounted () {
-        this.fetchBoardList()
+        this.fetchProductList()
     },
     methods: {
-        ...mapActions(['fetchBoardList'])
+        ...mapActions(['fetchProductList'])
     }
 }
 
