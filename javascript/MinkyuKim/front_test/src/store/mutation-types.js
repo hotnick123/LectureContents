@@ -12,3 +12,7 @@ export const DEATH = 'DEATH'
 
 export const SUCCESS_GEN_RAND_NUM = 'SUCCESS_GEN_RAND_NUM'
 export const FAIL_GEN_RAND_NUM = 'FAIL_GEN_RAND_NUM'
+
+//게시판
+export const FETCH_BOARD_LIST = 'FETCH_BOARD_LIST'
+export const FETCH_BOARD = 'FETCH_BOARD'

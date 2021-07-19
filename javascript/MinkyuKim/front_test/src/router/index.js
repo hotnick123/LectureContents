@@ -9,6 +9,10 @@ import Homework from '../views/Homework.vue'
 // ..은 상위폴더를 의미 @는 src폴더를 의미
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
+import BoardReadPage from '@/views/BoardReadPage.vue'
+
+//game
+import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +49,23 @@ const routes = [
     name: 'BoardRegisterPage',
     components: {
       default: BoardRegisterPage
+    }
+  },
+  { //가변처리
+    path: '/board/:boardNo',
+    name: 'BoardReadPage',
+    components: {
+      default: BoardReadPage
+    },
+    props: {
+      default: true
+    }    
+  },
+  {
+    path: '/member/create',
+    name: 'GameMemberRegisterPage',
+    components: {
+      default: GameMemberRegisterPage
     }
   }
 ]

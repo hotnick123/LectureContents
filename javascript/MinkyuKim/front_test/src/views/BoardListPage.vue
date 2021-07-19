@@ -4,17 +4,30 @@
         <router-link :to="{ name: 'BoardRegisterPage' }">
             게시물 작성
         </router-link>
-        <!-- <board-list/> -->
+        <board-list :boards="boards"/>
     </div>
 </template>
 
 <script>
-// import { mapState, mapActions } from 'vuex'
+
+import BoardList from '@/components/board/BoardList.vue'
+import { mapState, mapActions } from 'vuex'
+
 export default {
     name: 'BoardListPage',
     components: {
+        BoardList
     },
     computed: {
+        ...mapState(['boards'])
+    },
+    // monted-객체가 생성되고나서 web이랑 붙을 때 작동
+    mounted () {        
+        this.fetchBoardList()
+    },
+    methods: {
+        ...mapActions(['fetchBoardList'])
+
     }
 }
 </script> 
