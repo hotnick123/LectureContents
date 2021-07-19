@@ -7,9 +7,11 @@ import Prob82 from '../views/Prob82.vue'
 
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
 import BoardListPage from '@/views/BoardListPage.vue'
+import BoardReadPage from '@/views/BoardReadPage.vue'
 
 import MemberRegisterPage from '@/views/MemberRegisterPage.vue'
 import MemberListPage from '@/views/MemberListPage.vue'
+import MemberReadPage from '@/views/MemberReadPage.vue'
 //@는 src, ..는 상위
 
 Vue.use(VueRouter)
@@ -46,7 +48,17 @@ const routes = [
     path: '/board/create',
     name: 'BoardRegisterPage',
     components: {
-      default: BoardRegisterPage //components { default }이거 뭐지?
+      default: BoardRegisterPage //components { default: ~ }이거 뭐지? 
+    }
+  },
+  {
+    path: '/board/:boardNo',
+    name: 'BoardReadPage',
+    components: {
+      default: BoardReadPage
+    },
+    props: {
+      default: true //props를 보낼 수 있게 활성화한다.
     }
   },
   {
@@ -61,6 +73,16 @@ const routes = [
     name: 'MemberRegisterPage',
     components: {
       default: MemberRegisterPage 
+    }
+  },
+  {
+    path: '/member/:memberNo',
+    name: 'MemberReadPage',
+    components: {
+      default: MemberReadPage
+    },
+    props: {
+      default: true
     }
   }
 ]

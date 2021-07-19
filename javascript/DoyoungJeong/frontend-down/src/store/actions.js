@@ -2,14 +2,24 @@ import {
     ADD_TODO,
     REMOVE_TODO,
     EDIT_TODO,
+    CLEAR_ALL,
     TOGGLE_TODO_STATUS,
 
     KILL_MONSTER,
     ADD_MONSTER,
+    SUMMON_MANY_MONSTERS,
     EDIT_NAME,
-    CLEAR_ALL,
+    TOGGLE_MONSTER_STATUS,
+    CLEAR_ALL_MONSTER,
+
     SUCCESS_GEN_RAN_NUM,
-    FAIL_GEN_RAN_NUM
+    FAIL_GEN_RAN_NUM,
+
+    FETCH_BOARD_LIST,
+    FETCH_BOARD,
+
+    FETCH_MEMBER_LIST,
+    FETCH_MEMBER
 } from './mutation-types'
 
 import axios from 'axios'
@@ -33,6 +43,9 @@ export default {
     editTodo ({ commit }, payload) {
         commit(EDIT_TODO, payload)
     },
+    clearAll(context) {
+        context.commit(CLEAR_ALL) 
+    },
     toggleTodoStatus ({ commit }, payload) {
         commit(TOGGLE_TODO_STATUS, payload) //payload -> id
     },
@@ -55,16 +68,51 @@ export default {
     addMonster ({ commit }, payload) {
         commit(ADD_MONSTER, payload)
     },
+    summonManyMonsters ({ commit }, payload) {
+        commit(SUMMON_MANY_MONSTERS, payload)
+    },
     killMonster ({ commit }, payload) {
         commit(KILL_MONSTER, payload)
     },
     editName ({ commit }, payload) {
         commit(EDIT_NAME, payload)
     },
-    clearAll(context) {
-        context.commit(CLEAR_ALL)
+    clearAllMonster(context) {
+        context.commit(CLEAR_ALL_MONSTER) 
+    },
+    toggleMonsterStatus({ commit }, payload) {
+        commit(TOGGLE_MONSTER_STATUS, payload)
+    },
+
+    fetchBoardList ({ commit }) { //commit의 뜻은 mutation하는것
+        return axios.get('http://localhost:7777/vueboard/list')
+            .then((res) => {
+                commit(FETCH_BOARD_LIST, res.data)
+            })
+    },
+    fetchBoard ({ commit }, boardNo) {
+        return axios.get(`http://localhost:7777/vueboard/${boardNo}`) //인자를 받을 때는 ``를 사용한다.
+            .then((res) => {
+                commit(FETCH_BOARD, res.data)
+                //res는 불러온 서버에서 불러온 데이터
+                //res데이터를 mutation에 있는 FETCH_BOARD 메소드로 전송
+            })
+    },
+
+    fetchMemberList ({ commit }) {
+        return axios.get('http://localhost:7777/vuemember/list')
+        .then((res) => {
+            commit(FETCH_MEMBER_LIST, res.data)
+        })
+    },
+    fetchMember ({ commit }, memberNo) {
+        return axios.get(`http://localhost:7777/vuemember/${memberNo}`)
+            .then((res) => {
+                commit(FETCH_MEMBER, res.data)
+            })
     }
 }
+
 
 //action에 있는 것들은 비동기처리 - 대충 보여져도 된다면 action에
 //mutation에 있는 것들은 동기처리 - 무결성이 중요하다면 mutation에

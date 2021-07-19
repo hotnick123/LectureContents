@@ -61,6 +61,14 @@ export default {
         onSubmit() {
             const { id, pw, name, birthDay, address, party, comment } = this
             this.$emit('submit', { id, pw, name, birthDay, address, party, comment })
+
+            this.id = ''
+            this.pw = ''
+            this.name = ''
+            this.birthDay = ''
+            this.address = ''
+            this.party = ''
+            this.comment = ''
         }
     }
 }

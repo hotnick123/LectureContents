@@ -8,7 +8,7 @@
 <script>
 
 import BoardRegisterForm from '@/components/board/BoardRegisterForm.vue'
-//@는 src root파일을 의미한다. ..는 뭐였지?
+//@는 src root파일을 의미한다. ..는 뭐였지? 상위 파일이라는 뜻
 import axios from 'axios'
 
 export default {
