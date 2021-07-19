@@ -72,13 +72,13 @@ public class VueProductRepository {
     }
 
     public void delete(Integer productNo) throws Exception {
-        String query = "delete from product where product_no = ?";
+        String query = "delete from vueproduct where product_no = ?";
 
         jdbcTemplate.update(query, productNo);
     }
 
     public void update(Product product) throws Exception {
-        String query = "update product set title = ?, price = ?, content = ? where product_no = ?";
+        String query = "update vueproduct set title = ?, price = ?, content = ? where product_no = ?";
 
         jdbcTemplate.update(query, product.getTitle(), product.getPrice(),  product.getContent(), product.getProductNo());
     }

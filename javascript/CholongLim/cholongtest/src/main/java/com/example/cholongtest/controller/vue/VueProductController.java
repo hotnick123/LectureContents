@@ -1,5 +1,6 @@
 package com.example.cholongtest.controller.vue;
 
+import com.example.cholongtest.entity.Board;
 import com.example.cholongtest.entity.Product;
 import com.example.cholongtest.service.VueProductService;
 import lombok.extern.slf4j.Slf4j;
@@ -44,5 +45,21 @@ public class VueProductController {
         Product product = service.read(productNo);
 
         return new ResponseEntity<Product>(product, HttpStatus.OK);
+    }
+
+    @PutMapping("/{productNo}")
+    public ResponseEntity<Product> modify(@PathVariable("productNo") Integer productNo,
+                                        @Validated @RequestBody Product product ) throws Exception {
+        product.setProductNo(productNo);
+        service.modify(product);
+
+        return new ResponseEntity<>(product, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{productNo}")
+    public ResponseEntity<Void> remove(@PathVariable("productNo") Integer productNo) throws Exception {
+        service.remove(productNo);
+
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }
