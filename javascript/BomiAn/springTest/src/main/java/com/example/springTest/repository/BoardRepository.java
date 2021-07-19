@@ -35,7 +35,7 @@ public class BoardRepository {
         // results엔 DB에서 얻어온 행 정보들이 들어있다.
         List<Board> results = jdbcTemplate.query(
                 "select board_no, title, content, writer, reg_date from vueboard " +
-                        "where board_no > 0 order by board_no desc",
+                       "where board_no > 0 order by board_no desc",
                 // Row: 행
                 // 여러개의 Column(열)들이 행 1개에 포함되어 있음
                 // 여러 열들을 얻어와서 행으로 맵핑하는 작업을 수행함

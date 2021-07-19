@@ -4,15 +4,15 @@
         <table>
             <tr>
                 <td>제목</td>
-                <td><input type="text" v-model="title"></td>
+                <td><input type="text" placeholder="title" v-model="title"></td>
             </tr>
             <tr>
                 <td>작성자</td>
-                <td><input type="text" v-model="writer"></td>
+                <td><input type="text" placeholder="writer" v-model="writer"></td>
             </tr>
             <tr>
                 <td>본문</td>
-                <td><textarea cols="50" rows="20" v-model="content"></textarea></td>
+                <td><textarea cols="50" rows="20" placeholder="content" v-model="content"></textarea></td>
             </tr>
         </table>
 
@@ -30,9 +30,9 @@ export default {
     name: 'BoardRegisterForm',
     data () {
         return {
-            title: '제목을 작성하세요.',
+            title: '',
             writer: '',
-            content: '본문을 작성하면 됩니다.'
+            content: ''
         }
     },
     methods: {
