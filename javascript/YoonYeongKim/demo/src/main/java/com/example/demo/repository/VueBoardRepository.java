@@ -1,5 +1,4 @@
 package com.example.demo.repository;
-
 import com.example.demo.entity.Board;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,6 @@ public class VueBoardRepository {
         // 나머지 3개: query에 있는 ?에 배치할 값들을 결정함
         jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getWriter());
     }
-
     public List<Board> list() throws Exception {
         // RowMapper를 통해 얻은 행을 하나씩 List에 집어넣으니
         // results엔 DB에서 얻어온 행 정보들이 들어있다.
@@ -57,7 +55,6 @@ public class VueBoardRepository {
         );
         return results;
     }
-
     public Board read (Integer boardNo) throws Exception {
         List<Board> results = jdbcTemplate.query(
                 "select board_no, title, content, writer, reg_date from vueboard where board_no = ?",
@@ -77,12 +74,12 @@ public class VueBoardRepository {
     }
 
     public void delete(Integer boardNo) throws Exception {
-        String query = "delete from board where board_no = ?";
+        String query = "delete from vueboard where board_no = ?";
+
         jdbcTemplate.update(query, boardNo);
     }
-
     public void update(Board board) throws Exception {
-        String query = "update board set title = ?, content = ? where board_no = ?";
+        String query = "update vueboard set title = ?, content = ? where board_no = ?";
         jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
     }
 }
