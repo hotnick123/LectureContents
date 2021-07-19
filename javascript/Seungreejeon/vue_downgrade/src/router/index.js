@@ -9,6 +9,7 @@ import Homework from '../views/Homework.vue'
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
 import BoardReadPage from '@/views/BoardReadPage.vue'
+import BoardModifyPage from '@/views/BoardModifyPage.vue'
 
 // game
 import GameMemberRegisterPage from '@/views/GameMemberRegister.vue'
@@ -67,7 +68,18 @@ const routes = [
         props: {
           default: true
         }
-  }
+  },
+  {
+    path: '/board/:boardNo/edit',
+    name: 'BoardModifyPage',
+    components: {
+      default: BoardModifyPage
+    },
+    props: {
+      // 라우팅 파라미터를 props에 자동으로 설정하게 서포트한다.
+      default: true
+    }
+}
 ]
 // 파라미터로 받게 되있다. props로 받는것 자동 :x는 가변인자
 const router = new VueRouter({

@@ -16,7 +16,8 @@ import {
     DEATH,
 
     FETCH_BOARD_LIST,
-    FETCH_BOARD
+    FETCH_BOARD,
+    // ON_SUBMIT
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -89,5 +90,10 @@ export default {
     },
     [FETCH_BOARD] (state, board ) {
         state.board = board;
-    }
+    },
+    // [ON_SUBMIT] (state, payload) {
+    //     state.board.title = payload.title
+    //     state.board.content = payload.content
+
+    // }
 }
