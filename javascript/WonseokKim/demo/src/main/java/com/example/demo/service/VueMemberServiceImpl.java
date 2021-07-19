@@ -16,8 +16,8 @@ public class VueMemberServiceImpl implements VueMemberService {
     private VueMemberRepository repository;
 
     @Override
-    public void register(Member board) throws Exception {
-        repository.create(board);
+    public void register(Member member) throws Exception {
+        repository.create(member);
     }
 
     @Override
