@@ -18,7 +18,11 @@ import {
 
 // Spring
   SUCCESS_GEN_RAND_NUM,
-  FAIL_GEN_RAND_NUM
+  FAIL_GEN_RAND_NUM,
+
+// Board
+  FETCH_BOARD_LIST,
+  FETCH_BOARD
 } from './mutation-types'
 
 export default {
@@ -77,7 +81,7 @@ export default {
       state.monsterElements.push(payload[i])
       state.nextMonsterId++
     }
-  },
+},
 
 // Spring
   [SUCCESS_GEN_RAND_NUM] (state, payload) {
@@ -86,5 +90,13 @@ export default {
   },
   [FAIL_GEN_RAND_NUM] () {
     console.log('통신에러!')
-  }  
+  },
+  
+// Board
+  [FETCH_BOARD_LIST] (state, boards) {
+    state.boards = boards
+  },
+  [FETCH_BOARD] (state, board) {
+    state.board = board
+  }
 }

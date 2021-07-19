@@ -12,5 +12,9 @@ export default {
   nextMonsterId: 1,
 
 // Spring
-  randomFromSpring: 0
+  randomFromSpring: 0,
+
+// Board
+  boards: [],
+  board: null
 }

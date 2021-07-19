@@ -17,3 +17,7 @@ export const ADD_MANY_MONSTER = 'ADD_MANY_MONSTER'
 // Spring
 export const SUCCESS_GEN_RAND_NUM = 'SUCCESS_GEN_RAND_NUM'
 export const FAIL_GEN_RAND_NUM = 'FAIL_GEN_RAND_NUM'
+
+// Board
+export const FETCH_BOARD_LIST = 'FETCH_BOARD_LIST'
+export const FETCH_BOARD = 'FETCH_BOARD'

@@ -4,8 +4,14 @@ import Home from '../views/Home.vue'
 import Test from '../views/Test.vue'
 import Todo from '../views/Todo.vue'
 import Quiz from '../views/Quiz.vue'
+
+// Monster
+import MonsterSignupPage from '../views/MonsterSignupPage.vue'
+
+// Board
 import BoardListPage from '../views/BoardListPage.vue'
 import BoardRegisterPage from '../views/BoardRegisterPage.vue'
+import BoardReadPage from '@/views/BoardReadPage'
 
 Vue.use(VueRouter)
 
@@ -23,16 +29,28 @@ const routes = [
     name: 'Test',
     component: Test
   },
+
+// Todo
   {
     path: '/todo',
     name: 'Todo',
     component: Todo
   },
+
+// Monster
   {
     path: '/quiz',
     name: 'Quiz',
     component: Quiz
   },
+  {
+    path: '/quiz/signup',
+    name: 'MonsterSignupPage',
+    components: {
+      default: MonsterSignupPage
+    }
+  },
+// Board
   {
     path: '/board',
     name: 'BoardListPage',
@@ -45,6 +63,16 @@ const routes = [
     name: 'BoardRegisterPage',
     components: {
       default: BoardRegisterPage
+    } 
+  },
+  {
+    path: '/board/:boardNo',
+    name: 'BoardReadPage',
+    components: {
+      default: BoardReadPage
+    },
+    props: {
+      default: true
     } 
   }
   

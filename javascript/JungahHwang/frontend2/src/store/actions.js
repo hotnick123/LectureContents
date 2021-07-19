@@ -16,7 +16,11 @@ import {
 
 // Spring
   SUCCESS_GEN_RAND_NUM,
-  FAIL_GEN_RAND_NUM
+  FAIL_GEN_RAND_NUM,
+
+// Board
+  FETCH_BOARD_LIST,
+  FETCH_BOARD
 } from './mutation-types'
 
 import axios from 'axios'
@@ -77,6 +81,18 @@ export default {
       commit(SUCCESS_GEN_RAND_NUM, parseInt(res.data.randNumber))
     }).catch((res) => {
       commit(FAIL_GEN_RAND_NUM, res)
+    })
+  },
+
+// Board
+  fetchBoardList ({ commit }) {
+    return axios.get('http://localhost:7777/vueboard/lists').then((res) => {
+      commit(FETCH_BOARD_LIST, res.data)
+    })
+  },
+  fetchBoard ({ commit }, boardNo) {
+    return axios.get(`http://localhost:7777/vueboard/${boardNo}`).then((res) => {
+      commit(FETCH_BOARD, res.data)
     })
   }
 }
