@@ -11,6 +11,11 @@ import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
 import BoardReadPage from '@/views/BoardReadPage.vue'
 
+// product
+import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
+import ProductListPage from '@/views/ProductListPage.vue'
+import ProductReadPage from '@/views/ProductReadPage.vue'
+
 // game
 import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 
@@ -56,6 +61,30 @@ const routes = [
     name: 'BoardReadPage',
     components: {
       default: BoardReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/product',
+    name: 'ProductListPage',
+    components: {
+      default: ProductListPage
+    }
+  },
+  {
+    path: '/product/create',
+    name: 'ProductRegisterPage',
+    components: {
+      default: ProductRegisterPage
+    }
+  },
+  {
+    path: '/product/:productNo',
+    name: 'ProductReadPage',
+    components: {
+      default: ProductReadPage
     },
     props: {
       default: true

@@ -26,6 +26,11 @@
                     active-class="active">
                 BoardListPage
             </router-link>
+            <router-link :to="{ name: 'ProductListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                ProductListPage
+            </router-link>
             <router-link :to="{ name: 'GameMemberRegisterPage' }"
                     class="nav-link"
                     active-class="active">
