@@ -1,10 +1,11 @@
 <template>
     <div>
-        <h3>게시물 목록</h3>
-        <table border="1">
+        <h3>게시물 목록</h3><br><br><br>
+        <center>
+        <table border="1" >
             <tr>
                 <th align="center" width="100">번호</th>
-                <th align="center" width="640">제목</th>
+                <th align="center" width="300">제목</th>
                 <th align="center" width="150">작성자</th>
                 <th align="center" width="240">등록일자</th>
             </tr>
@@ -25,6 +26,7 @@
                 <td align="center">{{ board.regDate }}</td>
             </tr>
         </table>
+        </center>
     </div>
 </template>
 
