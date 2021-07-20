@@ -31,7 +31,7 @@ export default {
     onSubmit (payload) {
       const { title, content } = payload
       axios.put(`http://localhost:7777/vueboard/${this.boardNo}`, { title, content }).then(res => {
-        alert('수정 성공!')
+        alert('수정이 완료되었습니다')
         // router.push: router-link :to 와 같은 역할
         this.$router.push({
           name: 'BoardReadPage',

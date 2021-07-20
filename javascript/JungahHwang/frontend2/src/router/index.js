@@ -9,15 +9,18 @@ import Quiz from '../views/Quiz.vue'
 import MonsterSignupPage from '../views/MonsterSignupPage.vue'
 
 // Board
-import BoardListPage from '../views/BoardListPage.vue'
-import BoardRegisterPage from '../views/BoardRegisterPage.vue'
-import BoardReadPage from '@/views/BoardReadPage'
-import BoardModifyPage from '@/views/BoardModifyPage'
+import BoardListPage from '@/views/board/BoardListPage.vue'
+import BoardRegisterPage from '@/views/board/BoardRegisterPage.vue'
+import BoardReadPage from '@/views/board/BoardReadPage'
+import BoardModifyPage from '@/views/board/BoardModifyPage'
 
 // Product
-import ProductListPage from '@/views/ProductListPage'
-import ProductRegisterPage from '@/views/ProductRegisterPage'
-import ProductReadPage from '@/views/ProductReadPage'
+import ProductListPage from '@/views/product/ProductListPage'
+import ProductRegisterPage from '@/views/product/ProductRegisterPage'
+import ProductReadPage from '@/views/product/ProductReadPage'
+
+// 삼목
+import Concave from '@/views/Concave'
 
 Vue.use(VueRouter)
 
@@ -118,6 +121,15 @@ const routes = [
       default: true
     } 
   },
+
+// 삼목
+  {
+    path: '/concave',
+    name: 'Concave',
+    components: {
+      default: Concave
+    }
+  }
 
   
 ]

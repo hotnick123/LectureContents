@@ -24,6 +24,10 @@
       class="nav-link" 
       active-class="active">Board
     </router-link>
+    <router-link :to="{ name: 'Concave' }" 
+      class="nav-link" 
+      active-class="active">Concave
+    </router-link>
   </div>
 </template>
 
