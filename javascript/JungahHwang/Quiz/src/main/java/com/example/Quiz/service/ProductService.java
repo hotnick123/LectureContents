@@ -8,4 +8,6 @@ public interface ProductService {
     public void register(Product product) throws Exception;
 
     public List<Product> list() throws Exception;
+
+    public Product read(Integer productNo) throws Exception;
 }

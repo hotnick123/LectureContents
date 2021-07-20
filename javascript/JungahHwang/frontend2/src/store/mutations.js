@@ -22,7 +22,12 @@ import {
 
 // Board
   FETCH_BOARD_LIST,
-  FETCH_BOARD
+  FETCH_BOARD,
+
+// Product
+  FETCH_PRODUCT_LIST,
+  FETCH_PRODUCT,
+
 } from './mutation-types'
 
 export default {
@@ -98,5 +103,14 @@ export default {
   },
   [FETCH_BOARD] (state, board) {
     state.board = board
-  }
+  },
+
+// Product
+  [FETCH_PRODUCT_LIST] (state, products) {
+    state.products = products
+  },
+  [FETCH_PRODUCT] (state, product) {
+    state.product = product
+  },
+
 }

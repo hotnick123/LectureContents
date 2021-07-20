@@ -1,8 +1,12 @@
 <template>
-  <div class="monster">
+  <div class="quiz">
     <router-link :to="{ name: 'MonsterSignupPage' }" 
       class="nav-link" 
-      active-class="active">회원가입
+      active-class="active">SignUp
+    </router-link>
+    <router-link :to="{ name: 'ProductRegisterPage' }" 
+      class="nav-link" 
+      active-class="active">Product
     </router-link>
     <monster-header></monster-header>
     <monster-input v-on:addMonster="onAddMonster"></monster-input>

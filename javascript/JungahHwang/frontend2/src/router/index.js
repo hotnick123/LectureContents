@@ -14,6 +14,11 @@ import BoardRegisterPage from '../views/BoardRegisterPage.vue'
 import BoardReadPage from '@/views/BoardReadPage'
 import BoardModifyPage from '@/views/BoardModifyPage'
 
+// Product
+import ProductListPage from '@/views/ProductListPage'
+import ProductRegisterPage from '@/views/ProductRegisterPage'
+import ProductReadPage from '@/views/ProductReadPage'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -86,7 +91,34 @@ const routes = [
     props: {
       default: true
     } 
-  }
+  },
+
+// Product
+  {
+    path: '/quiz/product',
+    name: 'ProductListPage',
+    components: {
+      default: ProductListPage
+    } 
+  },
+  {
+    path: '/quiz/product/create',
+    name: 'ProductRegisterPage',
+    components: {
+      default: ProductRegisterPage
+    } 
+  },
+  {
+    path: '/quiz/product/:productNo',
+    name: 'ProductReadPage',
+    components: {
+      default: ProductReadPage
+    },
+    props: {
+      default: true
+    } 
+  },
+
   
 ]
 

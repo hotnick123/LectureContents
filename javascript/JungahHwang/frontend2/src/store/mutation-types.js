@@ -21,3 +21,7 @@ export const FAIL_GEN_RAND_NUM = 'FAIL_GEN_RAND_NUM'
 // Board
 export const FETCH_BOARD_LIST = 'FETCH_BOARD_LIST'
 export const FETCH_BOARD = 'FETCH_BOARD'
+
+// Product
+export const FETCH_PRODUCT_LIST = 'FETCH_PRODUCT_LIST'
+export const FETCH_PRODUCT = 'FETCH_PRODUCT'

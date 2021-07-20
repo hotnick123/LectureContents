@@ -49,6 +49,27 @@ public class ProductRepository {
 
         return results;
     }
+
+    public Product read(Integer productNo) throws Exception {
+        List<Product> results = jdbcTemplate.query(
+                "select product_no, title, content, price, reg_date from product where product_no = ?",
+                new RowMapper<Product>() {
+                    @Override
+                    public Product mapRow(ResultSet rs, int i) throws SQLException {
+                        Product product = new Product();
+
+                        product.setProductNo(rs.getInt("product_no"));
+                        product.setTitle(rs.getString("title"));
+                        product.setContent(rs.getString("content"));
+                        product.setPrice(rs.getInt("price"));
+                        product.setRegDate(rs.getDate("reg_date"));
+
+                        return product;
+                    }
+                }, productNo
+        );
+        return results.isEmpty() ? null: results.get(0);
+    }
 }
 
 
