@@ -8,13 +8,11 @@ import Homework from '../views/Homework.vue'
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
 import BoardReadPage from '@/views/BoardReadPage.vue'
-
+import BoardModifyPage from '@/views/BoardModifyPage.vue'
 
 // game
 import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
-
 Vue.use(VueRouter)
-
 const routes = [
   {
     path: '/',
@@ -61,6 +59,17 @@ const routes = [
     }
   },
   {
+    path: '/board/:boardNo/edit',
+    name: 'BoardModifyPage',
+    components: {
+      default: BoardModifyPage
+    },
+    props: {
+      // 라우팅 파라미터를 props에 자동으로 설정하게 서포트함
+      default: true
+    }
+  },
+  {
     path: '/member/create',
     name: 'GameMemberRegisterPage',
     components: {
@@ -68,7 +77,6 @@ const routes = [
     }
   }
 ]
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
