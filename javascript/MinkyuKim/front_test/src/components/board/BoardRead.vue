@@ -11,7 +11,7 @@
                 <td><input type="text" :value="board.regDate" readonly></td>
             </tr>
             <tr>
-                <td>wpahr</td>
+                <td>제목</td>
                 <td><input type="text" :value="board.title" readonly></td>
             </tr>
             <tr>
@@ -34,6 +34,7 @@ export default {
         board: {
             type: Object,
             // required는 반드시 있어야 한다라는 의미.
+            // 반대로 default는 false. 
             required: true
         }
     }
