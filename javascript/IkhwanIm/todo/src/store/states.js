@@ -11,5 +11,8 @@ export default {
     randomFromSpring: 0,
     // 게시판
     boards: [],
-    board: null
+    board: null,
+    // product
+    products: [],
+    product: null,
 }

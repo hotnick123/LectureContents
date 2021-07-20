@@ -19,6 +19,8 @@ import Concave from "../views/Concave.vue"
 Vue.use(VueRouter)
 
 // product
+import ProductListPage from "../views/ProductListPage";
+import ProductRegisterPage from "../views/ProductRegisterPage";
 
 const routes = [
   {
@@ -87,6 +89,21 @@ const routes = [
     name: 'Concave',
     components: {
       default: Concave
+    }
+  },
+    // product
+  {
+    path: '/product',
+    name: 'ProductListPage',
+    components: {
+      default: ProductListPage
+    }
+  },
+  {
+    path: '/product/create',
+    name: 'ProductRegisterPage',
+    components: {
+      default: ProductRegisterPage
     }
   },
 

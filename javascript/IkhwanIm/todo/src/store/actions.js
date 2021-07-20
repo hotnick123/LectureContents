@@ -15,6 +15,9 @@ import {
     // 게시판
     FETCH_BOARD_LIST,
     FETCH_BOARD,
+    // product
+    FETCH_PRODUCT,
+    FETCH_PRODUCT_LIST,
 } from './mutation-types'
 
 import axios from 'axios'
@@ -65,7 +68,7 @@ export default {
         // 보내고 넘겨 받은 데이터는 .then((res)) 절로 수신함
         // .catch((res)) 절은 오류가 발생했을 경우임
         // 어찌 되었든 응답받은 데이터는 res가 가지고 있음
-        axios.get('http://localhost:7777/random')
+        axios.get(`http://localhost:7777/random`)
             .then((res) => {
                 commit(SUCCESS_GEN_RAND_NUM, parseInt(res.data.randNumber))
             })
@@ -75,7 +78,7 @@ export default {
     },
     // 게시판
     fetchBoardList ({ commit }) {
-        return axios.get('http://localhost:7777/vueboard/lists')
+        return axios.get(`http://localhost:7777/vueboard/lists`)
             .then((res) => {
                 commit(FETCH_BOARD_LIST, res.data)
             })
@@ -85,5 +88,19 @@ export default {
             .then((res) => {
                 commit(FETCH_BOARD, res.data)
             })
-    }
+    },
+    // Product
+    fetchProductList ({ commit }) {
+        return axios.get(`http://localhost:7777/vueproduct/lists`)
+            .then((res) => {
+                commit(FETCH_PRODUCT_LIST, res.data)
+            })
+    },
+    fetchProduct ({ commit }, productNo) {
+        return axios.get(`http://localhost:7777/vueproduct/${productNo}`)
+            .then((res) => {
+                commit(FETCH_PRODUCT, res.data)
+            })
+    },
+
 }

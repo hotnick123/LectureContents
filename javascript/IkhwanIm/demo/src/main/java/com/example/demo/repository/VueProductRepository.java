@@ -20,26 +20,24 @@ public class VueProductRepository {
     public void create(Product product) throws Exception {
         String query = "insert into vueproduct (product_name, description, producer, price) values (?, ?, ?, ?)";
 
-        jdbcTemplate.update(query, product.getProductName(), product.getDescription(), product.getProducer(), product.getPrice());
+        jdbcTemplate.update(query, product.getProduct_name(), product.getDescription(),
+                product.getProducer(), product.getPrice());
     }
 
+
     public List<Product> list() throws Exception {
-        // RowMapper를 통해 얻은 행을 하나씩 List에 집어넣으니
-        // results엔 DB에서 얻어온 행 정보들이 들어있다.
         List<Product> results = jdbcTemplate.query(
                 "select product_no, product_name, description, producer, price, reg_date from vueproduct " +
                         "where product_no > 0 order by product_no desc",
-                // Row: 행
-                // 여러개의 Column(열)들이 행 1개에 포함되어 있음
-                // 여러 열들을 얻어와서 행으로 맵핑하는 작업을 수행함
+
                 new RowMapper<Product>() {
                     @SneakyThrows
                     @Override
                     public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Product product = new Product();
 
-                        product.setProductNo(rs.getInt("board_no"));
-                        product.setProductName(rs.getString("product_name"));
+                        product.setProductNo(rs.getInt("product_no"));
+                        product.setProduct_name(rs.getString("product_name"));
                         product.setDescription(rs.getString("description"));
                         product.setProducer(rs.getString("producer"));
                         product.setPrice(rs.getInt("price"));
@@ -65,7 +63,7 @@ public class VueProductRepository {
                         Product product = new Product();
 
                         product.setProductNo(rs.getInt("product_no"));
-                        product.setProductName(rs.getString("product_name"));
+                        product.setProduct_name(rs.getString("product_name"));
                         product.setDescription(rs.getString("description"));
                         product.setProducer(rs.getString("producer"));
                         product.setPrice(rs.getInt("price"));
@@ -88,6 +86,6 @@ public class VueProductRepository {
 
     public void update(Product product) throws Exception {
         String query = "update vueproduct set product_name = ?, description = ?, producer = ?, price = ? where porduct_no = ?";
-        jdbcTemplate.update(query, product.getProductName(), product.getDescription(), product.getProducer(), product.getPrice());
+        jdbcTemplate.update(query, product.getProduct_name(), product.getDescription(), product.getProducer(), product.getPrice());
     }
 }

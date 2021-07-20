@@ -48,16 +48,3 @@ export default {
   }
 }
 </script>
-
-<style>
-table {
-  border-collapse: collapse;
-  margin: 30px 0 30px 41%;
-}
-td {
-  border: 1px solid black;
-  width: 80px;
-  height: 80px;
-  text-align: center;
-}
-</style>

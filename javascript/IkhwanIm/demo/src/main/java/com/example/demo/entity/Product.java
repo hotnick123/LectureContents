@@ -9,7 +9,7 @@ import java.util.Date;
 @Setter
 public class Product {
     private int productNo;
-    private String productName;
+    private String product_name;
     private String description;
     private String producer;
     private Integer price;
