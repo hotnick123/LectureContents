@@ -73,7 +73,7 @@ export default {
         // 보내고 넘겨 받은 데이터는 .then((res)) 절로 수신함
         // .catch((res)) 절은 오류가 발생했을 경우임
         // 어찌 되었든 응답받은 데이터는 res가 가지고 있음
-        axios.get('http://localhost:8888/random')
+        axios.get('http://localhost:7777/random')
                 .then((res) => {
                     commit(SUCCESS_GEN_RAND_NUM, parseInt(res.data.randNumber))
                 })
@@ -83,13 +83,13 @@ export default {
     },
     // 게시판
     fetchBoardList ({commit}) {
-        return axios.get('http://localhost:8888/vueboard/lists')
+        return axios.get('http://localhost:7777/vueboard/lists')
             .then((res) =>{
                 commit(FETCH_BOARD_LIST, res.data)
             })
     },
     fetchBoard({ commit }, boardNo) {
-        return axios.get(`http://localhost:8888/vueboard/${boardNo}`)
+        return axios.get(`http://localhost:7777/vueboard/${boardNo}`)
         .then((res) => {
             commit(FETCH_BOARD, res.data)
         })
@@ -97,13 +97,13 @@ export default {
 
     // 게시판
     fetchProductList ({commit}) {
-        return axios.get('http://localhost:8888/vueproduct/productlists')
+        return axios.get('http://localhost:7777/vueproduct/productlists')
             .then((res) =>{
                 commit(FETCH_PRODUCT_LIST, res.data)
             })
     },
     fetchProduct({ commit }, productNo) {
-        return axios.get(`http://localhost:8888/vueproduct/${productNo}`)
+        return axios.get(`http://localhost:7777/vueproduct/${productNo}`)
         .then((res) => {
             commit(FETCH_PRODUCT, res.data)
         })

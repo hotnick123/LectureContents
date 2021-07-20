@@ -25,7 +25,7 @@ public class VueProductRepository {
         jdbcTemplate.update(query, product.getName(), product.getPrice(), product.getDescription(), product.getWriter());
     }
 
-    public List<Product> productlist() throws Exception {
+    public List<Product> list() throws Exception {
 
         List<Product> results = jdbcTemplate.query(
                 "select product_no, name, price, description, writer, reg_date from vueproduct " +
@@ -54,7 +54,7 @@ public class VueProductRepository {
         return results;
     }
 
-    public Product productread (Integer productNo) throws Exception {
+    public Product read (Integer productNo) throws Exception {
         List<Product> results = jdbcTemplate.query(
                 "select product_no, name, price, description, writer, reg_date from vueproduct where product_no = ?",
                 new RowMapper<Product>() {

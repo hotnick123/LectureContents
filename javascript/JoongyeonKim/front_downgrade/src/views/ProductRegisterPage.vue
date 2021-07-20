@@ -1,3 +1,4 @@
+
 <template>
     <div align="center">
         <h2>상품 등록</h2>
@@ -16,7 +17,7 @@ export default {
     methods: {
         onSubmit (payload) {
             const { name, price, writer, description } = payload
-            axios.post('http://localhost:8888/vueproduct/productregister', { name, price, writer, description })
+            axios.post('http://localhost:7777/vueproduct/register', { name, price, writer, description })
                     .then(res => {
                         alert('등록 성공! - ' + res)
                         /*

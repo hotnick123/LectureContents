@@ -16,7 +16,7 @@ export default {
     methods: {
         onSubmit (payload) {
             const { title, content, writer } = payload
-            axios.post('http://localhost:8888/vueboard/register', { title, writer, content })
+            axios.post('http://localhost:7777/vueboard/register', { title, writer, content })
                     .then(res => {
                         alert('등록 성공! - ' + res)
                         /*

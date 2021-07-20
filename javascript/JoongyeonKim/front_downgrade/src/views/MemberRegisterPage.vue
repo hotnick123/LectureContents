@@ -16,7 +16,7 @@ export default {
     methods: {
         onSubmit (payload) {
             const {id, pw } = payload
-            axios.post('http://localhost:8888/vuemember/register', {id, pw })
+            axios.post('http://localhost:7777/vuemember/register', {id, pw })
                     .then(res => {
                         alert('등록 성공! - ' + res)
                         /*

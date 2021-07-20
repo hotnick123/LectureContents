@@ -19,7 +19,7 @@ export default {
         ProductList
     },
     computed: {
-        ...mapState(['boards'])
+        ...mapState(['products'])
     },
     mounted () {
         this.fetchProductList()

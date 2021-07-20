@@ -31,6 +31,11 @@
                     active-class="active">
                 MemberListPage
             </router-link>
+            <router-link :to="{ name: 'ProductListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                ProductListPage
+            </router-link>
         </div>
     </div>
 </template>

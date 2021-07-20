@@ -10,6 +10,7 @@ import Homework from '../views/Homework.vue'
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
 import BoardReadPage from '@/views/BoardReadPage.vue'
+import BoardModifyPage from '@/views/BoardModifyPage.vue'
 
 //Member
 import MemberListPage from '@/views/MemberListPage.vue'
@@ -19,6 +20,7 @@ import MemberRegisterPage from '@/views/MemberRegisterPage.vue'
 import ProductListPage from '@/views/ProductListPage.vue'
 import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
 import ProductReadPage from '@/views/ProductReadPage.vue'
+
 
 Vue.use(VueRouter)
 
@@ -64,6 +66,17 @@ const routes = [
       default: BoardReadPage
     },
     props: {
+      default: true
+    }
+  },
+  {
+    path: '/board/:boardNo/edit',
+    name: 'BoardModifyPage',
+    components: {
+      default: BoardModifyPage
+    },
+    props: {
+      // 라우팅 파리미터를 props에 자동으로 설정하게 서포트함
       default: true
     }
   },

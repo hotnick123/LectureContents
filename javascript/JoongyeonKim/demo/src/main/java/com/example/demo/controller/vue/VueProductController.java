@@ -1,58 +1,46 @@
 package com.example.demo.controller.vue;
 
 import com.example.demo.entity.Product;
-import com.example.demo.service.ProductService;
+import com.example.demo.service.VueProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Slf4j
 @Controller
 @RequestMapping("/vueproduct")
+@CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
 public class VueProductController {
+
     @Autowired
-    private ProductService productservice;
+    private VueProductService service;
 
-    @GetMapping("/productregister")
-    public String getProduct (Product product, Model model) throws Exception {
-        log.info("getProduct(): " + productservice.productlist());
+    @PostMapping("/register")
+    public ResponseEntity<Product> register(@Validated @RequestBody Product product) throws Exception {
+        log.info("post register request from vue");
 
-        model.addAttribute("productlists", productservice.productlist());
+        service.register(product);
 
-        return "/board/fifth/product/productregister";
+        return new ResponseEntity<>(product, HttpStatus.OK);
     }
 
-    @PostMapping("/productregister")
-    public String postProduct (Product product, Model model) throws Exception {
-        log.info("postProduct()");
-        log.info("Product: " + product);
+    @GetMapping("/lists")
+    public ResponseEntity<List<Product>> getLists () throws Exception {
+        log.info("getLists(): " + service.lists());
 
-        productservice.productregister(product);
-
-        model.addAttribute("pdt", "등록이 완료되었습니다!");
-
-        return "/board/fifth/product/success";
+        return new ResponseEntity<>(service.lists(), HttpStatus.OK);
     }
 
-    @GetMapping("/productlist")
-    public String getProductlist (Model model) throws Exception {
-        log.info("getProductlist(): " + productservice.productlist());
+    @GetMapping("/{productNo}")
+    public ResponseEntity<Product> read(@PathVariable("productNo") Integer productNo) throws Exception {
+        Product product = service.read(productNo);
 
-        model.addAttribute("product", productservice.productlist());
-
-        return "/board/fifth/product/productlist";
-    }
-
-    @GetMapping("/productread")
-    public String getProductRead (int productNo, Model model) throws Exception{
-        log.info("productread(): productNo = " + productNo);
-
-        model.addAttribute(productservice.productread(productNo));
-
-        return "/product/productread";
+        return new ResponseEntity<Product>(product, HttpStatus.OK);
     }
 }
