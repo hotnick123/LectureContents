@@ -10,11 +10,13 @@ import Homework from '../views/Homework.vue'
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
 import BoardReadPage from '@/views/BoardReadPage.vue'
+import BoardModifyPage from '@/views/BoardModifyPage.vue'
 
 // product
 import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
 import ProductListPage from '@/views/ProductListPage.vue'
 import ProductReadPage from '@/views/ProductReadPage.vue'
+import ProductModifyPage from '@/views/ProductModifyPage.vue'
 
 // game
 import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
@@ -67,6 +69,17 @@ const routes = [
     }
   },
   {
+    path: '/board/:boardNo/edit',
+    name: 'BoardModifyPage',
+    components: {
+      default: BoardModifyPage
+    },
+    props: {
+      // 라우팅 파라미터를 props에 자동으로 설정하게 서포트함
+      default: true
+    }
+  },
+  {
     path: '/product',
     name: 'ProductListPage',
     components: {
@@ -85,6 +98,16 @@ const routes = [
     name: 'ProductReadPage',
     components: {
       default: ProductReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/product/:productNo/edit',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
     },
     props: {
       default: true

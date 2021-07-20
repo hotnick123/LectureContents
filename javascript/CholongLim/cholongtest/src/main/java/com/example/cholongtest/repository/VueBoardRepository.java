@@ -86,13 +86,13 @@ public class VueBoardRepository {
     }
 
     public void delete(Integer boardNo) throws Exception {
-        String query = "delete from board where board_no = ?";
+        String query = "delete from vueboard where board_no = ?";
 
         jdbcTemplate.update(query, boardNo);
     }
 
     public void update(Board board) throws Exception {
-        String query = "update board set title = ?, content = ? where board_no = ?";
+        String query = "update vueboard set title = ?, content = ? where board_no = ?";
 
         jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
     }

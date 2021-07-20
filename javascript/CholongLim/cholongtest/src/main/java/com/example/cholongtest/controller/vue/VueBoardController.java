@@ -46,4 +46,21 @@ public class VueBoardController {
 
         return new ResponseEntity<Board>(board, HttpStatus.OK);
     }
+
+    @PutMapping("/{boardNo}")
+    // axios.put 으로 보냈기때문에 PutMapping 으로 받는다
+    public ResponseEntity<Board> modify(@PathVariable("boardNo") Integer boardNo,
+                                        @Validated @RequestBody Board board ) throws Exception {
+        board.setBoardNo(boardNo);
+        service.modify(board);
+
+        return new ResponseEntity<>(board, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{boardNo}")
+    public ResponseEntity<Void> remove(@PathVariable("boardNo") Integer boardNo) throws Exception {
+        service.remove(boardNo);
+
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
 }
