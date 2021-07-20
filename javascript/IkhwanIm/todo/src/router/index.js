@@ -14,6 +14,8 @@ import BoardModifyPage from "../views/BoardModifyPage";
 //game
 import MemberRegisterPage from "../views/MemberRegisterPage";
 
+//삼목
+import Concave from "../views/Concave.vue"
 Vue.use(VueRouter)
 
 const routes = [
@@ -76,6 +78,13 @@ const routes = [
     },
     props: {
       default: true
+    }
+  },
+  {
+    path: '/concave',
+    name: 'Concave',
+    components: {
+      default: Concave
     }
   },
 
