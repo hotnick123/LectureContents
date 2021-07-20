@@ -52,6 +52,7 @@ export default {
 <style>
 table {
   border-collapse: collapse;
+  margin: 30px 0 30px 41%;
 }
 td {
   border: 1px solid black;

@@ -18,6 +18,8 @@ import MemberRegisterPage from "../views/MemberRegisterPage";
 import Concave from "../views/Concave.vue"
 Vue.use(VueRouter)
 
+// product
+
 const routes = [
   {
     path: '/',
