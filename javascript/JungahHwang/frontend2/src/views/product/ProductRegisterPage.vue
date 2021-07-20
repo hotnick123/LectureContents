@@ -9,7 +9,7 @@
 <script>
 import axios from 'axios'
 
-import ProductRegister from '../components/product/ProductRegister.vue'
+import ProductRegister from '@/components/product/ProductRegister.vue'
 
 export default {
   name: 'ProductRegisterPage',
