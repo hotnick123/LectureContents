@@ -79,7 +79,7 @@ const routes = [
       default: GameMemberRegisterPage
     }
   }
-  
+
 
 ]
 
