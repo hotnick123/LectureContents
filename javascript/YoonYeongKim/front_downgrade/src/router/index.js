@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Test from '../views/Test.vue'
 import Todo from '../views/Todo.vue'
 import Homework from '../views/Homework.vue'
+
 // board
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
@@ -12,7 +13,12 @@ import BoardModifyPage from '@/views/BoardModifyPage.vue'
 
 // game
 import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
+
+// 삼목
+import Concave from '@/views/Concave.vue'
+
 Vue.use(VueRouter)
+
 const routes = [
   {
     path: '/',
@@ -75,8 +81,16 @@ const routes = [
     components: {
       default: GameMemberRegisterPage
     }
+  },
+  {
+    path: '/concave',
+    name: 'Concave',
+    components: {
+      default: Concave
+    }
   }
 ]
+
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
