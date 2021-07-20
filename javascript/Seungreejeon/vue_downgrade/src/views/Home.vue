@@ -11,38 +11,44 @@
                     active-class="active">
                 Test
             </router-link>
-            <monster></monster>
             <router-link :to="{ name: 'Todo' }"
-                          class="nav-link"   
-                          active-class="active">
-                          Todo
+                    class="nav-link"
+                    active-class="active">
+                Todo
             </router-link>
-              <router-link :to="{ name: 'Homework' }"
-                          class="nav-link"   
-                          active-class="active">
-                          Homework
+            <router-link :to="{ name: 'Homework' }"
+                    class="nav-link"
+                    active-class="active">
+                Homework
             </router-link>
             <router-link :to="{ name: 'BoardListPage' }"
-                        class="nav-link"   
-                        active-class="active">
-                        BoardListPage
+                    class="nav-link"
+                    active-class="active">
+                BoardListPage
             </router-link>
             <router-link :to="{ name: 'GameMemberRegisterPage' }"
-                        class="nav-link"   
-                        active-class="active">
-                        GameMemberRegister
+                    class="nav-link"
+                    active-class="active">
+                GameMemberRegisterPage
+            </router-link>
+            <router-link :to="{ name: 'Concave' }"
+                    class="nav-link"
+                    active-class="active">
+                Concave
+            </router-link>
+            <router-link :to="{ name: 'ProductListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                ProductListPage
             </router-link>
         </div>
     </div>
 </template>
 
 <script>
-import Monster from "../components/Monster.vue"
-
   export default {
     name: 'Home',
     components: {
-        'monster': Monster
     },
   }
 </script>

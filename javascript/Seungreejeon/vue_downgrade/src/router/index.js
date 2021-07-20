@@ -14,6 +14,12 @@ import BoardModifyPage from '@/views/BoardModifyPage.vue'
 // game
 import GameMemberRegisterPage from '@/views/GameMemberRegister.vue'
 
+// product
+import ProductListPage from '@/views/ProductListPage.vue'
+import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
+
+//삼목
+import Concave from '@/views/Concave.vue'
 
 Vue.use(VueRouter)
 
@@ -78,8 +84,29 @@ const routes = [
     props: {
       // 라우팅 파라미터를 props에 자동으로 설정하게 서포트한다.
       default: true
-    }
-}
+    },
+},
+{
+    path: '/concave',
+    name: 'Concave',
+    components: {
+      default: Concave
+  }
+},
+{
+  path: '/product',
+  name: 'ProductListPage',
+  components: {
+    default: ProductListPage
+  }
+},
+{
+  path: '/product/create',
+  name: 'ProductRegisterPage',
+  components: {
+    default: ProductRegisterPage
+  }
+},
 ]
 // 파라미터로 받게 되있다. props로 받는것 자동 :x는 가변인자
 const router = new VueRouter({

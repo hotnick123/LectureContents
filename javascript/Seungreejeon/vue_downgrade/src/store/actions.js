@@ -15,7 +15,9 @@ import {
     // 게시판
     FETCH_BOARD_LIST,
     FETCH_BOARD,
-    // ON_SUBMIT
+    // 상품
+    FETCH_PRODUCT_LIST,
+    FETCH_PRODUCT
 } from './mutation-types'
 
 import axios from 'axios'
@@ -86,24 +88,18 @@ export default {
                 .then((res) => {
                     commit(FETCH_BOARD, res.data)
                 })
-                .catch(err => {
-                    alert(err.response.data.message)
-                    this.$router.push()
-                })   
     },
-    // onSubmit ({ commit },{payload, No:this.boardNo}) {
-    //     const { title, content } = payload
-    //     axios.put(`http://localhost:7777/vueboard/${this.$state.board.boardNo}`, {title, content})
-    //     .then(res => {
-    //         alert('성공')
-    //         commit(ON_SUBMIT, res.data)
-    //         this.$router.push({
-    //             name: 'BoardReadPage',
-    //             params: { boardNo: res.data.boardNo.toString()}
-    //         })
-    //     })
-    //     .catch(err => {
-    //         alert(err.response.data.message)
-    //     })
-    // }
+    // 상품
+    fetchProductList ({ commit }) {
+        return axios.get('http://localhost:7777/vueproduct/lists')
+                .then((res) => {
+                    commit(FETCH_PRODUCT_LIST, res.data)
+                })
+    },
+    fetchProduct ({ commit }, productNo) {
+        return axios.get(`http://localhost:7777/vueproduct/${productNo}`)
+                .then((res) => {
+                    commit(FETCH_PRODUCT, res.data)
+                })
+    }
 }
