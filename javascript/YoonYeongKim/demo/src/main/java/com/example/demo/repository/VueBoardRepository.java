@@ -16,6 +16,7 @@ public class VueBoardRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
     public void create(Board board) throws Exception {
         // insert into board: DB에 있는 board 테이블에 값을 집어넣겠다.
         // (title, content, writer): board 테이블 내에 있는 컬럼들임
@@ -26,6 +27,7 @@ public class VueBoardRepository {
         // 나머지 3개: query에 있는 ?에 배치할 값들을 결정함
         jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getWriter());
     }
+
     public List<Board> list() throws Exception {
         // RowMapper를 통해 얻은 행을 하나씩 List에 집어넣으니
         // results엔 DB에서 얻어온 행 정보들이 들어있다.
