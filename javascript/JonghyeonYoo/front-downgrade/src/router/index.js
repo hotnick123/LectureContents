@@ -4,10 +4,11 @@ import Home from '../views/Home.vue'
 import Test from '../views/Test.vue'
 import Todo from '../views/Todo.vue'
 import Homework from '../views/Homework.vue'
-// board
+// board(게시판)
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
 import BoardReadPage from '@/views/BoardReadPage.vue'
+import BoardModifyPage from '@/views/BoardModifyPage.vue'
 // import는 ? 라이브러리(vue에선 컴포넌트) 추가
 
 // game
@@ -60,6 +61,17 @@ const routes = [
       default: BoardReadPage
     } ,
     props: {
+      default: true
+    }
+  },
+  {
+    path: '/board/:boardNo/edit',
+    name: 'BoardModifyPage',
+    components: {
+      default: BoardModifyPage
+    } ,
+    props: {
+      // 라우팅 파라미터를 props에 자동으로 설정하게 서포트함
       default: true
     }
   },
