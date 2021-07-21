@@ -39,23 +39,27 @@ public class VueProductController {
         return new ResponseEntity<>(service.list(), HttpStatus.OK);
     }
 
-    /*
     @GetMapping("/{boardNo}")
-    public ResponseEntity<Board> read(@PathVariable("boardNo") Integer boardNo) throws Exception {
-        Board board = service.read(boardNo);
-        return new ResponseEntity<Board>(board, HttpStatus.OK);
+    public ResponseEntity<Product> read(@PathVariable("boardNo") Integer productNo) throws Exception {
+        Product product = service.read(productNo);
+
+        return new ResponseEntity<Product>(product, HttpStatus.OK);
     }
-    @PutMapping("/{boardNo}")
-    public ResponseEntity<Board> modify(@PathVariable("boardNo") Integer boardNo,
-                                        @Validated @RequestBody Board board) throws Exception {
-        board.setBoardNo(boardNo);
-        service.modify(board);
-        return new ResponseEntity<>(board, HttpStatus.OK);
+
+
+    @PutMapping("/{productNo}")
+    public ResponseEntity<Product> modify(@PathVariable("productNo") Integer productNo,
+                                        @Validated @RequestBody Product product) throws Exception {
+        product.setProductNo(productNo);
+        service.modify(product);
+        return new ResponseEntity<>(product, HttpStatus.OK);
     }
-    @DeleteMapping("/{boardNo}")
-    public ResponseEntity<Void> remove(@PathVariable("boardNo") Integer boardNo) throws Exception {
-        service.remove(boardNo);
+    @DeleteMapping("/{productNo}")
+    public ResponseEntity<Void> remove(@PathVariable("productNo") Integer productNo) throws Exception {
+        log.info("번호"+productNo);
+
+        service.remove(productNo);
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
-     */
+
 }
