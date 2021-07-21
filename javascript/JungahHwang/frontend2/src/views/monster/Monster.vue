@@ -1,13 +1,14 @@
 <template>
-  <div class="quiz">
+  <div class="monster">
     <router-link :to="{ name: 'MonsterSignupPage' }" 
       class="nav-link" 
       active-class="active">SignUp
     </router-link>
-    <router-link :to="{ name: 'ProductRegisterPage' }" 
+    <router-link :to="{ name: 'MonsterCreatePage' }" 
       class="nav-link" 
-      active-class="active">Product
+      active-class="active">Create
     </router-link>
+    
     <monster-header></monster-header>
     <monster-input v-on:addMonster="onAddMonster"></monster-input>
     <monster-hundred-input v-on:addManyMonster="onAddManyMonster"></monster-hundred-input>
@@ -18,11 +19,11 @@
 
 <script>
 import { mapActions } from 'vuex'
-import MonsterHeader from '../components/quiz/MonsterHeader.vue'
+import MonsterHeader from '@/components/monster/MonsterHeader'
 // import MonsterAttack from '../components/quiz/MonsterAttack.vue'
-import MonsterInput from '../components/quiz/MonsterInput.vue'
-import MonsterList from '../components/quiz/MonsterList.vue'
-import MonsterHundredInput from '../components/quiz/MonsterHundredInput.vue'
+import MonsterInput from '@/components/monster/MonsterInput'
+import MonsterList from '@/components/monster/MonsterList'
+import MonsterHundredInput from '@/components/monster/MonsterHundredInput'
 
 
 export default {

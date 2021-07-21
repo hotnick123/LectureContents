@@ -9,7 +9,7 @@
 <script>
 import axios from 'axios'
 
-import MonsterSignupForm from '../components/quiz/MonsterSignupForm.vue'
+import MonsterSignupForm from '@/components/monster/MonsterSignupForm'
 
 export default {
   name: 'MonsterSignupPage',

@@ -3,10 +3,11 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Test from '../views/Test.vue'
 import Todo from '../views/Todo.vue'
-import Quiz from '../views/Quiz.vue'
+import Monster from '@/views/monster/Monster.vue'
 
 // Monster
-import MonsterSignupPage from '../views/MonsterSignupPage.vue'
+import MonsterSignupPage from '@/views/monster/MonsterSignupPage'
+import MonsterCreatePage from '@/views/monster/MonsterCreatePage'
 
 // Board
 import BoardListPage from '@/views/board/BoardListPage.vue'
@@ -18,6 +19,7 @@ import BoardModifyPage from '@/views/board/BoardModifyPage'
 import ProductListPage from '@/views/product/ProductListPage'
 import ProductRegisterPage from '@/views/product/ProductRegisterPage'
 import ProductReadPage from '@/views/product/ProductReadPage'
+import ProductModifyPage from '@/views/product/ProductModifyPage'
 
 // 삼목
 import Concave from '@/views/Concave'
@@ -48,17 +50,25 @@ const routes = [
 
 // Monster
   {
-    path: '/quiz',
-    name: 'Quiz',
-    component: Quiz
+    path: '/monster',
+    name: 'Monster',
+    component: Monster
   },
   {
-    path: '/quiz/signup',
+    path: '/monster/signup',
     name: 'MonsterSignupPage',
     components: {
       default: MonsterSignupPage
     }
   },
+  {
+    path: '/monster/create',
+    name: 'MonsterCreatePage',
+    components: {
+      default: MonsterCreatePage
+    }
+  },
+
 // Board
   {
     path: '/board',
@@ -98,24 +108,34 @@ const routes = [
 
 // Product
   {
-    path: '/quiz/product',
+    path: '/product',
     name: 'ProductListPage',
     components: {
       default: ProductListPage
     } 
   },
   {
-    path: '/quiz/product/create',
+    path: '/product/create',
     name: 'ProductRegisterPage',
     components: {
       default: ProductRegisterPage
     } 
   },
   {
-    path: '/quiz/product/:productNo',
+    path: '/product/:productNo',
     name: 'ProductReadPage',
     components: {
       default: ProductReadPage
+    },
+    props: {
+      default: true
+    } 
+  },
+  {
+    path: '/product/:productNo/edit',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
     },
     props: {
       default: true

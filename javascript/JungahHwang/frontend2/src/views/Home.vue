@@ -16,13 +16,17 @@
       class="nav-link" 
       active-class="active">Todo
     </router-link>
-    <router-link :to="{ name: 'Quiz' }" 
+    <router-link :to="{ name: 'Monster' }" 
       class="nav-link" 
-      active-class="active">Quiz
+      active-class="active">Monster
     </router-link>
     <router-link :to="{ name: 'BoardListPage' }" 
       class="nav-link" 
       active-class="active">Board
+    </router-link>
+    <router-link :to="{ name: 'ProductListPage' }" 
+      class="nav-link" 
+      active-class="active">Product
     </router-link>
     <router-link :to="{ name: 'Concave' }" 
       class="nav-link" 
