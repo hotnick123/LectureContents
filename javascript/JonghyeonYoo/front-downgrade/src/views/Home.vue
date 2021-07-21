@@ -43,6 +43,18 @@
       >
         GameMemberRegisterPage
       </router-link>
+                  <router-link
+        :to="{ name: 'Concave' }"
+        class="nav-link"
+        active-class="active"
+      >
+        Concave
+      </router-link>
+       <router-link :to="{ name: 'ProductListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                ProductListPage
+            </router-link>
     </div>
   </div>
 </template>
