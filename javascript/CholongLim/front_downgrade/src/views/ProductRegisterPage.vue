@@ -23,12 +23,9 @@ export default {
             axios.post('http://localhost:7777/vueproduct/register', { title, price, writer, content })
                 .then(res => {
                     alert('상품 등록이 완료되었습니다.' + res)
-                    /*
                     this.$router.push({
-                        name: 'BoardReadPage',
-                        params: {boardNo: res.data.boardNo.toString () }
+                        name: 'ProductListPage',
                     })
-                    */
                 })
                 .catch(res => {
                     alert(res.response.data.message)
