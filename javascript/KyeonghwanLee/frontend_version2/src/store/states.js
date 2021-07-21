@@ -11,7 +11,10 @@ export default {
     randomFromSpring: 0,
     //게시판
     boards: [],
-    board: null
+    board: null,
+    //상품
+    products: [],
+    product: null
 }
 // vue는 데이터를 중앙관리한다.
 // 얘가 중앙이야

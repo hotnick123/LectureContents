@@ -31,7 +31,7 @@ export default {
     data () {
         return {
             title: '제목을 작성하세요.',
-            writer: '',
+            writer: '', 
             content: '본문을 작성하면 됩니다.'
         }
     },

@@ -16,7 +16,10 @@ import {
     FAIL_GEN_RAND_NUM,
     // 게시판
     FETCH_BOARD_LIST,
-    FETCH_BOARD
+    FETCH_BOARD,
+    // 상품
+    FETCH_PRODUCT_LIST,
+    FETCH_PRODUCT
 
 } from './mutation-types'
 
@@ -89,5 +92,12 @@ export default {
     },
     [FETCH_BOARD] (state, board){
         state.board = board
+    },
+     // 상품
+     [FETCH_PRODUCT_LIST] (state, products) {
+        state.products = products;
+    },
+    [FETCH_PRODUCT] (state, product) {
+        state.product = product
     }
 }
