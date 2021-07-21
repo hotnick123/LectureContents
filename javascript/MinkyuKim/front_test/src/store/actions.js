@@ -17,7 +17,11 @@ import {
 
     //게시판
     FETCH_BOARD_LIST,
-    FETCH_BOARD
+    FETCH_BOARD,
+    
+    //상품
+    FETCH_PRODUCT_LIST,
+    FETCH_PRODUCT
 
 } from './mutation-types'
 
@@ -104,6 +108,20 @@ export default {
         return axios.get(`http://localhost:7777/vueboard/${boardNo}`)
                 .then((res) => {
                     commit(FETCH_BOARD, res.data)
+                })
+    },
+    
+    // 상품
+    fetchProductList ({ commit }) {
+        return axios.get('http://localhost:7777/vueproduct/lists')
+                .then((res) => {
+                    commit(FETCH_PRODUCT_LIST, res.data)
+                })
+    },
+    fetchProduct ({ commit }, productNo) {
+        return axios.get(`http://localhost:7777/vueproduct/${productNo}`)
+                .then((res) => {
+                    commit(FETCH_PRODUCT, res.data)
                 })
     }
 }

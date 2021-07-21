@@ -13,5 +13,9 @@ export default {
     // views/GameMemberRegisterPage.vue에서 computed
     boards: [],
     // views/BoardReadPage.vue에서 ?
-    board: null
+    board: null,
+    // 상품
+    products: [],
+    product: null
+
 }

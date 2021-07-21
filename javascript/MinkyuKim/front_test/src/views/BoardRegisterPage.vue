@@ -23,7 +23,7 @@ export default {
             // payload를 레지스터폼에서 emit으로 받았음.
             const { title, content, writer } = payload
             axios.post('http://localhost:7777/vueboard/register', { title, writer, content })
-
+                    // 등록성공 후 BoardListPage로(name값으로) 넘어가게한다. (redirectfh BoardListPage로 보내버림)
                     .then(res => {
                         alert('등록 성공! - ' + res)                        
                         this.$router.push({
