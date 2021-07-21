@@ -26,15 +26,24 @@
                     active-class="active">
                 BoardListPage
             </router-link>
-             <router-link :to="{ name: 'GameMemberRegisterPage' }"
+            <router-link :to="{ name: 'GameMemberRegisterPage' }"
                     class="nav-link"
                     active-class="active">
                 GameMemberRegisterPage
             </router-link>
+            <router-link :to="{ name: 'Concave' }"
+                    class="nav-link"
+                    active-class="active">
+                Concave
+            </router-link>
+            <router-link :to="{ name: 'ProductListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                ProductListPage
+            </router-link>
         </div>
     </div>
 </template>
-
 <script>
   export default {
     name: 'Home',
