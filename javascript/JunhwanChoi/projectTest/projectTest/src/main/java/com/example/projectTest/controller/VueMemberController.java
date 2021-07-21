@@ -54,11 +54,10 @@ public class VueMemberController {
 
         return new ResponseEntity<>(member, HttpStatus.OK);
     }
-/*
-    @DeleteMapping("/{boardNo}")
-    public ResponseEntity<Void> remove(@PathVariable("boardNo") Integer boardNo) throws  Exception{
-        service.remove(boardNo);
+    @DeleteMapping("/{memberNo}")
+    public ResponseEntity<Void> remove(@PathVariable("memberNo") Integer memberNo) throws  Exception{
+        service.remove(memberNo);
 
         return new ResponseEntity<Void>(HttpStatus.OK);
-    }*/
+    }
 }

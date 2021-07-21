@@ -2,19 +2,19 @@
     <div align="center">
         <br><br><br>
         <member-read-form v-if="member" :member="member"/>
-        <p v-else>로딩중 ...... </p>
-        <!--
-        <router-link :to="{ name: 'BoardModifyPage', params: { boardNo } }">
-            게시물 수정
-        </router-link>
-        <button @click="onDelete">삭제</button>
-        -->
-        <router-link :to="{ name: 'MemberListPage' }">
-            회원정보 보기
-        </router-link>
-        <router-link :to="{ name: 'MemberModifyPage' }">
+        <p v-else>로딩중 ...... </p><br>
+        
+        <router-link :to="{ name: 'MemberModifyPage', params: { memberNo } }">
             비밀번호 변경
         </router-link>
+       
+        <router-link :to="{ name: 'MemberListPage' }">
+            회원 리스트
+        </router-link><br><br>
+
+        <button @click="onDelete">삭제</button>
+
+        
     </div>
 </template>
 
@@ -50,7 +50,7 @@ export default {
             axios.delete(`http://localhost:3647/project/${memberNo}`)
                     .then(() => {
                         alert('삭제 성공!')
-                        this.$router.push({ name: 'MamberListPage' })
+                        this.$router.push({ name: 'MemberListPage' })
                     })
                     .catch(err => {
                         alert(err.response.data.message)

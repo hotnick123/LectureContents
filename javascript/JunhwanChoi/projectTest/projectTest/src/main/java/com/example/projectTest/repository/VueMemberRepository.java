@@ -79,11 +79,11 @@ public class VueMemberRepository {
 
         return results.isEmpty() ? null : results.get(0);
     }
-    /*
-    public void delete(Integer boardNo) throws Exception {
-        String query = "delete from vueboard where board_no = ?";
-        jdbcTemplate.update(query, boardNo);
-    }*/
+    public void delete(Integer memberNo) throws Exception {
+        String query = "delete from vueproject where member_no = ?";
+        jdbcTemplate.update(query, memberNo);
+    }
+
     public void update(Member member) throws Exception {
         String query = "update vueproject set password = ? where member_no = ?";
         jdbcTemplate.update(query, member.getPassword(), member.getMemberNo());

@@ -29,10 +29,10 @@ public class VueMemberServiceImpl implements VueMemberService {
         return repository.read(memberNo);
     }
 
-    /*@Override
-    public void remove(Integer productNo) throws Exception {
-        // repository.delete(productNo);
-    }*/
+    @Override
+    public void remove(Integer memberNo) throws Exception {
+        repository.delete(memberNo);
+    }
 
     @Override
     public void modify(Member member) throws Exception {

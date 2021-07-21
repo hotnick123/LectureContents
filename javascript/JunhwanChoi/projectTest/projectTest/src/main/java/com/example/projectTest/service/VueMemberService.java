@@ -12,7 +12,7 @@ public interface VueMemberService {
 
     public Member read(Integer memberNo) throws Exception;
 
-   // public void remove(Integer productNo) throws Exception;
+    public void remove(Integer memberNo) throws Exception;
 
     public void modify(Member member) throws Exception;
 
