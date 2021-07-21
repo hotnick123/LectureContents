@@ -1,3 +1,4 @@
+/*
 package com.example.projectTest.controller;
 
 import com.example.projectTest.entity.Project;
@@ -33,13 +34,15 @@ public class ProjectController {
         log.info("postRegister()");
         log.info("Project: " + project);
 
-    /*    // 비밀번호 길이 체크 로직 시작
+    */
+/*    // 비밀번호 길이 체크 로직 시작
         String password = project.getPassword();
         if (password.length() <= 8) {
             model.addAttribute("alertMsg", "8자리 이상의 비밀번호를 기입해주세요");
             return "redirect:/register";
         }
-        // 비밀번호 길이 체크 로직 끝*/
+        // 비밀번호 길이 체크 로직 끝*//*
+
 
         service.register(project);
         model.addAttribute("msg", "등록이 완료되었습니다!");
@@ -138,7 +141,7 @@ public class ProjectController {
         model.addAttribute("msg", "로그인 성공!");
 
         return "/project/success";
-    }*/
+    }
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -182,4 +185,4 @@ public class ProjectController {
             return "project/fail";
         }
     }
-}
+}*/

@@ -13,7 +13,7 @@ import java.util.Date;
 public class Project {
 
 
-    private int signupNo;
+    private int memberNo;
     private String username;
     private int birth;
     private String id;

@@ -1,3 +1,4 @@
+/*
 package com.example.projectTest.service;
 
 import com.example.projectTest.entity.Project;
@@ -18,3 +19,4 @@ public interface ProjectService {
     public void login(Project project) throws Exception;
 
 }
+*/

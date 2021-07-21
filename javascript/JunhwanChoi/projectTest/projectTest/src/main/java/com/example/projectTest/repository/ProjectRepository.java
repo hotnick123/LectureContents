@@ -1,3 +1,4 @@
+/*
 package com.example.projectTest.repository;
 
 import com.example.projectTest.entity.Project;
@@ -26,7 +27,8 @@ public class ProjectRepository {
         jdbcTemplate.update(query, project.getId(),project.getPassword(),project.getUsername(),project.getBirth());
     }
 
-    public List<Project> list() throws Exception {
+   */
+/* public List<Project> list() throws Exception {
         List<Project> results = jdbcTemplate.query(
                 "select signup_no, id, password, username, birth, reg_date from project " +
                         "where signup_no > 0 order by signup_no desc",
@@ -112,5 +114,6 @@ public class ProjectRepository {
         } else {
             log.info("Password Incorrect");
         }
-    }
-}
+    }*//*
+
+}*/
