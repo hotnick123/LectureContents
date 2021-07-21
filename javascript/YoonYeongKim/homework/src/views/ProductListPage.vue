@@ -1,8 +1,8 @@
 <template>
     <div id="product">
-        <h2>Vue + Spring 상품 등록 구현</h2>
+        <h2>Vue + Spring + DB 상품 구현</h2>
         <router-link :to="{ name: 'ProductRegisterPage' }">
-            게시물 작성
+            상품 등록
         </router-link>
         <product-list :products="products"/>
     </div>
@@ -25,7 +25,8 @@ export default {
         this.fetchProductList()
     },
     methods: {
-        ...mapActions(['fetchProductList'])        
+        ...mapActions(['fetchProductList'])
     }
 }
+
 </script> 

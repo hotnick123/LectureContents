@@ -1,4 +1,4 @@
-create table product(
+create table vueproduct(
    product_no int not null auto_increment,
    name varchar(200) not null,
    price int not null,

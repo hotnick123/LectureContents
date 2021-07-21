@@ -6,6 +6,7 @@ import Home from '../views/Home.vue'
 import ProductListPage from '@/views/ProductListPage.vue'
 import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
 import ProductReadPage from '@/views/ProductReadPage.vue'
+import ProductModifyPage from '@/views/ProductModifyPage.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,16 @@ const routes = [
       default: true
     }
   },
+  {
+    path: '/product/:productNo/edit',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
+    },
+    props: {
+      default: true
+    }
+  }
 ]
 
 

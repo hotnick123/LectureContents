@@ -10,7 +10,6 @@ import java.util.Date;
 @Setter
 @ToString
 public class Product {
-
     private int productNo;
     private String name;
     private int price;

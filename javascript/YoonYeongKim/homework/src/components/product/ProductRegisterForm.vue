@@ -8,7 +8,7 @@
             </tr>
             <tr>
                 <td>가격</td>
-                <td><input type="text" v-model="price"></td>
+                <td><input type="number" v-model="price"></td>
             </tr>
             <tr>
                 <td>상품 설명</td>

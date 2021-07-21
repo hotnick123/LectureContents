@@ -4,7 +4,9 @@ import {
 } from './mutation-types'
 
 import axios from 'axios'
+
 export default {
+    // 상품
     fetchProductList ({ commit }) {
         return axios.get('http://localhost:7777/vueproduct/lists')
                 .then((res) => {
@@ -12,7 +14,7 @@ export default {
                 })
     },
     fetchProduct ({ commit }, productNo) {
-        return axios.get(`http://localhost:7777/vueproduct/${boardNo}`)
+        return axios.get(`http://localhost:7777/vueproduct/${productNo}`)
                 .then((res) => {
                     commit(FETCH_PRODUCT, res.data)
                 })

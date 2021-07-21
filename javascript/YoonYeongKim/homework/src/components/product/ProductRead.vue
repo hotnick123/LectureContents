@@ -16,7 +16,7 @@
             </tr>
             <tr>
                 <td>가격</td>
-                <td><input type="text" :value="product.price" readonly></td>
+                <td><input type="number" :value="product.price" readonly></td>
             </tr>
             <tr>
                 <td>상품 설명</td>
