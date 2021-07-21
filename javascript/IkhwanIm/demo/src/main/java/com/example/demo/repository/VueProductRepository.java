@@ -56,7 +56,8 @@ public class VueProductRepository {
     }
     public Product read (Integer productNo) throws Exception {
         List<Product> results = jdbcTemplate.query(
-                "select product_no, product_name, discription, producer, price, reg_date from vueproduct where product_no = ?",
+                "select product_no, product_name, description, producer, price, " +
+                        "reg_date from vueproduct where product_no = ?",
                 new RowMapper<Product>() {
                     @Override
                     public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -67,7 +68,6 @@ public class VueProductRepository {
                         product.setDescription(rs.getString("description"));
                         product.setProducer(rs.getString("producer"));
                         product.setPrice(rs.getInt("price"));
-                        product.setProductNo(rs.getInt("product_no"));
                         product.setRegDate(rs.getDate("reg_date"));
 
                         return product;
@@ -85,7 +85,7 @@ public class VueProductRepository {
 
 
     public void update(Product product) throws Exception {
-        String query = "update vueproduct set product_name = ?, description = ?, producer = ?, price = ? where porduct_no = ?";
-        jdbcTemplate.update(query, product.getProduct_name(), product.getDescription(), product.getProducer(), product.getPrice());
+        String query = "update vueproduct set product_name = ?, description = ?, price = ? where product_no = ?";
+        jdbcTemplate.update(query, product.getProduct_name(), product.getDescription(), product.getPrice(), product.getProductNo());
     }
 }

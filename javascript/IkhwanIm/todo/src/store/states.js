@@ -15,4 +15,7 @@ export default {
     // product
     products: [],
     product: null,
+    // monster
+    monsters: [],
+    monster: null,
 }

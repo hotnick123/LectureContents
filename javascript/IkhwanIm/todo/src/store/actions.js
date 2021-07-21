@@ -18,6 +18,9 @@ import {
     // product
     FETCH_PRODUCT,
     FETCH_PRODUCT_LIST,
+    // monster
+    FETCH_MONSTER,
+    FETCH_MONSTER_LIST,
 } from './mutation-types'
 
 import axios from 'axios'
@@ -100,6 +103,19 @@ export default {
         return axios.get(`http://localhost:7777/vueproduct/${productNo}`)
             .then((res) => {
                 commit(FETCH_PRODUCT, res.data)
+            })
+    },
+    // Monster
+    fetchMonsterList ({ commit }) {
+        return axios.get(`http://localhost:7777/vuemonster/lists`)
+            .then((res) => {
+                commit(FETCH_MONSTER_LIST, res.data)
+            })
+    },
+    fetchMonster({ commit }, monsterNo) {
+        return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
+            .then((res) => {
+                commit(FETCH_MONSTER, res.data)
             })
     },
 

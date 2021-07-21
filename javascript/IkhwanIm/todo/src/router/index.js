@@ -21,6 +21,14 @@ Vue.use(VueRouter)
 // product
 import ProductListPage from "../views/ProductListPage";
 import ProductRegisterPage from "../views/ProductRegisterPage";
+import ProductReadPage from "../views/ProductReadPage";
+import ProductModifyPage from "../views/ProductModifyPage";
+
+// Monster
+import MonsterListPage from "../views/MonsterListPage";
+import MonsterRegisterPage from "../views/MonsterRegisterPage";
+import MonsterReadPage from "../views/MonsterReadPage";
+import MonsterModifyPage from "../views/MonsterModifyPage";
 
 const routes = [
   {
@@ -106,7 +114,61 @@ const routes = [
       default: ProductRegisterPage
     }
   },
-
+  {
+    path: '/product/:productNo',
+    name: 'ProductReadPage',
+    components: {
+      default: ProductReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/product/:productNo/edit',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
+    },
+    props: {
+      default: true
+    }
+  },
+    //monster
+  {
+    path: '/monster',
+    name: 'MonsterListPage',
+    components: {
+      default: MonsterListPage
+    }
+  },
+  {
+    path: '/monster/create',
+    name: 'MonsterRegisterPage',
+    components: {
+      default: MonsterRegisterPage
+    }
+  },
+  {
+    path: '/monster/:monsterNo',
+    name: 'MonsterReadPage',
+    components: {
+      default: MonsterReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/monster/:monsterNo/edit',
+    name: 'MonsterModifyPage',
+    components: {
+      default: MonsterModifyPage
+    },
+    props: {
+      default: true
+    }
+  },
 ]
 
 const router = new VueRouter({
