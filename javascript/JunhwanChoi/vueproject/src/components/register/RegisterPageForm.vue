@@ -42,6 +42,7 @@
                             name="birth"
                             prepend-icon="mdi-account"
                             type="text"
+                            v-model="birth"
                             ></v-text-field>
 
                             <v-text-field

@@ -6,6 +6,7 @@
                     <li><a href>HOME</a></li>
                     <li><a href="/login">로그인</a></li>
                     <li><router-link :to="{ name: 'RegisterPage' }">회원가입</router-link></li>
+                    <li><router-link :to="{ name: 'MemberListPage' }">[관리자 회원 리스트]</router-link></li>
 
                 </ul>
             </nav>

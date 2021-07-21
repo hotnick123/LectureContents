@@ -6,6 +6,10 @@ import Home from '../views/Home.vue'
 import RegisterPage from '../views/RegisterPage.vue'
 import LoginPage from '../views/LoginPage.vue'
 
+// member
+import MemberListPage from '@/views/MemberListPage.vue'
+import MemberReadPage from '@/views/MemberReadPage.vue'
+import MemberModifyPage from '@/views/MemberModifyPage.vue'
 
 Vue.use(VueRouter)
 
@@ -25,9 +29,34 @@ const routes = [
     name: 'LoginPage',
     component: LoginPage
   },
-  
-  
-
+  {
+    path: '/member',
+    name: 'MemberListPage',
+    components: {
+      default: MemberListPage
+    }
+  },
+  {
+    path: '/member/:memberNo',
+    name: 'MemberReadPage',
+    components: {
+      default: MemberReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/member/:memberNo/edit',
+    name: 'MemberModifyPage',
+    components: {
+      default: MemberModifyPage
+    },
+    props: {
+      // 라우팅 파라미터를 props에 자동으로 설정하게 서포트함
+      default: true
+    }
+  },
 ]
 
 const router = new VueRouter({

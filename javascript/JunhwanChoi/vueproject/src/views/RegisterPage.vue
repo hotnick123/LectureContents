@@ -17,7 +17,7 @@ export default {
     methods: {
         onSubmit (payload) {
             const { id, password, username, birth } = payload
-            axios.post('http://localhost:3647/first/register', { id, password, username, birth })
+            axios.post('http://localhost:3647/project/register', { id, password, username, birth })
                     .then(res => {
                         alert('등록 성공! - ' + res)
                         /*
