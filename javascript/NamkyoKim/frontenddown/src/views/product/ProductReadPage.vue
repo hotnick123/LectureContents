@@ -1,54 +1,55 @@
 <template>
     <div align="center">
-        <h2>Vue + Spring 게시판 읽기</h2>
-        <board-read v-if="board" :board="board"/>
+        <h2>Vue + Spring 상품 목록 읽기</h2>
+        <product-read v-if="product" :product="product"/>
         <p v-else>로딩중 ...... </p>
         
-        <router-link :to="{ name: 'BoardModifyPage', params: { boardNo } }">
-            게시물 수정
+        <router-link :to="{ name: 'ProductModifyPage', params: { productNo } }">
+            상품 수정
         </router-link>
         
         <button @click="onDelete">삭제</button>
-        <router-link :to="{ name: 'BoardListPage' }">
-            게시물 보기
+        
+        <router-link :to="{ name: 'ProductListPage' }">
+            상품 리스트
         </router-link>
     </div>
 </template>
 
 <script>
-import BoardRead from '@/components/board/BoardRead.vue'
+import ProductRead from '@/components/product/ProductRead.vue'
 import { mapState, mapActions } from 'vuex'
 import axios from 'axios'
 
 export default {
-    name: 'BoardReadPage',
+    name: 'ProductReadPage',
     props: {
-        boardNo: {
+        productNo: {
             type: String,
             required: true
         }
     },
     components: {
-        BoardRead
+        ProductRead
     },
     computed: {
-        ...mapState(['board'])
+        ...mapState(['product'])
     },
     created () {
-        this.fetchBoard(this.boardNo)
+        this.fetchProduct(this.productNo)
                 .catch(err => {
                     alert(err.response.data.message)
                     this.$router.push()
                 })
     },
     methods: {
-        ...mapActions(['fetchBoard']),
+        ...mapActions(['fetchProduct']),
         onDelete () {
-            const { boardNo } = this.board
-            axios.delete(`http://localhost:7777/vueboard/${boardNo}`)
+            const { productNo } = this.product
+            axios.delete(`http://localhost:7777/vueproduct/${productNo}`)
                 .then(() => {
                 alert('삭제 성공!')
-                this.$router.push({ name: 'BoardListPage' })
+                this.$router.push({ name: 'ProductListPage' })
             })
             .catch(err => {
                 alert(err.response.data.message)

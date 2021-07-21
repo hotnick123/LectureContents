@@ -14,7 +14,11 @@ import {
     FAIL_GEN_RAND_NUM,
     // 게시판
     FETCH_BOARD_LIST,
-    FETCH_BOARD
+    FETCH_BOARD,
+    // product
+    FETCH_PRODUCT_LIST,
+    FETCH_PRODUCT
+
 } from './mutation-types'
 
 import axios from 'axios'
@@ -84,6 +88,19 @@ export default {
         return axios.get(`http://localhost:7777/vueboard/${boardNo}`)
                 .then((res) => {
                     commit(FETCH_BOARD, res.data)
+                })
+    },
+    // product
+    fetchProductList ({ commit }) {
+        return axios.get('http://localhost:7777/vueproduct/lists')
+                .then((res) => {
+                    commit(FETCH_PRODUCT_LIST, res.data)
+                })
+    },
+    fetchProduct ({ commit }, productNo) {
+        return axios.get(`http://localhost:7777/vueproduct/${productNo}`)
+                .then((res) => {
+                    commit(FETCH_PRODUCT, res.data)
                 })
     }
 }

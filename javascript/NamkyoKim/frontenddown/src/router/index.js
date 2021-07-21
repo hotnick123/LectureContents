@@ -9,9 +9,19 @@ import Homework from '../views/Homework.vue'
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
 import BoardReadPage from '@/views/BoardReadPage.vue'
+import BoardModifyPage from '@/views/BoardModifyPage.vue'
 
 // game
 import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
+
+// 삼목
+import Concave from '@/views/Concave.vue'
+
+// product
+import ProductListPage from '@/views/product/ProductListPage.vue'
+import ProductRegisterPage from '@/views/product/ProductRegisterPage.vue'
+import ProductReadPage from '@/views/product/ProductReadPage.vue'
+import ProductModifyPage from '@/views/product/ProductModifyPage.vue'
 
 Vue.use(VueRouter)
 
@@ -61,12 +71,64 @@ const routes = [
     }
   },
   {
+    path: '/board/:boardNo/edit',
+    name: 'BoardModifyPage',
+    components: {
+      default: BoardModifyPage
+    },
+    props: {
+      // 라우팅 파라미터를 props에 자동으로 설정하게 서포트함
+      default: true
+    }
+  },
+  {
     path: '/member/create',
     name: 'GameMemberRegisterPage',
     components: {
       default: GameMemberRegisterPage
     }
   },
+  {
+    path: '/concave',
+    name: 'Concave',
+    components: {
+      default: Concave
+    }
+  },
+  {
+    path: '/product',
+    name: 'ProductListPage',
+    components: {
+      default: ProductListPage
+    }
+  },
+  {
+    path: '/product/create',
+    name: 'ProductRegisterPage',
+    components: {
+      default: ProductRegisterPage
+    }
+  },
+  {
+    path: '/product/:productNo',
+    name: 'ProductReadPage',
+    components: {
+      default: ProductReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/product/:productNo/edit',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
+    },
+    props: {
+      default: true
+    }
+  }
 ]
 
 const router = new VueRouter({
