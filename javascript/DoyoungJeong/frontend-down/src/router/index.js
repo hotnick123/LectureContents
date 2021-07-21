@@ -14,6 +14,8 @@ import MemberRegisterPage from '@/views/MemberRegisterPage.vue'
 import MemberListPage from '@/views/MemberListPage.vue'
 import MemberReadPage from '@/views/MemberReadPage.vue'
 import MemberModifyPage from '../views/MemberModifyPage.vue'
+
+import Concave from '../views/Concave.vue'
 //@는 src, ..는 상위
 
 Vue.use(VueRouter)
@@ -107,6 +109,13 @@ const routes = [
       default: true 
     }
   },
+  {
+    path: '/concave',
+    name: 'Concave',
+    components: {
+      default: Concave
+    }
+  }
 ]
 
 const router = new VueRouter({
