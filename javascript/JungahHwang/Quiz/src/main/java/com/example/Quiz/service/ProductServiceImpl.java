@@ -25,4 +25,14 @@ public class ProductServiceImpl implements ProductService {
     public Product read(Integer productNo) throws Exception{
         return repository.read(productNo);
     }
+
+    @Override
+    public void modify(Product product) throws Exception{
+        repository.update(product);
+    }
+
+    @Override
+    public void remove(Integer productNo) throws Exception{
+        repository.delete(productNo);
+    }
 }

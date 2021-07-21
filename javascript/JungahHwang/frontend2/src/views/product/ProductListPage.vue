@@ -1,6 +1,6 @@
 <template>
   <div id="product">
-    <h2>상품등록</h2>
+    <h2>상품 목록</h2>
     <router-link :to="{ name: 'ProductRegisterPage'}">
       상품등록
     </router-link>

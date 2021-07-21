@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>상품 목록</h3>
     <table border="1">
       <tr>
         <th align="center" width="100">번호</th>
