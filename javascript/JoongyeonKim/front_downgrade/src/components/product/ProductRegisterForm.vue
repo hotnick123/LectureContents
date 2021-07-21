@@ -13,7 +13,7 @@
             </tr>
             <tr>
                 <td>금액</td>
-                <td><input type="text" v-model="price"></td>
+                <td><input type="number" v-model="price"></td>
             </tr>
             <tr>
                 <td>상품내용</td>
@@ -24,7 +24,7 @@
         <div>
             <button type="submit">상품등록</button>
             <router-link :to="{ name: 'ProductListPage' }">
-                상품취소
+                취소
             </router-link>
         </div>
     </form>
@@ -35,10 +35,10 @@ export default {
     name: 'ProductRegisterForm',
     data () {
         return {
-            name: '상품의 이름을 작성하세요.',
+            name: '',
             writer: '',
-            price: '가격을 입력하세요',
-            description: '상품의 설명을 입력하세요'
+            price: '',
+            description: ''
         }
     },
     methods: {

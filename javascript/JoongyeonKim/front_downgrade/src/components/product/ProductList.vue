@@ -4,10 +4,11 @@
         <table border="1">
             <tr>
                 <th align="center" width="100">번호</th>
-                <th align="center" width="240">상품이름</th>
-                <th align="center" width="150">판매자</th>
+                <th align="center" width="350">상품이름</th>
+                <th align="center" width="350">판매자</th>
                 <th align="center" width="240">금액</th>
                 <th align="center" width="640">상품내용</th>
+                <th align="center" width="440">날짜</th>
             </tr>
             <tr v-if="!products || (Array.isArray(products) && products.length === 0)">
                 <td colspan="5">
@@ -22,10 +23,9 @@
                         {{ product.name }}
                     </router-link> 
                 </td>
-                <td align="right">{{ product.name }}</td>
                 <td align="right">{{ product.writer }}</td>
                 <td align="right">{{ product.price }}</td>
-                 <td align="right">{{ product.description }}</td>
+                <td align="right">{{ product.description }}</td>
                 <td align="center">{{ product.regDate }}</td>
             </tr>
         </table>

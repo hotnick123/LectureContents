@@ -5,7 +5,6 @@
             <table>
                 <tr>
                     <td>글번호</td>
-                    <!-- th:field의 경우엔 Board 객체에 있는 title과 직접 맵핑시킴 -->
                     <td><input type="text" :value="board.boardNo" disabled></td>
                 </tr>
                 <tr>

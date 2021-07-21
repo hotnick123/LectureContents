@@ -16,7 +16,7 @@
             </tr>
             <tr>
                 <td>금액</td>
-                <td><input type="text" :value="product.price" readonly></td>
+                <td><input type="number" :value="product.price" readonly></td>
             </tr>
             <tr>
                 <td>작성자</td>

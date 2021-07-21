@@ -21,6 +21,9 @@ import ProductListPage from '@/views/ProductListPage.vue'
 import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
 import ProductReadPage from '@/views/ProductReadPage.vue'
 
+//삼목
+import Concave from '@/views/Concave.vue'
+
 
 Vue.use(VueRouter)
 
@@ -116,6 +119,13 @@ const routes = [
     },
     props: {
       default: true
+    }
+  },
+  {
+    path: '/Concave',
+    name: 'Concave',
+    components: {
+      default: Concave
     }
   }
 ]

@@ -97,7 +97,7 @@ export default {
 
     // 게시판
     fetchProductList ({commit}) {
-        return axios.get('http://localhost:7777/vueproduct/productlists')
+        return axios.get('http://localhost:7777/vueproduct/lists')
             .then((res) =>{
                 commit(FETCH_PRODUCT_LIST, res.data)
             })

@@ -2,6 +2,7 @@ package com.example.demo.repository;
 
 import com.example.demo.entity.Product;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+@Slf4j
 @Repository
 public class VueProductRepository {
 

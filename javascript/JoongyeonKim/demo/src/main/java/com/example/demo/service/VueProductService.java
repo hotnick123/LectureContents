@@ -5,7 +5,7 @@ import com.example.demo.entity.Product;
 import java.util.List;
 
 public interface VueProductService {
-    public void register(Product product) throws Exception;
+    public void register(Product product)  ;
 
     public List<Product> lists() throws Exception;
 

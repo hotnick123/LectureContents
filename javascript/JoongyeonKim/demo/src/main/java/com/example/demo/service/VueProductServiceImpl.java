@@ -14,7 +14,7 @@ public class VueProductServiceImpl implements VueProductService {
     private VueProductRepository productrepository;
 
     @Override
-    public void register(Product product) throws Exception {
+    public void register(Product product)   {
         productrepository.create(product);
     }
 

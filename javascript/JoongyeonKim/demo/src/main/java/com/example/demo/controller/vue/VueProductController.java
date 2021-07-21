@@ -22,7 +22,7 @@ public class VueProductController {
     private VueProductService service;
 
     @PostMapping("/register")
-    public ResponseEntity<Product> register(@Validated @RequestBody Product product) throws Exception {
+    public ResponseEntity<Product> register(@Validated @RequestBody Product product) {
         log.info("post register request from vue");
 
         service.register(product);

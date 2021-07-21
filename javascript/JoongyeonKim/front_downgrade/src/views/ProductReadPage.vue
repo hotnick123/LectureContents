@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>Vue + Spring 상품내용 읽기</h2>
-        <board-read v-if="product" :product="product"/>
+        <product-read v-if="product" :product="product"/>
         <p v-else>로딩중 .......</p>
         <!--
         <router-link :to="{ name: 'BoardModifyPage', params: { boardNo } }">
