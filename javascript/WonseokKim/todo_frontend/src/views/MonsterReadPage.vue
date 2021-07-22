@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import MonsterRead from '@/components/monster1/MonsterRead.vue'
+import MonsterRead from '@/components/monsterhw/MonsterRead.vue'
 import { mapState, mapActions } from 'vuex'
 import axios from 'axios'
 
@@ -45,7 +45,7 @@ export default {
         ...mapActions(['fetchMonster']),
         onDelete () {
             const { monsterNo } = this.monster
-            axios.delete(`http://localhost:7777/vueboard/${monsterNo}`)
+            axios.delete(`http://localhost:7777/vuemonster/${monsterNo}`)
                     .then(() => {
                         alert('삭제 성공!')
                         this.$router.push({ name: 'MonsterListPage'})

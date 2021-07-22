@@ -10,7 +10,7 @@
 
 <script>
 
-import MonsterList from '@/components/monster1/MonsterList.vue'
+import MonsterList from '@/components/monsterhw/MonsterList.vue'
 import { mapState, mapActions } from 'vuex'
 
 export default {

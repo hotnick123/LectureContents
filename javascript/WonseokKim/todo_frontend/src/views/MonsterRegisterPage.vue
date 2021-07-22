@@ -7,7 +7,7 @@
 
 <script>
 // @는 src 자체를 의미 함
-import MonsterRegisterForm from '@/components/monster1/MonsterRegisterForm.vue'
+import MonsterRegisterForm from '@/components/monsterhw/MonsterRegisterForm.vue'
 import axios from 'axios'
 export default {
     name: 'MonsterRegisterPage',

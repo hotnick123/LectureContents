@@ -13,6 +13,6 @@ public interface VueMonsterService {
 
     public void remove(Integer monsterNo) throws Exception;
 
-    public void modify(Monster board) throws Exception;
+    public void modify(Monster monster) throws Exception;
 }
 

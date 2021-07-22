@@ -173,6 +173,10 @@ const routes = [
     name: 'MonsterModifyPage',
     components: {
       default: MonsterModifyPage
+    },
+    props: {
+      // 라우팅 파라미터를 props에 자동으로 설정하게 서포트함
+      default: true
     }
   }
 ]

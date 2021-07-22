@@ -10,7 +10,7 @@ import java.util.Date;
 @Setter
 @ToString
 public class Monster {
-    private int MonsterNo;
+    private int monsterNo;
     // th:field로 맵핑됨
     private String monster_name;
     private int monster_hp;

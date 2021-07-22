@@ -8,7 +8,7 @@
 
 <script>
 
-import MonsterModifyForm from '@/components/monster1/MonsterModifyForm'
+import MonsterModifyForm from '@/components/monsterhw/MonsterModifyForm'
 import { mapState, mapActions } from 'vuex'
 import axios from 'axios'
 

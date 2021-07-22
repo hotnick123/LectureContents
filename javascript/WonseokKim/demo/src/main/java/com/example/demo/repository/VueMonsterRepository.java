@@ -1,6 +1,5 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.Board;
 import com.example.demo.entity.Monster;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +36,7 @@ public class VueMonsterRepository {
         // results엔 DB에서 얻어온 행 정보들이 들어있다.
         List<Monster> results = jdbcTemplate.query(
                 "select monster_no, monster_name, monster_hp, monster_exp, monster_money," +
-                        "monster_descrition, reg_date from vueboard " +
+                        "monster_description, reg_date from vuemonster " +
                         "where monster_no > 0 order by monster_no desc",
                 // Row: 행
                 // 여러개의 Column(열)들이 행 1개에 포함되어 있음
@@ -98,9 +97,9 @@ public class VueMonsterRepository {
 
     public void update(Monster monster) throws Exception {
         String query = "update vuemonster set monster_name = ?, monster_hp = ?," +
-                "monster_exp = ?, monster_money = ? where monster_no = ?";
+                "monster_exp = ?, monster_money = ?, monster_description = ? where monster_no = ?";
 
         jdbcTemplate.update(query, monster.getMonster_name(), monster.getMonster_hp(),
-                monster.getMonster_exp(), monster.getMonster_money());
+                monster.getMonster_exp(), monster.getMonster_money(), monster.getMonster_description(), monster.getMonsterNo());
     }
 }
