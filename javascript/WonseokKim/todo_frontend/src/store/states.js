@@ -14,5 +14,8 @@ export default {
     board: null,
     // 상품 게시판
     products: [],
-    product: null
+    product: null,
+    //몬스터 등록
+    monsters: [],
+    monster: null
 }

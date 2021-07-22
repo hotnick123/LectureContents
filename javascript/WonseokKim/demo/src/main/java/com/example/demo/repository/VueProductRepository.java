@@ -68,7 +68,8 @@ public class VueProductRepository {
 
     public Product read (Integer productNo) throws Exception {
         List<Product> results = jdbcTemplate.query(
-                "select product_no, title, content, writer, price, reg_date from vueproduct where product_no = ?",
+                "select product_no, title, content, writer, price, " +
+                        "reg_date from vueproduct where product_no = ?",
                 new RowMapper<Product>() {
                     @Override
                     public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -89,13 +90,13 @@ public class VueProductRepository {
     }
 
     public void delete(Integer productNo) throws Exception {
-        String query = "delete from product where product_no = ?";
+        String query = "delete from vueproduct where product_no = ?";
 
         jdbcTemplate.update(query, productNo);
     }
 
     public void update(Product product) throws Exception {
-        String query = "update product set title = ?, price = ?, content = ? where product_no = ?";
+        String query = "update vueproduct set title = ?, price = ?, content = ? where product_no = ?";
 
         jdbcTemplate.update(query, product.getTitle(), product.getContent(),
                                 product.getPrice(), product.getProductNo());

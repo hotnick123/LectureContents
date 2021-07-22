@@ -19,7 +19,10 @@ import {
     FETCH_BOARD,
     //상품 게시판
     FETCH_PRODUCT_LIST,
-    FETCH_PRODUCT
+    FETCH_PRODUCT,
+    //몬스터 등록
+    FETCH_MONSTER_LIST,
+    FETCH_MONSTER
 
 } from './mutation-types'
 
@@ -98,5 +101,11 @@ export default {
     },
     [FETCH_PRODUCT] (state, product) {
         state.product = product
+    },
+    [FETCH_MONSTER_LIST] (state, monsters) {
+        state.monsters = monsters;
+    },
+    [FETCH_MONSTER] (state, monster) {
+        state.monster = monster
     }
 }

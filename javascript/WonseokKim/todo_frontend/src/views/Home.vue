@@ -41,6 +41,11 @@
                     active-class="active">
                 Concave
             </router-link>
+            <router-link :to="{ name: 'MonsterListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                MonsterListPage
+            </router-link>
         </div>
     </div>
 </template>
