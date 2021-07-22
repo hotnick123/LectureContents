@@ -76,7 +76,7 @@ public class VueProductRepository {
     }
 
     public void delete(Integer productNo) throws Exception {
-        String query = "delete from vueproduct where product_no = ?";
+        String query = "delete from vueprocut where product_no = ?";
         jdbcTemplate.update(query, productNo);
     }
     public void update(Product product) throws Exception {

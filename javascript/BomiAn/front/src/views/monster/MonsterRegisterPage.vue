@@ -15,18 +15,18 @@ export default {
   },
   methods: {
     onSubmit (payload) {
-      const { monsterName, monsterHp, monsterExp, monsterMoney } = payload
-      axios.post('http://localhost7777/vuemonster/registerMon', { monsterName, monsterHp, monsterExp, monsterMoney })
-                .then(res => {
-                  alert('등록성공! -' + res)
-                  this.$router.push({
-                    name: 'MonsterListPage'
-                  })
-                })
-                .catch(res => {
-                  alert(res.response.data.message)
-                })
-    }
+            const { monsterName, monsterHp, monsterExp, monsterMoney } = payload
+            axios.post('http://localhost:7777/vuemonster/registerMon', {  monsterName, monsterHp, monsterExp, monsterMoney })
+                    .then((res) => {
+                        alert('등록 성공! - ' + res)
+                        this.$router.push({
+                            name: 'MonsterListPage'
+                        })
+                    })
+                    .catch(res => {
+                        alert(res.response.data.message)
+                    })
+        }
   },
 }
 </script>

@@ -18,10 +18,10 @@
        <tr v-else v-for="monster in monsters" :key="monster.monsterNo">
                 <td align="center">{{ monster.monsterNo }}</td>
                 <td align="left">
-                    <!--<router-link :to="{ name: 'ProductReadPage',
-                                    params: { productNo: product.productNo.toString() } }">-->
+                    <router-link :to="{ name: 'MonsterReadPage',
+                                    params: { monsterNo: monster.monsterNo.toString() } }">
                         {{ monster.monsterName }}
-                    <!--</router-link>-->
+                    </router-link>
                 </td>
                 <td align="center">{{ monster.monsterHp }}</td> 
                 <td align="center">{{ monster.monsterExp }}</td>

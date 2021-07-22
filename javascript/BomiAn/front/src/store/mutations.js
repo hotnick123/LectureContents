@@ -24,6 +24,7 @@ import {
   
   //monster
   FETCH_MONSTER_LIST,
+  FETCH_MONSTER
 
 } from './mutation-types'
 
@@ -106,5 +107,8 @@ export default {
   //monster
   [FETCH_MONSTER_LIST] (state, monsters) {
     state.monsters = monsters;
+  },
+  [FETCH_MONSTER] (state, monster) {
+    state.monster = monster;
   }
 }

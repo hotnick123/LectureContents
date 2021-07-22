@@ -21,4 +21,19 @@ public class VueMonsterServiceImpl implements VueMonsterService{
     public List<Monster> list() throws Exception {
         return repository.list();
     }
+
+    @Override
+    public Monster read(Integer monsterNo) throws Exception {
+        return repository.read(monsterNo);
+    }
+
+    @Override
+    public void remove(Integer monsterNo) throws Exception {
+        repository.delete(monsterNo);
+    }
+
+    @Override
+    public void modify(Monster monster) throws Exception {
+        repository.update(monster);
+    }
 }

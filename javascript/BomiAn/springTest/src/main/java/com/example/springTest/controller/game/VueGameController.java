@@ -1,5 +1,6 @@
 package com.example.springTest.controller.game;
 
+import com.example.springTest.entity.Product;
 import com.example.springTest.entity.game.Monster;
 import com.example.springTest.service.game.VueMonsterService;
 import lombok.extern.slf4j.Slf4j;
@@ -34,5 +35,24 @@ public class VueGameController {
         log.info("getLists(): " + service.list());
 
         return new ResponseEntity<>(service.list(), HttpStatus.OK);
+    }
+
+    @GetMapping("/{monsterNo}")
+    public ResponseEntity<Monster> readMonster(@PathVariable("monsterNo") Integer monsterNo) throws Exception {
+        Monster monster = service.read(monsterNo);
+
+        return new ResponseEntity<Monster>(monster, HttpStatus.OK);
+    }
+    @PutMapping("/{monsterNo}")
+    public ResponseEntity<Monster> modifyMonster(@PathVariable("monsterNo") Integer monsterNo,
+                                                 @Validated @RequestBody Monster monster) throws Exception {
+        monster.setMonsterNo(monsterNo);
+        service.modify(monster);
+        return new ResponseEntity<>(monster, HttpStatus.OK);
+    }
+    @DeleteMapping("/{monsterNo}")
+    public ResponseEntity<Void> removeMonster(@PathVariable("monsterNo") Integer monsterNo) throws Exception {
+        service.remove(monsterNo);
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }

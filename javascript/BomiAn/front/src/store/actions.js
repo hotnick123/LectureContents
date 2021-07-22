@@ -23,6 +23,8 @@ import {
 
   //MONSTER
   FETCH_MONSTER_LIST,
+  FETCH_MONSTER,
+  
 
 
 } from './mutation-types'
@@ -114,5 +116,11 @@ export default {
             .then((res) => {
               commit(FETCH_MONSTER_LIST, res.data)
             })
-  }
+  },
+  fetchMonster ({ commit }, monsterNo) {
+    return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
+            .then((res) => {
+                commit(FETCH_MONSTER, res.data)
+            })
+},
 }

@@ -20,6 +20,7 @@ export const FETCH_PRODUCT_LIST = 'FETCH_PRODUCT_LIST'
 export const FETCH_PRODUCT = 'FETCH_PRODUCT'
 
 export const FETCH_MONSTER_LIST = 'FETCH_MONSTER_LIST'
+export const FETCH_MONSTER = 'FETCH_MONSTER'
 
 
 //actions 비동기 처리 
