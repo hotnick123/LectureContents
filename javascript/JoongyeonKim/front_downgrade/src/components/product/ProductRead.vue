@@ -11,7 +11,7 @@
                 <td><input type="text" :value="product.regDate" readonly></td>
             </tr>
             <tr>
-                <td>제목</td>
+                <td>상품이름</td>
                 <td><input type="text" :value="product.name" readonly></td>
             </tr>
             <tr>

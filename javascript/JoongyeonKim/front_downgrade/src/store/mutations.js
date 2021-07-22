@@ -11,6 +11,8 @@ import {
     ADD_MONSTER,
     ADD_MANY_MONSTER,
     DEATH,
+    FETCH_MONSTER_LIST,
+    FETCH_MONSTER,
     // 스프링 랜덤 데이터 통신
     SUCCESS_GEN_RAND_NUM,
     FAIL_GEN_RAND_NUM,
@@ -63,8 +65,6 @@ export default {
             todoItem.done = !todoItem.done
         })
     },
-
-
     [ADD_MONSTER] (state, payload) {
         const { name } = payload
         state.monsterElements.push({ monsterId: state.nextMonsterId, name })
@@ -79,6 +79,12 @@ export default {
     [DEATH] (state, monsterId) {
         const targetIndex = state.monsterElements.findIndex(v => v.monsterId === monsterId)
         state.monsterElements.splice(targetIndex, 1)
+    },
+    [FETCH_MONSTER_LIST] (state, monsters) {
+        state.monsters = monsters;
+    },
+    [FETCH_MONSTER] (state, monster) {
+        state.monster = monster
     },
     //스프링 랜덤 데이터 통신
     [SUCCESS_GEN_RAND_NUM] (state, payload) {

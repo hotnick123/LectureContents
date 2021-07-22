@@ -1,27 +1,27 @@
 <template>
     <div align="center">
         <h2>상품 등록</h2>
-        <product-register-form @submit="onSubmit"/>
+        <monster-book-register-form @submit="onSubmit"/>
     </div>
 </template>
 
 <script>
-import ProductRegisterForm from '@/components/product/ProductRegisterForm.vue'
+import MonsterBookRegisterform from '@/components/monster/MonsterBookRegisterform.vue'
 import axios from 'axios'
 export default {
-    name: 'ProductRegisterPage',
+    name: 'MonsterBookRegisterPage',
     components: {
-        ProductRegisterForm
+        MonsterBookRegisterform
     },
     methods: {
         onSubmit (payload) {
-            const { name, price, writer, description } = payload
-            axios.post('http://localhost:7777/vueproduct/register', { name, price, writer, description })
+            const { name, hp, atk } = payload
+            axios.post('http://localhost:7777/vuemonster/register', { name, hp, atk })
                     .then(res => {
                         alert('등록 성공! - ' + res)
                         
                         this.$router.push({
-                            name: 'ProductListPage',
+                            name: 'MonsterBookListPage',
                         })
                     })
                     .catch(res => {

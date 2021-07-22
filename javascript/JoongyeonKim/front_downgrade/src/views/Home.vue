@@ -36,6 +36,11 @@
                     active-class="active">
                 ProductListPage
             </router-link>
+            <router-link :to="{ name: 'MonsterBookListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                MonsterBookListPage
+            </router-link>
             <router-link :to="{ name: 'Concave' }"
                     class="nav-link"
                     active-class="active">

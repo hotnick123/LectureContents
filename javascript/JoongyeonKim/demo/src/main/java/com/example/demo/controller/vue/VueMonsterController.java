@@ -1,6 +1,8 @@
 package com.example.demo.controller.vue;
 
+import com.example.demo.entity.Monster;
 import com.example.demo.entity.Product;
+import com.example.demo.service.VueMonsterService;
 import com.example.demo.service.VueProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,39 +16,40 @@ import java.util.List;
 
 @Slf4j
 @Controller
-@RequestMapping("/vueproduct")
+@RequestMapping("/vuemonster")
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
-public class VueProductController {
+public class VueMonsterController {
 
     @Autowired
-    private VueProductService service;
+    private VueMonsterService service;
 
     @PostMapping("/register")
-    public ResponseEntity<Product> register(@Validated @RequestBody Product product) {
+    public ResponseEntity<Monster> register(@Validated @RequestBody Monster monster) {
         log.info("post register request from vue");
 
-        service.register(product);
+        service.register(monster);
 
-        return new ResponseEntity<>(product, HttpStatus.OK);
+        return new ResponseEntity<>(monster, HttpStatus.OK);
     }
 
     @GetMapping("/lists")
-    public ResponseEntity<List<Product>> getLists () throws Exception {
+    public ResponseEntity<List<Monster>> getLists () throws Exception {
         log.info("getLists(): " + service.lists());
 
         return new ResponseEntity<>(service.lists(), HttpStatus.OK);
     }
 
+    /*
     @GetMapping("/{productNo}")
-    public ResponseEntity<Product> read(@PathVariable("productNo") Integer productNo) throws Exception {
-        Product product = service.read(productNo);
+    public ResponseEntity<Monster> read(@PathVariable("monsterNo") Integer monsterNo) throws Exception {
+        Monster monster = service.read(monsterNo);
 
-        return new ResponseEntity<Product>(product, HttpStatus.OK);
+        return new ResponseEntity<Monster>(monster, HttpStatus.OK);
     }
 
     @PutMapping("/{productNo}")
     public ResponseEntity<Product> modify(@PathVariable("productNo") Integer productNo,
-                                        @Validated @RequestBody Product product) throws Exception {
+                                          @Validated @RequestBody Product product) throws Exception {
         product.setProductNo(productNo);
         service.modify(product);
 
@@ -59,4 +62,5 @@ public class VueProductController {
 
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
+    */
 }

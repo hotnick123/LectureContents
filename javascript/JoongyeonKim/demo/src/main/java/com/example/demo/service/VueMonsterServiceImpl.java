@@ -1,7 +1,8 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Board;
+import com.example.demo.entity.Monster;
 import com.example.demo.entity.Product;
+import com.example.demo.repository.VueMonsterRepository;
 import com.example.demo.repository.VueProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,21 +10,21 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class VueProductServiceImpl implements VueProductService {
+public class VueMonsterServiceImpl implements VueMonsterService {
 
     @Autowired
-    private VueProductRepository productrepository;
+    private VueMonsterRepository repository;
 
     @Override
-    public void register(Product product)   {
-        productrepository.create(product);
+    public void register(Monster monster)   {
+        repository.create(monster);
     }
 
     @Override
-    public List<Product> lists() throws Exception {
-        return productrepository.list();
+    public List<Monster> lists() throws Exception {
+        return repository.list();
     }
-
+    /*
     @Override
     public Product read(Integer productNo) throws Exception {
         return productrepository.read(productNo);
@@ -38,4 +39,6 @@ public class VueProductServiceImpl implements VueProductService {
     public void modify(Product product) throws Exception {
         productrepository.update(product);
     }
+
+     */
 }

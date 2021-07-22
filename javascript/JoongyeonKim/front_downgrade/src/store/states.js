@@ -7,6 +7,8 @@ export default {
     // 몬스터
     monsterElements: [],
     nextMonsterId: 1,
+    monsters: [],
+    monster: null,
     // 스프링과 랜덤 데이터 통신
     randomFromSpring: 0,
     // 게시판

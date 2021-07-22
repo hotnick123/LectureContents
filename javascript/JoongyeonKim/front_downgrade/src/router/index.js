@@ -20,10 +20,14 @@ import MemberRegisterPage from '@/views/MemberRegisterPage.vue'
 import ProductListPage from '@/views/ProductListPage.vue'
 import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
 import ProductReadPage from '@/views/ProductReadPage.vue'
+import ProductModifyPage from '@/views/ProductModifyPage.vue'
 
 //삼목
 import Concave from '@/views/Concave.vue'
 
+//monster
+import MonsterBookListPage from '@/views/MonsterBookListPage.vue'
+import MonsterBookRegisterPage from '@/views/MonsterBookRegisterPage.vue'
 
 Vue.use(VueRouter)
 
@@ -112,10 +116,20 @@ const routes = [
     }
   },
   {
-    path: '/product/:prductNo',
+    path: '/product/:productNo',
     name: 'ProductReadPage',
     components: {
       default: ProductReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/product/:productNo/edit',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
     },
     props: {
       default: true
@@ -126,6 +140,20 @@ const routes = [
     name: 'Concave',
     components: {
       default: Concave
+    }
+  },
+  {
+    path: '/monster',
+    name: 'MonsterBookListPage',
+    components: {
+      default: MonsterBookListPage
+    }
+  },
+  {
+    path: '/monster/create',
+    name: 'MonsterBookRegisterPage',
+    components: {
+      default: MonsterBookRegisterPage
     }
   }
 ]

@@ -81,6 +81,19 @@ export default {
                     commit(FAIL_GEN_RAND_NUM, res)
                 })
     },
+    fetchMonsterList ({commit}) {
+        return axios.get('http://localhost:7777/vuemonster/lists')
+            .then((res) =>{
+                commit(FETCH_MONSTER_LIST, res.data)
+            })
+    },
+    fetchMonster({ commit }, monsterNo) {
+        return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
+        .then((res) => {
+            commit(FETCH_MONSTER, res.data)
+        })
+    },
+
     // 게시판
     fetchBoardList ({commit}) {
         return axios.get('http://localhost:7777/vueboard/lists')
