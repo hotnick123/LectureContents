@@ -35,7 +35,17 @@
                     class="nav-link"
                     active-class="active">
                 Concave
-            </router-link>            
+            </router-link>  
+            <router-link :to="{ name: 'MonsterListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                몬스터 도감
+            </router-link>       
+            <router-link :to="{ name: 'EventBusTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                EventBus 테스트
+            </router-link>                          
         </div>
     </div>
 </template>
