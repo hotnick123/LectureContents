@@ -19,7 +19,10 @@ import {
     FETCH_BOARD,
 
     FETCH_MEMBER_LIST,
-    FETCH_MEMBER
+    FETCH_MEMBER,
+
+    FETCH_MONSTER_STORAGE,
+    FETCH_MONSTER
 } from './mutation-types'
 
 import axios from 'axios'
@@ -110,6 +113,19 @@ export default {
             .then((res) => {
                 commit(FETCH_MEMBER, res.data)
             })
+    },
+
+    fetchMonsterStorage ({ commit }) {
+        return axios.get('http://localhost:7777/vuemonster/storage')
+        .then((res) => {
+            commit(FETCH_MONSTER_STORAGE, res.data)
+        }) 
+    },
+    fetchMonster ({ commit }, monsterNo) {
+        return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
+        .then((res) => {
+            commit(FETCH_MONSTER, res.data)
+        })
     }
 }
 

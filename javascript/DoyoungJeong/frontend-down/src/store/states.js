@@ -13,7 +13,10 @@ export default {
     board: null,
 
     members: [],
-    member: null
+    member: null,
+
+    monsters: [],
+    monster: null
 }
 
 //이곳 state는 크리티컬 섹션이다.

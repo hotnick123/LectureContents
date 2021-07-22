@@ -21,7 +21,10 @@ import {
     FETCH_BOARD,
 
     FETCH_MEMBER_LIST,
-    FETCH_MEMBER
+    FETCH_MEMBER,
+
+    FETCH_MONSTER_STORAGE,
+    FETCH_MONSTER
 } from './mutation-types'
 
 export default {
@@ -130,6 +133,13 @@ export default {
     [FETCH_MEMBER] (state, member) {
         state.member = member
     },
+
+    [FETCH_MONSTER_STORAGE] (state, monsters) {
+        state.monsters = monsters
+    },
+    [FETCH_MONSTER] (state, monster) {
+        state.monster = monster
+    }
 
 }
 
