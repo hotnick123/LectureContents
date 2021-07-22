@@ -19,7 +19,10 @@ import {
     FETCH_BOARD,
     // 상품
     FETCH_PRODUCT_LIST,
-    FETCH_PRODUCT
+    FETCH_PRODUCT,
+
+    FETCH_MONSTER_LIST,
+    FETCH_MONSTER
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -98,5 +101,13 @@ export default {
     },
     [FETCH_PRODUCT] (state, product) {
         state.product = product
+    },
+    [FETCH_MONSTER_LIST] (state, monsters) {
+        state.monsters = monsters;
+    },
+    [FETCH_MONSTER] (state, monster) {
+        state.monster = monster
     }
+    ,
+    
 }

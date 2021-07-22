@@ -17,7 +17,11 @@ import {
     FETCH_BOARD,
     // 상품
     FETCH_PRODUCT_LIST,
-    FETCH_PRODUCT
+    FETCH_PRODUCT,
+
+    //판타지온라인
+    FETCH_MONSTER,
+    FETCH_MONSTER_LIST
 } from './mutation-types'
 
 import axios from 'axios'
@@ -101,5 +105,18 @@ export default {
                 .then((res) => {
                     commit(FETCH_PRODUCT, res.data)
                 })
-    }
+    },
+    fetchMonster ({ commit }, monsterNo) {
+        return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
+                .then((res) => {
+                    alert('성공')
+                    commit(FETCH_MONSTER, res.data)
+                })
+    },
+    fetchMonsterList ({ commit }) {
+        return axios.get('http://localhost:7777/vuemonster/lists')
+                .then((res) => {
+                    commit(FETCH_MONSTER_LIST, res.data)
+                })
+    },
 }

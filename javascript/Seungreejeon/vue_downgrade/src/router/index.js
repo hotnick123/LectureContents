@@ -12,7 +12,7 @@ import BoardReadPage from '@/views/BoardReadPage.vue'
 import BoardModifyPage from '@/views/BoardModifyPage.vue'
 
 // game
-// import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
+import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 
 // 삼목
 import Concave from '@/views/Concave.vue'
@@ -22,6 +22,14 @@ import ProductListPage from '@/views/ProductListPage.vue'
 import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
 import ProductReadPage from '@/views/ProductReadPage.vue'
 import ProductModifyPage from '@/views/ProductModifyPage.vue'
+
+// monster
+import MonsterListPage from '@/views/MonsterListPage.vue'
+import MonsterRegisterPage from '@/views/MonsterRegisterPage.vue'
+import MonsterReadPage from '@/views/MonsterReadPage.vue'
+import MonsterModifyPage from '@/views/MonsterModifyPage.vue'
+
+import EventBusTestPage from '@/views/EventBusTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -81,13 +89,13 @@ const routes = [
       default: true
     }
   },
-  // {
-  //   path: '/member/create',
-  //   name: 'GameMemberRegisterPage',
-  //   components: {
-  //     default: GameMemberRegisterPage
-  //   }
-  // },
+  {
+    path: '/member/create',
+    name: 'GameMemberRegisterPage',
+    components: {
+      default: GameMemberRegisterPage
+    }
+  },
   {
     path: '/concave',
     name: 'Concave',
@@ -119,16 +127,57 @@ const routes = [
       default: true
     }
   },
-    {
-      path: '/product/:productNo/edit',
-      name: 'ProductModifyPage',
-      components: {
-        default: ProductModifyPage
-      },
-      props: {
-        default: true
-      }
+  {
+    path: '/product/:productNo/edit',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
+    },
+    props: {
+      default: true
     }
+  },
+  {
+    path: '/monster',
+    name: 'MonsterListPage',
+    components: {
+      default: MonsterListPage
+    }
+  },
+  {
+    path: '/monster/create',
+    name: 'MonsterRegisterPage',
+    components: {
+      default: MonsterRegisterPage
+    }
+  },
+  {
+    path: '/monster/read/:monsterNo',
+    name: 'MonsterReadPage',
+    components: {
+      default: MonsterReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/monster/edit/:monsterNo',
+    name: 'MonsterModifyPage',
+    components: {
+      default: MonsterModifyPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/eventbusTest',
+    name: 'EventBusTestPage',
+    components: {
+      default: EventBusTestPage
+    }
+  }
 ]
 
 const router = new VueRouter({
