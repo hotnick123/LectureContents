@@ -13,6 +13,8 @@ import {
   ADD_MONSTER,
   DEATH,
   ADD_MANY_MONSTER,
+  FETCH_MONSTER_LIST,
+  FETCH_MONSTER,
 
 // Spring
   SUCCESS_GEN_RAND_NUM,
@@ -70,6 +72,16 @@ export default {
   },
   addManyMonster (context, payload) {
     context.commit(ADD_MANY_MONSTER, payload)
+  },
+  fetchMonsterList ({ commit }) {
+    return axios.get('http://localhost:7777/vuemonster/lists').then((res) => {
+      commit(FETCH_MONSTER_LIST, res.data)
+    })
+  },
+  fetchMonster ({ commit }, monsterNo) {
+    return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`).then((res) => {
+      commit(FETCH_MONSTER, res.data)
+    })
   },
 
 // spring과 랜덤 데이터 통신

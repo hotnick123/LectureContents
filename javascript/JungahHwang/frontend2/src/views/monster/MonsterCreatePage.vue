@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h2>몬스터 생성</h2>
+    <h2>몬스터 등록</h2>
     <monster-create @submit="onSubmit"/>
   </div>
 </template>
@@ -17,10 +17,13 @@ export default {
   },
   methods: {
     onSubmit (payload) {
-      const { name, hp, exp, money } = payload
+      const { name, hp, exp, money, item } = payload
 
-      axios.post('http://localhost:7777/monster/create', { name, hp, exp, money }).then(() => {
+      axios.post('http://localhost:7777/vuemonster/create', { name, hp, exp, money, item }).then(() => {
         alert('몬스터가 등록되었습니다')
+        this.$router.push({
+          name: 'MonsterGuidePage' 
+        })
       }).catch(res => {
         alert(res.response.data.message)
       })

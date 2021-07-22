@@ -10,6 +10,8 @@ export default {
 // Monster
   monsterElements: [],
   nextMonsterId: 1,
+  monsters: [],
+  monster: null,
 
 // Spring
   randomFromSpring: 0,

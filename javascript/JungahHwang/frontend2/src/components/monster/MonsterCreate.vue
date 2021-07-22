@@ -17,9 +17,13 @@
         <td>money</td>
         <td><input type="text" v-model="money"></td>
       </tr>
+      <tr>
+        <td>item</td>
+        <td><input type="text" v-model="item"></td>
+      </tr>
     </table>
     <div>
-      <button type="submit">생성</button>
+      <button type="submit">등록</button>
       <router-link :to="{ name: 'Monster' }">
         취소
       </router-link>
@@ -36,14 +40,15 @@ export default {
       name: null,
       hp: null,
       exp: null,
-      money: null
+      money: null,
+      item: null
     }
   },
   methods: {
     onSubmit () {
-      const { name, hp, exp, money } = this
+      const { name, hp, exp, money, item } = this
       this.name !== null && this.hp !== null && this.exp !== null && this.money !== null
-      ? this.$emit('submit', { name, hp, exp, money }) : alert('정보를 입력해주세요')
+      ? this.$emit('submit', { name, hp, exp, money, item }) : alert('정보를 입력해주세요')
       
     }
   }

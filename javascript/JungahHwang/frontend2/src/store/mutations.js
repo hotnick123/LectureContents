@@ -15,6 +15,8 @@ import {
   ADD_MONSTER,
   DEATH,
   ADD_MANY_MONSTER,
+  FETCH_MONSTER_LIST,
+  FETCH_MONSTER,
 
 // Spring
   SUCCESS_GEN_RAND_NUM,
@@ -86,7 +88,13 @@ export default {
       state.monsterElements.push(payload[i])
       state.nextMonsterId++
     }
-},
+  },
+  [FETCH_MONSTER_LIST] (state, monsters) {
+    state.monsters = monsters
+  },
+  [FETCH_MONSTER] (state, monster) {
+    state.monster = monster
+  },
 
 // Spring
   [SUCCESS_GEN_RAND_NUM] (state, payload) {

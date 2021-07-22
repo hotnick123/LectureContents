@@ -4,13 +4,17 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Date;
+
 @Getter
 @Setter
 @ToString
 public class Monster {
-    private int monsterNo;
+    private Integer monsterNo;
     private String name;
-    private int hp;
-    private int exp;
-    private int money;
+    private Integer hp;
+    private Integer exp;
+    private Integer money;
+    private String item;
+    private Date regDate;
 }

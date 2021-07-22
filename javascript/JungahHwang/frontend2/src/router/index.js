@@ -8,6 +8,10 @@ import Monster from '@/views/monster/Monster.vue'
 // Monster
 import MonsterSignupPage from '@/views/monster/MonsterSignupPage'
 import MonsterCreatePage from '@/views/monster/MonsterCreatePage'
+import MonsterGuidePage from '@/views/monster/MonsterGuidePage'
+import MonsterReadPage from '@/views/monster/MonsterReadPage'
+import MonsterModifyPage from '@/views/monster/MonsterModifyPage'
+
 
 // Board
 import BoardListPage from '@/views/board/BoardListPage.vue'
@@ -67,6 +71,33 @@ const routes = [
     components: {
       default: MonsterCreatePage
     }
+  },
+  {
+    path: '/monster/guide',
+    name: 'MonsterGuidePage',
+    components: {
+      default: MonsterGuidePage
+    }
+  },
+  {
+    path: '/monster/:monsterNo',
+    name: 'MonsterReadPage',
+    components: {
+      default: MonsterReadPage
+    },
+    props: {
+      default: true
+    } 
+  },
+  {
+    path: '/monster/:monsterNo/edit',
+    name: 'MonsterModifyPage',
+    components: {
+      default: MonsterModifyPage
+    },
+    props: {
+      default: true
+    } 
   },
 
 // Board
