@@ -8,7 +8,7 @@
 
 <script>
 
-import BoardModifyForm from '@/components/board/BoardModifyForm'
+import BoardModifyForm from '@/components/board/BoardModifyForm.vue'
 import { mapState, mapActions } from 'vuex'
 import axios from 'axios'
 

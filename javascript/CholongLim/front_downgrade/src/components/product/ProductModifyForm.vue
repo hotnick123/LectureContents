@@ -1,6 +1,8 @@
 <template>
     <div>
         <h3>Product Modified Form</h3>
+        <!-- prevent 실행하는 순서를 바꿈 , 바로 처리하는 것이 아니라
+             productModifyPage의 onSubmit쪽으로 내려감-->
         <form @submit.prevent="onSubmit">
             <table>
                 <tr>
