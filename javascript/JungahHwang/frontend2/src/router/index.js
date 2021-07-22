@@ -28,6 +28,9 @@ import ProductModifyPage from '@/views/product/ProductModifyPage'
 // 삼목
 import Concave from '@/views/Concave'
 
+// EventBus
+import EventBusTestPage from '@/views/EventBusTestPage'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -180,8 +183,16 @@ const routes = [
     components: {
       default: Concave
     }
-  }
+  },
 
+// EventBus
+  {
+    path: '/eventbus',
+    name: 'EventBusTestPage',
+    components: {
+      default: EventBusTestPage
+    }
+  },
   
 ]
 

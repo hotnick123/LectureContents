@@ -32,6 +32,10 @@
       class="nav-link" 
       active-class="active">Concave
     </router-link>
+    <router-link :to="{ name: 'EventBusTestPage' }" 
+      class="nav-link" 
+      active-class="active">EventBus
+    </router-link>
   </div>
 </template>
 
