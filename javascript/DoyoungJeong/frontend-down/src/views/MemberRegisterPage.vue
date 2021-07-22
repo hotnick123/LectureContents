@@ -22,10 +22,9 @@ export default {
             axios.post('http://localhost:7777/vuemember/signup', { id, pw, name, birthDay, address, party, comment })
             .then(res => {
                 alert('등록 성공' + res)
-                // this.$router.push({
-                //     name: 'BoardReadPage',
-                //     params: 
-                //})
+                this.$router.push({
+                    name: 'MemberListPage'
+                })
             })
             .catch(res => {
                 alert(res.response.data.message)

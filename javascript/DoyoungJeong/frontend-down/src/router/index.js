@@ -8,10 +8,14 @@ import Prob82 from '../views/Prob82.vue'
 import BoardRegisterPage from '@/views/BoardRegisterPage.vue'
 import BoardListPage from '@/views/BoardListPage.vue'
 import BoardReadPage from '@/views/BoardReadPage.vue'
+import BoardModifyPage from '@/views/BoardModifyPage.vue'
 
 import MemberRegisterPage from '@/views/MemberRegisterPage.vue'
 import MemberListPage from '@/views/MemberListPage.vue'
 import MemberReadPage from '@/views/MemberReadPage.vue'
+import MemberModifyPage from '../views/MemberModifyPage.vue'
+
+import Concave from '../views/Concave.vue'
 //@는 src, ..는 상위
 
 Vue.use(VueRouter)
@@ -62,6 +66,16 @@ const routes = [
     }
   },
   {
+    path: '/board/:boardNo/edit',
+    name: 'BoardModifyPage',
+    components: {
+      default: BoardModifyPage
+    },
+    props: {
+      default: true 
+    }
+  },
+  {
     path: '/member',
     name: 'MemberListPage',
     components: {
@@ -83,6 +97,23 @@ const routes = [
     },
     props: {
       default: true
+    }
+  },
+  {
+    path: '/member/:memberNo/edit',
+    name: 'MemberModifyPage',
+    components: {
+      default: MemberModifyPage
+    },
+    props: {
+      default: true 
+    }
+  },
+  {
+    path: '/concave',
+    name: 'Concave',
+    components: {
+      default: Concave
     }
   }
 ]
