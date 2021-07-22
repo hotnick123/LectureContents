@@ -8,7 +8,7 @@
 
 <script>
 import axios from 'axios'
-import SignUpForm from '../components/SignUpForm.vue'
+import SignUpForm from '@/components/member/SignUpForm'
 
 export default {
   name: 'SignUp',
@@ -19,8 +19,8 @@ export default {
     onSubmit (payload) {
       const { id, pw, name, gender, birth, email, tel, addr } = payload
       axios.post('http://localhost:7777/vue/signup', { id, pw, name, gender, birth, email, tel, addr })
-      .then(res => {
-        alert('성공!' + res)
+      .then(() => {
+        alert('회원가입이 완료되었습니다.')
       }).catch(res => {
         alert(res)
       })
