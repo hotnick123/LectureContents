@@ -27,17 +27,16 @@ public class VueProductServiceImpl implements VueProductService {
 
     @Override
     public Product read(Integer productNo) throws Exception {
-        // return repository.read(productNo);
-        return null;
+        return repository.read(productNo);
     }
 
     @Override
     public void remove(Integer productNo) throws Exception {
-        // repository.delete(productNo);
+        repository.delete(productNo);
     }
 
     @Override
     public void modify(Product product) throws Exception {
-        // repository.update(product);
+        repository.update(product);
     }
 }

@@ -21,6 +21,8 @@ import Concave from '@/views/Concave.vue'
 // product
 import ProductListPage from '@/views/ProductListPage.vue'
 import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
+import ProductReadPage from '@/views/ProductReadPage.vue'
+import ProductModifyPage from '@/views/ProductModifyPage.vue'
 
 
 Vue.use(VueRouter)
@@ -112,6 +114,27 @@ const routes = [
       default: ProductRegisterPage
     }
   },
+  { //가변처리
+    path: '/product/:productNo',
+    name: 'ProductReadPage',
+    components: {
+      default: ProductReadPage
+    },
+    props: {
+      default: true
+    }   
+  },
+  {
+    path: '/product/:productNo/edit',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
+    },
+    props: {
+      // 라우팅 파라미터를 props에 자동으로 설정하게 서포트함(true로 설정하면 데이터를 props로도 받음.)
+      default: true
+    }
+  }
 ]
 
 const router = new VueRouter({

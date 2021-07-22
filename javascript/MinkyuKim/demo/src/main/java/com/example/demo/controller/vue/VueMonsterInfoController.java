@@ -16,9 +16,9 @@ import java.util.List;
 
 @Slf4j
 @Controller
-@RequestMapping("/vueproduct")
+@RequestMapping("/vuemonsterinfo")
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
-public class VueProductController {
+public class VueMonsterInfoController {
 
     @Autowired
     private VueProductService service;
@@ -49,7 +49,7 @@ public class VueProductController {
 
     @PutMapping("/{productNo}")
     public ResponseEntity<Product> modifyProduct(@PathVariable("productNo") Integer productNo,
-                                        @Validated @RequestBody Product product) throws Exception {
+                                                 @Validated @RequestBody Product product) throws Exception {
 
         log.info("modifyProduct(): " + product);
 
