@@ -1,7 +1,7 @@
 <template>
   <div align="center">
     <h2>몬스터 변조</h2>
-    <monster-modify-form v-if="monster" :product="monster" @submit="onSubmit"/>
+    <monster-modify-form v-if="monster" :monster="monster" @submit="onSubmit"/>
     <p v-else>로딩중 .......</p>
   </div>
 </template>
