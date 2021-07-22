@@ -15,5 +15,8 @@ export default {
   board: null,
   // 상품
   products: [],
-  product: null
+  product: null,
+  // 몬스터북
+  monsters: [],
+  monster: null
 }
