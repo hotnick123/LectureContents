@@ -17,6 +17,12 @@ import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 // 삼목
 import Concave from '@/views/Concave.vue'
 
+// monster
+import MonsterListPage from '@/views/MonsterListPage.vue'
+import MonsterRegisterPage from '@/views/MonsterRegisterPage.vue'
+import MonsterReadPage from '@/views/MonsterReadPage.vue'
+import MonsterModifyPage from '@/views/MonsterModifyPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -87,6 +93,40 @@ const routes = [
     name: 'Concave',
     components: {
       default: Concave
+    }
+  },
+  {
+    path: '/monster',
+    name: 'MonsterListPage',
+    components: {
+      default: MonsterListPage
+    }
+  },
+  {
+    path: '/monster/create',
+    name: 'MonsterRegisterPage',
+    components: {
+      default: MonsterRegisterPage
+    }
+  },
+  {
+    path: '/monster/:monsterNo',
+    name: 'MonsterReadPage',
+    components: {
+      default: MonsterReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/monster/:monsterNo/edit',
+    name: 'MonsterModifyPage',
+    components: {
+      default: MonsterModifyPage
+    },
+    props: {
+      default: true
     }
   }
 ]

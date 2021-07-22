@@ -5,6 +5,7 @@ export const SET_EDITTING_ID = 'SET_EDITTING_ID'
 export const RESET_EDITTING_ID = 'RESET_EDITTING_ID'
 export const CLEAR_ALL = 'CLEAR_ALL'
 export const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS'
+
 export const ADD_MANY_MONSTER = 'ADD_MANY_MONSTER'
 export const ADD_MONSTER = 'ADD_MONSTER'
 export const DEATH = 'DEATH'
@@ -14,3 +15,6 @@ export const FAIL_GEN_RAND_NUM = 'FAIL_GEN_RAND_NUM'
 
 export const FETCH_BOARD_LIST = 'FETCH_BOARD_LIST'
 export const FETCH_BOARD = 'FETCH_BOARD' 
+
+export const FETCH_MONSTER_LIST = 'FETCH_MONSTER_LIST'
+export const FETCH_MONSTER = 'FETCH_MONSTER' 
