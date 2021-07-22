@@ -17,7 +17,10 @@ import {
     FETCH_BOARD,
     // 상품
     FETCH_PRODUCT_LIST,
-    FETCH_PRODUCT
+    FETCH_PRODUCT,
+    // 몬스터
+    FETCH_MONSTER_LIST,
+    FETCH_MONSTER
 } from './mutation-types'
 
 import axios from 'axios'
@@ -101,5 +104,20 @@ export default {
                 .then((res) => {
                     commit(FETCH_PRODUCT, res.data)
                 })
+    },
+    // 몬스터
+    fetchMonsterList ({ commit }) {
+        return axios.get('http://localhost:7777/vuemonster/lists')
+                .then((res) => {
+                    commit(FETCH_MONSTER_LIST, res.data)
+                })
+    },
+    fetchMonster ({ commit }, monsterNo) {
+        return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
+                .then((res) => {
+                    commit(FETCH_MONSTER, res.data)
+                })
     }
+    // eventBus
+
 }

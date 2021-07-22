@@ -80,3 +80,16 @@ export default {
     }
 }
 </script> 
+
+<style scoped>
+
+table {
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid black;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+}
+</style> 
