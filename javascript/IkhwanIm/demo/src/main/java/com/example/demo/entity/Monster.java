@@ -8,10 +8,10 @@ import java.util.Date;
 @Getter
 @Setter
 public class Monster {
-    private int monsterNo;
+    private Integer monsterNo;
     private String monster_name;
-    private int hp;
-    private int exp;
-    private int money;
+    private Integer hp;
+    private Integer exp;
+    private Integer money;
     private Date regDate;
 }
