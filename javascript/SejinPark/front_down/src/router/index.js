@@ -13,10 +13,11 @@ import BoardModifyPage from '@/views/BoardModifyPage.vue'
 import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 // 삼목
 import Concave from '@/views/Concave.vue'
-
 // product
 import ProductListPage from '@/views/ProductListPage.vue'
 import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
+import ProductReadPage from '@/views/ProductReadPage.vue'
+import ProductModifyPage from '@/views/ProductModifyPage.vue'
 
 Vue.use(VueRouter)
 
@@ -89,7 +90,6 @@ const routes = [
     components: {
       default: Concave
     }
-  
   },
   {
     path: '/product',
@@ -105,6 +105,26 @@ const routes = [
       default: ProductRegisterPage
     }
   },
+  {
+    path: '/product/:productNo',
+    name: 'ProductReadPage',
+    components: {
+      default: ProductReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/product/:productNo/edit',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
+    },
+    props: {
+      default: true
+    }
+  }
 ]
 
 const router = new VueRouter({
