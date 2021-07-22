@@ -16,7 +16,14 @@ import {
   SUCCESS_GEN_RAND_NUM,
 
   FETCH_BOARD_LIST,
-  FETCH_BOARD
+  FETCH_BOARD,
+
+  // 상품
+  FETCH_PRODUCT_LIST,
+  FETCH_PRODUCT,
+  
+  //monster
+  FETCH_MONSTER_LIST,
 
 } from './mutation-types'
 
@@ -87,6 +94,17 @@ export default {
     state.boards = boards;
   },
   [FETCH_BOARD] (state, board) {
-    state.board = board
+    state.board = board;
+  },
+   // 상품
+   [FETCH_PRODUCT_LIST] (state, products) {
+    state.products = products;
+  },
+  [FETCH_PRODUCT] (state, product) {
+      state.product = product;
+  },
+  //monster
+  [FETCH_MONSTER_LIST] (state, monsters) {
+    state.monsters = monsters;
   }
 }

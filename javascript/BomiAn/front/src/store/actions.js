@@ -15,7 +15,16 @@ import {
   FAIL_GEN_RAND_NUM,
   // 게시판
   FETCH_BOARD_LIST,
-  FETCH_BOARD
+  FETCH_BOARD,
+
+  // 상품
+  FETCH_PRODUCT_LIST,
+  FETCH_PRODUCT,
+
+  //MONSTER
+  FETCH_MONSTER_LIST,
+
+
 } from './mutation-types'
 
 import axios from 'axios'
@@ -86,5 +95,24 @@ export default {
               .then((res) => {
                   commit(FETCH_BOARD, res.data)
               })
+  },
+     // 상품
+     fetchProductList ({ commit }) {
+      return axios.get('http://localhost:7777/vueproduct/lists')
+              .then((res) => {
+                  commit(FETCH_PRODUCT_LIST, res.data)
+              })
+  },
+  fetchProduct ({ commit }, productNo) {
+      return axios.get(`http://localhost:7777/vueproduct/${productNo}`)
+              .then((res) => {
+                  commit(FETCH_PRODUCT, res.data)
+              })
+  },
+  fetchMonsterList ({ commit }) {
+    return axios.get('http://localhost:7777/vuemonster/listsMon')
+            .then((res) => {
+              commit(FETCH_MONSTER_LIST, res.data)
+            })
   }
 }

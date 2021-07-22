@@ -11,6 +11,14 @@ export default {
   randomFromSpring: 0,
 // 게시판
   boards: [],
-  board: null
+  board: null,
+
+  // 상품
+  products: [],
+  product: null,
+
+  //monster
+   monsters: [],
+   monster: null
 
 }

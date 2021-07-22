@@ -15,6 +15,22 @@ import MemberRegisterPage from '@/views/MemberRegisterPage.vue'
 import BoardReadPage from '@/views/BoardReadPage.vue'
 import BoardModifyPage from '@/views/BoardModifyPage.vue'
 
+//삼목
+import Concave from '@/views/Concave.vue'
+
+// product
+import ProductListPage from '@/views/ProductListPage.vue'
+import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
+import ProductReadPage from '@/views/ProductReadPage.vue'
+import ProductModifyPage from '@/views/ProductModifyPage.vue'
+
+//monster
+import MonsterListPage from '@/views/monster/MonsterListPage.vue'
+import MonsterRegisterPage from '@/views/monster/MonsterRegisterPage.vue'
+
+Vue.use(VueRouter)
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -75,7 +91,8 @@ const routes = [
     props: {
       default: true
     }
-  },{
+  },
+  {
     path: '/board/:boardNo/edit',
     name: 'BoardModifyPage',
     components: {
@@ -85,7 +102,63 @@ const routes = [
       default: true
     }
   },
+  {
+    path: '/concave',
+    name: 'Concave',
+    components: {
+      default: Concave
+    }
+  },
+  {
+    path: '/product',
+    name: 'ProductListPage',
+    components: {
+      default: ProductListPage
+    }
+  },
+  {
+    path: '/product/create',
+    name: 'ProductRegisterPage',
+    components: {
+      default: ProductRegisterPage
+    }
+  },
+  {
+    path: '/product/:productNo',
+    name: 'ProductReadPage',
+    components: {
+      default: ProductReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/product/:productNo/edit',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/monster',
+    name: 'MonsterListPage',
+    components: {
+      default: MonsterListPage
+    }
+  },
+  {
+    path: '/monster/create',
+    name: 'MonsterRegisterPage',
+    components: {
+      default: MonsterRegisterPage
+    }
+  },
 ]
+
 
 const router = new VueRouter({
   mode: 'history',
