@@ -30,6 +30,7 @@ import MonsterRegisterPage from "../views/MonsterRegisterPage";
 import MonsterReadPage from "../views/MonsterReadPage";
 import MonsterModifyPage from "../views/MonsterModifyPage";
 
+import EventBusTestPage from "../views/EventBusTestPage";
 const routes = [
   {
     path: '/',
@@ -167,6 +168,13 @@ const routes = [
     },
     props: {
       default: true
+    }
+  },
+  {
+    path: '/eventBusTest',
+    name: 'EventBusTestPage',
+    components: {
+      default: EventBusTestPage
     }
   },
 ]
