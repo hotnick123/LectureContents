@@ -2,6 +2,7 @@ package com.example.jsmain.repository;
 
 import com.example.jsmain.entity.Monster;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -11,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+@Slf4j
 @Repository
 public class VueMonsterRepository {
 
@@ -18,16 +20,18 @@ public class VueMonsterRepository {
     private JdbcTemplate jdbcTemplate;
 
     public void create(Monster monster) throws Exception {
-        String query = "insert into vuemonster (monster_name, hp, atk, def) values (?, ?, ?, ?)";
+        String query = "insert into vuemonster (name, description, hp, exp, dropMoney, dropItem) " +
+                "values (?, ?, ?, ?, ?, ?)";
 
-        jdbcTemplate.update(query, monster.getMonster_name(), monster.getHp(), monster.getAtk(), monster.getDef());
+        jdbcTemplate.update(query, monster.getName(), monster.getDescription(),
+                monster.getHp(), monster.getExp(), monster.getDropMoney(), monster.getDropItem());
     }
 
     public List<Monster> list() throws Exception {
 
         List<Monster> results = jdbcTemplate.query(
-                "select monster_no, monster_name, hp, atk, def, reg_date from vuemonster " +
-                        "where monster_no > 0 order by monster_no desc",
+                "select monster_no, name, description, hp, exp, dropMoney, dropItem, reg_date " +
+                        "from vuemonster where monster_no > 0 order by monster_no desc",
 
                 new RowMapper<Monster>() {
                     @SneakyThrows
@@ -36,10 +40,12 @@ public class VueMonsterRepository {
                         Monster monster = new Monster();
 
                         monster.setMonsterNo(rs.getInt("monster_no"));
-                        monster.setMonster_name(rs.getString("monster_name"));
+                        monster.setName(rs.getString("name"));
+                        monster.setDescription(rs.getString("description"));
                         monster.setHp(rs.getInt("hp"));
-                        monster.setAtk(rs.getInt("atk"));
-                        monster.setDef((rs.getInt("def")));
+                        monster.setExp((rs.getInt("exp")));
+                        monster.setDropMoney((rs.getInt("dropMoney")));
+                        monster.setDropItem(rs.getString("dropItem"));
 
                         monster.setRegDate(rs.getDate("reg_date"));
 
@@ -51,16 +57,47 @@ public class VueMonsterRepository {
         return results;
     }
 
+    public Monster read (Integer monsterNo) throws Exception {
+        List<Monster> results = jdbcTemplate.query(
+                "select monster_no, name, description, hp, exp, dropMoney, dropItem, " +
+                        "reg_date from vuemonster where monster_no = ?",
+                new RowMapper<Monster>() {
+                    @Override
+                    public Monster mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Monster monster = new Monster();
+
+                        monster.setMonsterNo(rs.getInt("monster_no"));
+                        monster.setName(rs.getString("name"));
+                        monster.setDescription(rs.getString("description"));
+                        monster.setHp(rs.getInt("hp"));
+                        monster.setExp((rs.getInt("exp")));
+                        monster.setDropMoney((rs.getInt("dropMoney")));
+                        monster.setDropItem(rs.getString("dropItem"));
+
+                        monster.setRegDate(rs.getDate("reg_date"));
+
+                        return monster;
+                    }
+                }, monsterNo);
+
+        return results.isEmpty() ? null : results.get(0);
+    }
 
     public void delete(Integer monsterNo) throws Exception {
         String query = "delete from vuemonster where monster_no = ?";
+
         jdbcTemplate.update(query, monsterNo);
     }
 
-
     public void update(Monster monster) throws Exception {
-        String query = "update vuemonster set monster_name = ?, hp = ?, atk = ?, def = ? where monster_no = ?";
-        jdbcTemplate.update(query, monster.getMonster_name(), monster.getHp(), monster.getAtk(), monster.getDef(), monster.getMonsterNo());
+        String query = "update vuemonster set name = ?, description = ?, " +
+                "hp = ?, exp = ?, dropMoney = ?, dropItem = ? where monster_no = ?";
+
+        log.info("Vuemonster Repository: " + monster);
+
+        jdbcTemplate.update(query, monster.getName(), monster.getDescription(),
+                monster.getHp(), monster.getExp(), monster.getDropMoney(),
+                monster.getDropItem(), monster.getMonsterNo());
     }
 
 }

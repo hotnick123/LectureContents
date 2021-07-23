@@ -72,7 +72,7 @@ export default {
                     row.forEach(cell => {
                         if (!cell) {
                             all = false
-                        }
+                        } 
                     })
                 })
                 if (all) {

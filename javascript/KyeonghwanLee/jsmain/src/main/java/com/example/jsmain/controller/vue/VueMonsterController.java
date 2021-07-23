@@ -39,20 +39,32 @@ public class VueMonsterController {
         return new ResponseEntity<>(service.list(), HttpStatus.OK);
     }
 
+    @GetMapping("/{monsterNo}")
+    public ResponseEntity<Monster> read(@PathVariable("monsterNo") Integer monsterNo) throws Exception {
+        Monster monster = service.read(monsterNo);
+
+        return new ResponseEntity<Monster>(monster, HttpStatus.OK);
+    }
 
     @PutMapping("/{monsterNo}")
-    public ResponseEntity<Monster> modifyProduct(@PathVariable("monsterNo") Integer monsterNo,
-                                        @Validated @RequestBody Monster monster) throws Exception {
+    public ResponseEntity<Monster> modifyMonster(@PathVariable("monsterNo") Integer monsterNo,
+                                                 @Validated @RequestBody Monster monster) throws Exception {
+
+        log.info("modifyMonster() - monsterNo: " + monsterNo);
 
         monster.setMonsterNo(monsterNo);
+
+        log.info("modifyMonster(): " + monster);
+
         service.modify(monster);
+
         return new ResponseEntity<>(monster, HttpStatus.OK);
     }
 
     @DeleteMapping("/{monsterNo}")
     public ResponseEntity<Void> remove(@PathVariable("monsterNo") Integer monsterNo) throws Exception {
         service.remove(monsterNo);
+
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
-
 }
