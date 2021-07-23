@@ -30,6 +30,9 @@ import MonsterRegisterPage from '@/views/MonsterRegisterPage.vue'
 import MonsterReadPage from '@/views/MonsterReadPage.vue'
 import MonsterModifyPage from '@/views/MonsterModifyPage.vue'
 
+// EventBus
+import EventBusTestPage from '@/views/EventBusTestPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -177,6 +180,13 @@ const routes = [
     props: {
       // 라우팅 파라미터를 props에 자동으로 설정하게 서포트함
       default: true
+    }
+  },
+  {
+    path: '/eventbusTest',
+    name: 'EventBusTestPage',
+    components: {
+      default: EventBusTestPage
     }
   }
 ]
