@@ -11,7 +11,17 @@ import {
     DEATH,
     // 스프링 랜덤 데이터 통신
     SUCCESS_GEN_RAND_NUM,
-    FAIL_GEN_RAND_NUM
+    FAIL_GEN_RAND_NUM,
+    // 게시판
+    FETCH_BOARD_LIST,
+    FETCH_BOARD,
+    //상품관련
+    FETCH_PRODUCT_LIST,
+    FETCH_PRODUCT,
+    // 괴물
+    FETCH_MONSTER_LIST,
+    FETCH_MONSTER
+    
 } from './mutation-types'
 
 import axios from 'axios'
@@ -62,12 +72,49 @@ export default {
         // 보내고 넘겨 받은 데이터는 .then((res)) 절로 수신함
         // .catch((res)) 절은 오류가 발생했을 경우임
         // 어찌 되었든 응답받은 데이터는 res가 가지고 있음
-        axios.get('http://localhost:7777/random')
+        axios.get('http://localhost:9999/random')
                 .then((res) => {
                     commit(SUCCESS_GEN_RAND_NUM, parseInt(res.data.randNumber))
                 })
                 .catch((res) => {
                     commit(FAIL_GEN_RAND_NUM, res)
+                })
+    },
+    // 게시판
+    fetchBoardList ({ commit }) {
+        return axios.get('http://localhost:9999/vueboard/lists')
+                .then((res) => {
+                    commit(FETCH_BOARD_LIST, res.data)
+                })
+    },
+    fetchBoard ({ commit }, boardNo) {
+        return axios.get(`http://localhost:9999/vueboard/${boardNo}`)
+                .then((res) => {
+                    commit(FETCH_BOARD, res.data)
+                })
+    },  // 상품
+    fetchProductList ({ commit }) {
+        return axios.get('http://localhost:9999/vueproduct/lists')
+                .then((res) => {
+                    commit(FETCH_PRODUCT_LIST, res.data)
+                })
+    },
+    fetchProduct ({ commit }, productNo) {
+        return axios.get(`http://localhost:9999/vueproduct/${productNo}`)
+                .then((res) => {
+                    commit(FETCH_PRODUCT, res.data)
+                })
+    },
+    fetchMonsterList ({ commit }) {
+        return axios.get('http://localhost:9999/vuemonster/lists')
+                .then((res) => {
+                    commit(FETCH_MONSTER_LIST, res.data)
+                })
+    },
+    fetchMonster ({ commit }, monsterNo) {
+        return axios.get(`http://localhost:9999/vuemonster/${monsterNo}`)
+                .then((res) => {
+                    commit(FETCH_MONSTER, res.data)
                 })
     }
 }

@@ -15,3 +15,13 @@ export const DEATH = 'DEATH'
 export const SUCCESS_GEN_RAND_NUM = 'SUCCESS_GEN_RAND_NUM'
 export const FAIL_GEN_RAND_NUM = 'FAIL_GEN_RAND_NUM'
 
+
+// 게시판 관련.,,.
+export const FETCH_BOARD_LIST = 'FETCH_BOARD_LIST'
+export const FETCH_BOARD = 'FETCH_BOARD'
+//상품 관련..,
+export const FETCH_PRODUCT_LIST = 'FETCH_PRODUCT_LIST'
+export const FETCH_PRODUCT = 'FETCH_PRODUCT'
+// 괴물
+export const FETCH_MONSTER_LIST = 'FETCH_MONSTER_LIST'
+export const FETCH_MONSTER = 'FETCH_MONSTER'

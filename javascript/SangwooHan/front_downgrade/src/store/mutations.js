@@ -13,7 +13,18 @@ import {
     DEATH,
     // 스프링 랜덤 데이터 통신
     SUCCESS_GEN_RAND_NUM,
-    FAIL_GEN_RAND_NUM
+    FAIL_GEN_RAND_NUM,
+    // 게시판
+    FETCH_BOARD_LIST,
+    FETCH_BOARD,
+    //상품
+    FETCH_PRODUCT_LIST,
+    FETCH_PRODUCT,
+    //몬스터 
+    FETCH_MONSTER_LIST,
+    FETCH_MONSTER
+
+
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -30,8 +41,9 @@ export default {
     [EDIT_TODO] (state, payload) {
         const { id, content } = payload
         const targetIndex = state.todoItems.findIndex(v => v.id === id)
-        const targetTodoItem = state.todoItems[targetIndex]
-        state.todoItems.splice(targetIndex, 1, { ...targetTodoItem, content })
+        // const targetTodoItem = state.todoItems[targetIndex]
+        // state.todoItems.splice(targetIndex, 1, { ...targetTodoItem, content })
+        state.todoItems.splice(targetIndex, 1, { content })
     },
     [SET_EDITTING_ID] (state, id) {
         state.editingId = id
@@ -77,5 +89,26 @@ export default {
     },
     [FAIL_GEN_RAND_NUM] () {
         console.log('통신 에러!')
+    },
+    // 게시판
+    [FETCH_BOARD_LIST] (state, boards) {
+        state.boards = boards;
+    },
+    [FETCH_BOARD] (state, board) {
+        state.board = board
+    },
+    //상품
+    [FETCH_PRODUCT_LIST] (state, products) {
+        state.products = products;
+    },
+    [FETCH_PRODUCT] (state, product) {
+        state.product = product
+    },
+    //괴물들
+    [FETCH_MONSTER_LIST] (state, monsters) {
+        state.monsters = monsters
+    },
+    [FETCH_MONSTER] (state, monster) {
+        state.monster = monster
     }
 }

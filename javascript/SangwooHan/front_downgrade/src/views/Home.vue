@@ -4,33 +4,64 @@
             <router-link :to="{ name: 'Home' }"
                     class="nav-link"
                     active-class="active">
-                Home
+                [Home]
             </router-link>
             <router-link :to="{ name: 'Test' }"
                     class="nav-link"
                     active-class="active">
-                Test
+                [Test]
             </router-link>
              <router-link :to="{ name: 'Todo' }"
                     class="nav-link"
                     active-class="active">
-                Todo
+                [Todo]
             </router-link>
                 <router-link :to="{ name: 'Homework' }"
                     class="nav-link"
                     active-class="active">
-                Homework
+                [Homework]
             </router-link>
              <router-link :to="{ name: 'BoardListPage' }"
                     class="nav-link"
                     active-class="active">
-                BoardListPage
+                [BoardListPage]
             </router-link>
             <router-link :to="{ name: 'SignupPage' }"
                     class="nav-link"
                     active-class="active">
-                SignupPage
+                [SignupPage]
             </router-link>
+            <router-link :to="{ name: 'GameMemberRegisterPage' }"
+                    class="nav-link"
+                    active-class="active">
+                [GameMemberRegisterPage]
+            </router-link>
+             <router-link :to="{ name: 'MarketRegisterPage' }"
+                    class="nav-link"
+                    active-class="active">
+                [MarketRegisterPage]
+            </router-link>
+             <router-link :to="{ name: 'Concave' }"
+                    class="nav-link"
+                    active-class="active">
+                [Concave]
+            </router-link>
+            <router-link :to="{ name: 'ProductListPage' }"
+                    class="nav-link"
+                    active-class="active">
+               [] ProductListPage]
+            </router-link>
+             <router-link :to="{ name: 'MonsterListPage' }"
+                    class="nav-link"
+                    active-class="active">
+               [] MonsterListPage]
+            </router-link>
+             <router-link :to="{ name: 'EventBusTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+               [] EventBusTestPage]
+            </router-link>
+           
         </div>
     </div>
 </template>

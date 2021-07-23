@@ -9,17 +9,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Slf4j
 @Controller
-@CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
 @RequestMapping("/vueboard")
+@CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
 public class VueBoardController {
-
 
     @Autowired
     private VueBoardService service;
@@ -30,6 +28,35 @@ public class VueBoardController {
 
         service.register(board);
 
-        return  new ResponseEntity<>(board, HttpStatus.OK);
+        return new ResponseEntity<>(board, HttpStatus.OK);
+    }
+
+    @GetMapping("/lists")
+    public ResponseEntity<List<Board>> getLists () throws Exception {
+        log.info("getLists(): " + service.list());
+
+        return new ResponseEntity<>(service.list(), HttpStatus.OK);
+    }
+
+    @GetMapping("/{boardNo}")
+    public ResponseEntity<Board> read(@PathVariable("boardNo") Integer boardNo) throws Exception {
+        Board board = service.read(boardNo);
+
+        return new ResponseEntity<Board>(board, HttpStatus.OK);
+    }
+
+    @PutMapping("/{boardNo}")
+    public ResponseEntity<Board> modify(@PathVariable("boardNo") Integer boardNo,
+                                        @Validated @RequestBody Board board) throws  Exception{
+        board.setBoardNo(boardNo);
+        log.info("board"+ board);
+        service.modify(board);
+
+        return new ResponseEntity<>(board, HttpStatus.OK);
+    }
+    @DeleteMapping("/{boardNo}")
+    public ResponseEntity<Void> remove(@PathVariable("boardNo")Integer boardNo) throws  Exception {
+    service.remove(boardNo);
+    return  new ResponseEntity<Void>(HttpStatus.OK);
     }
 }
