@@ -16,7 +16,8 @@
       </tr>
       <tr v-else v-for="student in students" :key="student.studentNo">
         <td align="center">{{ student.studentNo }}</td>
-        <td align="center">{{ student.name }}</td>
+        <td align="center" v-on:click="checkStudentGrades(student.grades, $event)">
+          {{ student.name }}</td>
         <td align="center">{{ student.studentGrade }}</td>
         <td align="center">{{ student.grades }}</td>
         <td align="center">{{ student.regDate }}</td>
@@ -26,11 +27,19 @@
 </template>
 
 <script>
+import EventBus from "../../eventBus";
+
 export default {
   name: "StudentList",
   props: {
     students: {
       type: Array,
+    }
+  },
+  methods: {
+    checkStudentGrades(grades, $event) {
+      const payload = [grades, $event.target.innerHTML]
+      EventBus.$emit('checkStudentGrades',payload)
     }
   }
 }

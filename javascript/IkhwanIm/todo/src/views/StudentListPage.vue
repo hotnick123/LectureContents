@@ -2,6 +2,7 @@
   <div id="board">
     <h2>학생들 성적표</h2>
     <student-list :students="students"></student-list>
+    <student-average></student-average>
 
   </div>
 </template>
@@ -11,9 +12,11 @@
 import { mapState, mapActions } from 'vuex'
 
 import StudentList from "../components/student/StudentList";
+import StudentAverage from "../components/student/StudentAverage";
 export default {
   name: 'StudentListPage',
   components: {
+    StudentAverage,
     StudentList,
 
   },
