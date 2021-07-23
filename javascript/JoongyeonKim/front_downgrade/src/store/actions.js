@@ -10,6 +10,8 @@ import {
     ADD_MONSTER,
     DEATH,
     ADD_MANY_MONSTER,
+    FETCH_MONSTER_LIST,
+    FETCH_MONSTER,
     //spring과 랜덤 데이터 통신
     SUCCESS_GEN_RAND_NUM,
     FAIL_GEN_RAND_NUM,
@@ -20,7 +22,10 @@ import {
 
     //상품
     FETCH_PRODUCT_LIST,
-    FETCH_PRODUCT 
+    FETCH_PRODUCT,
+    
+    //랜덤 던전
+    
     
 } from './mutation-types'
 
@@ -122,4 +127,10 @@ export default {
         })
     },
 
+    randomDungeonList({ commit }) {
+        return axios.get(`http://localhost:7777/vuedungeon/${productNo}`)
+        .then((res) => {
+            commit(FETCH_PRODUCT, res.data)
+        })
+    },
 }

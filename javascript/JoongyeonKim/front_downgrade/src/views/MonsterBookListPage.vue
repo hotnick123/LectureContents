@@ -1,8 +1,8 @@
 <template>
-    <div id="monster">
+    <div align="center">
         <h2>Vue + Spring 몬스터게시판 구현</h2>
         <router-link :to="{ name: 'MonsterBookRegisterPage' }">
-            게시물 작성
+            몬스터 생성!
         </router-link>
         <monster-book-list :monsters="monsters"/>
     </div>

@@ -10,11 +10,10 @@ public interface VueMonsterService {
 
     public List<Monster> lists() throws Exception;
 
-    /*
-    public Product read(Integer productNo) throws Exception;
 
-    public void remove(Integer productNo) throws Exception;
+    public Monster read(Integer monsterNo) throws Exception;
 
-    public void modify(Product product) throws Exception;
-    */
+    public void remove(Integer monsterNo) throws Exception;
+
+    public void modify(Monster monster) throws Exception;
 }

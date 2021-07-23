@@ -25,13 +25,13 @@ public class VueMonsterRepository {
 
         String query = "insert into vuemonster (name, hp, atk) values (?, ?, ?)";
 
-        jdbcTemplate.update(query, monster.getMonsterName(), monster.getHp(), monster.getAtk());
+        jdbcTemplate.update(query, monster.getName(), monster.getHp(), monster.getAtk());
     }
 
     public List<Monster> list() throws Exception {
 
         List<Monster> results = jdbcTemplate.query(
-                "select monster_no, monster_name, hp, atk, reg_date from vuemonster " +
+                "select monster_no, name, hp, atk, reg_date from vuemonster " +
                         "where monster_no > 0 order by monster_no desc",
 
                 new RowMapper<Monster>() {
@@ -41,7 +41,7 @@ public class VueMonsterRepository {
                         Monster monster = new Monster();
 
                         monster.setMonsterNo(rs.getInt("monster_no"));
-                        monster.setMonsterName(rs.getString("monster_name"));
+                        monster.setName(rs.getString("name"));
                         monster.setHp(rs.getInt("hp"));
                         monster.setAtk(rs.getInt("atk"));
 
@@ -55,40 +55,37 @@ public class VueMonsterRepository {
         );
         return results;
     }
-    /*
-    public Product read (Integer productNo) throws Exception {
-        List<Product> results = jdbcTemplate.query(
-                "select product_no, name, price, description, writer, reg_date from vueproduct where product_no = ?",
-                new RowMapper<Product>() {
+    public Monster read (Integer monsterNo) throws Exception {
+        List<Monster> results = jdbcTemplate.query(
+                "select monster_no, name, hp, atk, reg_date from vuemonster where monster_no = ?",
+                new RowMapper<Monster>() {
                     @Override
-                    public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        Product product = new Product();
+                    public Monster mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Monster monster = new Monster();
 
-                        product.setProductNo(rs.getInt("product_no"));
-                        product.setName(rs.getString("name"));
-                        product.setPrice(rs.getInt("price"));
-                        product.setDescription(rs.getString("description"));
-                        product.setWriter(rs.getString("writer"));
-                        product.setRegDate(rs.getDate("reg_date"));
+                        monster.setMonsterNo(rs.getInt("monster_no"));
+                        monster.setName(rs.getString("name"));
+                        monster.setHp(rs.getInt("hp"));
+                        monster.setAtk(rs.getInt("atk"));
+                        monster.setRegDate(rs.getDate("reg_date"));
 
-                        return product;
+                        return monster;
                     }
-                }, productNo);
+                }, monsterNo);
 
         return results.isEmpty() ? null : results.get(0);
     }
 
-    public void delete(Integer productNo) throws Exception {
-        String query = "delete from vueproduct where product_no = ?";
+    public void delete(Integer monsterNo) throws Exception {
+        String query = "delete from vuemonster where monster_no = ?";
 
-        jdbcTemplate.update(query, productNo);
+        jdbcTemplate.update(query, monsterNo);
     }
 
-    public void update(Product product) throws Exception {
-        String query = "update vueproduct set name = ?, price = ?, description= ? where product_no = ?";
+    public void update(Monster monster) throws Exception {
+        String query = "update vuemonster set name = ?, hp = ?, atk= ? where monster_no = ?";
 
-        jdbcTemplate.update(query, product.getName(), product.getPrice(), product.getDescription(), product.getProductNo());
+        jdbcTemplate.update(query, monster.getName(), monster.getHp(), monster.getAtk(), monster.getMonsterNo());
     }
 
-    */
 }

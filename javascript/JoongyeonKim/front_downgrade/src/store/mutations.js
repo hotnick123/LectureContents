@@ -13,6 +13,7 @@ import {
     DEATH,
     FETCH_MONSTER_LIST,
     FETCH_MONSTER,
+    
     // 스프링 랜덤 데이터 통신
     SUCCESS_GEN_RAND_NUM,
     FAIL_GEN_RAND_NUM,
@@ -23,7 +24,9 @@ import {
 
     //상품페이지
     FETCH_PRODUCT_LIST,
-    FETCH_PRODUCT
+    FETCH_PRODUCT,
+
+    
 
 } from './mutation-types'
 

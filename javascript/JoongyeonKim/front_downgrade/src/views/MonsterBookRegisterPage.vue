@@ -1,17 +1,17 @@
 <template>
     <div align="center">
-        <h2>상품 등록</h2>
+        <h2>몬스터 등록</h2>
         <monster-book-register-form @submit="onSubmit"/>
     </div>
 </template>
 
 <script>
-import MonsterBookRegisterform from '@/components/monster/MonsterBookRegisterform.vue'
+import MonsterBookRegisterForm from '@/components/monster/MonsterBookRegisterForm.vue'
 import axios from 'axios'
 export default {
     name: 'MonsterBookRegisterPage',
     components: {
-        MonsterBookRegisterform
+        MonsterBookRegisterForm
     },
     methods: {
         onSubmit (payload) {

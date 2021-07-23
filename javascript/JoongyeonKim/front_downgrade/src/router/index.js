@@ -28,6 +28,11 @@ import Concave from '@/views/Concave.vue'
 //monster
 import MonsterBookListPage from '@/views/MonsterBookListPage.vue'
 import MonsterBookRegisterPage from '@/views/MonsterBookRegisterPage.vue'
+import MonsterBookReadPage from '@/views/MonsterBookReadPage.vue'
+import MonsterBookModifyPage from '@/views/MonsterBookModifyPage.vue'
+
+//EventBus
+import EventBusTestPage from '@/views/EventBusTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -154,6 +159,33 @@ const routes = [
     name: 'MonsterBookRegisterPage',
     components: {
       default: MonsterBookRegisterPage
+    }
+  },
+  {
+    path: '/monster/:monsterNo',
+    name: 'MonsterBookReadPage',
+    components: {
+      default: MonsterBookReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/monster/:monsterNo/edit',
+    name: 'MonsterBookModifyPage',
+    components: {
+      default: MonsterBookModifyPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/eventbusTest',
+    name: 'EventBusTestPage',
+    components: {
+      default: EventBusTestPage
     }
   }
 ]
