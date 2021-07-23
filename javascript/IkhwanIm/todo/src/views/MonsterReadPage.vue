@@ -1,22 +1,22 @@
 <template>
   <div align="center">
-    <h2>Vue + Spring + DB 몬스터 세부사항</h2>
+    <h2>몬스터 설명 읽기</h2>
     <monster-read v-if="monster" :monster="monster"/>
     <p v-else>로딩중 ...... </p>
     <router-link :to="{ name: 'MonsterModifyPage', params: { monsterNo } }">
-        몬스터 수정
+      몬스터 도감 정보 수정
     </router-link>
-    <button @click="onDelete">삭제</button>
+    <button @click="onDelete">상품 삭제</button>
     <router-link :to="{ name: 'MonsterListPage' }">
-      몬스터 목록 보기
+      상품 보기
     </router-link>
   </div>
 </template>
 
 <script>
+import MonsterRead from '@/components/monster/MonsterRead.vue'
 import { mapState, mapActions } from 'vuex'
 import axios from 'axios'
-import MonsterRead from "../components/monster/MonsterRead";
 export default {
   name: 'MonsterReadPage',
   props: {
@@ -26,7 +26,7 @@ export default {
     }
   },
   components: {
-    MonsterRead,
+    MonsterRead
   },
   computed: {
     ...mapState(['monster'])

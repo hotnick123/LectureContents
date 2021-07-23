@@ -18,4 +18,6 @@ export default {
     // monster
     monsters: [],
     monster: null,
+    // 랜덤 던전
+    dungeons: [],
 }

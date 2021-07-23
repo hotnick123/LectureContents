@@ -31,6 +31,9 @@ import MonsterReadPage from "../views/MonsterReadPage";
 import MonsterModifyPage from "../views/MonsterModifyPage";
 
 import EventBusTestPage from "../views/EventBusTestPage";
+
+//던전
+import DungeonListPage from "../views/DungeonListPage";
 const routes = [
   {
     path: '/',
@@ -175,6 +178,13 @@ const routes = [
     name: 'EventBusTestPage',
     components: {
       default: EventBusTestPage
+    }
+  },
+  {
+    path: '/dungeon',
+    name: 'DungeonListPage',
+    components: {
+      default: DungeonListPage
     }
   },
 ]

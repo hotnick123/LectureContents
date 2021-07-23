@@ -19,7 +19,11 @@ import {
     FETCH_BOARD,
     // product
     FETCH_PRODUCT_LIST,
-    FETCH_PRODUCT, FETCH_MONSTER_LIST, FETCH_MONSTER,
+    FETCH_PRODUCT,
+    FETCH_MONSTER_LIST,
+    FETCH_MONSTER,
+    // 던전
+    ALLOC_RANDOM_DUNGEON
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -106,4 +110,7 @@ export default {
     [FETCH_MONSTER] (state, monster) {
         state.monster = monster
     },
+    [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
+        state.dungeons = dungeons
+    }
 }

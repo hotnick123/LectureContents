@@ -1,12 +1,12 @@
 <template>
   <div align="center">
-    <h2>몬스터 등록</h2>
+    <h2>게시물 작성</h2>
     <monster-register-form @submit="onSubmit"/>
   </div>
 </template>
 
 <script>
-import MonsterRegisterForm from "../components/monster/MonsterRegisterForm";
+import MonsterRegisterForm from '@/components/monster/MonsterRegisterForm.vue'
 import axios from 'axios'
 export default {
   name: 'MonsterRegisterPage',
@@ -15,13 +15,14 @@ export default {
   },
   methods: {
     onSubmit (payload) {
-      const { monster_name, hp, exp, money } = payload
-      axios.post(`http://localhost:7777/vuemonster/register`, { monster_name, hp, exp, money })
+      const { name, description, hp, exp, dropMoney, dropItem } = payload
+      axios.post('http://localhost:7777/vuemonster/register', { name, description, hp, exp, dropMoney, dropItem })
           .then(res => {
             alert('등록 성공! - ' + res)
-            console.log('몬스터 번호: ' + res.data.monsterNo.toString())
+            // console.log('게시물 번호: ' + res.data.monsterNo.toString())
             this.$router.push({
-                name: 'MonsterListPage',
+              name: 'MonsterListPage'
+              // params: { boardNo: res.data.boardNo.toString() }
             })
           })
           .catch(res => {

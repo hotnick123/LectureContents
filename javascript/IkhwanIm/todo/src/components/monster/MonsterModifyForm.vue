@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Monster Modified Form</h3>
+    <h3>몬스터 도감 변경폼</h3>
     <form @submit.prevent="onSubmit">
       <table>
         <tr>
@@ -8,31 +8,39 @@
           <td><input type="text" :value="monster.monsterNo" disabled></td>
         </tr>
         <tr>
-          <td>몬스터이름</td>
-          <td><input type="text" v-model="monster_name"></td>
+          <td>등록일자</td>
+          <td><input type="text" :value="monster.regDate" disabled></td>
+        </tr>
+        <tr>
+          <td>몬스터명</td>
+          <td><input type="text" v-model="name"></td>
         </tr>
         <tr>
           <td>HP</td>
-          <td><input type="text" v-model="hp"></td>
+          <td><input type="number" v-model="hp"></td>
         </tr>
         <tr>
-          <td>EXP</td>
-          <td><input type="text" v-model="exp"></td>
+          <td>경험치</td>
+          <td><input type="number" v-model="exp"></td>
         </tr>
         <tr>
-          <td>MONEY</td>
-          <td><input type="text" v-model="money"></td>
+          <td>드랍 머니</td>
+          <td><input type="number" v-model="dropMoney"></td>
         </tr>
         <tr>
-          <td>등록일자</td>
-          <td><input type="text" :value="monster.regDate" disabled></td>
+          <td>드랍 아이템</td>
+          <td><input type="text" v-model="dropItem"></td>
+        </tr>
+        <tr>
+          <td>몬스터 설명</td>
+          <td><textarea cols="50" rows="15" v-model="description"></textarea></td>
         </tr>
       </table>
 
       <div>
         <button type="submit">수정 완료</button>
         <router-link :to="{ name: 'MonsterReadPage', params: { monsterNo: monster.monsterNo.toString() } }">
-          취소하기
+          취소
         </router-link>
       </div>
     </form>
@@ -50,23 +58,27 @@ export default {
   },
   data () {
     return {
-      monster_name: '',
-      hp: '',
-      exp:'',
-      money:'',
+      name: '',
+      hp: 0,
+      exp: 0,
+      dropMoney: 0,
+      dropItem: '',
+      description: ''
     }
   },
   methods: {
     onSubmit () {
-      const { monster_name, hp, exp, money } = this
-      this.$emit('submit', { monster_name, hp, exp, money })
+      const { name, hp, exp, dropMoney, dropItem, description } = this
+      this.$emit('submit', { name, hp, exp, dropMoney, dropItem, description })
     }
   },
   created () {
-    this.monster_name = this.monster.monster_name
+    this.name = this.monster.name
     this.hp = this.monster.hp
     this.exp = this.monster.exp
-    this.money = this.monster.money
+    this.dropMoney = this.monster.dropMoney
+    this.dropItem = this.monster.dropItem
+    this.description = this.monster.description
   }
 }
 </script>

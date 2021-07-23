@@ -1,20 +1,20 @@
 <template>
-  <div id="monster">
-    <h2>Vue + Spring + DB 몬스터 목록</h2>
+  <div id="board">
+    <h2>몬스터 도감이닷!</h2>
     <router-link :to="{ name: 'MonsterRegisterPage' }">
-      몬스터 등록
+      몬스터 도감 등록
     </router-link>
-    <monster-lists :monsters="monsters"/>
+    <monster-list :monsters="monsters"/>
   </div>
 </template>
 
 <script>
-import MonsterLists from "../components/monster/MonsterLists";
+import MonsterList from '@/components/monster/MonsterList.vue'
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'MonsterListPage',
   components: {
-    MonsterLists
+    MonsterList
   },
   computed: {
     ...mapState(['monsters'])

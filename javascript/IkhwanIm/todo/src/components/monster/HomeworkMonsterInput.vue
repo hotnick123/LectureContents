@@ -10,8 +10,7 @@
 export default {
   data () {
     return {
-      newMonsterElement: '',
-      newManyMonsterElement: '',
+      newMonsterElement: ''
     }
   },
   methods: {
@@ -19,13 +18,13 @@ export default {
       if (this.newMonsterElement !== '') {
         var value = this.newMonsterElement && this.newMonsterElement.trim()
         console.log('addMonster')
+        // emit의 역할은 무엇인가 ?
         this.$emit('addMonster', value)
         this.clearInput()
       }
     },
     clearInput () {
       this.newMonsterElement = ''
-      this.newManyMonsterElement = ''
     }
   }
 }

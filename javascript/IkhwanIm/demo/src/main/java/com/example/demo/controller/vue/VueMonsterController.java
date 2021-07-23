@@ -1,7 +1,9 @@
 package com.example.demo.controller.vue;
 
 import com.example.demo.entity.Monster;
+import com.example.demo.entity.Product;
 import com.example.demo.service.VueMonsterService;
+import com.example.demo.service.VueProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -43,17 +45,24 @@ public class VueMonsterController {
 
         return new ResponseEntity<Monster>(monster, HttpStatus.OK);
     }
-    @PutMapping("/{monsterNo}")
-    public ResponseEntity<Monster> modify(@PathVariable("monsterNo") Integer monsterNo,
-            @Validated @RequestBody Monster monster) throws Exception {
-        monster.setMonsterNo(monsterNo);
-    service.modify(monster);
 
-    return new ResponseEntity<>(monster, HttpStatus.OK);
+    @PutMapping("/{monsterNo}")
+    public ResponseEntity<Monster> modifyMonster(@PathVariable("monsterNo") Integer monsterNo,
+                                                 @Validated @RequestBody Monster monster) throws Exception {
+
+        log.info("modifyMonster() - monsterNo: " + monsterNo);
+
+        monster.setMonsterNo(monsterNo);
+
+        log.info("modifyMonster(): " + monster);
+
+        service.modify(monster);
+
+        return new ResponseEntity<>(monster, HttpStatus.OK);
     }
 
     @DeleteMapping("/{monsterNo}")
-    public ResponseEntity<Void> remove(@PathVariable("monsterNo") Integer monsterNo ) throws Exception {
+    public ResponseEntity<Void> remove(@PathVariable("monsterNo") Integer monsterNo) throws Exception {
         service.remove(monsterNo);
 
         return new ResponseEntity<Void>(HttpStatus.OK);

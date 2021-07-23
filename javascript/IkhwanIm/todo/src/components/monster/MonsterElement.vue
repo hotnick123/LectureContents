@@ -27,7 +27,7 @@ export default {
   // VDOM 변화가 없어도 계산값이 적용되도록 서포트함
   computed: {
     isEditing() {
-      return this.monster.monsterId === this.editingId
+      return this.monster.id === this.editingId
     }
   },
   methods: {
@@ -35,14 +35,14 @@ export default {
       const monsterId = this.monster.monsterId
       this.$emit('death', monsterId)
     },
-    editMonster(event) {
+    editTodo(event) {
       const monsterId = this.monster.monsterId
       const name = event.target.value.trim()
       if (name.length <= 0) {
         return false
       }
-      this.$emit('editMonster', name, monsterId)
-      this.$refs.content.blur()
+      this.$emit('editTodo', name, monsterId)
+      this.$refs.name.blur()
     },
     handleBlur() {
       this.$emit('resetEditingId')

@@ -1,40 +1,40 @@
 <template>
   <div align="center">
-    <h2>몬스터 변조</h2>
-    <monster-modify-form v-if="monster" :monster="monster" @submit="onSubmit"/>
+    <h2>상품 수정</h2>
+    <product-modify-form v-if="product" :product="product" @submit="onSubmit"/>
     <p v-else>로딩중 .......</p>
   </div>
 </template>
 
 <script>
+import ProductModifyForm from '@/components/product/ProductModifyForm.vue'
 import { mapState, mapActions } from 'vuex'
 import axios from 'axios'
-import MonsterModifyForm from "../components/monster/MonsterModifyForm";
-
 export default {
-  name: 'MonsterModifyPage',
+  name: 'ProductModifyPage',
   components: {
-    MonsterModifyForm,
+    ProductModifyForm
   },
   props: {
-    monsterNo: {
+    productNo: {
       type: String,
       required: true
     }
   },
   computed: {
-    ...mapState(['monster'])
+    ...mapState(['product'])
   },
   methods: {
-    ...mapActions(['fetchMonster']),
+    ...mapActions(['fetchProduct']),
     onSubmit (payload) {
-      const { monster_name, hp, exp, money } = payload
-      axios.put(`http://localhost:7777/vuemonster/${this.monsterNo}`, { monster_name, hp, exp, money })
+      console.log("payload: " + JSON.stringify(payload))
+      const { product_name, description, price } = payload
+      axios.put(`http://localhost:7777/vueproduct/${this.productNo}`, { product_name, description, price })
           .then(res => {
             alert('수정 성공!')
             this.$router.push({
-              name: 'MonsterReadPage',
-              params: { monsterNo: res.data.monsterNo.toString() }
+              name: 'ProductReadPage',
+              params: { productNo: res.data.productNo.toString() }
             })
           })
           .catch(err => {
@@ -43,7 +43,7 @@ export default {
     }
   },
   created () {
-    this.fetchMonster(this.monsterNo)
+    this.fetchProduct(this.productNo)
         .catch(err => {
           alert(err.response.data.message)
           this.$router.back()
