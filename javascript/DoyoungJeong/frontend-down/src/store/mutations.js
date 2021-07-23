@@ -24,7 +24,11 @@ import {
     FETCH_MEMBER,
 
     FETCH_MONSTER_STORAGE,
-    FETCH_MONSTER
+    FETCH_MONSTER,
+    
+    FETCH_DUNGEON_LIST,
+
+    FETCH_STUDENT_LIST
 } from './mutation-types'
 
 export default {
@@ -139,8 +143,15 @@ export default {
     },
     [FETCH_MONSTER] (state, monster) {
         state.monster = monster
-    }
+    },
 
+    [FETCH_DUNGEON_LIST] (state, dungeons) {
+        state.dungeons = dungeons
+    },
+
+    [FETCH_STUDENT_LIST] (state, students) {
+        state.students = students
+    }
 }
 
 //action에 있는 것들은 비동기처리 - 대충 보여져도 된다면 action에

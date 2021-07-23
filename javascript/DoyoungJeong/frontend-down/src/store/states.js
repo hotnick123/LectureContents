@@ -16,7 +16,11 @@ export default {
     member: null,
 
     monsters: [],
-    monster: null
+    monster: null,
+
+    dungeons: [],
+
+    students: []
 }
 
 //이곳 state는 크리티컬 섹션이다.

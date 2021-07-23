@@ -23,6 +23,10 @@ import MonsterReadPage from '../views/monster/MonsterReadPage.vue'
 import MonsterModifyPage from '../views/monster/MonsterModifyPage.vue'
 
 import EventBusTestPage from '@/views/EventBusTestPage.vue'
+
+import DungeonPage from '@/views/DungeonPage.vue'
+
+import StudentScoresPage from '@/views/student/StudentScoresPage.vue'
 //@는 src, ..는 상위
 
 Vue.use(VueRouter)
@@ -173,8 +177,27 @@ const routes = [
     components: {
       default: EventBusTestPage
     }
+  },
+  {
+    path: '/dungeon',
+    name: 'DungeonPage',
+    components: {
+      default: DungeonPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/studentScores',
+    name: 'StudentScoresPage',
+    components: {
+      default: StudentScoresPage
+    },
+    props: {
+      default: true
+    }
   }
-  
 ]
 
 const router = new VueRouter({
