@@ -15,6 +15,7 @@ import {
   ADD_MANY_MONSTER,
   FETCH_MONSTER_LIST,
   FETCH_MONSTER,
+  ALLOC_RANDOM_DUNGEON,
 
 // Spring
   SUCCESS_GEN_RAND_NUM,
@@ -81,6 +82,11 @@ export default {
   fetchMonster ({ commit }, monsterNo) {
     return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`).then((res) => {
       commit(FETCH_MONSTER, res.data)
+    })
+  },
+  randomDungeonList ({ commit }) {
+    return axios.get('http://localhost:7777/vuedungeon/randomAlloc').then((res) => {
+      commit(ALLOC_RANDOM_DUNGEON, res.data)
     })
   },
 

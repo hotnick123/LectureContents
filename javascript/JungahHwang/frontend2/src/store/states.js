@@ -12,6 +12,7 @@ export default {
   nextMonsterId: 1,
   monsters: [],
   monster: null,
+  dungeons: [],
 
 // Spring
   randomFromSpring: 0,

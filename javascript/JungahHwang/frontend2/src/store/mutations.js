@@ -17,6 +17,7 @@ import {
   ADD_MANY_MONSTER,
   FETCH_MONSTER_LIST,
   FETCH_MONSTER,
+  ALLOC_RANDOM_DUNGEON,
 
 // Spring
   SUCCESS_GEN_RAND_NUM,
@@ -94,6 +95,9 @@ export default {
   },
   [FETCH_MONSTER] (state, monster) {
     state.monster = monster
+  },
+  [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
+    state.dungeons = dungeons
   },
 
 // Spring

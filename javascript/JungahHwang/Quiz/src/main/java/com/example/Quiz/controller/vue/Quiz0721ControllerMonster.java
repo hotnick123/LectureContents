@@ -1,7 +1,6 @@
 package com.example.Quiz.controller.vue;
 
 import com.example.Quiz.entity.Monster;
-import com.example.Quiz.entity.Product;
 import com.example.Quiz.service.MonsterService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/vuemonster")
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
-public class Quiz0721Controller {
+public class Quiz0721ControllerMonster {
 
     @Autowired
     private MonsterService service;

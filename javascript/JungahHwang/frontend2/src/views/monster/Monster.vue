@@ -12,6 +12,10 @@
       class="nav-link" 
       active-class="active">Guide
     </router-link>
+    <router-link :to="{ name: 'MonsterDungeonPage' }" 
+      class="nav-link" 
+      active-class="active">Dungeon
+    </router-link>
     
     <monster-header></monster-header>
     <monster-input v-on:addMonster="onAddMonster"></monster-input>

@@ -11,6 +11,7 @@ import MonsterCreatePage from '@/views/monster/MonsterCreatePage'
 import MonsterGuidePage from '@/views/monster/MonsterGuidePage'
 import MonsterReadPage from '@/views/monster/MonsterReadPage'
 import MonsterModifyPage from '@/views/monster/MonsterModifyPage'
+import MonsterDungeonPage from '@/views/monster/MonsterDungeonPage'
 
 
 // Board
@@ -101,6 +102,13 @@ const routes = [
     props: {
       default: true
     } 
+  },
+  {
+    path: '/dungeon',
+    name: 'MonsterDungeonPage',
+    components: {
+      default: MonsterDungeonPage
+    }
   },
 
 // Board

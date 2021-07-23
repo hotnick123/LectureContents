@@ -16,11 +16,11 @@
       </tr>
       <tr v-else v-for="monster in monsters" :key="monster.monsterNo">
         <td align="center">{{ monster.monsterNo }}</td>
-        <td align="left"> 
+        <td align="center"> 
           <router-link :to="{ name: 'MonsterReadPage', params: { monsterNo: monster.monsterNo.toString() }}">
             {{ monster.name }}
           </router-link></td>
-        <td align="right">{{ monster.hp }}</td>
+        <td align="center">{{ monster.hp }}</td>
         <td align="center">{{ monster.exp }}</td>
         <td align="center">{{ monster.money }}</td>
         <td align="center">{{ monster.item }}</td>
