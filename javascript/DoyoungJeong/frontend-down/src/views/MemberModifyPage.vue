@@ -38,7 +38,7 @@ export default {
 
         onSubmit(payload) {
             const { id, pw, name, birthDay, address, party, comment } = payload
-            axios.put(`http://localhost:7777/vuemember/${ this.memberNo }`, { id, pw, name, birthDay, address, party, comment })
+            axios.put(`http://localhost:7777/vuemember`, { id, pw, name, birthDay, address, party, comment })
                 .then(res => {
                     alert('수정 성공! ' + res)
 
