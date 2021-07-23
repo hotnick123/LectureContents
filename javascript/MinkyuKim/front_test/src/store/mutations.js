@@ -22,7 +22,11 @@ import {
     FETCH_BOARD,
     // 상품
     FETCH_PRODUCT_LIST,
-    FETCH_PRODUCT
+    FETCH_PRODUCT,
+
+    // 판타지 온라인
+    FETCH_MONSTER_LIST,
+    FETCH_MONSTER
 
 } from './mutation-types'
 
@@ -105,10 +109,17 @@ export default {
     },
     // 상품
     [FETCH_PRODUCT_LIST] (state, products) {
-        state.products = products;
+        state.products = products
     },
     [FETCH_PRODUCT] (state, product) {
         state.product = product
+    },
+    // 
+    [FETCH_MONSTER_LIST] (state, monsters) {
+        state.monsters = monsters
+    },
+    [FETCH_MONSTER] (state, monster) {
+        state.monster = monster
     }
     
 }

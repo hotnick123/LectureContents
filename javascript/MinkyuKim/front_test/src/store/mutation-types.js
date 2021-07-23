@@ -20,3 +20,7 @@ export const FETCH_BOARD = 'FETCH_BOARD'
 //상품
 export const FETCH_PRODUCT_LIST = 'FETCH_PRODUCT_LIST'
 export const FETCH_PRODUCT = 'FETCH_PRODUCT' 
+
+// 판타지 온라인
+export const FETCH_MONSTER_LIST = 'FETCH_MONSTER_LIST'
+export const FETCH_MONSTER = 'FETCH_MONSTER'
