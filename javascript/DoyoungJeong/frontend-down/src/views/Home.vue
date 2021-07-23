@@ -36,6 +36,26 @@
                     active-class="active">
                 Concave
             </router-link>
+            <router-link :to="{ name: 'MonsterStoragePage' }"
+                    class="nav-link"
+                    active-class="active">
+                MonsterStoragePage     
+            </router-link>
+            <router-link :to="{ name: 'EventBusTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                EventBusTestPage   
+            </router-link>
+            <router-link :to="{ name: 'DungeonPage' }"
+                    class="nav-link"
+                    active-class="active">
+                DungeonPage   
+            </router-link>
+            <router-link :to="{ name: 'StudentScoresPage' }"
+                    class="nav-link"
+                    active-class="active">
+                StudentScoresPage   
+            </router-link>
         </div>
         <div>
             <!-- <button v-on:click="addManyMonster">몬스터 100마리 리젠</button>-->

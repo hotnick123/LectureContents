@@ -22,7 +22,11 @@ import {
     FETCH_MEMBER,
 
     FETCH_MONSTER_STORAGE,
-    FETCH_MONSTER
+    FETCH_MONSTER,
+
+    FETCH_DUNGEON_LIST,
+
+    FETCH_STUDENT_LIST
 } from './mutation-types'
 
 import axios from 'axios'
@@ -125,6 +129,20 @@ export default {
         return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
         .then((res) => {
             commit(FETCH_MONSTER, res.data)
+        })
+    },
+
+    fetchDungeonList ({ commit }) {
+        return axios.get('http://localhost:7777/vuedungeon/list')
+        .then((res) => {
+            commit(FETCH_DUNGEON_LIST, res.data)
+        })
+    },
+
+    fetchStudentList ({ commit }) {
+        return axios.get('http://localhost:7777/vuestudent/list')
+        .then((res) => {
+            commit(FETCH_STUDENT_LIST, res.data)
         })
     }
 }
