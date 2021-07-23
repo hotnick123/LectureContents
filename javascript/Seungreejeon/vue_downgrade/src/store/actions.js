@@ -18,10 +18,11 @@ import {
     // 상품
     FETCH_PRODUCT_LIST,
     FETCH_PRODUCT,
-
-    //판타지온라인
+    // 판타지 온라인
+    FETCH_MONSTER_LIST,
     FETCH_MONSTER,
-    FETCH_MONSTER_LIST
+    // 랜덤 던전
+    ALLOC_RANDOM_DUNGEON
 } from './mutation-types'
 
 import axios from 'axios'
@@ -106,17 +107,26 @@ export default {
                     commit(FETCH_PRODUCT, res.data)
                 })
     },
-    fetchMonster ({ commit }, monsterNo) {
-        return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
-                .then((res) => {
-                    alert('성공')
-                    commit(FETCH_MONSTER, res.data)
-                })
-    },
+    // 판타지 온라인
     fetchMonsterList ({ commit }) {
         return axios.get('http://localhost:7777/vuemonster/lists')
                 .then((res) => {
                     commit(FETCH_MONSTER_LIST, res.data)
                 })
     },
+    fetchMonster ({ commit }, monsterNo) {
+        return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
+                .then((res) => {
+                    commit(FETCH_MONSTER, res.data)
+                })
+    },
+    // 랜덤 던전
+    randomDungeonList ({ commit }) {
+        return axios.get('http://localhost:7777/vuedungeon/randomAlloc')
+                .then((res) => {
+                    // alert(JSON.stringify(res.data))
+                    commit(ALLOC_RANDOM_DUNGEON, res.data)
+                    
+                })
+    }
 }

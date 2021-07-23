@@ -22,7 +22,8 @@ export default {
     methods: {
         sendCode(incode, $event) {
             const payload = [ incode, $event.target.innerHTML ]
-            EventBus.$emit('sendcode', payload)
+            // EventBus.$emit('sendcode', payload)
+            EventBus.sendscode(payload)
         }
     }
 }

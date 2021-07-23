@@ -20,9 +20,11 @@ import {
     // 상품
     FETCH_PRODUCT_LIST,
     FETCH_PRODUCT,
-
+    // 판타지 온라인
     FETCH_MONSTER_LIST,
-    FETCH_MONSTER
+    FETCH_MONSTER,
+    // 랜덤 던전
+    ALLOC_RANDOM_DUNGEON
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -97,17 +99,21 @@ export default {
     },
     // 상품
     [FETCH_PRODUCT_LIST] (state, products) {
-        state.products = products;
+        state.products = products
     },
     [FETCH_PRODUCT] (state, product) {
         state.product = product
     },
+    // 판타지 온라인
     [FETCH_MONSTER_LIST] (state, monsters) {
-        state.monsters = monsters;
+        state.monsters = monsters
     },
     [FETCH_MONSTER] (state, monster) {
         state.monster = monster
+    },
+    // 랜덤 던전
+    [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
+    // alert(JSON.stringify(dungeons))
+    state.dungeons = dungeons
     }
-    ,
-    
 }

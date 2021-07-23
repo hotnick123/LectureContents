@@ -29,7 +29,11 @@ import MonsterRegisterPage from '@/views/MonsterRegisterPage.vue'
 import MonsterReadPage from '@/views/MonsterReadPage.vue'
 import MonsterModifyPage from '@/views/MonsterModifyPage.vue'
 
+// EventBus
 import EventBusTestPage from '@/views/EventBusTestPage.vue'
+
+// 던전
+import DungeonListPage from '../views/DungeonListpage.vue'
 
 Vue.use(VueRouter)
 
@@ -152,7 +156,7 @@ const routes = [
     }
   },
   {
-    path: '/monster/read/:monsterNo',
+    path: '/monster/:monsterNo',
     name: 'MonsterReadPage',
     components: {
       default: MonsterReadPage
@@ -162,7 +166,7 @@ const routes = [
     }
   },
   {
-    path: '/monster/edit/:monsterNo',
+    path: '/monster/:monsterNo/edit',
     name: 'MonsterModifyPage',
     components: {
       default: MonsterModifyPage
@@ -176,6 +180,13 @@ const routes = [
     name: 'EventBusTestPage',
     components: {
       default: EventBusTestPage
+    }
+  },
+  {
+    path: '/dungeon',
+    name: 'DungeonListPage',
+    components: {
+      default: DungeonListPage
     }
   }
 ]
