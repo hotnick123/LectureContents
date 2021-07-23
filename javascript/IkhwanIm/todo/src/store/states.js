@@ -20,4 +20,6 @@ export default {
     monster: null,
     // 랜덤 던전
     dungeons: [],
+    // 학생
+    students: [],
 }

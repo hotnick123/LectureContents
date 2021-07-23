@@ -34,6 +34,8 @@ import EventBusTestPage from "../views/EventBusTestPage";
 
 //던전
 import DungeonListPage from "../views/DungeonListPage";
+// 학생
+import StudentListPage from "../views/StudentListPage";
 const routes = [
   {
     path: '/',
@@ -185,6 +187,13 @@ const routes = [
     name: 'DungeonListPage',
     components: {
       default: DungeonListPage
+    }
+  },
+  {
+    path: '/student',
+    name: 'StudentListPage',
+    components: {
+      default: StudentListPage
     }
   },
 ]

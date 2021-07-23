@@ -51,6 +51,11 @@
                    active-class="active">
         Dungeon 테스트
       </router-link>
+      <router-link :to="{ name: 'StudentListPage' }"
+                   class="nav-link"
+                   active-class="active">
+        학생 테스트
+      </router-link>
     </div>
   </div>
 </template>

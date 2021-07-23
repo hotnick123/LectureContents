@@ -23,7 +23,9 @@ import {
     FETCH_MONSTER_LIST,
     FETCH_MONSTER,
     // 던전
-    ALLOC_RANDOM_DUNGEON
+    ALLOC_RANDOM_DUNGEON,
+    // 학생
+    FETCH_STUDENT_LIST,
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -112,5 +114,8 @@ export default {
     },
     [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
         state.dungeons = dungeons
+    },
+    [FETCH_STUDENT_LIST] (state, students) {
+        state.students = students
     }
 }

@@ -23,6 +23,8 @@ import {
     FETCH_MONSTER_LIST,
     // 던전
     ALLOC_RANDOM_DUNGEON,
+    // 학생
+    FETCH_STUDENT_LIST,
 } from './mutation-types'
 
 import axios from 'axios'
@@ -126,6 +128,12 @@ export default {
             .then((res) => {
                 commit(ALLOC_RANDOM_DUNGEON, res.data)
             })
-    }
+    },
+    fetchStudentList ({ commit }) {
+        return axios.get(`http://localhost:7777/vuestudent/grades`)
+            .then((res) => {
+                commit(FETCH_STUDENT_LIST, res.data)
+            })
+    },
 
 }
