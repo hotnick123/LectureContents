@@ -22,6 +22,7 @@ import MonsterUploadPage from '../views/monster/MonsterUploadPage.vue'
 import MonsterReadPage from '../views/monster/MonsterReadPage.vue'
 import MonsterModifyPage from '../views/monster/MonsterModifyPage.vue'
 
+import EventBusTestPage from '@/views/EventBusTestPage.vue'
 //@는 src, ..는 상위
 
 Vue.use(VueRouter)
@@ -155,7 +156,25 @@ const routes = [
     props: {
       default: true
     }
+  },
+  {
+    path: '/monster/:monsterNo/edit',
+    name: 'MonsterModifyPage',
+    components: {
+      default: MonsterModifyPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/eventbusTest',
+    name: 'EventBusTestPage',
+    components: {
+      default: EventBusTestPage
+    }
   }
+  
 ]
 
 const router = new VueRouter({
