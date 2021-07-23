@@ -6,7 +6,9 @@
                 <th align="center" width="80">번호</th>
                 <th align="center" width="250">몬스터 이름</th>
                 <th align="center" width="150">HP</th>
-                <th align="center" width="150">EXP</th>
+                <th align="center" width="150">경험치</th>
+                <th align="center" width="150">드랍머니</th>
+                <th align="center" width="200">드랍아이템</th>
             </tr>
             <tr v-if="!monsters || (Array.isArray(monsters) && monsters.length === 0)">
                 <td colspan="4">
@@ -23,6 +25,8 @@
                 </td>
                 <td align="right">{{ monster.hp }}</td>
                 <td align="center">{{ monster.exp }}</td>
+                <td align="center">{{ monster.dropMoney }}</td>
+                <td align="center">{{ monster.dropItem }}</td>
             </tr>
         </table>
     </div>

@@ -46,6 +46,11 @@
                     active-class="active">
                 MonsterListPage
             </router-link>
+            <router-link :to="{ name: 'EventBusTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                EventBusTestPage
+            </router-link>
         </div>
     </div>
 </template>

@@ -30,6 +30,9 @@ import MonsterModifyPage from '@/views/MonsterModifyPage.vue'
 // 삼목
 import Concave from '@/views/Concave.vue'
 
+// EventBus
+import EventBusTestPage from '@/views/EventBusTestPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -169,7 +172,14 @@ const routes = [
     props: {
       default: true
     }
-  }
+  }, 
+  {
+    path: '/eventbusTest',
+    name: 'EventBusTestPage',
+    components: {
+      default: EventBusTestPage
+    }
+  },
 ]
 
 const router = new VueRouter({

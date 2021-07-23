@@ -31,8 +31,8 @@ export default {
         onSubmit (payload) {
             console.log("payload: " + JSON.stringify(payload))
 
-            const { name, hp, exp } = payload
-            axios.put(`http://localhost:7777/vuemonster/${this.monsterNo}`, { name, hp, exp })
+            const { name, description, hp, exp, dropMoney, dropItem } = payload
+            axios.put(`http://localhost:7777/vuemonster/${this.monsterNo}`, { name, description, hp, exp, dropMoney, dropItem })
                     .then(res => {
                         alert('몬스터 정보를 수정하였습니다.')
                         this.$router.push({

@@ -10,10 +10,13 @@ import java.util.Date;
 @Setter
 @ToString
 public class Monster {
-    private int monsterNo;
+    private Integer monsterNo;
     private String name;
-    private int hp;
-    private int exp;
+    private String description;
+    private Integer hp;
+    private Integer exp;
+    private Integer dropMoney;
+    private String dropItem;
     private Date regDate;
 }
 

@@ -18,8 +18,8 @@ export default {
     },
     methods: {
         onSubmit (payload) {
-            const { name, hp, exp } = payload
-            axios.post('http://localhost:7777/vuemonster/register', { name, hp, exp })
+            const { name, description, hp, exp, dropMoney, dropItem } = payload
+            axios.post('http://localhost:7777/vuemonster/register', { name, description, hp, exp, dropMoney, dropItem })
                 .then(res => {
                     alert('몬스터 등록이 완료되었습니다.' + res)
                     console.log('몬스터 번호 : ' + res.data.monsterNo.toString ())
