@@ -23,6 +23,8 @@ export const FETCH_MONSTER_LIST = 'FETCH_MONSTER_LIST'
 export const FETCH_MONSTER = 'FETCH_MONSTER'
 
 
+export const ALLOC_RANDOM_DUNGEON = 'ALLOC_RANDOM_DUNGEON'
+
 //actions 비동기 처리 
 //mutations 동기 처리 -> 데이터의 무결성을 보장하고자 한다면 
 //mutation-types mutation에서 사용할 데이터를 지정

@@ -24,7 +24,10 @@ import {
   
   //monster
   FETCH_MONSTER_LIST,
-  FETCH_MONSTER
+  FETCH_MONSTER,
+
+  //dungeon
+  ALLOC_RANDOM_DUNGEON
 
 } from './mutation-types'
 
@@ -110,5 +113,9 @@ export default {
   },
   [FETCH_MONSTER] (state, monster) {
     state.monster = monster;
-  }
+  },
+  // 랜덤 던전
+  [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
+    state.dungeons = dungeons
+  } 
 }

@@ -19,6 +19,9 @@ export default {
 
   //monster
    monsters: [],
-   monster: null
+   monster: null,
+
+   //dungeons
+   dungeons: []
 
 }
