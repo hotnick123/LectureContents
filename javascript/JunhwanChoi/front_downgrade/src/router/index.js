@@ -14,21 +14,21 @@ import BoardModifyPage from '@/views/BoardModifyPage.vue'
 // game
 import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 
-//삼목 
+// 삼목
 import Concave from '@/views/Concave.vue'
 
-//monster
+
+// monster
 import MonsterListPage from '@/views/MonsterListPage.vue'
 import MonsterRegisterPage from '@/views/MonsterRegisterPage.vue'
 import MonsterReadPage from '@/views/MonsterReadPage.vue'
 import MonsterModifyPage from '@/views/MonsterModifyPage.vue'
 
-//EventBusTestPage
+// EventBus
 import EventBusTestPage from '@/views/EventBusTestPage.vue'
 
-
-
-
+// 던전
+import DungeonListPage from '@/views/DungeonListPage.vue'
 
 Vue.use(VueRouter)
 
@@ -102,6 +102,7 @@ const routes = [
       default: Concave
     }
   },
+  
   {
     path: '/monster',
     name: 'MonsterListPage',
@@ -133,7 +134,6 @@ const routes = [
       default: MonsterModifyPage
     },
     props: {
-      // 라우팅 파라미터를 props에 자동으로 설정하게 서포트함
       default: true
     }
   },
@@ -144,6 +144,13 @@ const routes = [
       default: EventBusTestPage
     }
   },
+  {
+    path: '/dungeon',
+    name: 'DungeonListPage',
+    components: {
+      default: DungeonListPage
+    }
+  }
 ]
 
 const router = new VueRouter({
