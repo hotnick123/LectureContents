@@ -27,6 +27,7 @@ export default {
         // $on은 이벤트를 감지함<<<
         // $emit은 이벤트를 발생시킴<<<
         // EventBus.$on('sendcod', (payload)=>{
+        // 여기서 sendcode라는 신호가 전달되면 컴퍼넌트내의 products안에 전달된 데이터(payload)값을 넣는다.
         EventBus.$on('sendcode', (payload) => {
             this.products = payload
         })

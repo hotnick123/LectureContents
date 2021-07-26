@@ -20,6 +20,7 @@ export default {
         }
     },
     methods: {
+        //$event 어떤 이벤트가 발생하는지
         sendCode(incode, $event) {
             const payload = [ incode, $event.target.innerHTML ]
             EventBus.$emit('sendcode', payload)
