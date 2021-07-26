@@ -1,69 +1,64 @@
 <template>
-  <div class="home">
-    <div id="header">
-      <router-link
-        :to="{ name: 'Home' }"
-        class="nav-link"
-        active-class="active"
-      >
-        Home
-      </router-link>
-      <router-link
-        :to="{ name: 'Test' }"
-        class="nav-link"
-        active-class="active"
-      >
-        Test
-      </router-link>
-      <router-link
-        :to="{ name: 'Todo' }"
-        class="nav-link"
-        active-class="active"
-      >
-        Todo
-      </router-link>
-      <router-link
-        :to="{ name: 'Homework' }"
-        class="nav-link"
-        active-class="active"
-      >
-        Homework
-      </router-link>
-      <router-link
-        :to="{ name: 'BoardListPage' }"
-        class="nav-link"
-        active-class="active"
-      >
-        BoardListPage
-      </router-link>
-            <router-link
-        :to="{ name: 'GameMemberRegisterPage' }"
-        class="nav-link"
-        active-class="active"
-      >
-        GameMemberRegisterPage
-      </router-link>
-                  <router-link
-        :to="{ name: 'Concave' }"
-        class="nav-link"
-        active-class="active"
-      >
-        Concave
-      </router-link>
-       <router-link :to="{ name: 'ProductListPage' }"
+    <div class="home">
+        <div id="header">
+            <router-link :to="{ name: 'Home' }"
+                    class="nav-link"
+                    active-class="active">
+                Home
+            </router-link>
+            <router-link :to="{ name: 'Test' }"
+                    class="nav-link"
+                    active-class="active">
+                Test
+            </router-link>
+            <router-link :to="{ name: 'Todo' }"
+                    class="nav-link"
+                    active-class="active">
+                Todo
+            </router-link>
+            <router-link :to="{ name: 'Homework' }"
+                    class="nav-link"
+                    active-class="active">
+                Homework
+            </router-link>
+            <router-link :to="{ name: 'BoardListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                BoardListPage
+            </router-link>
+            <router-link :to="{ name: 'GameMemberRegisterPage' }"
+                    class="nav-link"
+                    active-class="active">
+                GameMemberRegisterPage
+            </router-link>
+            <router-link :to="{ name: 'Concave' }"
+                    class="nav-link"
+                    active-class="active">
+                Concave
+            </router-link>
+            <router-link :to="{ name: 'ProductListPage' }"
                     class="nav-link"
                     active-class="active">
                 ProductListPage
             </router-link>
+            <router-link :to="{ name: 'MonsterListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                몬스터 도감
+            </router-link>
+            <router-link :to="{ name: 'EventBusTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                EventBus 테스트
+            </router-link>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
-export default {
-  name: "Home",
-  components: {
-    
-  },
-};
+  export default {
+    name: 'Home',
+    components: {
+    },
+  }
 </script>

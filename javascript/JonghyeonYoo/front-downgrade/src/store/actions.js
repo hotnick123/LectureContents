@@ -15,9 +15,12 @@ import {
     // 게시판
     FETCH_BOARD_LIST,
     FETCH_BOARD,
-        // 상품
-        FETCH_PRODUCT_LIST,
-        FETCH_PRODUCT
+    // 상품
+    FETCH_PRODUCT_LIST,
+    FETCH_PRODUCT,
+    // 판타지 온라인
+    FETCH_MONSTER_LIST,
+    FETCH_MONSTER
 } from './mutation-types'
 
 import axios from 'axios'
@@ -83,23 +86,36 @@ export default {
                     commit(FETCH_BOARD_LIST, res.data)
                 })
     },
-    fetchBoard ({ commit }, boardNo){
-    return axios.get(`http://localhost:7777/vueboard/${boardNo}`)
-        .then((res) => {
-            commit(FETCH_BOARD, res.data)
-        })
-},
- // 상품
- fetchProductList ({ commit }) {
-    return axios.get('http://localhost:7777/vueproduct/lists')
-            .then((res) => {
-                commit(FETCH_PRODUCT_LIST, res.data)
-            })
-},
-fetchProduct ({ commit }, productNo) {
-    return axios.get(`http://localhost:7777/vueproduct/${productNo}`)
-            .then((res) => {
-                commit(FETCH_PRODUCT, res.data)
-            })
-}
+    fetchBoard ({ commit }, boardNo) {
+        return axios.get(`http://localhost:7777/vueboard/${boardNo}`)
+                .then((res) => {
+                    commit(FETCH_BOARD, res.data)
+                })
+    },
+    // 상품
+    fetchProductList ({ commit }) {
+        return axios.get('http://localhost:7777/vueproduct/lists')
+                .then((res) => {
+                    commit(FETCH_PRODUCT_LIST, res.data)
+                })
+    },
+    fetchProduct ({ commit }, productNo) {
+        return axios.get(`http://localhost:7777/vueproduct/${productNo}`)
+                .then((res) => {
+                    commit(FETCH_PRODUCT, res.data)
+                })
+    },
+    // 판타지 온라인
+    fetchMonsterList ({ commit }) {
+        return axios.get('http://localhost:7777/vuemonster/lists')
+                .then((res) => {
+                    commit(FETCH_MONSTER_LIST, res.data)
+                })
+    },
+    fetchMonster ({ commit }, monsterNo) {
+        return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
+                .then((res) => {
+                    commit(FETCH_MONSTER, res.data)
+                })
+    }
 }
