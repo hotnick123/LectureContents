@@ -23,11 +23,11 @@ export default {
         }
     },
     // created () {
-    created: function() {  
-             // $on 은 이벤트를 감지함 <<<
+    created: function() {
+        // $on은 이벤트를 감지함 <<<
         // $emit은 이벤트를 발생시킴 <<<
-        // EventBus.$on('sendcode', (payload) => {)
         EventBus.$on('sendcode', (payload) => {
+        // EventBus.$once('sendcode', (payload) => {
             this.products = payload
         })
     }
