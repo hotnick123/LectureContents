@@ -23,6 +23,17 @@ import ProductRegisterPage from '@/views/product/ProductRegisterPage.vue'
 import ProductReadPage from '@/views/product/ProductReadPage.vue'
 import ProductModifyPage from '@/views/product/ProductModifyPage.vue'
 
+//monster
+import MonsterListPage from '@/views/monster/MonsterListPage.vue'
+import MonsterRegisterPage from '@/views/monster/MonsterRegisterPage.vue'
+import MonsterReadPage from '@/views/monster/MonsterReadPage.vue'
+import MonsterModifyPage from '@/views/monster/MonsterModifyPage.vue'
+
+// EventBus
+import EventBusTestPage from '@/views/eventbus/EventBusTestPage.vue'
+// 던전
+import DungeonListPage from '@/views/DungeonListPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -127,6 +138,54 @@ const routes = [
     },
     props: {
       default: true
+    }
+  },
+  {
+    path: '/monster',
+    name: 'MonsterListPage',
+    components: {
+      default: MonsterListPage
+    }
+  },
+  {
+    path: '/monster/create',
+    name: 'MonsterRegisterPage',
+    components: {
+      default: MonsterRegisterPage
+    }
+  },
+  {
+    path: '/monster/:monsterNo',
+    name: 'MonsterReadPage',
+    components: {
+      default: MonsterReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/monster/:monsterNo/edit',
+    name: 'MonsterModifyPage',
+    components: {
+      default: MonsterModifyPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/eventbusTest',
+    name: 'EventBusTestPage',
+    components: {
+      default: EventBusTestPage
+    }
+  },
+  {
+    path: '/dungeon',
+    name: 'DungeonListPage',
+    components: {
+      default: DungeonListPage
     }
   }
 ]

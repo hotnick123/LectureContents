@@ -14,5 +14,10 @@ export default {
     board: null,
     // product
     products: [],
-    product: null
+    product: null,
+    // 판타지온라인
+    monsters: [],
+    monster: null,
+    // 랜덤 던전
+    dungeons: []
 }
