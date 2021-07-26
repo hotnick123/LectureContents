@@ -26,7 +26,10 @@ import {
 
     // 판타지 온라인
     FETCH_MONSTER_LIST,
-    FETCH_MONSTER
+    FETCH_MONSTER,
+
+    // 랜덤 던전
+    ALLOC_RANDOM_DUNGEON
 
 } from './mutation-types'
 
@@ -120,6 +123,11 @@ export default {
     },
     [FETCH_MONSTER] (state, monster) {
         state.monster = monster
+    },
+    [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
+        state.dungeons = dungeons
     }
+
+
     
 }

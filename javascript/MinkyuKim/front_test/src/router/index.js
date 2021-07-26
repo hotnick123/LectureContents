@@ -33,6 +33,9 @@ import MonsterModifyPage from '@/views/MonsterModifyPage.vue'
 // EventBus
 import EventBusTestPage from '@/views/EventBusTestPage.vue'
 
+// 랜덤 던전
+import DungeonListPage from '@/views/DungeonListPage.vue'
+
 
 Vue.use(VueRouter)
 
@@ -185,6 +188,14 @@ const routes = [
     name: 'EventBusTestPage',
     components: {
       default: EventBusTestPage
+    }    
+  },
+  // 랜덤 던전
+  {
+    path: '/dungeon',
+    name: 'DungeonListPage',
+    components: {
+      default: DungeonListPage
     }    
   }
 ]

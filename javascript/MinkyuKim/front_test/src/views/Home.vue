@@ -56,6 +56,12 @@
                     active-class="active">
                 EventBus 테스트
             </router-link>
+
+            <router-link :to="{ name: 'DungeonListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Dungeon 테스트
+            </router-link>
         </div>
     </div>
 </template>

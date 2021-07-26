@@ -24,3 +24,6 @@ export const FETCH_PRODUCT = 'FETCH_PRODUCT'
 // 판타지 온라인
 export const FETCH_MONSTER_LIST = 'FETCH_MONSTER_LIST'
 export const FETCH_MONSTER = 'FETCH_MONSTER'
+
+// 랜덤 던전
+export const ALLOC_RANDOM_DUNGEON = 'ALLOC_RANDOM_DUNGEON'
