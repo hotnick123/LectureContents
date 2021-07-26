@@ -17,5 +17,7 @@ export default {
     product: null,
     //괴물들
     monsters: [],
-    monster: null
+    monster: null,
+    // 렌덤 던젼
+    dungeons: []
 }

@@ -20,7 +20,9 @@ import {
     FETCH_PRODUCT,
     // 괴물
     FETCH_MONSTER_LIST,
-    FETCH_MONSTER
+    FETCH_MONSTER,
+    //렌덤 던전
+    ALLOC_RANDOM_DUNGEON,
     
 } from './mutation-types'
 
@@ -115,6 +117,12 @@ export default {
         return axios.get(`http://localhost:9999/vuemonster/${monsterNo}`)
                 .then((res) => {
                     commit(FETCH_MONSTER, res.data)
+                })
+    },
+    randomDugeonList ({ commit }) {
+        return axios.get('http://localhost:9999/vuedungeon/randomAlloc')
+                .then((res) => {
+                    commit(ALLOC_RANDOM_DUNGEON, res.data)
                 })
     }
 }

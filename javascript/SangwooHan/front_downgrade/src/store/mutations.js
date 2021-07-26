@@ -22,7 +22,9 @@ import {
     FETCH_PRODUCT,
     //몬스터 
     FETCH_MONSTER_LIST,
-    FETCH_MONSTER
+    FETCH_MONSTER,
+    //렌덤 던전
+    ALLOC_RANDOM_DUNGEON
 
 
 } from './mutation-types'
@@ -110,5 +112,9 @@ export default {
     },
     [FETCH_MONSTER] (state, monster) {
         state.monster = monster
+    },
+    // 렌덤 던전 
+    [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
+        state.dungeons = dungeons
     }
 }
