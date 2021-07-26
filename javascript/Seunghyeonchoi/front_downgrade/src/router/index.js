@@ -35,6 +35,9 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 // 던전
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
+// Quiz89
+import Quiz89 from '@/views/Quiz89.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -187,6 +190,13 @@ const routes = [
     name: 'DungeonListPage',
     components: {
       default: DungeonListPage
+    }
+  },
+  {
+    path: '/quiz89',
+    name: 'Quiz89',
+    components: {
+      default: Quiz89
     }
   }
 ]

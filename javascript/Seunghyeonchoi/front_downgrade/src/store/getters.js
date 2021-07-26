@@ -10,5 +10,8 @@ export default {
     },
     randomFromSpring (state) {
         return state.randomFromSpring
+    },
+    AreaFromSpring (state) {
+        return state.AreaFromSpring
     }
 }

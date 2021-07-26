@@ -24,7 +24,9 @@ import {
     FETCH_MONSTER_LIST,
     FETCH_MONSTER,
     // 랜덤 던전
-    ALLOC_RANDOM_DUNGEON
+    ALLOC_RANDOM_DUNGEON,
+    // QUIZ89
+    GIVE_ME_AREA
 
 } from './mutation-types'
 
@@ -115,5 +117,9 @@ export default {
     // 랜덤 던전
     [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
         state.dungeons = dungeons
+    },
+    // Quiz89
+    [GIVE_ME_AREA] (state, triangleArea) {
+        state.triangleArea = triangleArea
     }
 }

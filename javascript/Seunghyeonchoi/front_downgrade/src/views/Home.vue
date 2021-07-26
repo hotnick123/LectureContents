@@ -58,6 +58,11 @@
                     active-class="active">
                 Dungeon 테스트
             </router-link>
+             <router-link :to="{ name: 'Quiz89' }"
+                    class="nav-link"
+                    active-class="active">
+                Quiz89
+            </router-link>
         </div>
     </div>
 </template>
