@@ -20,7 +20,12 @@ import {
     FETCH_PRODUCT,
     //몬스터 등록
     FETCH_MONSTER_LIST,
-    FETCH_MONSTER
+    FETCH_MONSTER,
+     // 랜덤 던전
+     ALLOC_RANDOM_DUNGEON,
+     // 학생 성적표
+     FETCH_STUDENT_SCORE_LIST,
+     FETCH_STUDENT
 } from './mutation-types'
 
 import axios from 'axios'
@@ -116,6 +121,25 @@ export default {
         return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
                 .then((res) => {
                     commit(FETCH_MONSTER, res.data)
+                })
+    },
+    //  랜덤 던전
+    randomDungeonList ({ commit }) {
+        return axios.get('http://localhost:7777/vuedungeon/randomAlloc')
+                        .then((res) => {
+                            commit(ALLOC_RANDOM_DUNGEON, res.data)
+                        })
+    },
+    fetchStudentScoreList ({ commit }) {
+        return axios.get('http://localhost:7777/vuestudent/lists')
+                .then((res) => {
+                    commit(FETCH_STUDENT_SCORE_LIST, res.data)
+                })
+    },
+    fetchStudent ({ commit }, studentNo) {
+        return axios.get(`http://localhost:7777/vuestudent/${studentNo}`)
+                .then((res) => {
+                    commit(FETCH_STUDENT, res.data)
                 })
     }
 }

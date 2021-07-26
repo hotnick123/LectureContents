@@ -22,7 +22,12 @@ import {
     FETCH_PRODUCT,
     //몬스터 등록
     FETCH_MONSTER_LIST,
-    FETCH_MONSTER
+    FETCH_MONSTER,
+    // 랜덤 던전
+    ALLOC_RANDOM_DUNGEON,
+    // 학생 성적표
+    FETCH_STUDENT_SCORE_LIST,
+    FETCH_STUDENT
 
 } from './mutation-types'
 
@@ -107,5 +112,16 @@ export default {
     },
     [FETCH_MONSTER] (state, monster) {
         state.monster = monster
+    },
+     // 랜덤 던전
+     [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
+        state.dungeons = dungeons
+    },
+    // 학생 성적표
+    [FETCH_STUDENT_SCORE_LIST] (state, students) {
+        state.students = students;
+    },
+    [FETCH_STUDENT] (state, student) {
+        state.student = student
     }
 }

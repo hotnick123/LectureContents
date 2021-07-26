@@ -17,5 +17,9 @@ export default {
     product: null,
     //몬스터 등록
     monsters: [],
-    monster: null
+    monster: null,
+    // 랜덤 던전
+    dungeons: [],
+    // 학생 성적표
+    students: []
 }
