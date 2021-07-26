@@ -31,9 +31,7 @@ public class VueDungeonRepository {
         List<Dungeon> tmp;
 
         int max = jdbcTemplate.queryForObject(
-                "select count(1) from vuedungeon",
-                Integer.class
-        );
+                "select count(1) from vuedungeon", Integer.class);
 
         for(int i = 0; i < DUNGEON_NUM; i++) {
             randArr[i] = (int) (Math.random() * max) + 1;
@@ -66,7 +64,6 @@ public class VueDungeonRepository {
                         }
                     }, randArr[i]
             );
-
             results.add(tmp.get(0));
         }
 

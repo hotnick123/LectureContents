@@ -9,7 +9,7 @@
         </router-link>
        
         <button @click="onDelete">삭제</button>
-  
+
         <router-link :to="{ name: 'ProductListPage' }">
             게시물 보기
         </router-link>
