@@ -16,5 +16,9 @@ export default {
     board: null,
     // 상품페이지
     products: [],
-    product: null
+    product: null,
+    // 랜덤 던전
+    dungeons: [],
+    //학생
+    students: []
 }

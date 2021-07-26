@@ -24,8 +24,11 @@ import {
     FETCH_PRODUCT_LIST,
     FETCH_PRODUCT,
     
-    //랜덤 던전
-    
+    // 랜덤 던전
+    ALLOC_RANDOM_DUNGEON,
+
+    // 학생
+    AVERAGE_STUDENT
     
 } from './mutation-types'
 
@@ -127,10 +130,19 @@ export default {
         })
     },
 
-    randomDungeonList({ commit }) {
-        return axios.get(`http://localhost:7777/vuedungeon/${productNo}`)
-        .then((res) => {
-            commit(FETCH_PRODUCT, res.data)
-        })
+    // 랜덤 던전
+    randomDungeonList ({ commit },) {
+        return axios.get('http://localhost:7777/vuedungeon/randomAlloc')
+                .then((res) => {
+                    commit(ALLOC_RANDOM_DUNGEON, res.data)
+                })
     },
+
+    //학생
+    studentAverageTest ({ commit },) {
+        return axios.get('http://localhost:7777/vuestudent/studentAverage')
+                .then((res) => {
+                    commit(AVERAGE_STUDENT, res.data)
+                })
+    }
 }

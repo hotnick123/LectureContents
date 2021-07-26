@@ -54,7 +54,12 @@
             <router-link :to="{ name: 'DungeonListPage' }"
                     class="nav-link"
                     active-class="active">
-                DungeonListPage
+                Dungeon 테스트
+            </router-link>
+            <router-link :to="{ name: 'StudentListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Student 테스트
             </router-link>
         </div>
     </div>

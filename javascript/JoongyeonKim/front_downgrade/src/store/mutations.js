@@ -26,7 +26,11 @@ import {
     FETCH_PRODUCT_LIST,
     FETCH_PRODUCT,
 
+    // 랜덤 던전
+    ALLOC_RANDOM_DUNGEON ,
     
+    //학생
+    AVERAGE_STUDENT
 
 } from './mutation-types'
 
@@ -108,5 +112,12 @@ export default {
     },
     [FETCH_PRODUCT] (state, product) {
         state.product = product
+    },
+    // 랜덤 던전
+    [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
+        state.dungeons = dungeons
+    },
+    [AVERAGE_STUDENT] (state, students) {
+        state.students = students
     }
 }

@@ -34,6 +34,12 @@ import MonsterBookModifyPage from '@/views/MonsterBookModifyPage.vue'
 //EventBus
 import EventBusTestPage from '@/views/EventBusTestPage.vue'
 
+// 던전
+import DungeonListPage from '@/views/DungeonListPage.vue'
+
+//학생
+import StudentListPage from '@/views/StudentListPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -186,6 +192,20 @@ const routes = [
     name: 'EventBusTestPage',
     components: {
       default: EventBusTestPage
+    }
+  },
+  {
+    path: '/dungeon',
+    name: 'DungeonListPage',
+    components: {
+      default: DungeonListPage
+    }
+  },
+  {
+    path: '/student',
+    name: 'StudentListPage',
+    components: {
+      default: StudentListPage
     }
   }
 ]
