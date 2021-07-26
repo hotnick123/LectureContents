@@ -27,7 +27,7 @@ export default {
                 })
             })
             .catch(res => {
-                alert(res.response.data.message)
+                alert('upload failed ' + res.response.data.message)
             })
         }
     }

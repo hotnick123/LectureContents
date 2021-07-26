@@ -1,7 +1,10 @@
 <template>
     <div>
+        <!-- 여기에 prevent를 써주는 이유는 상위 컴포넌트로 전송되는걸 보장하기 위함이다.<template>
+                그래서 보통 상위 또는 하위 컴포넌트와 연결돼 form을 전송할 때는 prevent를 써줘야한다.
+                prevent를 쓰지 않으면 ?? -->
         <h3>회원 정보 수정 양식</h3>
-        <form v-on:submit.prevent="onSubmit">
+        <form v-on:submit.prevent="onSubmit">             
             <table>
                 <tr>
                     <td>ID</td>
