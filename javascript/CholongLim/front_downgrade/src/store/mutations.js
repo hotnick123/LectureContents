@@ -21,7 +21,11 @@ import {
   FETCH_PRODUCT,
   // 몬스터북
   FETCH_MONSTER_LIST,
-  FETCH_MONSTER
+  FETCH_MONSTER,
+  // Dungeon
+  ALLOC_RANDOM_DUNGEON,
+  // 성적 관리
+  GRADE_AVERAGE_STUDENT
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -106,5 +110,11 @@ export default {
   },
   [FETCH_MONSTER] (state, monster) {
     state.monster = monster
+  },
+  [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
+    state.dungeons = dungeons
+  },
+  [GRADE_AVERAGE_STUDENT] (state, students) {
+    state.students = students
   }
 }

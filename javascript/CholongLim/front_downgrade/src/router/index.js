@@ -33,6 +33,12 @@ import Concave from '@/views/Concave.vue'
 // EventBus
 import EventBusTestPage from '@/views/EventBusTestPage.vue'
 
+// Dungeon
+import DungeonListPage from '@/views/DungeonListPage.vue'
+
+// 학생 성적관리
+import StudentListPage from '@/views/StudentListPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -180,6 +186,20 @@ const routes = [
       default: EventBusTestPage
     }
   },
+  {
+    path: '/dungeonTest',
+    name: 'DungeonListPage',
+    components: {
+      default: DungeonListPage
+    }
+  },
+  {
+    path: '/studentGrade',
+    name: 'StudentListPage',
+    components: {
+      default: StudentListPage
+    }
+  }
 ]
 
 const router = new VueRouter({

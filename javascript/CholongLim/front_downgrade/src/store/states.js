@@ -18,5 +18,9 @@ export default {
   product: null,
   // 몬스터북
   monsters: [],
-  monster: null
+  monster: null,
+  // 던전
+  dungeons: [],
+  // 성적관리
+  students: []
 }

@@ -1,6 +1,5 @@
 package com.example.cholongtest.repository;
 
-import com.example.cholongtest.entity.Board;
 import com.example.cholongtest.entity.Monster;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;

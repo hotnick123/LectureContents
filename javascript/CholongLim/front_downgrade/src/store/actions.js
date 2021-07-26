@@ -20,7 +20,11 @@ import {
   FETCH_PRODUCT,
   // 몬스터북
   FETCH_MONSTER_LIST,
-  FETCH_MONSTER
+  FETCH_MONSTER,
+  // Dungeon
+  ALLOC_RANDOM_DUNGEON,
+  // 성적 관리
+  GRADE_AVERAGE_STUDENT
 } from './mutation-types'
 
 import axios from 'axios'
@@ -117,5 +121,17 @@ export default {
             .then((res) => {
                 commit(FETCH_MONSTER, res.data)
             })
+  },
+  randomDungeonList ({ commit }) {
+    return axios.get('http://localhost:7777/vuedungeon/randomAlloc')
+    .then((res) => {
+        commit(ALLOC_RANDOM_DUNGEON, res.data)
+    })
+  },
+  averageStudentList ({ commit }) {
+    return axios.get('http://localhost:7777/vuestudent/averageGrade')
+    .then((res) => {
+        commit(GRADE_AVERAGE_STUDENT, res.data)
+    })
   }
 }

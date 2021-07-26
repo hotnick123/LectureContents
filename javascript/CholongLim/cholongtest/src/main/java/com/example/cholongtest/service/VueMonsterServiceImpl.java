@@ -25,8 +25,8 @@ public class VueMonsterServiceImpl implements VueMonsterService {
     }
 
     @Override
-    public Monster read(Integer monsterdNo) throws Exception {
-        return repository.read(monsterdNo);
+    public Monster read(Integer monsterNo) throws Exception {
+        return repository.read(monsterNo);
     }
 
     @Override
