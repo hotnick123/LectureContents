@@ -22,7 +22,10 @@ import {
     FETCH_MONSTER_LIST,
     FETCH_MONSTER,
     // 랜덤 던전
-    ALLOC_RANDOM_DUNGEON
+    ALLOC_RANDOM_DUNGEON,
+
+    // 학생
+    ALLOC_STUDENT,
 } from './mutation-types'
 
 import axios from 'axios'
@@ -125,6 +128,13 @@ export default {
         return axios.get('http://localhost:7777/vuedungeon/randomAlloc')
                 .then((res) => {
                     commit(ALLOC_RANDOM_DUNGEON, res.data)
+                })
+    },
+     // 학생
+     randomStudentList ({ commit }) {
+        return axios.get('http://localhost:7777/vuestudent/student')
+                .then((res) => {
+                    commit(    ALLOC_STUDENT, res.data)
                 })
     }
 }
