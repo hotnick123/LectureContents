@@ -27,6 +27,8 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 import DungeonPage from '@/views/DungeonPage.vue'
 
 import StudentScoresPage from '@/views/student/StudentScoresPage.vue'
+
+import TriangleAreaCalc from '@/views/prob89/TriangleAreaCalc.vue'
 //@는 src, ..는 상위
 
 Vue.use(VueRouter)
@@ -193,6 +195,16 @@ const routes = [
     name: 'StudentScoresPage',
     components: {
       default: StudentScoresPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/triangleAreaCalc',
+    name: 'TriangleAreaCalc',
+    components: {
+      default: TriangleAreaCalc
     },
     props: {
       default: true
