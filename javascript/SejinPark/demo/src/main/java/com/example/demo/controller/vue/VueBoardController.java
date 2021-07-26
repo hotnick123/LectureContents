@@ -31,8 +31,10 @@ public class VueBoardController {
     @GetMapping("/{boardNo}")
     public ResponseEntity<Board> read(@PathVariable("boardNo") Integer boardNo) throws Exception {
         Board board = service.read(boardNo);
+
         return new ResponseEntity<Board>(board, HttpStatus.OK);
     }
+
     @PutMapping("/{boardNo}")
     public ResponseEntity<Board> modify(@PathVariable("boardNo") Integer boardNo,
                                         @Validated @RequestBody Board board) throws Exception {
@@ -40,12 +42,5 @@ public class VueBoardController {
         service.modify(board);
 
         return new ResponseEntity<>(board, HttpStatus.OK);
-    }
-
-    @DeleteMapping("/{boardNo}")
-    public ResponseEntity<Void> remove(@PathVariable("boardNo") Integer boardNo) throws Exception {
-        service.remove(boardNo);
-
-        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }

@@ -70,7 +70,7 @@ public class VueBoardRepository {
         return results.isEmpty() ? null : results.get(0);
     }
     public void delete(Integer boardNo) throws Exception {
-        String query = "delete from vueboard where board_no = ?";
+        String query = "delete from board where board_no = ?";
         jdbcTemplate.update(query, boardNo);
     }
 
