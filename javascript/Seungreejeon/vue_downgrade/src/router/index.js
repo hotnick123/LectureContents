@@ -35,6 +35,13 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 // 던전
 import DungeonListPage from '../views/DungeonListpage.vue'
 
+// 삼각형
+import OnlyVuePage from '../views/OnlyVuePage.vue'
+import SpringInterconnectionPage from '../views/SpringInterconnectionPage.vue'
+
+//성적관리
+import ScoreManagerPage from '../views/ScoreManagerPage.vue';
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -188,7 +195,28 @@ const routes = [
     components: {
       default: DungeonListPage
     }
-  }
+  },
+  {
+    path: '/only-vue-page',
+    name: 'OnlyVuePage',
+    components: {
+      default: OnlyVuePage
+    }
+  },
+  {
+    path: '/Spring-inter-connection-page',
+    name: 'SpringInterconnectionPage',
+    components: {
+      default: SpringInterconnectionPage
+    }
+  },
+  {
+    path: '/score-manager-page',
+    name: 'ScoreManagerPage',
+    components: {
+      default: ScoreManagerPage
+    }
+  },
 ]
 
 const router = new VueRouter({
