@@ -36,6 +36,9 @@ import EventBusTestPage from "../views/EventBusTestPage";
 import DungeonListPage from "../views/DungeonListPage";
 // 학생
 import StudentListPage from "../views/StudentListPage";
+
+import OnlyVuePage from "../views/OnlyVuePage";
+import SpringInterconnectionPage from "../views/SpringInterconnectionPage";
 const routes = [
   {
     path: '/',
@@ -194,6 +197,20 @@ const routes = [
     name: 'StudentListPage',
     components: {
       default: StudentListPage
+    }
+  },
+  {
+    path: '/OnlyVuePage',
+    name: 'OnlyVuePage',
+    components: {
+      default: OnlyVuePage
+    }
+  },
+  {
+    path: '/springintercon',
+    name: 'SpringInterconnectionPage',
+    components: {
+      default: SpringInterconnectionPage
     }
   },
 ]

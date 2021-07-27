@@ -4,7 +4,7 @@
     <table border="1">
       <tr>
         <th align="center" width="100">학생번호</th>
-        <th align="center" width="100">이름</th>
+        <th align="center" width="100" >이름</th>
         <th align="center" width="100">학년</th>
         <th align="center" width="100">성적</th>
         <th align="center" width="100">등록일자</th>
@@ -16,7 +16,7 @@
       </tr>
       <tr v-else v-for="student in students" :key="student.studentNo">
         <td align="center">{{ student.studentNo }}</td>
-        <td align="center" v-on:click="checkStudentGrades(student.grades, $event)">
+        <td align="center" v-on:click="checkStudentGrades(student.grades, $event)" class="name">
           {{ student.name }}</td>
         <td align="center">{{ student.studentGrade }}</td>
         <td align="center">{{ student.grades }}</td>
@@ -45,6 +45,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+.name{
+  cursor: pointer;
+}
 </style>
