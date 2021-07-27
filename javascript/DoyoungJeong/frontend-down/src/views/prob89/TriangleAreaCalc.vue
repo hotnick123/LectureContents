@@ -65,8 +65,10 @@ export default {
     },
     methods: {
         onSubmit() {
-            if(this.width < 0 || this.width.isNan == false || this.height < 0 || this.height.isNan == false) {
+            if(this.width < 0 || isNaN(this.width) || this.height < 0 || isNaN(this.height)) {
                 alert("Please Enter legitimate Number!")
+                // isNaN 결과 : 문자 포함 시 true / 숫자로만 이루어져 있을 경우 false
+                // isNaN은 위처럼 쓰는 거였다
                 //??안되네
             }
             
