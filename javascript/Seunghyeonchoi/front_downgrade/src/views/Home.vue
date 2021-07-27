@@ -58,10 +58,26 @@
                     active-class="active">
                 Dungeon 테스트
             </router-link>
+            <br><br>
              <router-link :to="{ name: 'Quiz89' }"
                     class="nav-link"
                     active-class="active">
                 Quiz89
+            </router-link>
+             <router-link :to="{ name: 'OnlyVuePage' }"
+                    class="nav-link"
+                    active-class="active">
+                    삼각형 넓이 구하기!
+            </router-link>
+             <router-link :to="{ name: 'SpringinterconnectionPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Spring 연동 삼각형 넓이 구하기!
+            </router-link>
+            <router-link :to="{ name: 'ScoreManagerPage' }"
+                    class="nav-link"
+                    active-class="active">
+                성적 관리 페이지
             </router-link>
         </div>
     </div>

@@ -26,7 +26,10 @@ import {
     // 랜덤 던전
     ALLOC_RANDOM_DUNGEON,
     // QUIZ89
-    GIVE_ME_AREA
+    GIVE_ME_AREA,
+    // 성적 관리
+    SCORE_MANAGEMENT,
+    CALC_MEAN
 
 } from './mutation-types'
 
@@ -121,5 +124,20 @@ export default {
     // Quiz89
     [GIVE_ME_AREA] (state, triangleArea) {
         state.triangleArea = triangleArea
+    },
+    // 성적 관리
+    [SCORE_MANAGEMENT] (state, students) {
+        state.students = students
+    },
+    [CALC_MEAN] (state) {
+        state.mean = 0
+        var tmp = 0
+        var len = state.students.length
+
+        for (var i = 0; i < len; i++) {
+            tmp += state.students[i].score
+        }
+
+        state.mean = tmp / len
     }
 }

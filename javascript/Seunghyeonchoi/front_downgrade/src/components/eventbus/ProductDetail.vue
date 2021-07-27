@@ -28,7 +28,7 @@ export default {
         // emit : 이벤트 발생!
         //once : 이벤트 발생시킨놈 찾아!(감지)
         // 누구야? products의 
-        EventBus.$once('sendcode', (payload) => {
+        EventBus.$on('sendcode', (payload) => {
             this.products = payload
         })
     }

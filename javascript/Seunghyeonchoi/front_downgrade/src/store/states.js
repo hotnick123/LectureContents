@@ -22,6 +22,9 @@ export default {
     dungeons: [],
     // QUIZ89
     triangleArea: null,
-    triangleAreas: []
+    triangleAreas: [],
+    // 성적 관리
+    students: [],
+    mean: 0
 
 }

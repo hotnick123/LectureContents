@@ -37,6 +37,12 @@ import DungeonListPage from '@/views/DungeonListPage.vue'
 
 // Quiz89
 import Quiz89 from '@/views/Quiz89.vue'
+// OnlyVuePage
+import OnlyVuePage from '@/views/OnlyVuePage.vue'
+// + Spring
+import SpringinterconnectionPage from '@/views/SpringinterconnectionPage.vue'
+// 성적 관리
+import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
 
 Vue.use(VueRouter)
 
@@ -197,6 +203,27 @@ const routes = [
     name: 'Quiz89',
     components: {
       default: Quiz89
+    }
+  },
+  {
+    path: '/onlyVuePage',
+    name: 'OnlyVuePage',
+    components: {
+      default: OnlyVuePage
+    }
+  },
+  {
+    path: '/springintercon',
+    name: 'SpringinterconnectionPage',
+    components: {
+      default: SpringinterconnectionPage
+    }
+  },
+  {
+    path: '/scoreManager',
+    name: 'ScoreManagerPage',
+    components: {
+      default: ScoreManagerPage
     }
   }
 ]
