@@ -29,6 +29,11 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 // 던전
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
+// Only 뷰 삼각형 넓이 구하기
+import OnlyVuePage from '@/views/OnlyVuePage.vue'
+
+// 뷰 삼각형 넓이 구하기 + Spring
+import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
 
 Vue.use(VueRouter)
 
@@ -149,7 +154,21 @@ const routes = [
     components: {
       default: DungeonListPage
     }
-  }
+    },
+    {
+      path: '/onlyvue',
+      name: 'OnlyVuePage',
+      components: {
+        default: OnlyVuePage
+    }    
+  },
+    {
+      path: '/springinterconnectionpage',
+      name: 'SpringInterconnectionPage',
+      components: {
+        default: SpringInterconnectionPage
+      }  
+    } 
 ]
 
 const router = new VueRouter({
@@ -157,4 +176,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
 export default router
