@@ -16,5 +16,7 @@ export default {
     monsters: [],
     monster: null,
     // 랜덤 던전
-    dungeons: []   
+    dungeons: [],   
+    // 성적 관리
+    students: []
 } 

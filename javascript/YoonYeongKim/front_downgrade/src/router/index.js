@@ -35,6 +35,9 @@ import OnlyVuePage from '@/views/OnlyVuePage.vue'
 // 뷰 삼각형 넓이 구하기 + Spring
 import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
 
+// 성적 관리
+import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -162,13 +165,20 @@ const routes = [
         default: OnlyVuePage
     }    
   },
-    {
+      {
       path: '/springinterconnectionpage',
       name: 'SpringInterconnectionPage',
       components: {
         default: SpringInterconnectionPage
       }  
-    } 
+    },
+    {
+    path: '/scoreManager',
+    name: 'ScoreManagerPage',
+    components: {
+      default: ScoreManagerPage
+    }  
+  }  
 ]
 
 const router = new VueRouter({

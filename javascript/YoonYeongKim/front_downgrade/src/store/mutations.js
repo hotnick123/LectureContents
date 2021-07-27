@@ -21,7 +21,10 @@ import {
     FETCH_MONSTER_LIST,
     FETCH_MONSTER,
     // 랜덤 던전
-    ALLOC_RANDOM_DUNGEON
+    ALLOC_RANDOM_DUNGEON,
+    // 성적 관리
+    SCORE_MANAGEMENT,
+    CALC_MEAN
 
 } from './mutation-types'
 
@@ -102,5 +105,20 @@ export default {
     },
     [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
         state.dungeons = dungeons    
-    }   
+    },
+    // 성적 관리
+    [SCORE_MANAGEMENT] (state, students) {
+        state.students = students
+    },
+    [CALC_MEAN] (state) {
+        state.mean = 0
+        var tmp = 0
+        var len = state.students.length
+
+        for (var i = 0; i < len; i++) {
+            tmp += state.students[i].score
+        }
+
+        state.mean = tmp / len
+    }    
 }
