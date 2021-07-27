@@ -61,6 +61,11 @@
                     active-class="active">
                 학생 성적관리
             </router-link>
+            <router-link :to="{ name: 'TrianglePage' }"
+                    class="nav-link"
+                    active-class="active">
+                삼각형 넓이 계산
+            </router-link>
         </div>
     </div>
 </template>

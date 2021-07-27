@@ -39,6 +39,9 @@ import DungeonListPage from '@/views/DungeonListPage.vue'
 // 학생 성적관리
 import StudentListPage from '@/views/StudentListPage.vue'
 
+// 삼각형 넓이 계산
+import TrianglePage from '@/views/TrianglePage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -198,6 +201,13 @@ const routes = [
     name: 'StudentListPage',
     components: {
       default: StudentListPage
+    }
+  },
+  {
+    path: '/triangle',
+    name: 'TrianglePage',
+    components: {
+      default: TrianglePage
     }
   }
 ]

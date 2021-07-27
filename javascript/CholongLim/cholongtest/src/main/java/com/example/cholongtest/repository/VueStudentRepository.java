@@ -24,6 +24,7 @@ public class VueStudentRepository {
                 Integer.class
         );
 
+
         int sum = 0;
 
         List<Student> results = jdbcTemplate.query(
@@ -43,6 +44,7 @@ public class VueStudentRepository {
 
                         return student;
                     }
+
                 }
         );
 
