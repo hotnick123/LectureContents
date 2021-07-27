@@ -31,6 +31,9 @@ import {
   FETCH_PRODUCT_LIST,
   FETCH_PRODUCT,
 
+// Student
+  FETCH_STUDENT_SCORE
+
 } from './mutation-types'
 
 export default {
@@ -125,4 +128,8 @@ export default {
     state.product = product
   },
 
+// Quiz
+  [FETCH_STUDENT_SCORE] (state, students) {
+    state.students = students
+  }
 }

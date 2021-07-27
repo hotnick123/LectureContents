@@ -12,6 +12,10 @@
       class="nav-link" 
       active-class="active">Test
     </router-link>
+    <router-link :to="{ name: 'Quiz' }" 
+      class="nav-link" 
+      active-class="active">Quiz
+    </router-link>
     <router-link :to="{ name: 'Todo' }" 
       class="nav-link" 
       active-class="active">Todo

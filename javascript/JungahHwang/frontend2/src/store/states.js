@@ -25,4 +25,7 @@ export default {
   products: [],
   product: null,
 
+// Quiz
+  students: []
+
 }

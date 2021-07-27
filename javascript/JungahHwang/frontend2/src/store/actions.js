@@ -27,7 +27,10 @@ import {
 
 // Product
   FETCH_PRODUCT_LIST,
-  FETCH_PRODUCT
+  FETCH_PRODUCT,
+
+// Quiz
+  FETCH_STUDENT_SCORE
 } from './mutation-types'
 
 import axios from 'axios'
@@ -127,6 +130,13 @@ export default {
   fetchProduct ({ commit }, productNo) {
     return axios.get(`http://localhost:7777/vueproduct/${productNo}`).then((res) => {
       commit(FETCH_PRODUCT, res.data)
+    })
+  },
+
+// Quiz
+  fetchStudentScore ({ commit }) {
+    return axios.get('http://localhost:7777/vuestudent/score').then(res => {
+      commit(FETCH_STUDENT_SCORE, res.data)
     })
   }
 }

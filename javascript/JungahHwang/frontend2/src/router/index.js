@@ -5,6 +5,11 @@ import Test from '../views/Test.vue'
 import Todo from '../views/Todo.vue'
 import Monster from '@/views/monster/Monster.vue'
 
+// Quiz
+import Quiz from '@/views/quiz/Quiz'
+import StudentScorePage from '@/views/quiz/StudentScorePage'
+import TriangleVuePage from '@/views/quiz/TriangleVuePage'
+
 // Monster
 import MonsterSignupPage from '@/views/monster/MonsterSignupPage'
 import MonsterCreatePage from '@/views/monster/MonsterCreatePage'
@@ -12,7 +17,6 @@ import MonsterGuidePage from '@/views/monster/MonsterGuidePage'
 import MonsterReadPage from '@/views/monster/MonsterReadPage'
 import MonsterModifyPage from '@/views/monster/MonsterModifyPage'
 import MonsterDungeonPage from '@/views/monster/MonsterDungeonPage'
-
 
 // Board
 import BoardListPage from '@/views/board/BoardListPage.vue'
@@ -49,6 +53,23 @@ const routes = [
     component: Test
   },
 
+// Quiz
+  {
+    path: '/quiz',
+    name: 'Quiz',
+    component: Quiz
+  },
+  {
+    path: '/quiz/stuent',
+    name: 'StudentScorePage',
+    component: StudentScorePage
+  },
+  {
+    path: '/quiz/triangle',
+    name: 'TriangleVuePage',
+    component: TriangleVuePage
+  },
+    
 // Todo
   {
     path: '/todo',
@@ -200,7 +221,7 @@ const routes = [
     components: {
       default: EventBusTestPage
     }
-  },
+  }
   
 ]
 

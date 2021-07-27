@@ -28,3 +28,6 @@ export const FETCH_BOARD = 'FETCH_BOARD'
 // Product
 export const FETCH_PRODUCT_LIST = 'FETCH_PRODUCT_LIST'
 export const FETCH_PRODUCT = 'FETCH_PRODUCT'
+
+// Quiz
+export const FETCH_STUDENT_SCORE = 'FETCH_STUDENT_SCORE'
