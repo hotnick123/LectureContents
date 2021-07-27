@@ -61,6 +61,11 @@
                     active-class="active">
                 Student 테스트
             </router-link>
+            <router-link :to="{ name: 'TriangleWidthPage' }"
+                    class="nav-link"
+                    active-class="active">
+                TriangleWidth 테스트
+            </router-link>
         </div>
     </div>
 </template>

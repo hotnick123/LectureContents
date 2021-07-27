@@ -40,6 +40,9 @@ import DungeonListPage from '@/views/DungeonListPage.vue'
 //학생
 import StudentListPage from '@/views/StudentListPage.vue'
 
+//삼각형
+import TriangleWidthPage from '@/views/TriangleWidthPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -206,6 +209,13 @@ const routes = [
     name: 'StudentListPage',
     components: {
       default: StudentListPage
+    }
+  },
+  {
+    path: '/triangle',
+    name: 'TriangleWidthPage',
+    components: {
+      default: TriangleWidthPage
     }
   }
 ]

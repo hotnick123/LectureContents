@@ -8,11 +8,11 @@
             </tr>
             <tr>
                 <td>체력</td>
-                <td><input type="text" v-model="hp"></td>
+                <td><input type="number" v-model="hp"></td>
             </tr>
             <tr>
                 <td>공격력</td>
-                <td><input type="text" v-model="atk"></td>
+                <td><input type="number" v-model="atk"></td>
             </tr>
         </table>
         <div>

@@ -19,12 +19,6 @@ export default {
             axios.post('http://localhost:7777/vuemember/register', {id, pw })
                     .then(res => {
                         alert('등록 성공! - ' + res)
-                        /*
-                        this.$router.push({
-                            name: 'MemberReadPage',
-                            params: { memberNo: res.data.memberNo.toString() }
-                        })
-                        */
                     })
                     .catch(res => {
                         alert(res.response.data.message)
