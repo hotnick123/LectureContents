@@ -9,6 +9,7 @@ import Monster from '@/views/monster/Monster.vue'
 import Quiz from '@/views/quiz/Quiz'
 import StudentScorePage from '@/views/quiz/StudentScorePage'
 import TriangleVuePage from '@/views/quiz/TriangleVuePage'
+import TriangleSpringPage from '@/views/quiz/TriangleSpringPage'
 
 // Monster
 import MonsterSignupPage from '@/views/monster/MonsterSignupPage'
@@ -65,9 +66,14 @@ const routes = [
     component: StudentScorePage
   },
   {
-    path: '/quiz/triangle',
+    path: '/quiz/triangleVue',
     name: 'TriangleVuePage',
     component: TriangleVuePage
+  },
+  {
+    path: '/quiz/triangleSpring',
+    name: 'TriangleSpringPage',
+    component: TriangleSpringPage
   },
     
 // Todo

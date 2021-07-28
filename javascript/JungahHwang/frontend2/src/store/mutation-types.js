@@ -31,3 +31,4 @@ export const FETCH_PRODUCT = 'FETCH_PRODUCT'
 
 // Quiz
 export const FETCH_STUDENT_SCORE = 'FETCH_STUDENT_SCORE'
+export const CALC_MEAN = 'CALC_MEAN'

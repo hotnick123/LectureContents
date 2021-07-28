@@ -31,8 +31,9 @@ import {
   FETCH_PRODUCT_LIST,
   FETCH_PRODUCT,
 
-// Student
-  FETCH_STUDENT_SCORE
+// Quiz
+  FETCH_STUDENT_SCORE,
+  CALC_MEAN
 
 } from './mutation-types'
 
@@ -131,5 +132,16 @@ export default {
 // Quiz
   [FETCH_STUDENT_SCORE] (state, students) {
     state.students = students
+  },
+  [CALC_MEAN] (state) {
+    state.mean = 0
+    var tmp = 0
+    var len = state.students.length
+
+    for (var i = 0; i < len; i++) {
+        tmp += state.students[i].score
+    }
+
+    state.mean = tmp / len
   }
 }

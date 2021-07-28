@@ -2,9 +2,9 @@
   <div>
     <table border="1">
       <tr>
-        <td>번호</td>
-        <td>이름</td>
-        <td>점수</td>
+        <th width="50">번호</th>
+        <th width="100">이름</th>
+        <th width="100">점수</th>
       </tr>
        <tr v-if="!students || (Array.isArray(students) && students.length === 0)">
         <td colspan="3">
@@ -12,12 +12,13 @@
         </td>
       </tr>
       <tr v-else v-for="(student, idx) in students" :key="idx"
-          v-on:click="sendScore(student.score)">
+          v-on:click="determinantMean(student.score, student.name)">
         <td align="center">{{ student.studentNo }}</td>
         <td align="center">{{ student.name }}</td>
         <td align="center">{{ student.score }}</td>
       </tr>
     </table>
+    <h4>평균 점수: {{ calcMean }}점</h4>
   </div>
 </template>
 
@@ -32,10 +33,29 @@ export default {
       type: Array
     }
   },
-   methods: {
-    sendScore(inscore) {
-      const payload = inscore
-      EventBus.$emit('sendscore', payload)
+  computed: {
+    calcMean () {
+      var tmp = 0
+      var len = this.students.length
+      
+      for (var i = 0; i < len; i++) {
+        tmp += this.students[i].score
+      }
+      return tmp / len
+    }
+  },
+  methods: {
+    determinantMean(scores, name) {
+      var tmp = 0
+      var len = this.students.length
+      
+      for (var i = 0; i < len; i++) {
+        tmp += this.students[i].score
+      }
+      const mean = tmp / len
+
+      const payload = [ mean, scores, name ]
+      EventBus.$emit('calcMean', payload)
     }
   },
 }
