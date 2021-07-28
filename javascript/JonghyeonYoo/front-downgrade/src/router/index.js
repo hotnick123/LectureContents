@@ -36,6 +36,15 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 // 던전
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
+// 성적 관리
+import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
+
+// OnlyVuePage (Quiz. 89)
+import OnlyVuePage from '@/views/OnlyVuePage.vue'
+
+// + Spring
+import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -192,9 +201,31 @@ const routes = [
     components: {
       default: DungeonListPage
     }
+  },
+  {
+    path: '/onlyvuepage',
+    name: 'OnlyVuePage',
+    components: {
+      default: OnlyVuePage
+    }
+  },
+  {
+    path: '/springintercon',
+    name: 'SpringInterconnectionPage',
+    components: {
+      default: SpringInterconnectionPage
+    }
+  },
+  {
+    path: '/scoreManager',
+    name: 'ScoreManagerPage',
+    components: {
+      default: ScoreManagerPage
+    }
   }
 ]
 
+ScoreManagerPage
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
