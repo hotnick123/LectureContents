@@ -1,8 +1,8 @@
 <template>
     <div align="center">
         <h2>삼각형 넓이 구하기</h2>
-            밑면:<input v-model="bottomline" type="number">
-            높이:<input v-model="height" type="number">
+            밑면:<input type="number" v-model="bottomline">
+            높이:<input type="number" v-model="height"><br>
             넓이:{{answer}}
     </div>
             
@@ -12,15 +12,15 @@
 
 export default {
     name: 'TriangleWidthPage',
-    data: function() {
+    data() {
             return {
                 bottomline: 0,
                 height: 0,   
             }
         },
         computed: {
-            answer: function() {
-                return this.bottomline * this.height / 2;
+            answer() {
+                return this.bottomline * this.height / 2.0;
             }
         }
     }

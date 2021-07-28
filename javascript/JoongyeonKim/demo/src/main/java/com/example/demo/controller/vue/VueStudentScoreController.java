@@ -1,7 +1,7 @@
 package com.example.demo.controller.vue;
 
 import com.example.demo.entity.Student;
-import com.example.demo.service.VueStudentService;
+import com.example.demo.service.VueStudentScoreService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,17 +15,17 @@ import java.util.List;
 
 @Slf4j
 @Controller
-@RequestMapping("/vuestudent")
+@RequestMapping("/vuescore")
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
-public class VueStudentController {
+public class VueStudentScoreController {
 
     @Autowired
-    private VueStudentService service;
+    private VueStudentScoreService service;
 
-    @GetMapping("/studentAverage")
-    public ResponseEntity<List<Student>> getStudentAverage () throws Exception {
-        log.info("getLists(): " + service.averageList());
+    @GetMapping("/scoreManagement")
+    public ResponseEntity<List<Student>> getStudentScore() throws Exception {
+        log.info("getStudentScore()");
 
-        return new ResponseEntity<>(service.averageList(), HttpStatus.OK);
+        return new ResponseEntity<>(service.getStudentScore(), HttpStatus.OK);
     }
 }

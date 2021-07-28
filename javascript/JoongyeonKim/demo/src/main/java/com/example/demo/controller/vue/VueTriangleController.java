@@ -1,35 +1,28 @@
 package com.example.demo.controller.vue;
 
+
 import com.example.demo.entity.Product;
-import com.example.demo.entity.Student;
 import com.example.demo.entity.Triangle;
-import com.example.demo.service.VueStudentService;
-import com.example.demo.service.VueTriangleService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.validation.annotation.Validated;
+
+
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Slf4j
-@Controller
-@RequestMapping("/vuetriangle")
+@RestController
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
 public class VueTriangleController {
 
-    @Autowired
-    private VueTriangleService service;
+    // 근래 엄중성이 부여되어 RestController를 사용하더라도
+    // JSON 방식의 데이터를 처리하려면 PostMapping에
+    // 파라미터(입력)에 RequestBody를 붙여서 JSON임을 명시해주는 것이 좋다.
+    @PostMapping("/calcTriangle")
+    public double getCalcTriangle(@RequestBody Triangle triangle) {
+        log.info("getCalcTriangle(): " + triangle);
 
-    @PostMapping("/register")
-    public ResponseEntity<Triangle> register(@Validated @RequestBody Triangle triangle) {
-        log.info("post register request from vue");
+        Integer height = triangle.getHeight();
+        Integer bottomline = triangle.getBottomline();
 
-        service.register(triangle);
-
-        return new ResponseEntity<>(triangle, HttpStatus.OK);
+        return height * bottomline / 2.0;
     }
 }

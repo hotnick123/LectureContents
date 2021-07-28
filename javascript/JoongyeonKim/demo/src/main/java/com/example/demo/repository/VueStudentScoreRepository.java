@@ -1,6 +1,5 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.Product;
 import com.example.demo.entity.Student;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -15,16 +14,16 @@ import java.util.List;
 
 @Slf4j
 @Repository
-public class VueStudentRepository {
+public class VueStudentScoreRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-
-    public List<Student> averageList() throws Exception {
+    public List<Student> getStudentScore() throws Exception {
+        log.info("Repository - getStudentScoreList()");
 
         List<Student> results = jdbcTemplate.query(
-                "select student_no, name, school_year, grade, reg_date from vuestudent " +
+                "select student_no, name, score, reg_date from vuestudent " +
                         "where student_no > 0 order by student_no desc",
 
                 new RowMapper<Student>() {
@@ -35,15 +34,14 @@ public class VueStudentRepository {
 
                         student.setStudentNo(rs.getInt("student_no"));
                         student.setName(rs.getString("name"));
-                        student.setSchoolYear(rs.getInt("school_year"));
-                        student.setGrade(rs.getInt("grade"));
-
+                        student.setScore(rs.getInt("score"));
                         student.setRegDate(rs.getDate("reg_date"));
 
                         return student;
                     }
                 }
         );
+
         return results;
     }
 }

@@ -12,7 +12,6 @@ import java.util.Date;
 public class Student {
     private Integer studentNo;
     private String name;
-    private Integer schoolYear;
-    private Integer grade;
+    private Integer score;
     private Date regDate;
 }

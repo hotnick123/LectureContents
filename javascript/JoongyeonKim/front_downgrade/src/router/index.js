@@ -38,10 +38,11 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
 //학생
-import StudentListPage from '@/views/StudentListPage.vue'
+import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
 
 //삼각형
 import TriangleWidthPage from '@/views/TriangleWidthPage.vue'
+import TriangleAreaSpringPage from '@/views/TriangleAreaSpringPage.vue'
 
 Vue.use(VueRouter)
 
@@ -205,10 +206,10 @@ const routes = [
     }
   },
   {
-    path: '/student',
-    name: 'StudentListPage',
+    path: '/score',
+    name: 'ScoreManagerPage',
     components: {
-      default: StudentListPage
+      default: ScoreManagerPage
     }
   },
   {
@@ -216,6 +217,13 @@ const routes = [
     name: 'TriangleWidthPage',
     components: {
       default: TriangleWidthPage
+    }
+  },
+  {
+    path: '/triangleSpring',
+    name: 'TriangleAreaSpringPage',
+    components: {
+      default: TriangleAreaSpringPage
     }
   }
 ]

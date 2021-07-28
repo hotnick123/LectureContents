@@ -30,7 +30,8 @@ import {
     ALLOC_RANDOM_DUNGEON ,
     
     //학생
-    AVERAGE_STUDENT
+    SCORE_MANAGEMENT,
+    CALC_MEAN
 
 } from './mutation-types'
 
@@ -117,7 +118,19 @@ export default {
     [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
         state.dungeons = dungeons
     },
-    [AVERAGE_STUDENT] (state, students) {
+    // 성적 관리
+    [SCORE_MANAGEMENT] (state, students) {
         state.students = students
+    },
+    [CALC_MEAN] (state) {
+        state.mean = 0
+        var tmp = 0
+        var len = state.students.length
+
+        for (var i = 0; i < len; i++) {
+            tmp += state.students[i].score
+        }
+
+        state.mean = tmp / len
     }
 }

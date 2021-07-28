@@ -28,7 +28,7 @@ import {
     ALLOC_RANDOM_DUNGEON,
 
     // 학생
-    AVERAGE_STUDENT
+    SCORE_MANAGEMENT
     
 } from './mutation-types'
 
@@ -137,12 +137,11 @@ export default {
                     commit(ALLOC_RANDOM_DUNGEON, res.data)
                 })
     },
-
-    //학생
-    studentAverageTest ({ commit },) {
-        return axios.get('http://localhost:7777/vuestudent/studentAverage')
+    // 성적 관리
+    fetchStudentScoreList ({ commit }) {
+        return axios.get('http://localhost:7777/vuescore/scoreManagement')
                 .then((res) => {
-                    commit(AVERAGE_STUDENT, res.data)
+                    commit(SCORE_MANAGEMENT, res.data)
                 })
     }
 }

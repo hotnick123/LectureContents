@@ -56,15 +56,20 @@
                     active-class="active">
                 Dungeon 테스트
             </router-link>
-            <router-link :to="{ name: 'StudentListPage' }"
+            <router-link :to="{ name: 'ScoreManagerPage' }"
                     class="nav-link"
                     active-class="active">
-                Student 테스트
+                성적관리 테스트
             </router-link>
             <router-link :to="{ name: 'TriangleWidthPage' }"
                     class="nav-link"
                     active-class="active">
                 TriangleWidth 테스트
+            </router-link>
+            <router-link :to="{ name: 'TriangleAreaSpringPage' }"
+                    class="nav-link"
+                    active-class="active">
+                TriangleAreaSpringPage 테스트
             </router-link>
         </div>
     </div>

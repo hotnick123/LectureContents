@@ -10,9 +10,7 @@ import java.util.Date;
 @Setter
 @ToString
 public class Triangle {
-    private Integer studentNo;
-    private String bottomline;
-    private Integer height;
-    private Integer answer;
-    private Date regDate;
+    Integer bottomline;
+    Integer height;
+
 }
