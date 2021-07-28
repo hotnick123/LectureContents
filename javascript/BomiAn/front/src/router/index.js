@@ -34,8 +34,17 @@ import MonsterModifyPage from '@/views/monster/MonsterModifyPage.vue'
 import EventBusTestPage from '@/views/EventBusTestPage.vue'
 
 //dungeon
-
 import DungeonListPage from '@/views/DungeonListPage'
+
+//area
+import CalcAreaPage from '@/views/CalcAreaPage.vue'
+
+//score
+import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
+
+// 크롤링
+import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
+
 
 Vue.use(VueRouter)
 
@@ -196,6 +205,27 @@ const routes = [
     name: 'DungeonListPage',
     components: {
       default: DungeonListPage
+    }
+  },
+  {
+    path: '/calcarea',
+    name: 'CalcAreaPage',
+    components: {
+      default: CalcAreaPage
+    }
+  },
+  {
+    path: '/scoreManager',
+    name: 'ScoreManagerPage',
+    components: {
+      default: ScoreManagerPage
+    }
+  },
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
     }
   }
 ]

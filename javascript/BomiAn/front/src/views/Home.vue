@@ -56,6 +56,26 @@
                     active-class="active">
                 Dungeon 테스트
             </router-link>
+            <router-link :to="{ name: 'CalcAreaPage' }"
+                    class="nav-link"
+                    active-class="active">
+                calc area 테스트
+            </router-link>
+               <router-link :to="{ name: 'SpringInterconnectionPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Spring 연동 삼각형 넓이 구하기
+            </router-link>
+             <router-link :to="{ name: 'ScoreManagerPage' }"
+                    class="nav-link"
+                    active-class="active">
+                성적 관리 페이지
+            </router-link>
+             <router-link :to="{ name: 'DaumNewsCrawlerPage' }"
+                    class="nav-link"
+                    active-class="active">
+                다음 뉴스 크롤러 페이지
+            </router-link>
         </div>
     </div>
 </template>

@@ -27,7 +27,11 @@ import {
 
   //랜덤 던전
   ALLOC_RANDOM_DUNGEON, 
+  //성적관리
+  SCORE_MANAGEMENT,
 
+  //크롤링
+  CRAWL_START
 
 
 } from './mutation-types'
@@ -125,12 +129,29 @@ export default {
             .then((res) => {
                 commit(FETCH_MONSTER, res.data)
             })
-},
- // 랜덤 던전
- randomDungeonList ({ commit }) {
-  return axios.get('http://localhost:7777/vuedungeon/randomAlloc')
-          .then((res) => {
-              commit(ALLOC_RANDOM_DUNGEON, res.data)
-          })
+  },
+  // 랜덤 던전
+  randomDungeonList ({ commit }) {
+    return axios.get('http://localhost:7777/vuedungeon/randomAlloc')
+            .then((res) => {
+                commit(ALLOC_RANDOM_DUNGEON, res.data)
+            })
+    },
+    fetchStudentScoreList ({ commit }) {
+      return axios.get('http://localhost:7777/vuescore/scoreManagement')
+              .then((res) => {
+                commit(SCORE_MANAGEMENT, res.data)
+              })
+    },
+     // 크롤링
+     async crawlFind ({ commit }, category) {
+      axios.get('http://localhost:7777/' + `${category}`)
+              .then(({ data }) => {
+                  commit(CRAWL_START, data)
+
+                  if (window.location.pathname !== '/daumNewsCrawler') {
+                      router.push('/daumNewsCrawler')
+                  }
+              })
   }
 }

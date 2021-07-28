@@ -22,6 +22,11 @@ export default {
    monster: null,
 
    //dungeons
-   dungeons: []
+   dungeons: [],
+
+   students: [],
+
+   //크롤링
+   lists: []
 
 }

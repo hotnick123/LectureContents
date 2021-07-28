@@ -16,7 +16,6 @@ create table vuedungeon(
     reg_date timestamp not null default now(),
     primary key(dungeon_no)
 );
-
 insert into vuedungeon (name, description, monster_amount) values
 ('불타는 대지', '끝없이 화염 폭풍이 몰아치는 과거 전장지역', 2);
 
@@ -31,3 +30,27 @@ insert into vuedungeon (name, description, monster_amount) values
 
 insert into vuedungeon (name, description, monster_amount) values
 ('잊혀진 고대의 신전', '빛 계열의 몬스터들이 가장 많이 출몰하는 던전', 3);
+
+create table vuestudent(
+    student_no int not null auto_increment,
+    name varchar(200) not null,
+    score int not null,
+    reg_date timestamp not null default now(),
+    primary key(student_no)
+);
+
+insert into vuestudent (name, score) values
+('최강석', 20);
+insert into vuestudent (name, score) values
+('공명진', 85);
+insert into vuestudent (name, score) values
+('김석형', 70);
+insert into vuestudent (name, score) values
+('유강찬', 65);
+insert into vuestudent (name, score) values
+('김태형', 30);
+
+
+insert into vuestudent (name, description, monster_amount) values
+('잊혀진 고대의 신전', '빛 계열의 몬스터들이 가장 많이 출몰하는 던전', 3);
+
