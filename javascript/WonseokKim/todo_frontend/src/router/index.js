@@ -37,7 +37,11 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
 // 학생 성적표
-import StudentScoreListPage from '@/views/StudentScoreListPage.vue'
+import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
+
+// OnlyVuePage
+import OnlyVuePage from '@/views/OnlyVuePage.vue'
+import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
 
 Vue.use(VueRouter)
 
@@ -203,10 +207,24 @@ const routes = [
     }
   },
   {
-    path: '/student',
-    name: 'StudentScoreListPage',
+    path: '/scoreManager',
+    name: 'ScoreManagerPage',
     components: {
-      default: StudentScoreListPage
+      default: ScoreManagerPage
+    }
+  },
+  {
+    path: '/onlyvuepage',
+    name: 'OnlyVuePage',
+    components: {
+      default: OnlyVuePage
+    }
+  },
+  {
+    path: '/springintercon',
+    name: 'SpringInterconnectionPage',
+    components: {
+      default: SpringInterconnectionPage
     }
   }
 ]

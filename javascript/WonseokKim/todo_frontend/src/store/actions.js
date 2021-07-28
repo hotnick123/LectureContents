@@ -24,7 +24,7 @@ import {
      // 랜덤 던전
      ALLOC_RANDOM_DUNGEON,
      // 학생 성적표
-     FETCH_STUDENT_SCORE_LIST,
+     SCORE_MANAGEMENT,
      FETCH_STUDENT
 } from './mutation-types'
 
@@ -130,10 +130,11 @@ export default {
                             commit(ALLOC_RANDOM_DUNGEON, res.data)
                         })
     },
+    // 성적 관리
     fetchStudentScoreList ({ commit }) {
-        return axios.get('http://localhost:7777/vuestudent/lists')
+        return axios.get('http://localhost:7777/vuescore/scoreManagement')
                 .then((res) => {
-                    commit(FETCH_STUDENT_SCORE_LIST, res.data)
+                    commit(SCORE_MANAGEMENT, res.data)
                 })
     },
     fetchStudent ({ commit }, studentNo) {

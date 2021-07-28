@@ -21,5 +21,6 @@ export default {
     // 랜덤 던전
     dungeons: [],
     // 학생 성적표
-    students: []
+    students: [],
+    mean: 0
 }

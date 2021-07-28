@@ -13,13 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class VueStudentRepository {
+public class VueStudentScoreRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
 
-    public List<Student> list() throws Exception {
+    public List<Student> getStudentScoreList() throws Exception {
         // RowMapper를 통해 얻은 행을 하나씩 List에 집어넣으니
         // results엔 DB에서 얻어온 행 정보들이 들어있다.
         List<Student> results = jdbcTemplate.query(
