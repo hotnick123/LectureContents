@@ -1,11 +1,12 @@
 package com.example.demo.controller.crawl;
 
-
 import com.example.demo.entity.DaumNews;
+import com.example.demo.service.VueDaumNewsCrawlService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,12 +20,11 @@ public class VueCrawlController {
     VueDaumNewsCrawlService service;
 
     @GetMapping("{category}")
-    public List<DaumNews> getDaumNewsCategory(@pathVariable String category) {
-        log.info("Crawling with getDaumNewsCategory" + category);
+    public List<DaumNews> getDaumNewsCategory(@PathVariable String category) {
+        log.info("Crawling with getDaumNewsCategory(): " + category);
 
-//        service.mainDaumCrawler(category);
+        service.daumNewsMainCrawler(category);
 
-//        return service.newsFindAll();
+        return service.daumNewsFindAll();
     }
-
 }

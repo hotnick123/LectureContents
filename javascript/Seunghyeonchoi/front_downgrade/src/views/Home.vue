@@ -79,6 +79,11 @@
                     active-class="active">
                 성적 관리 페이지
             </router-link>
+            <router-link :to="{ name: 'DaumNewsCrawlerPage' }"
+                    class="nav-link"
+                    active-class="active">
+                다음 뉴스 클로러
+            </router-link>
         </div>
     </div>
 </template>
