@@ -26,6 +26,8 @@ import {
     ALLOC_RANDOM_DUNGEON,
     // 학생
     FETCH_STUDENT_LIST,
+    // 크롤링
+    CRAWL_START,
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -117,5 +119,8 @@ export default {
     },
     [FETCH_STUDENT_LIST] (state, students) {
         state.students = students
+    },
+    [CRAWL_START] (state, payload) {
+        state.lists = payload
     }
 }

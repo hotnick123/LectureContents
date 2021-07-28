@@ -38,7 +38,11 @@ import DungeonListPage from "../views/DungeonListPage";
 import StudentListPage from "../views/StudentListPage";
 
 import OnlyVuePage from "../views/OnlyVuePage";
+
 import SpringInterconnectionPage from "../views/SpringInterconnectionPage";
+// 크롤링
+import DaumNewsCrawlerPage from "../views/DaumNewsCrawlerPage";
+
 const routes = [
   {
     path: '/',
@@ -211,6 +215,13 @@ const routes = [
     name: 'SpringInterconnectionPage',
     components: {
       default: SpringInterconnectionPage
+    }
+  },
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
     }
   },
 ]

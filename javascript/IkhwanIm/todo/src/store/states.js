@@ -22,4 +22,6 @@ export default {
     dungeons: [],
     // 학생
     students: [],
+    // 크롤링
+    lists: [],
 }

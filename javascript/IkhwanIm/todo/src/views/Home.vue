@@ -66,6 +66,11 @@
                    active-class="active">
         Spring 연동 삼각형 넓이 구하기
       </router-link>
+      <router-link :to="{ name: 'DaumNewsCrawlerPage' }"
+                   class="nav-link"
+                   active-class="active">
+        다음 뉴스 크롤러
+      </router-link>
     </div>
   </div>
 </template>
