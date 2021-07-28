@@ -1,4 +1,4 @@
-package com.example.jsmain.controller;
+package com.example.jsmain.controller.basic;
 
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;

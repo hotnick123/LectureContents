@@ -1,4 +1,4 @@
-package com.example.jsmain.controller;
+package com.example.jsmain.controller.basic;
 
 import com.example.jsmain.utility.Test;
 import com.example.jsmain.utility.network.Client;
