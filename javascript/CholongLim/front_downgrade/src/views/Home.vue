@@ -56,15 +56,25 @@
                     active-class="active">
                 DungeonListPage
             </router-link>
-            <router-link :to="{ name: 'StudentListPage' }"
+            <router-link :to="{ name: 'ScoreManagerPage' }"
                     class="nav-link"
                     active-class="active">
-                학생 성적관리
+                학생 성적 관리
             </router-link>
             <router-link :to="{ name: 'TrianglePage' }"
                     class="nav-link"
                     active-class="active">
                 삼각형 넓이 계산
+            </router-link>
+            <router-link :to="{ name: 'OnlyVuePage' }"
+                    class="nav-link"
+                    active-class="active">
+                Only 뷰 페이지
+            </router-link>
+            <router-link :to="{ name: 'SpringInterconnectionPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Sping 연동 삼각형 넓이 구하기
             </router-link>
         </div>
     </div>

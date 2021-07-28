@@ -22,10 +22,10 @@ public class VueStudentController {
     @Autowired
     private VueStudentService service;
 
-    @GetMapping("/averageGrade")
-    public ResponseEntity<List<Student>> getLists () throws Exception {
-        log.info("getLists()");
+    @GetMapping("/scoreManagement")
+    public ResponseEntity<List<Student>> getStudentScore () throws Exception {
+        log.info("getStudentScore()");
 
-        return new ResponseEntity<>(service.gradeList(), HttpStatus.OK);
+        return new ResponseEntity<>(service.getStudentScoreList(), HttpStatus.OK);
     }
 }

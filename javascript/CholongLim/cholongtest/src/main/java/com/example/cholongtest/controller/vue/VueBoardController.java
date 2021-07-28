@@ -23,7 +23,7 @@ public class VueBoardController {
     private VueBoardService service;
 
     // Validated: 값이 올바르게 들어오는지 검증함
-    // ResponseBody 가 붙어 있으면 리턴하는 값을 json 형식으로 만들어줌
+    // RequestBody 가 붙어 있으면 리턴하는 값을 json 형식으로 만들어줌
     @PostMapping("/register")
     public ResponseEntity<Board> register(@Validated @RequestBody Board board) throws Exception {
         log.info("post register request from vue");

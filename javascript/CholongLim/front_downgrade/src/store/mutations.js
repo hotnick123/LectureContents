@@ -25,7 +25,7 @@ import {
   // Dungeon
   ALLOC_RANDOM_DUNGEON,
   // 성적 관리
-  GRADE_AVERAGE_STUDENT
+  SCORE_MANAGEMENT
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -114,7 +114,8 @@ export default {
   [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
     state.dungeons = dungeons
   },
-  [GRADE_AVERAGE_STUDENT] (state, students) {
+    // 성적 관리
+  [SCORE_MANAGEMENT] (state, students) {
     state.students = students
   }
 }

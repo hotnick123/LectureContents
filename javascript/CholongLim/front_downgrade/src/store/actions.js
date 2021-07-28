@@ -24,7 +24,7 @@ import {
   // Dungeon
   ALLOC_RANDOM_DUNGEON,
   // 성적 관리
-  GRADE_AVERAGE_STUDENT
+  SCORE_MANAGEMENT
 } from './mutation-types'
 
 import axios from 'axios'
@@ -128,10 +128,10 @@ export default {
         commit(ALLOC_RANDOM_DUNGEON, res.data)
     })
   },
-  averageStudentList ({ commit }) {
-    return axios.get('http://localhost:7777/vuestudent/averageGrade')
+  fetchStudentScoreList ({ commit }) {
+    return axios.get('http://localhost:7777/vuestudent/scoreManagement')
     .then((res) => {
-        commit(GRADE_AVERAGE_STUDENT, res.data)
+        commit(SCORE_MANAGEMENT, res.data)
     })
   }
 }

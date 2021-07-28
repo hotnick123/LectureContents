@@ -1,11 +1,15 @@
 <template>
     <div>
-        <p> {{ students }} </p>
-        <ul v-for="(sd,idx) in students_details" :key="idx">
-            <li v-if="sd.grade == students[0]">
-                평균 : {{ sd.text }}
-            </li>
-        </ul>
+        <p> {{ students }} </p><br>
+        <p v-if="flag && (mean === students[0])">
+            평균점이랑 동일합니다.
+        </p>
+        <p v-else-if="flag && (mean < students[0])">
+            성적이 평균 이상입니다.
+        </p>
+        <p v-else-if="flag && (mean > students[0])">
+            성적이 평균 이하입니다.
+        </p>
     </div>
 </template>
 
@@ -14,22 +18,22 @@
 import EventBus from '@/eventBus.js'
 
 export default {
-    data() {
+    data () {
         return {
-            students_details: [
-                {grade: '0', text: "평균 점수보다 낮습니다." },
-                {grade: '1', text: "평균 점수와 동일합니다." },
-                {grade: '2', text: "평균 점수보다 높습니다." }
-            ],
+            flag: false,
+            mean: 0,
             students: []
         }
     },
     created: function() {
-        EventBus.$on('measureGrade', (payload) => {
-            this.students = payload
+        EventBus.$on('calcMean', (payload) => {
+            this.flag = true
+            this.mean = payload[0]
+            this.students = [ payload[1], payload[2] ]
         })
     }
 }
+
 </script>
 
 <style scoped>

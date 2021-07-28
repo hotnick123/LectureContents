@@ -14,3 +14,12 @@ insert into vuestudent (name, grade) values
 
 insert into vuestudent (name, grade) values
 ('박다다', 100);
+
+insert into vuestudent (name, grade) values
+('권라라', 93);
+
+insert into vuestudent (name, grade) values
+('강마마', 71);
+
+insert into vuestudent (name, grade) values
+('최바바', 57);

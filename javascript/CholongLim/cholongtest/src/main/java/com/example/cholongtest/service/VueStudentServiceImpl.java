@@ -15,7 +15,7 @@ public class VueStudentServiceImpl implements VueStudentService  {
     private VueStudentRepository repository;
 
     @Override
-    public List<Student> gradeList() throws Exception {
-        return repository.gradeList();
+    public List<Student> getStudentScoreList() throws Exception {
+        return repository.getStudentScoreList();
     }
 }

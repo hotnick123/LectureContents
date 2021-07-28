@@ -1,7 +1,7 @@
 <template>
     <div id="student">
         <h2>학생 성적 관리표</h2>
-        <student-list :students="students"/>
+        <student-list :students="students"/><br>
         <student-average></student-average>
     </div>
 </template>
@@ -10,8 +10,9 @@
 import StudentList from '@/components/student/StudentList.vue'
 import StudentAverage from '@/components/student/StudentAverage.vue'
 import { mapState, mapActions } from 'vuex'
+
 export default {
-    name: 'StudentListPage',
+    name: 'ScoreManagePage',
     components: {
         StudentList,
         StudentAverage
@@ -20,10 +21,10 @@ export default {
         ...mapState(['students'])
     },
     mounted () {
-        this.averageStudentList()
+        this.fetchStudentScoreList()
     },
     methods: {
-        ...mapActions(['averageStudentList'])
+        ...mapActions(['fetchStudentScoreList']),
     }
 }
 </script>

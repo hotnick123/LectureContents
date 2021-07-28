@@ -17,15 +17,7 @@ public class VueStudentRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public List<Student> gradeList() throws Exception {
-
-        int max = jdbcTemplate.queryForObject(
-                "select count(1) from vuestudent",
-                Integer.class
-        );
-
-
-        int sum = 0;
+    public List<Student> getStudentScoreList() throws Exception {
 
         List<Student> results = jdbcTemplate.query(
                 "select student_no, name, grade, reg_date from vuestudent " +

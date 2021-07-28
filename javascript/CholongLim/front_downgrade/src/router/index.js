@@ -37,10 +37,12 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
 // 학생 성적관리
-import StudentListPage from '@/views/StudentListPage.vue'
+import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
 
 // 삼각형 넓이 계산
 import TrianglePage from '@/views/TrianglePage.vue'
+import OnlyVuePage from '@/views/OnlyVuePage.vue'
+import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
 
 Vue.use(VueRouter)
 
@@ -198,9 +200,9 @@ const routes = [
   },
   {
     path: '/studentGrade',
-    name: 'StudentListPage',
+    name: 'ScoreManagerPage',
     components: {
-      default: StudentListPage
+      default: ScoreManagerPage
     }
   },
   {
@@ -208,6 +210,20 @@ const routes = [
     name: 'TrianglePage',
     components: {
       default: TrianglePage
+    }
+  },
+  {
+    path: '/OnlyVue',
+    name: 'OnlyVuePage',
+    components: {
+      default: OnlyVuePage
+    }
+  },
+  {
+    path: '/springInterconnection',
+    name: 'SpringInterconnectionPage',
+    components: {
+      default: SpringInterconnectionPage
     }
   }
 ]
