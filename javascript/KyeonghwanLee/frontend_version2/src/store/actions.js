@@ -21,8 +21,10 @@ import {
     // 판타지 온라인
     FETCH_MONSTER_LIST,
     FETCH_MONSTER,
-      // 랜덤 던전
-      ALLOC_RANDOM_DUNGEON
+    // 랜덤 던전
+    ALLOC_RANDOM_DUNGEON,
+    //성적관리
+    SCORE_MANAGEMENT
 } from './mutation-types'
 
 import axios from 'axios'
@@ -126,7 +128,15 @@ export default {
                 .then((res) => {
                     commit(ALLOC_RANDOM_DUNGEON, res.data)
                 })
-    }
+    },
+    // 성적 관리
+    fetchStudentScoreList ({ commit }) {
+        return axios.get('http://localhost:7777/vuescore/scoreManagement')
+                .then((res) => {
+                    commit(SCORE_MANAGEMENT, res.data)
+                })
+    },
+
 }
 
 //commit 하면 mutation이 작동한다.
