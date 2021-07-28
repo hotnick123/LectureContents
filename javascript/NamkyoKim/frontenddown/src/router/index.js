@@ -34,6 +34,17 @@ import EventBusTestPage from '@/views/eventbus/EventBusTestPage.vue'
 // 던전
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
+// 삼각형넓이구하기
+import TriangleAreaPage from '@/views/area/TriangleAreaPage.vue'
+import TriangleAreaPageSpring from '@/views/area/TriangleAreaPageSpring.vue'
+import OnlyVuePage from '@/views/area/OnlyVuePage.vue'
+import SpringInterconnectionPage from '@/views/area/SpringInterconnectionPage.vue'
+
+// 성적관리 페이지
+
+import ScoreManagerPage from '@/views/score/ScoreManagerPage.vue'
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -187,7 +198,43 @@ const routes = [
     components: {
       default: DungeonListPage
     }
-  }
+  },
+  {
+    path: '/triangle',
+    name: 'TriangleAreaPage',
+    components: {
+      default: TriangleAreaPage
+    }
+  },
+  {
+    path: '/triangleSpring',
+    name: 'TriangleAreaPageSpring',
+    components: {
+      default: TriangleAreaPageSpring
+    }
+  },
+  {
+    path: '/onlyVue',
+    name: 'OnlyVuePage',
+    components: {
+      default: OnlyVuePage
+    }
+  },
+  {
+    path: '/springintercon',
+    name: 'SpringInterconnectionPage',
+    components: {
+      default: SpringInterconnectionPage
+    }
+  },
+  {
+    path: '/scoreManager',
+    name: 'ScoreManagerPage',
+    components: {
+      default: ScoreManagerPage
+    }
+  },
+  
 ]
 
 const router = new VueRouter({

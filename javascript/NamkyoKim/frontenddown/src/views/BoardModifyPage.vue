@@ -28,6 +28,7 @@ export default {
     methods: {
         ...mapActions(['fetchBoard']),
         onSubmit(payload){
+            
             const { title, content } = payload
             axios.put(`http://localhost:7777/vueboard/${this.boardNo}`,{ title, content })
                     .then(res => {

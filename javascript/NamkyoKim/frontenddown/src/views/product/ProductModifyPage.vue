@@ -1,6 +1,6 @@
 <template>
     <div align="center">
-        <h2>게시물 수정</h2>
+        <h2>상품 수정</h2>
         <product-modify-form v-if="product" :product="product" @submit="onSubmit"/>
         <p v-else>로딩중 ......</p>
     </div>
