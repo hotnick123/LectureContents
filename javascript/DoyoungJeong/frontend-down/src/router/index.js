@@ -29,6 +29,8 @@ import DungeonPage from '@/views/DungeonPage.vue'
 import StudentScoresPage from '@/views/student/StudentScoresPage.vue'
 
 import TriangleAreaCalc from '@/views/prob89/TriangleAreaCalc.vue'
+
+import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
 //@는 src, ..는 상위
 
 Vue.use(VueRouter)
@@ -164,16 +166,6 @@ const routes = [
     }
   },
   {
-    path: '/monster/:monsterNo/edit',
-    name: 'MonsterModifyPage',
-    components: {
-      default: MonsterModifyPage
-    },
-    props: {
-      default: true
-    }
-  },
-  {
     path: '/eventbusTest',
     name: 'EventBusTestPage',
     components: {
@@ -208,6 +200,13 @@ const routes = [
     },
     props: {
       default: true
+    }
+  },
+  {
+    path: '/daumNewsCrawlerPage',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
     }
   }
 ]
