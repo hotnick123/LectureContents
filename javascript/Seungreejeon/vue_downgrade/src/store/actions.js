@@ -24,11 +24,13 @@ import {
     // 랜덤 던전
     ALLOC_RANDOM_DUNGEON,
     //학생리스트
-    SCORE_MANAGEMENT
+    SCORE_MANAGEMENT,
+    CRAWL_START
     
 } from './mutation-types'
 
 import axios from 'axios'
+import router from '../router'
 
 // 보통 action에서 처리하는 것은 비동기 처리를 함
 export default {
@@ -138,5 +140,16 @@ export default {
             commit(SCORE_MANAGEMENT, res.data)
 
         })
+    },
+    //크롤링
+    async crawlFind ({ commit }, category) {
+        axios.get('http://localhost:7777/' + `${category}`)
+                .then(({ data }) => {
+                    commit(CRAWL_START, data)
+
+                    if (window.location.pathname !== '/daumNewsCrawler') {
+                        router.push('/daumNewsCrawler')
+                    }
+                })
     }
 }

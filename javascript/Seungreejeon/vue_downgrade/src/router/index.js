@@ -42,6 +42,9 @@ import SpringInterconnectionPage from '../views/SpringInterconnectionPage.vue'
 //성적관리
 import ScoreManagerPage from '../views/ScoreManagerPage.vue';
 
+//다음 크롤링
+import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -217,6 +220,13 @@ const routes = [
       default: ScoreManagerPage
     }
   },
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
+    }
+  }
 ]
 
 const router = new VueRouter({

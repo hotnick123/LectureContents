@@ -26,6 +26,7 @@ import {
     // 랜덤 던전
     ALLOC_RANDOM_DUNGEON,
     SCORE_MANAGEMENT,
+    CRAWL_START
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -121,5 +122,10 @@ export default {
         // alert(JSON.stringify(students))
         state.students = students
     },
+
+    [CRAWL_START] (state, payload) {
+        alert(payload)
+        state.lists = payload
+    }
 
 }
