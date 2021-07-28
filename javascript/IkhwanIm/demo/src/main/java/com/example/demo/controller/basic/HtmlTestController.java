@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.controller.basic;
 
 import com.example.demo.utility.Test;
 import com.example.demo.utility.network.Client;
