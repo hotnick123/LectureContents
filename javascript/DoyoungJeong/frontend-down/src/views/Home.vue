@@ -56,6 +56,11 @@
                     active-class="active">
                 StudentScoresPage   
             </router-link>
+            <router-link :to="{ name: 'TriangleAreaCalc' }"
+                    class="nav-link"
+                    active-class="active">
+                TriangleAreaCalc   
+            </router-link>
         </div>
         <div>
             <!-- <button v-on:click="addManyMonster">몬스터 100마리 리젠</button>-->

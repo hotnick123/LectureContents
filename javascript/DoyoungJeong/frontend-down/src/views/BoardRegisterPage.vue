@@ -21,7 +21,7 @@ export default {
             const { title, writer, content } = payload
             axios.post('http://localhost:7777/vueboard/register', { title, writer, content })
             .then(res => {
-                alert('등록 성공! ' + res)
+                alert('등록 성공! ' + res.data)
                 this.$router.push({
                     name: 'BoardListPage'
                 })
