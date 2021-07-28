@@ -56,6 +56,22 @@
                     active-class="active">
                 StudentListPage
             </router-link><br><br>
+            <router-link :to="{ name: 'OnlyVuePage' }"
+                    class="nav-link"
+                    active-class="active">
+                OnlyVuePage
+            </router-link><br><br>
+            <router-link :to="{ name: 'SpringInterconnectionPage' }"
+                    class="nav-link"
+                    active-class="active">
+                SpringInterconnectionPage
+            </router-link><br><br>
+             <router-link :to="{ name: 'ScoreManagerPage' }"
+                    class="nav-link"
+                    active-class="active">
+                ScoreManagerPage
+            </router-link><br><br>
+
 
 
             

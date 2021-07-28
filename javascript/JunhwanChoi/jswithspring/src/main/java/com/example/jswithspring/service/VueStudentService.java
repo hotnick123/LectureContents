@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface VueStudentService {
 
-    public List<Student> randomList() throws Exception;
+    public List<Student> getStudentScoreList() throws Exception;
 }

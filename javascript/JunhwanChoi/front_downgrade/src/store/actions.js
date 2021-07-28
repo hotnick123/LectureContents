@@ -25,7 +25,7 @@ import {
     ALLOC_RANDOM_DUNGEON,
 
     // 학생
-    ALLOC_STUDENT,
+    SCORE_MANAGEMENT,
 } from './mutation-types'
 
 import axios from 'axios'
@@ -131,10 +131,10 @@ export default {
                 })
     },
      // 학생
-     randomStudentList ({ commit }) {
-        return axios.get('http://localhost:7777/vuestudent/student')
+     fetchStudentScoreList ({ commit }) {
+        return axios.get('http://localhost:7777/vuescore/scoreManagement')
                 .then((res) => {
-                    commit(    ALLOC_STUDENT, res.data)
+                    commit(SCORE_MANAGEMENT, res.data)
                 })
     }
 }

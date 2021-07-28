@@ -17,17 +17,17 @@ import java.util.List;
 
 @Slf4j
 @Controller
-@RequestMapping("/vuestudent")
+@RequestMapping("/vuescore")
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
 public class VueStudentController {
 
     @Autowired
     private VueStudentService service;
 
-    @GetMapping("/student")
-    public ResponseEntity<List<Student>> getRandomListsDungeon () throws Exception {
-        log.info("getLists()");
+    @GetMapping("/scoreManagement")
+    public ResponseEntity<List<Student>> getStudentScore () throws Exception {
+        log.info("getStudentScore()");
 
-        return new ResponseEntity<>(service.randomList(), HttpStatus.OK);
+        return new ResponseEntity<>(service.getStudentScoreList(), HttpStatus.OK);
     }
 }
