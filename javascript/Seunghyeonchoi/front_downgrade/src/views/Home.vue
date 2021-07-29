@@ -84,6 +84,33 @@
                     active-class="active">
                 다음 뉴스 클로러
             </router-link>
+            <router-link :to="{ name: 'UnNameSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                UnNameSlot 활용
+            </router-link>
+            <router-link :to="{ name: 'NamedSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                NamedSlot 활용
+            </router-link>
+            <!-- 기존과 방향이 반대임 -->
+            <!-- 부모가 자식 걸 가져온다는 뜻 -->
+            <router-link :to="{ name: 'ScopedSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                ScopedSlot 활용
+            </router-link>
+            <router-link :to="{ name: 'RecentSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                vSlot 활용
+            </router-link>
+             <router-link :to="{ name: 'MaterializeTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Materialize 활용                
+            </router-link>
         </div>
     </div>
 </template>
