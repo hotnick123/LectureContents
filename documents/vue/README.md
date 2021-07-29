@@ -83,3 +83,10 @@
 cd frontend
 npm run serve
 ```
+
+## materialize 설정
+
+```make
+npm install materialize-css@next --save-dev
+npm install materialize-design-icons --save-dev
+```
