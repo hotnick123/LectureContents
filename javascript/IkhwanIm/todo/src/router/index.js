@@ -43,6 +43,11 @@ import SpringInterconnectionPage from "../views/SpringInterconnectionPage";
 // 크롤링
 import DaumNewsCrawlerPage from "../views/DaumNewsCrawlerPage";
 
+// un-named slot
+import UnNamedSlotTestPage from "../views/UnNamedSlotTestPage";
+import NamedSlotTestPage from "../views/NamedSlotTestPage";
+import ScopedSlotTestPage from "../views/ScopedSlotTestPage";
+import RecentSlotTestPage from "../views/RecentSlotTestPage";
 const routes = [
   {
     path: '/',
@@ -222,6 +227,34 @@ const routes = [
     name: 'DaumNewsCrawlerPage',
     components: {
       default: DaumNewsCrawlerPage
+    }
+  },
+  {
+    path: '/unNamedSlot',
+    name: 'UnNamedSlotTestPage',
+    components: {
+      default: UnNamedSlotTestPage
+    }
+  },
+  {
+    path: '/NamedSlot',
+    name: 'NamedSlotTestPage',
+    components: {
+      default: NamedSlotTestPage
+    }
+  },
+  {
+    path: '/ScopedSlot',
+    name: 'ScopedSlotTestPage',
+    components: {
+      default: ScopedSlotTestPage
+    }
+  },
+  {
+    path: '/vSlot',
+    name: 'RecentSlotTestPage',
+    components: {
+      default: RecentSlotTestPage
     }
   },
 ]

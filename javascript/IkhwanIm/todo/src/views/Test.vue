@@ -32,9 +32,7 @@
 import Vue from 'vue'
 import GlobalComponent from '../components/GlobalComponent.vue'
 import LocalComponent from '../components/LocalComponent.vue'
-
 import { mapActions } from 'vuex'
-
 Vue.component(GlobalComponent.name, GlobalComponent)
 export default {
   components: {
@@ -48,8 +46,8 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-        'generateRandomNumber'
+    ...mapActions ([
+      'generateRandomNumber'
     ]),
     plus () {
       this.value++
