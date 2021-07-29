@@ -45,6 +45,9 @@ import OnlyVuePage from '@/views/OnlyVuePage.vue'
 // + Spring
 import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
 
+// 크롤링
+import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -221,6 +224,13 @@ const routes = [
     name: 'ScoreManagerPage',
     components: {
       default: ScoreManagerPage
+    }
+  },
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
     }
   }
 ]

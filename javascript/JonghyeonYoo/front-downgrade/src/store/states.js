@@ -22,5 +22,7 @@ export default {
     dungeons: [],
     // 성적 관리
     students: [],
-    mean: 0
+    mean: 0,
+    // 크롤링
+    lists: []
 }

@@ -27,7 +27,9 @@ import {
     ALLOC_RANDOM_DUNGEON,
     // 성적 관리
     SCORE_MANAGEMENT,
-    CALC_MEAN
+    CALC_MEAN,
+    // 크롤링
+    CRAWL_START
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -132,5 +134,11 @@ export default {
         }
 
         state.mean = tmp / len
-    }
+    },
+        // 크롤링
+        
+        [CRAWL_START] (state, payload) {
+            state.lists = payload
+        }
+    
 }
