@@ -44,6 +44,9 @@ import TrianglePage from '@/views/TrianglePage.vue'
 import OnlyVuePage from '@/views/OnlyVuePage.vue'
 import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
 
+// 크롤링
+import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -224,6 +227,13 @@ const routes = [
     name: 'SpringInterconnectionPage',
     components: {
       default: SpringInterconnectionPage
+    }
+  },
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
     }
   }
 ]

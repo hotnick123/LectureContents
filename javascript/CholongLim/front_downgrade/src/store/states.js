@@ -22,5 +22,7 @@ export default {
   // 던전
   dungeons: [],
   // 성적관리
-  students: []
+  students: [],
+  // 크롤링
+  lists: []
 }
