@@ -44,6 +44,9 @@ import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
 import TriangleWidthPage from '@/views/TriangleWidthPage.vue'
 import TriangleAreaSpringPage from '@/views/TriangleAreaSpringPage.vue'
 
+//크롤링
+import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -224,6 +227,13 @@ const routes = [
     name: 'TriangleAreaSpringPage',
     components: {
       default: TriangleAreaSpringPage
+    }
+  },
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
     }
   }
 ]
