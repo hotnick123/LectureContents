@@ -70,7 +70,17 @@
                     class="nav-link"
                     active-class="active">
                 다음 뉴스 크롤러
-            </router-link>                      
+            </router-link>         
+            <router-link :to="{ name: 'UnNamedSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                UnNamedSlot 활용
+            </router-link>    
+            <router-link :to="{ name: 'NamedSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                NamedSlot 활용
+            </router-link>                                       
         </div>
     </div>
 </template>

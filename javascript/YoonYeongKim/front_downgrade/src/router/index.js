@@ -41,6 +41,10 @@ import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
 // 크롤링
 import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
 
+// Slot
+import UnNamedSlotTestPage from '@/views/UnNamedSlotTestPage.vue'
+import NamedSlotTestPage from '@/views/NamedSlotTestPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -188,7 +192,21 @@ const routes = [
     components: {
       default: DaumNewsCrawlerPage
     }  
-  } 
+  },
+  {
+    path: '/UnNamedSlotTest',
+    name: 'UnNamedSlotTestPage',
+    components: {
+      default: UnNamedSlotTestPage
+    }  
+  },
+  {
+    path: '/NamedSlotTest',
+    name: 'NamedSlotTestPage',
+    components: {
+      default: NamedSlotTestPage
+    }  
+  }  
 ]
 
 const router = new VueRouter({
