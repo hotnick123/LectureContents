@@ -66,10 +66,15 @@
                     active-class="active">
                 Only 뷰 페이지
             </router-link>
-                        <router-link :to="{ name: 'SpringInterconnectionPage' }"
+            <router-link :to="{ name: 'SpringInterconnectionPage' }"
                     class="nav-link"
                     active-class="active">
                 Spring 페이지
+            </router-link>
+            <router-link :to="{ name: 'DaumNewsCrawlerPage' }"
+                    class="nav-link"
+                    active-class="active">
+                다음 뉴스 크롤러
             </router-link>
         </div>
     </div>
