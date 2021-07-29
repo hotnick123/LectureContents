@@ -95,6 +95,11 @@
                     active-class="active">
                 V-Slot 활용
             </router-link>
+            <router-link :to="{ name: 'MaterializeTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Materialize 활용
+            </router-link>
         </div>
     </div>
 </template>
