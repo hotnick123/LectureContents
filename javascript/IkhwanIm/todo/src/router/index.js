@@ -48,6 +48,9 @@ import UnNamedSlotTestPage from "../views/UnNamedSlotTestPage";
 import NamedSlotTestPage from "../views/NamedSlotTestPage";
 import ScopedSlotTestPage from "../views/ScopedSlotTestPage";
 import RecentSlotTestPage from "../views/RecentSlotTestPage";
+
+// materialize
+import MaterializeTestPage from "../views/MaterializeTestPage";
 const routes = [
   {
     path: '/',
@@ -255,6 +258,13 @@ const routes = [
     name: 'RecentSlotTestPage',
     components: {
       default: RecentSlotTestPage
+    }
+  },
+  {
+    path: '/materialize',
+    name: 'MaterializeTestPage',
+    components: {
+      default: MaterializeTestPage
     }
   },
 ]
