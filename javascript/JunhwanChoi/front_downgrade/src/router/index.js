@@ -30,14 +30,28 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 // 던전
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
+// 성적 관리
+import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
 
+// OnlyVuePage
 import OnlyVuePage from '@/views/OnlyVuePage.vue'
-
+// + Spring
 import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
 
-// 학생
+// 크롤링
+import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
 
-import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
+import UnNameSlotTestPage from '@/views/UnNameSlotTestPage.vue'
+
+import NameSlotTestPage from '@/views/NameSlotTestPage.vue'
+import ScopedSlotTestPage from '@/views/ScopedSlotTestPage.vue'
+import RecentSlotTestPage from '@/views/RecentSlotTestPage.vue'
+
+
+import MeterializeTestPage from '@/views/MeterializeTestPage.vue'
+
+
+
 
 
 
@@ -113,7 +127,6 @@ const routes = [
       default: Concave
     }
   },
-  
   {
     path: '/monster',
     name: 'MonsterListPage',
@@ -162,28 +175,73 @@ const routes = [
       default: DungeonListPage
     }
   },
-  
   {
-    path: '/onlyvue',
+    path: '/onlyvuepage',
     name: 'OnlyVuePage',
-    component:OnlyVuePage
-
+    components: {
+      default: OnlyVuePage
+    }
   },
   {
-    path: '/sprignvueconnection',
+    path: '/springintercon',
     name: 'SpringInterconnectionPage',
     components: {
       default: SpringInterconnectionPage
     }
   },
   {
-    path: '/scoremanager',
+    path: '/scoreManager',
     name: 'ScoreManagerPage',
     components: {
       default: ScoreManagerPage
     }
   },
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
+    }
+  },
+  {
+    path: '/unNameSlotTest',
+    name: 'UnNameSlotTestPage',
+    components: {
+      default: UnNameSlotTestPage
+    }
+  },
+  {
+    path: '/nameSlotTest',
+    name: 'NameSlotTestPage',
+    components: {
+      default: NameSlotTestPage
+    }
+  },
+  {
+    path: '/scopedSlotTest',
+    name: 'ScopedSlotTestPage',
+    components: {
+      default: ScopedSlotTestPage
+    }
+  },
+  {
+    path: '/vslot',
+    name: 'RecentSlotTestPage',
+    components: {
+      default: RecentSlotTestPage
+    }
+  },
+  {
+    path: '/meterializeTestPage',
+    name: 'MeterializeTestPage',
+    components: {
+      default: MeterializeTestPage
+    }
+  },
 
+
+  
+  
 
   
   

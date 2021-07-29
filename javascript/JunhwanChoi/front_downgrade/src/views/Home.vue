@@ -51,11 +51,7 @@
                     active-class="active">
                 Dungeon 테스트
             </router-link><br><br>
-             <router-link :to="{ name: 'StudentListPage' }"
-                    class="nav-link"
-                    active-class="active">
-                StudentListPage
-            </router-link><br><br>
+         
             <router-link :to="{ name: 'OnlyVuePage' }"
                     class="nav-link"
                     active-class="active">
@@ -71,6 +67,42 @@
                     active-class="active">
                 ScoreManagerPage
             </router-link><br><br>
+             <router-link :to="{ name: 'DaumNewsCrawlerPage' }"
+                    class="nav-link"
+                    active-class="active">
+                다음 뉴스 크롤러
+            </router-link><br><br>
+              <router-link :to="{ name: 'UnNameSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                UnNameSlotTestPage
+            </router-link><br><br>
+               <router-link :to="{ name: 'NameSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                NameSlotTestPage
+            </router-link><br><br>
+            <!-- 기존 slot이 p, div등 html요소를 전달 (부모 -> 자녀)
+            하지만 이녀석은 템플릿을 이용하여 자식 -> 부모 -->
+               <router-link :to="{ name: 'ScopedSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                ScopedSlotTestPage
+            </router-link><br><br>
+              <router-link :to="{ name: 'RecentSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                RecentSlotTestPage
+            </router-link><br><br>
+              <router-link :to="{ name: 'MeterializeTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                MeterializeTestPage
+            </router-link><br><br>
+
+
+
+
 
 
 
