@@ -19,10 +19,7 @@ export default {
     monsters: [],
     monster: null,
     //랜덤 던전
-    dungeons: [],
-    students: [],
-    //크롤링
-    lists: []
+    dungeons: []
 }
 // vue는 데이터를 중앙관리한다.
 // 얘가 중앙이야
