@@ -40,6 +40,10 @@
       class="nav-link" 
       active-class="active">EventBus
     </router-link>
+    <router-link :to="{ name: 'DaumNewsCrawlerPage' }" 
+      class="nav-link" 
+      active-class="active">DaumNews
+    </router-link>
   </div>
 </template>
 

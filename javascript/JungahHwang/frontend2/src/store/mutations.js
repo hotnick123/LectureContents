@@ -33,7 +33,10 @@ import {
 
 // Quiz
   FETCH_STUDENT_SCORE,
-  CALC_MEAN
+  CALC_MEAN,
+
+// Crawling
+  CRAWL_START
 
 } from './mutation-types'
 
@@ -143,5 +146,10 @@ export default {
     }
 
     state.mean = tmp / len
+  },
+
+// Crawling
+  [CRAWL_START] (state, payload) {
+    state.lists = payload
   }
 }

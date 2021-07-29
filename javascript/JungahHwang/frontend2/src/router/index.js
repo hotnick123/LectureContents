@@ -37,6 +37,9 @@ import Concave from '@/views/Concave'
 // EventBus
 import EventBusTestPage from '@/views/EventBusTestPage'
 
+// Crawling
+import DaumNewsCrawlerPage from '@/views/crawl/DaumNewsCrawlerPage'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -226,6 +229,15 @@ const routes = [
     name: 'EventBusTestPage',
     components: {
       default: EventBusTestPage
+    }
+  },
+
+// Crawling
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
     }
   }
   

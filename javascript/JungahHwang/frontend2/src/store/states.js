@@ -26,6 +26,8 @@ export default {
   product: null,
 
 // Quiz
-  students: []
+  students: [],
 
+// Crawling
+  lists: []
 }

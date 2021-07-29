@@ -30,10 +30,14 @@ import {
   FETCH_PRODUCT,
 
 // Quiz
-  FETCH_STUDENT_SCORE
+  FETCH_STUDENT_SCORE,
+
+// Crawling
+  CRAWL_START
 } from './mutation-types'
 
 import axios from 'axios'
+import router from '../router'
 
 export default {
 // Todo
@@ -137,6 +141,17 @@ export default {
   fetchStudentScore ({ commit }) {
     return axios.get('http://localhost:7777/vuestudent/score').then(res => {
       commit(FETCH_STUDENT_SCORE, res.data)
+    })
+  },
+
+// Crawling
+  async crawlFind ({ commit }, category) {
+    axios.get('http://localhost:7777/' + `${category}`).then(({ data }) => {
+      commit(CRAWL_START, data)
+
+      if (window.location.pathname !== '/daumNewsCrawler') {
+        router.push('/daumNewsCrawler')
+      }
     })
   }
 }
