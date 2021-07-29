@@ -88,5 +88,5 @@ npm run serve
 
 ```make
 npm install materialize-css@next --save-dev
-npm install materialize-design-icons --save-dev
+npm install material-design-icons --save-dev
 ```
