@@ -80,7 +80,21 @@
                     class="nav-link"
                     active-class="active">
                 NamedSlot 활용
-            </router-link>                                       
+            </router-link>
+            <!-- 기존 slot이 p, div 등의 HTML 태그를 전달하고
+                 자녀 컴포넌트에서 부모 컴포넌트를 사용했음
+                 이 녀석은 템플릿을 이용하며 부모 컴포넌트로 자녀 컴포넌트의 데이터를 전달할 수 있음 -->      
+            <router-link :to="{ name: 'ScopedSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                ScopedSlot 활용
+            </router-link>
+            <!-- v-slot = 여러 개의 slot 하나로 통일하기 -->
+            <router-link :to="{ name: 'RecentSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                V-Slot 활용
+            </router-link>
         </div>
     </div>
 </template>

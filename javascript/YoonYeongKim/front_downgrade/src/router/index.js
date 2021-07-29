@@ -44,6 +44,8 @@ import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
 // Slot
 import UnNamedSlotTestPage from '@/views/UnNamedSlotTestPage.vue'
 import NamedSlotTestPage from '@/views/NamedSlotTestPage.vue'
+import ScopedSlotTestPage from '@/views/ScopedSlotTestPage.vue'
+import RecentSlotTestPage from '@/views/RecentSlotTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -194,19 +196,33 @@ const routes = [
     }  
   },
   {
-    path: '/UnNamedSlotTest',
+    path: '/unNamedSlotTest',
     name: 'UnNamedSlotTestPage',
     components: {
       default: UnNamedSlotTestPage
     }  
   },
   {
-    path: '/NamedSlotTest',
+    path: '/namedSlotTest',
     name: 'NamedSlotTestPage',
     components: {
       default: NamedSlotTestPage
     }  
-  }  
+  },
+  {
+    path: '/scopedSlotTest',
+    name: 'ScopedSlotTestPage',
+    components: {
+      default: ScopedSlotTestPage
+    }  
+  },
+  {
+    path: '/vSlotTest',
+    name: 'RecentSlotTestPage',
+    components: {
+      default: RecentSlotTestPage
+    }  
+  }     
 ]
 
 const router = new VueRouter({
