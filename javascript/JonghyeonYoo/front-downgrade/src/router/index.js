@@ -48,6 +48,16 @@ import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
 // 크롤링
 import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
 
+// 슬롯(Slot)
+import UnNameSlotTestPage from '@/views/UnNameSlotTestPage.vue'
+import NamedSlotTestPage from '@/views/NamedSlotTestPage.vue'
+import ScopedSlotTestPage from '@/views/ScopedSlotTestPage.vue'
+import RecentSlotTestPage from '@/views/RecentSlotTestPage.vue'
+
+// Materialize
+import MaterializeTestPage from '@/views/MaterializeTestPage.vue'
+
+// Vuetify
 Vue.use(VueRouter)
 
 const routes = [
@@ -232,10 +242,44 @@ const routes = [
     components: {
       default: DaumNewsCrawlerPage
     }
+  },
+  {
+    path: '/unNameSlot',
+    name: 'UnNameSlotTestPage',
+    components: {
+      default: UnNameSlotTestPage
+    }
+  },
+  {
+    path: '/NamedSlot',
+    name: 'NamedSlotTestPage',
+    components: {
+      default: NamedSlotTestPage
+    }
+  },
+   {
+    path: '/ScopedSlot',
+    name: 'ScopedSlotTestPage',
+    components: {
+      default: ScopedSlotTestPage
+    }
+  },
+  {
+    path: '/vSlot',
+    name: 'RecentSlotTestPage',
+    components: {
+      default: RecentSlotTestPage
+    }
+  },
+  {
+    path: '/materialize',
+    name: 'MaterializeTestPage',
+    components: {
+      default: MaterializeTestPage
+    }
   }
 ]
 
-ScoreManagerPage
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
