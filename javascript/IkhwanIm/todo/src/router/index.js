@@ -51,6 +51,7 @@ import RecentSlotTestPage from "../views/RecentSlotTestPage";
 
 // materialize
 import MaterializeTestPage from "../views/MaterializeTestPage";
+import MaterializeGridTestPage from "../views/MaterializeGridTestPage";
 const routes = [
   {
     path: '/',
@@ -265,6 +266,13 @@ const routes = [
     name: 'MaterializeTestPage',
     components: {
       default: MaterializeTestPage
+    }
+  },
+  {
+    path: '/materializeGrid',
+    name: 'MaterializeGridTestPage',
+    components: {
+      default: MaterializeGridTestPage
     }
   },
 ]
