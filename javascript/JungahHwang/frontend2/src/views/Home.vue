@@ -44,6 +44,14 @@
       class="nav-link" 
       active-class="active">DaumNews
     </router-link>
+    <router-link :to="{ name: 'Slot' }" 
+      class="nav-link" 
+      active-class="active">Slot
+    </router-link>
+    <router-link :to="{ name: 'MaterializePage' }" 
+      class="nav-link" 
+      active-class="active">Materialize
+    </router-link>
   </div>
 </template>
 

@@ -32,13 +32,23 @@ import ProductReadPage from '@/views/product/ProductReadPage'
 import ProductModifyPage from '@/views/product/ProductModifyPage'
 
 // 삼목
-import Concave from '@/views/Concave'
+import Concave from '@/views/lecture/Concave'
 
 // EventBus
-import EventBusTestPage from '@/views/EventBusTestPage'
+import EventBusTestPage from '@/views/lecture/EventBusTestPage'
 
 // Crawling
-import DaumNewsCrawlerPage from '@/views/crawl/DaumNewsCrawlerPage'
+import DaumNewsCrawlerPage from '@/views/lecture/DaumNewsCrawlerPage'
+
+// Slot
+import Slot from '@/views/slot/Slot'
+import UnNamedSlotPage from '@/views/slot/UnNamedSlotPage'
+import NamedSlotPage from '@/views/slot/NamedSlotPage'
+import ScopedSlotPage from '@/views/slot/ScopedSlotPage'
+import RecentSlotPage from '@/views/slot/RecentSlotPage'
+
+// Materialize
+import MaterializePage from '@/views/materialize/MaterializePage'
 
 Vue.use(VueRouter)
 
@@ -238,6 +248,52 @@ const routes = [
     name: 'DaumNewsCrawlerPage',
     components: {
       default: DaumNewsCrawlerPage
+    }
+  },
+
+// Slot
+  {
+    path: '/slot',
+    name: 'Slot',
+    components: {
+      default: Slot
+    }
+  },
+  {
+    path: '/slot/unNamed',
+    name: 'UnNamedSlotPage',
+    components: {
+      default: UnNamedSlotPage
+    }
+  },
+  {
+    path: '/slot/named',
+    name: 'NamedSlotPage',
+    components: {
+      default: NamedSlotPage
+    }
+  },
+  {
+    path: '/slot/scoped',
+    name: 'ScopedSlotPage',
+    components: {
+      default: ScopedSlotPage
+    }
+  },
+  {
+    path: '/slot/v',
+    name: 'RecentSlotPage',
+    components: {
+      default: RecentSlotPage
+    }
+  },
+
+// Materialize
+  {
+    path: '/material',
+    name: 'MaterializePage',
+    components: {
+      default: MaterializePagez
     }
   }
   
