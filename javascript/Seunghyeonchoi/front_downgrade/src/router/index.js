@@ -52,6 +52,8 @@ import ScopedSlotTestPage from '@/views/ScopedSlotTestPage.vue'
 import RecentSlotTestPage from '@/views/RecentSlotTestPage.vue'
 // ?
 import MaterializeTestPage from '@/views/MaterializeTestPage.vue'
+import MaterializeGridTestPage from '@/views/MaterializeGridTestPage.vue'
+import VuetifyAllOneTestPage from '@/views/VuetifyAllOneTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -271,10 +273,24 @@ const routes = [
     }
   },
   {
-    path: '/Materialize',
+    path: '/materialize',
     name: 'MaterializeTestPage',
     components: {
       default: MaterializeTestPage
+    }
+  },
+  {
+    path: '/materializeGrid',
+    name: 'MaterializeGridTestPage',
+    components: {
+      default: MaterializeGridTestPage
+    }
+  },
+  {
+    path: '/vuetifyAllOne',
+    name: 'VuetifyAllOneTestPage',
+    components: {
+      default: VuetifyAllOneTestPage
     }
   }
 ]
