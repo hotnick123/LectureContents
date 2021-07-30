@@ -52,6 +52,7 @@ import RecentSlotTestPage from "../views/RecentSlotTestPage";
 // materialize
 import MaterializeTestPage from "../views/MaterializeTestPage";
 import MaterializeGridTestPage from "../views/MaterializeGridTestPage";
+import VuetifyAllInOneTestPage from "../views/VuetifyAllInOneTestPage";
 const routes = [
   {
     path: '/',
@@ -273,6 +274,13 @@ const routes = [
     name: 'MaterializeGridTestPage',
     components: {
       default: MaterializeGridTestPage
+    }
+  },
+  {
+    path: '/vuetifyAllInOne',
+    name: 'VuetifyAllInOneTestPage',
+    components: {
+      default: VuetifyAllInOneTestPage
     }
   },
 ]
