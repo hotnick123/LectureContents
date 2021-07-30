@@ -45,6 +45,14 @@ import ScoreManagerPage from '../views/ScoreManagerPage.vue';
 //다음 크롤링
 import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
 
+//slot
+import UnNamedSlotTestPage from '@/views/UnNamedSlotTestPage.vue'
+import NamedSlotTestPage from '@/views/NamedSlotTestPage'
+import ScopedSlotTestPage from '@/views/ScopedSlotTestPage'
+import RecentSlotTestPage from '@/views/RecentSlotTestPage'
+
+//Materialize
+import MaterializeTestPage from '@/views/MaterializeTestPage'
 Vue.use(VueRouter)
 
 const routes = [
@@ -226,6 +234,37 @@ const routes = [
     components: {
       default: DaumNewsCrawlerPage
     }
+  },
+  {
+    path: '/unnamed-slot-test-page',
+    name: 'UnNamedSlotTestPage',
+    components: {
+      default: UnNamedSlotTestPage
+    }
+  },
+  {
+    path: '/named-slot-test-page',
+    name: 'NamedSlotTestPage',
+    components: {
+      default: NamedSlotTestPage
+    }
+  },
+  {
+    path: '/scoped-slot',
+    name: 'ScopedSlotTestPage',
+    components: {
+      default: ScopedSlotTestPage
+    }
+  },
+  {
+    path: '/vSlot',
+    name: 'RecentSlotTestPage',
+    component: RecentSlotTestPage
+  },
+  {
+    path: '/materialize-test',
+    name: 'MaterializeTestPage',
+    component: MaterializeTestPage
   }
 ]
 

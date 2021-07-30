@@ -69,7 +69,7 @@ export default {
     methods: {
         onSubmit () {
             const { name, hp, exp, dropMoney, dropItem, description, } = this
-            this.$emit('submit', { name, hp, exp, exp, dropMoney, dropItem, description })
+            this.$emit('submit', { name, hp, exp, dropMoney, dropItem, description })
         }
     },
     created () {
