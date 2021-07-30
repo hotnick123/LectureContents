@@ -49,9 +49,9 @@ import RecentSlotTestPage from '@/views/RecentSlotTestPage.vue'
 
 
 import MeterializeTestPage from '@/views/MeterializeTestPage.vue'
+import MeterializeGridTestPage from '@/views/MeterializeGridTestPage.vue'
 
-
-
+import VuetifyAllInOneTestPage from '@/views/VuetifyAllInOneTestPage.vue'
 
 
 
@@ -238,11 +238,28 @@ const routes = [
       default: MeterializeTestPage
     }
   },
+  {
+    path: '/meterializeGridTestPage',
+    name: 'MeterializeGridTestPage',
+    components: {
+      default: MeterializeGridTestPage
+    }
+  },
+  {
+    path: '/vuetifyAllInOneTestPage',
+    name: 'VuetifyAllInOneTestPage',
+    components: {
+      default: VuetifyAllInOneTestPage
+    }
+  },
+
 
 
   
-  
 
+  
+  
+  
   
   
 ]

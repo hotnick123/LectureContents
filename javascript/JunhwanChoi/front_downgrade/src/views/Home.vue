@@ -94,11 +94,22 @@
                     active-class="active">
                 RecentSlotTestPage
             </router-link><br><br>
-              <router-link :to="{ name: 'MeterializeTestPage' }"
+            <router-link :to="{ name: 'MeterializeTestPage' }"
                     class="nav-link"
                     active-class="active">
                 MeterializeTestPage
             </router-link><br><br>
+            <router-link :to="{ name: 'MeterializeGridTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                MeterializeGridTestPage
+            </router-link><br><br>
+            <router-link :to="{ name: 'VuetifyAllInOneTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                VuetifyAllInOneTestPage
+            </router-link><br><br>
+
 
 
 
