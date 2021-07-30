@@ -31,6 +31,13 @@ import StudentScoresPage from '@/views/student/StudentScoresPage.vue'
 import TriangleAreaCalc from '@/views/prob89/TriangleAreaCalc.vue'
 
 import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
+
+import UnNamedSlotTestPage from '@/views/UnNamedSlotTestPage.vue'
+import NamedSlotTestPage from '@/views/NamedSlotTestPage.vue'
+import ScopedSlotTestPage from '@/views/ScopedSlotTestPage.vue'
+import RecentSlotTestPage from '@/views/RecentSlotTestPage.vue'
+
+import MaterializeTestPage from '@/views/MaterializeTestPage.vue'
 //@는 src, ..는 상위
 
 Vue.use(VueRouter)
@@ -207,6 +214,41 @@ const routes = [
     name: 'DaumNewsCrawlerPage',
     components: {
       default: DaumNewsCrawlerPage
+    }
+  },
+  {
+    path: '/unNamedSlotTestPage',
+    name: 'UnNamedSlotTestPage',
+    components: {
+      default: UnNamedSlotTestPage
+    }
+  },
+  {
+    path: '/namedSlotTestPage',
+    name: 'NamedSlotTestPage',
+    components: {
+      default: NamedSlotTestPage
+    }
+  },
+  {
+    path: '/scopedSlotTestPage',
+    name: 'ScopedSlotTestPage',
+    components: {
+      default: ScopedSlotTestPage
+    }
+  },
+  {
+    path: '/vSlot',
+    name: 'RecentSlotTestPage',
+    components: {
+      default: RecentSlotTestPage
+    }
+  },
+  {
+    path: '/materialize',
+    name: 'MaterializeTestPage',
+    components: {
+      default: MaterializeTestPage
     }
   }
 ]
