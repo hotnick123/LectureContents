@@ -32,15 +32,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-div {
-    background: red;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-}
-ul {
-    list-style: none;
-}
-</style>

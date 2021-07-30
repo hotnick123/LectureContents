@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style scoped>
-td {
+/* td {
   text-align: center;
-}
+} */
 </style>
