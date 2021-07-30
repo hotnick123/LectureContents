@@ -100,6 +100,16 @@
                     active-class="active">
                 Materialize 활용
             </router-link>
+            <router-link :to="{ name: 'MaterializeGridTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Materialize Grid 활용
+            </router-link>      
+            <router-link :to="{ name: 'VuetifyAllInOneTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Vuetify 활용
+            </router-link>          
         </div>
     </div>
 </template>
@@ -107,9 +117,7 @@
 <script>
 
   export default {
-    name: 'Home',
-    components: {
-    },
+    name: 'Home'
   }
   
 </script>
