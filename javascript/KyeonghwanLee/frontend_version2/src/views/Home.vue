@@ -56,6 +56,56 @@
                     active-class="active">
                 Dungeon 테스트
             </router-link>
+             <router-link :to="{ name: 'OnlyVuePage' }"
+                    class="nav-link"
+                    active-class="active">
+                Only 뷰 페이지
+            </router-link>
+            <router-link :to="{ name: 'SpringInterconnectionPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Spring 연동 삼각형 넓이 구하기
+            </router-link>
+            <router-link :to="{ name: 'ScoreManagerPage' }"
+                    class="nav-link"
+                    active-class="active">
+                성적 관리 페이지
+            </router-link>
+            <router-link :to="{ name: 'DaumNewsCrawlerPage' }"
+                    class="nav-link"
+                    active-class="active">
+                다음 뉴스 크롤러
+            </router-link>
+            <router-link :to="{ name: 'UnNamedSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                UnNameSlot 활용
+            </router-link>
+            <router-link :to="{ name: 'NamedSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                NamedSlot 활용
+            </router-link>
+            <!-- 기존 slot이 p, div 등의 HTML 태그를 전달하고 
+                 자녀 컴포넌트에서 부모 컴포넌트를 사용했음
+                 이 녀석은 템플릿을 이용하며 부모 컴포넌트로 자녀 컴포넌트의 데이터를 전달할 수 있음
+                 쉽게 얘기하면 방향이 반대 부모가 자식것을 가져와서 쓴다.-->
+            <router-link :to="{ name: 'ScopedSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                ScopedSlot 활용
+            </router-link>
+            <!-- slot을 하나로 통일하자-->
+            <router-link :to="{ name: 'RecentSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                v-slot 활용
+            </router-link>
+            <router-link :to="{ name: 'MaterializeTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Materialize 활용
+            </router-link>
             
         </div>
     </div>

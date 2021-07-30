@@ -34,6 +34,24 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 
 // 던전
 import DungeonListPage from '@/views/DungeonListPage.vue'
+// 성적 관리
+import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
+
+// OnlyVuePage
+import OnlyVuePage from '@/views/OnlyVuePage.vue'
+// + Spring
+import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
+
+// 크롤링
+import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
+// 슬롯
+import UnNamedSlotTestPage from '@/views/UnNamedSlotTestPage.vue'
+import NamedSlotTestPage from '@/views/NamedSlotTestPage.vue'
+import ScopedSlotTestPage from '@/views/ScopedSlotTestPage.vue'
+import RecentSlotTestPage from '@/views/RecentSlotTestPage.vue'
+
+// Vuetify
+import MaterializeTestPage from '@/views/MaterializeTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -189,8 +207,70 @@ const routes = [
     components: {
       default: DungeonListPage
     }
-  }
-
+  },
+  {
+    path: '/onlyvuepage',
+    name: 'OnlyVuePage',
+    components: {
+      default: OnlyVuePage
+    }
+  },
+  {
+    path: '/springintercon',
+    name: 'SpringInterconnectionPage',
+    components: {
+      default: SpringInterconnectionPage
+    }
+  },
+  {
+    path: '/scoreManager',
+    name: 'ScoreManagerPage',
+    components: {
+      default: ScoreManagerPage
+    }
+  },
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
+    }
+  },
+  {
+    path: '/unNamedSlot',
+    name: 'UnNamedSlotTestPage',
+    components: {
+      default: UnNamedSlotTestPage
+    }
+  },
+  {
+    path: '/namedSlot',
+    name: 'NamedSlotTestPage',
+    components: {
+      default: NamedSlotTestPage
+    }
+  },
+  {
+    path: '/scopedSlot',
+    name: 'ScopedSlotTestPage',
+    components: {
+      default: ScopedSlotTestPage
+    }
+  },
+  {
+    path: '/vSlot',
+    name: 'RecentSlotTestPage',
+    components: {
+      default: RecentSlotTestPage
+    }
+  },
+  {
+    path: '/materialize',
+    name: 'MaterializeTestPage',
+    components: {
+      default: MaterializeTestPage
+    }
+  },
 ]
 
 
