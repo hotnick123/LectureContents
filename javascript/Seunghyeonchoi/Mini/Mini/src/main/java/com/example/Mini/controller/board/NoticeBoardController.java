@@ -14,8 +14,8 @@ import java.util.List;
 
 @Slf4j
 @Controller
-@RequestMapping("/noticeBoard")
-@CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
+@RequestMapping("/noticeboard")
+@CrossOrigin(origins = "http://localhost:8081", allowedHeaders = "*")
 public class NoticeBoardController {
 
     @Autowired

@@ -66,7 +66,7 @@ public class NoticeBoardRepository {
 
     public Notice read (Integer boardNo) throws Exception {
         List<Notice> results = jdbcTemplate.query(
-                "select board_no, title, content, writer, reg_date from vueboard where board_no = ?",
+                "select board_no, title, content, writer, reg_date from noticeboard where board_no = ?",
                 new RowMapper<Notice>() {
                     @Override
                     public Notice mapRow(ResultSet rs, int rowNum) throws SQLException {
