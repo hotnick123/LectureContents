@@ -16,6 +16,11 @@
                     active-class="active">
                 Vuetify 활용
             </router-link>
+            <router-link :to="{ name: 'MainPage' }"
+                    class="nav-link"
+                    active-class="active">
+                MainPage
+            </router-link>
             
         </div>
     </div>

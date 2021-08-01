@@ -9,6 +9,10 @@ import NoticeBoardReadPage from '@/views/board/notice/BoardReadPage.vue'
 import NoticeBoardModifyPage from '@/views/board/notice/BoardModifyPage.vue'
 
 
+// 첫화면
+import MainPage from '@/views/MainPage.vue'
+
+
 //temp
 import VuetifyAllOneTestPage from '@/views/VuetifyAllOneTestPage.vue'
 
@@ -62,6 +66,13 @@ const routes = [
     name: 'VuetifyAllOneTestPage',
     components: {
       default: VuetifyAllOneTestPage
+    }
+  },
+  {
+    path: '/mainPage',
+    name: 'MainPage',
+    components: {
+      default: MainPage
     }
   }
 ]
