@@ -49,6 +49,10 @@ import RecentSlotPage from '@/views/slot/RecentSlotPage'
 
 // Materialize
 import MaterializePage from '@/views/materialize/MaterializePage'
+import MaterialGridPage from '@/views/materialize/MaterialGridPage'
+
+// Vuetify
+import VuetifyPage from '@/views/vuetify/VuetifyPage'
 
 Vue.use(VueRouter)
 
@@ -293,9 +297,25 @@ const routes = [
     path: '/material',
     name: 'MaterializePage',
     components: {
-      default: MaterializePagez
+      default: MaterializePage
     }
-  }
+  },
+  {
+    path: '/material/grid',
+    name: 'MaterialGridPage',
+    components: {
+      default: MaterialGridPage
+    }
+  },
+
+// Vuetify
+  {
+    path: '/vuetify',
+    name: 'VuetifyPage',
+    components: {
+      default: VuetifyPage
+    }
+  },
   
 ]
 

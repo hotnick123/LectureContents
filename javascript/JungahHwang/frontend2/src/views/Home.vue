@@ -52,6 +52,10 @@
       class="nav-link" 
       active-class="active">Materialize
     </router-link>
+    <router-link :to="{ name: 'VuetifyPage' }" 
+      class="nav-link" 
+      active-class="active">Vuetify
+    </router-link>
   </div>
 </template>
 

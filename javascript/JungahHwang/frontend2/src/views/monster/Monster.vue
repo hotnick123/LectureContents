@@ -132,7 +132,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 
 body {
   text-align: center;
