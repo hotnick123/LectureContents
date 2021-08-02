@@ -27,3 +27,10 @@ export const FETCH_MONSTER = 'FETCH_MONSTER'
 
 // 랜덤 던전
 export const ALLOC_RANDOM_DUNGEON = 'ALLOC_RANDOM_DUNGEON'
+
+// 성적 관리
+export const SCORE_MANAGEMENT = 'SCORE_MANAGEMENT'
+export const CALC_MEAN = 'CALC_MEAN'
+
+// 크롤링
+export const CRAWL_START = 'CRAWL_START'

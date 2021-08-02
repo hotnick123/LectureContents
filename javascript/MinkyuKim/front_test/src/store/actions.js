@@ -28,11 +28,20 @@ import {
     FETCH_MONSTER,
 
     // 랜덤 던전
-    ALLOC_RANDOM_DUNGEON
+    ALLOC_RANDOM_DUNGEON,
+
+    // 성적 관리
+    SCORE_MANAGEMENT,
+    CALC_MEAN,
+
+    // 크롤링
+    CRAWL_START
+
 
 } from './mutation-types'
 
 import axios from 'axios'
+import router from '../router'
 
 // 보통 action에서 처리하는 것은 비동기 처리를 함
 export default {
@@ -150,5 +159,34 @@ export default {
                 .then((res) => {
                     commit(ALLOC_RANDOM_DUNGEON, res.data)
                 })
+    },
+    fetchStudentScoreList ({ commit }) {
+        return axios.get('http://localhost:7777/vuescore/scoreManagement')
+                .then((res) => {
+                    commit(SCORE_MANAGEMENT, res.data)
+                })
+    },
+    [CALC_MEAN] (state) {
+        state.mean = 0
+        var tmp = 0
+        var len = state.students.length
+
+        for (var i = 0; i < len; i++) {
+            tmp += state.students[i].score
+        }
+
+        state.mean = tmp / len
+    },
+    //크롤링
+    async crawlFind ({ commit }, category) {
+        axios.get('http://localhost:7777/' + `${category}` )
+                .then(({ data }) => {
+                    commit(CRAWL_START, data)
+
+                    if (window.location.pathname !== '/daumNewsCrawler') {
+                        router.push('/daumNewsCrawler')
+                    }
+                })
     }
-} 
+    
+}

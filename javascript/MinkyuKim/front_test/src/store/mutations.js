@@ -29,7 +29,13 @@ import {
     FETCH_MONSTER,
 
     // 랜덤 던전
-    ALLOC_RANDOM_DUNGEON
+    ALLOC_RANDOM_DUNGEON,
+
+    //성적 관리
+    SCORE_MANAGEMENT,
+
+    // 크롤링
+    CRAWL_START
 
 } from './mutation-types'
 
@@ -126,8 +132,11 @@ export default {
     },
     [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
         state.dungeons = dungeons
+    },
+    [SCORE_MANAGEMENT] (state, students) {
+        state.students = students
+    },    
+    [CRAWL_START] (state, payload) {
+        state.lists = payload
     }
-
-
-    
 }

@@ -36,6 +36,25 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 // 랜덤 던전
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
+//삼각형 넓이
+import OnlyVuePage from '@/views/OnlyVuePage.vue'
+import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
+import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
+
+// 크롤링
+import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
+//슬롯
+import UnNamedSlotTestPage from '@/views/UnNamedSlotTestPage.vue'
+import NamedSlotTestPage from '@/views/NamedSlotTestPage.vue'
+import ScopedSlotTestPage from '@/views/ScopedSlotTestPage.vue'
+import RecentSlotTestPage from '@/views/RecentSlotTestPage.vue'
+
+// Materialize
+import MaterializeTestPage from '@/views/MaterializeTestPage.vue'
+import MaterializeGridTestPage from '@/views/MaterializeGridTestPage.vue'
+
+// Veutify
+import VuetifyAllInOneTestPage from '@/views/VuetifyAllInOneTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -196,6 +215,86 @@ const routes = [
     name: 'DungeonListPage',
     components: {
       default: DungeonListPage
+    }    
+  },
+  //삼각형 넓이
+  {
+    path: '/onlyvuepage',
+    name: 'OnlyVuePage',
+    components: {
+      default: OnlyVuePage
+    }    
+  },
+  {
+    path: '/springintercon',
+    name: 'SpringInterconnectionPage',
+    components: {
+      default: SpringInterconnectionPage
+    }    
+  },
+  {
+    path: '/scoremanager',
+    name: 'ScoreManagerPage',
+    components: {
+      default: ScoreManagerPage
+    }    
+  },
+  //크롤링
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
+    }    
+  },
+  //슬롯
+  {
+    path: '/unNamedSlot',
+    name: 'UnNamedSlotTestPage',
+    components: {
+      default: UnNamedSlotTestPage
+    }    
+  },
+  {
+    path: '/NamedSlot',
+    name: 'NamedSlotTestPage',
+    components: {
+      default: NamedSlotTestPage
+    }    
+  },
+  {
+    path: '/ScopedSlot',
+    name: 'ScopedSlotTestPage',
+    components: {
+      default: ScopedSlotTestPage
+    }    
+  },
+  {
+    path: '/vSlot',
+    name: 'RecentSlotTestPage',
+    components: {
+      default: RecentSlotTestPage
+    }    
+  },
+  {
+    path: '/materialize',
+    name: 'MaterializeTestPage',
+    components: {
+      default: MaterializeTestPage
+    }    
+  },
+  {
+    path: '/materializeGrid',
+    name: 'MaterializeGridTestPage',
+    components: {
+      default: MaterializeGridTestPage
+    }    
+  },
+  {
+    path: '/vuetifyTest',
+    name: 'VuetifyAllInOneTestPage',
+    components: {
+      default: VuetifyAllInOneTestPage
     }    
   }
 ]
