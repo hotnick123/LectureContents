@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.controller.basic;
 
 
 import lombok.extern.slf4j.Slf4j;
@@ -74,3 +74,4 @@ public class NinethController {
         return "/csstest/nineth/backgroundUrlTest";
     }
 }
+
