@@ -1,6 +1,9 @@
 import { 
     FETCH_MEMBER_LIST,
-    FETCH_MEMBER
+    FETCH_MEMBER,
+
+    // 크롤링
+    CRAWL_START
 } from './mutation-types'
 
 export default {
@@ -10,5 +13,9 @@ export default {
     },
     [FETCH_MEMBER] (state, member) {
         state.member = member
+    },
+
+    [CRAWL_START] (state, payload) {
+        state.lists = payload
     }
 }

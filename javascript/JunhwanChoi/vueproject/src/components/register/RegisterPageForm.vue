@@ -19,7 +19,7 @@
                     >
                     <v-card class="elevation-12">
                         <v-toolbar
-                        color="primary"
+                        color="orange"
                         dark
                         flat
                         >
@@ -66,9 +66,12 @@
                         </v-card-text>
                         <v-card-actions>
                         <v-spacer></v-spacer>
+
                         <v-btn color="primary"
                         type="submit"
                         >회원가입 완료</v-btn>&nbsp;&nbsp;
+                        
+
                         <router-link :to="{name:'Home'}">
                             <v-btn color="primary">취소</v-btn>
                         </router-link>

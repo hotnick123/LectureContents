@@ -11,6 +11,10 @@ import MemberListPage from '@/views/MemberListPage.vue'
 import MemberReadPage from '@/views/MemberReadPage.vue'
 import MemberModifyPage from '@/views/MemberModifyPage.vue'
 
+//news
+import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -57,6 +61,15 @@ const routes = [
       default: true
     }
   },
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
+    }
+  },
+
+  
 ]
 
 const router = new VueRouter({

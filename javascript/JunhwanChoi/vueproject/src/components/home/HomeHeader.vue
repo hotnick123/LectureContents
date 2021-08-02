@@ -1,21 +1,21 @@
 <template>
     <div>
         <div id="header">
-            <nav>
+            <nav id="navcolor">
                 <ul>
                     <li><a href>HOME</a></li>
                     <li><a href="/login">로그인</a></li>
                     <li><router-link :to="{ name: 'RegisterPage' }">회원가입</router-link></li>
-                    <li><router-link :to="{ name: 'MemberListPage' }">[관리자 회원 리스트]</router-link></li>
+                    <!-- <li><router-link :to="{ name: 'MemberListPage' }">[관리자 회원 리스트]</router-link></li> -->
 
                 </ul>
             </nav>
 
-            <div><h3>코로나 선별진료 예약 사이트</h3></div>
 
             <center>
                 <div id="main">
-                    <p>메인페이지 이미지 들어갈곳</p>                    
+                    <br><br>
+                    <p><img src="../../assets/mainPageImg.jpg"></p>                    
                 </div>
             </center> 
         </div>
@@ -40,6 +40,9 @@ ul{ list-style: none;}
         padding: 0;
         font-size: 1.2em;
         font-family: 'Hack';
+    }
+    #navcolor{
+        background: #C8D7FF;
     }
     #header{
         color:  black;

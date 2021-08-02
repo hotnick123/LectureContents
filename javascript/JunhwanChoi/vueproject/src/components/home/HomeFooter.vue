@@ -2,9 +2,12 @@
     <div>
         <div id="footer">
            <center>
-               <li><a href=/news><img src="../../assets/banner1.png" alt="banner1"></a></li>
+               <li>
+                   <router-link :to="{ name: 'DaumNewsCrawlerPage' }">
+                       <img src="../../assets/banner1.png" alt="banner1">
+                   </router-link>
+               </li>
                
-
                 <li><a href="#"><img src="../../assets/banner2.png" alt="banner2"></a></li>
                 <li><a href="#"><img src="../../assets/banner3.png" alt="banner3"></a></li>
                 <li><a href="/reservation"><img src="../../assets/banner4.png" alt="banner4"></a></li>
