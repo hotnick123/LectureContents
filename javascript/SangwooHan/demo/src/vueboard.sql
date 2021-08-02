@@ -28,6 +28,8 @@ create table vueboard(
            primary key(dungeon_no)
        );
 
+
+
 insert into vendungeon (name, description, monster_amount) values
 ('불타는 대지', '끝없이 화염푹풍이 몰아치는전장', 2);
 insert into vendungeon (name, description, monster_amount) values

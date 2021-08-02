@@ -50,6 +50,7 @@ export default {
 </script>
 
 <style>
+/*
 table {
     border-collapse: collapse;
 }
@@ -59,4 +60,5 @@ td {
     height: 80px;
     text-align: center;
 }
+*/
 </style>

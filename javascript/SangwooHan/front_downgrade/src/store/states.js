@@ -19,5 +19,9 @@ export default {
     monsters: [],
     monster: null,
     // 렌덤 던젼
-    dungeons: []
+    dungeons: [],
+    // 성적표
+    students: [],
+    // 크롤링
+    list: [],
 }

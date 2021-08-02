@@ -27,3 +27,8 @@ export const FETCH_MONSTER_LIST = 'FETCH_MONSTER_LIST'
 export const FETCH_MONSTER = 'FETCH_MONSTER'
 // 렌덤 던전 
 export const ALLOC_RANDOM_DUNGEON = 'ALLOC_RANDOM_DUNGEON'
+// 성적표
+export const SCORE_MANAGEMENT = 'SCORE_MANAGEMENT'
+
+//크롤링
+export const CRAWL_START = 'CRAWL_START'

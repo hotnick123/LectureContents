@@ -38,7 +38,34 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
 
+//숙제 페이지
+import prob89Page from '../views/prob89Page.vue'
+import springCon from '../views/springCon.vue'
+
+
+// 성적관리
+import  ScoreManagePage from '../views/ScoreManagePage.vue'
+
+//크롤링
+
+import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
+
+//  언네임드 슬롯 페이지
+import UnNamedSlotTestPage from '@/views/UnNamedSlotTestPage.vue'
+// 네임드 슬롯 페이지
+import NamedSlotTestPage from '@/views/NamedSlotTestPage.vue'
+// 스코프드 
+import ScopedSlotTestPage from '@/views/ScopedSlotTestPage.vue'
+// v-slot
+import RecentSlotTestPage from '@/views/RecentSlotTestPage.vue'
+
+
+// Materialize
+import MaterialzeTestPage from '@/views/MaterialzeTestPage.vue'
+import MaterializeGridTestPage from '@/views/MaterializeGridTestPage.vue'
+import VuetifyAllInOneTestPage from '@/views/VuetifyAllInOneTestPage.vue'
 Vue.use(VueRouter)
+
 
 const routes = [
   {
@@ -198,6 +225,84 @@ const routes = [
       default: DungeonListPage
     }
   },
+  {
+    path: '/Prob89Page',
+    name: 'prob89Page',
+    components: {
+      default: prob89Page
+    }
+  },
+  {
+    path: '/springcon',
+    name: 'springCon',
+    components: {
+      default: springCon
+    }
+  },
+  {
+    path: '/scoreManagePage',
+    name: 'ScoreManagePage',
+    components: {
+      default: ScoreManagePage
+    }
+  },
+  {
+    path: '/daumNewsCrawler',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
+    }
+  },
+  {
+    path: '/unNameSlot',
+    name: 'UnNamedSlotTestPage',
+    components: {
+      default: UnNamedSlotTestPage
+    }
+  },
+  {
+    path: '/NameSlot',
+    name: 'NamedSlotTestPage',
+    components: {
+      default: NamedSlotTestPage
+    }
+  },{
+    path: '/Scopedslot',
+    name: 'ScopedSlotTestPage',
+    components: {
+      default: ScopedSlotTestPage
+    }
+  },
+  {
+    path: '/vSlot',
+    name: 'RecentSlotTestPage',
+    components: {
+      default: RecentSlotTestPage
+    }
+  },
+  { 
+    path: '/materialize',
+    name: 'MaterialzeTestPage',
+    components: {
+      default: MaterialzeTestPage
+    }
+  },
+  { 
+    path: '/materializeGrid',
+    name: 'MaterializeGridTestPage',
+    components: {
+      default: MaterializeGridTestPage
+    }
+  },
+  { 
+    path: '/VuetifyTestPage',
+    name: 'VuetifyAllInOneTestPage',
+    components: {
+      default: VuetifyAllInOneTestPage
+    }
+  },
+ 
+ 
  
 
 
