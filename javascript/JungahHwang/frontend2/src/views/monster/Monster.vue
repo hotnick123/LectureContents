@@ -1,5 +1,22 @@
 <template>
   <div class="monster">
+    <router-link :to="{ name: 'MonsterSignupPage' }" 
+      class="nav-link" 
+      active-class="active">SignUp
+    </router-link>
+    <router-link :to="{ name: 'MonsterCreatePage' }" 
+      class="nav-link" 
+      active-class="active">Create
+    </router-link>
+    <router-link :to="{ name: 'MonsterGuidePage' }" 
+      class="nav-link" 
+      active-class="active">Guide
+    </router-link>
+    <router-link :to="{ name: 'MonsterDungeonPage' }" 
+      class="nav-link" 
+      active-class="active">Dungeon
+    </router-link>
+    
     <monster-header></monster-header>
     <monster-input v-on:addMonster="onAddMonster"></monster-input>
     <monster-hundred-input v-on:addManyMonster="onAddManyMonster"></monster-hundred-input>
@@ -10,11 +27,11 @@
 
 <script>
 import { mapActions } from 'vuex'
-import MonsterHeader from '../components/quiz/MonsterHeader.vue'
+import MonsterHeader from '@/components/monster/MonsterHeader'
 // import MonsterAttack from '../components/quiz/MonsterAttack.vue'
-import MonsterInput from '../components/quiz/MonsterInput.vue'
-import MonsterList from '../components/quiz/MonsterList.vue'
-import MonsterHundredInput from '../components/quiz/MonsterHundredInput.vue'
+import MonsterInput from '@/components/monster/MonsterInput'
+import MonsterList from '@/components/monster/MonsterList'
+import MonsterHundredInput from '@/components/monster/MonsterHundredInput'
 
 
 export default {
@@ -35,7 +52,7 @@ export default {
       name: '슬라임',
       hp: 3000
       },
-      monsterGuide: [
+      monsterBook: [
             { name: '리자드', type: '불꽃', hp: 1653, exp: 17, money: 2500 },
             { name: '꼬부기', type: '물', hp: 946, exp: 9, money: 900 },
             { name: '피카츄', type: '전기', hp: 938, exp: 9, money: 900 },
@@ -84,7 +101,7 @@ export default {
       'addMonster',
       'death',
       'save',
-      'addManyMonster'
+      'addManyMonster',
     ]),
     onAddMonster (name) {
       const monsterElement = { name }
@@ -102,20 +119,20 @@ export default {
     },
     onAddManyMonster () {
       var monsterList = []
-
+      
       for (var i = 0; i < 100; i++) {
-        var rand = Math.floor(Math.random() * this.monsterGuide.length)
-        monsterList.push({ monsterId: i, name: this.monsterGuide[rand].name, hp: this.monsterGuide[rand].hp })
+          var rand = Math.floor(Math.random() * this.monsterBook.length)
+          monsterList.push({ monsterId: i, name: this.monsterBook[rand].name, hp: this.monsterBook[rand].hp })
       }
       this.addManyMonster(monsterList)
       this.save()
-    }
+    },
   }
 }
 </script>
 
 
-<style>
+<style scoped>
 
 body {
   text-align: center;
