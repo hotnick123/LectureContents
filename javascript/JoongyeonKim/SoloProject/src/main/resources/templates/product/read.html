@@ -9,7 +9,7 @@
 
 <script>
     $(document).ready(function() {
-        var formObj = $("#productread");
+        var formObj = $("#read");
 
         $("#btnModify").on("click", function() {
             var productNo = $("#productNo");
@@ -19,12 +19,12 @@
         });
 
         $("#btnRemove").on("click", function() {
-            formObj.attr("action", "productremove");
+            formObj.attr("action", "remove");
             formObj.submit();
         });
 
         $("#btnList").on("click", function() {
-            self.location = "productlist";
+            self.location = "lists";
         });
     });
 </script>
@@ -32,24 +32,24 @@
 <body>
 <h2>상품 등록</h2>
 
-<form id="productread" th:object="${product}" method="post">
+<form id="read" th:object="${product}" method="post">
   <input type="hidden" name="productNo" th:field="*{productNo}"/>
   <table>
     <tr>
       <td>상품명</td>
-      <td><input type="text" name="name" th:field="*{name}" ></td>
+      <td><input type="text" name="name" th:field="*{name}" readonly="readonly"></td>
     </tr>
     <tr>
       <td>가격</td>
-      <td><input type="number" name="price" th:field="*{price}" ></td>
+      <td><input type="number" name="price" th:field="*{price}" readonly="readonly"></td>
     </tr>
     <tr>
       <td>상품설명</td>
-      <td><input type="text" name="description" th:field="*{description}" ></td>
+      <td><input type="text" name="description" th:field="*{description}" readonly="readonly"></td>
     </tr>
     <tr>
       <td>작성자</td>
-      <td><input type="text" name="writer" th:field="*{writer}" readonly="readonly"></td>
+      <td><input type="text" name="writer" th:field="*{writer}" readonly="readonly" ></td>
     </tr>
   </table>
 </form>

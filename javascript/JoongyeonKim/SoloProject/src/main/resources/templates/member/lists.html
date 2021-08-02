@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/css/js/member-list.css">
+    <!--<link rel="stylesheet" href="/css/js/member-list.css"> -->
 </head>
 <body>
 <h2 id="look-member"></h2>
@@ -14,8 +14,8 @@
             <th align="center" width="240">회원 ID</th>
         </tr>
         <tr th:if="${#lists.isEmpty(member)}">
-            <td colspan="4">
-                현재 등록된 게시물이 없습니다!
+            <td colspan="2">
+                현재 등록된 회원이 없습니다!
             </td>
         </tr>
         <tr th:each="memberElem : ${member}">
@@ -25,6 +25,6 @@
         </tr>
     </table>
 </div>
-<script src="/js/member-list.js"></script>
+<!--<script src="/js/member-list.js"></script>-->
 </body>
 </html>

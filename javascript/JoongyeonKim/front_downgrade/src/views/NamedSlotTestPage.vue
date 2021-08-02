@@ -30,7 +30,7 @@ export default {
             cars: [
                 { car_name: "Tesla Model X", pic:require('@/assets/img/tesla_model_x.jpg') },
                 { car_name: "Spyder 918", pic:require('@/assets/img/Spyder.jpg') },
-                { car_name: "Nissan Maxima", pic:require('@/assets/img/nissan_maxima.jpg') }
+                { car_name: "Nissan Maxima", pic:require('@/assets/img/nissan_maxima.png') }
             ]
         }
     },
