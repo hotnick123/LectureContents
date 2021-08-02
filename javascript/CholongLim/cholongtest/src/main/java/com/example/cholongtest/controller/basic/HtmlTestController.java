@@ -1,4 +1,4 @@
-package com.example.cholongtest.controller;
+package com.example.cholongtest.controller.basic;
 
 import ch.qos.logback.core.net.server.Client;
 import lombok.extern.slf4j.Slf4j;
