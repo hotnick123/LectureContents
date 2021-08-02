@@ -102,14 +102,29 @@
                     active-class="active">
                 Materialize 활용
             </router-link>
+            <router-link :to="{ name: 'MaterialGridTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                MaterialGrid 활용
+            </router-link>
+            <router-link :to="{ name: 'vuetifyAllInoneTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                vuetifyAllInoneTestPage
+            </router-link>
+           <div>
+               <vuetify-all-inone-test-page />
+           </div>
         </div>
     </div>
 </template>
 
 <script>
+import VuetifyAllInoneTestPage from './vuetifyAllInoneTestPage.vue'
   export default {
     name: 'Home',
     components: {
+        VuetifyAllInoneTestPage
     },
   }
 </script>

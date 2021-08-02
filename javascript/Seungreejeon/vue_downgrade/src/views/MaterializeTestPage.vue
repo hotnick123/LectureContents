@@ -25,6 +25,46 @@
       <div>
         <img class="circle responsive-img hide-on-small-only" src="@/assets/img/Spyder.jpg">
       </div>
+
+      <div class="row">
+          <img class="circle responsive-img hide-on-small-only" src="@/assets/img/Spyder.jpg">\
+      </div>
+
+      <div class="container">
+          <div class="row">
+              <div class="col s1 blue">1</div>
+              <div class="col s1 cyan">2</div>
+              <div class="col s1 red">3</div>
+              <div class="col s1 black">4</div>
+              <div class="col s1 white">5</div>
+              <div class="col s1 green">6</div>
+              <div class="col s1 purple">7</div>
+              <div class="col s1 teal">8</div>
+              <div class="col s1 grey">9</div>
+              <div class="col s1 orange">10</div>
+              <div class="col s1 yellow">11</div>
+              <div class="col s1 indigo">12</div>
+          </div>
+      </div>
+      <!-- container를 사용할 경우 70%, row는 100% 마진을 사용한다 -->
+      <div>
+          <div class="row">
+              <div class="col s1 blue">1</div>
+              <div class="col s1 cyan">2</div>
+              <div class="col s1 red">3</div>
+              <div class="col s1 black">4</div>
+              <div class="col s1 white">5</div>
+              <div class="col s1 green">6</div>
+              <div class="col s1 purple">7</div>
+              <div class="col s1 teal">8</div>
+              <div class="col s1 grey">9</div>
+              <div class="col s1 orange">10</div>
+              <div class="col s1 yellow">11</div>
+              <div class="col s1 indigo">12</div>
+          </div>
+      </div>
+   
+      
       
   </div>
 </template>

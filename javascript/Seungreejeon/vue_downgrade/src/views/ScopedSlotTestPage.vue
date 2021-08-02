@@ -15,7 +15,7 @@
               <p v-for="item in items" :key="item">
               {{ item }}</p>
           </template>
-      </travel-list>1
+      </travel-list>
   </div>
 </template>
 
