@@ -9,10 +9,10 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Board {
-    private Integer boardNo;
-    private String title;
-    private String content;
-    private String writer;
+public class Dungeon {
+    private Integer dungeonNo;
+    private String name;
+    private String description;
+    private Integer monsterAmount;
     private Date regDate;
 }

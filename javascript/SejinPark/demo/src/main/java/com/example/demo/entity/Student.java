@@ -9,10 +9,9 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Board {
-    private Integer boardNo;
-    private String title;
-    private String content;
-    private String writer;
+public class Student {
+    private Integer studentNo;
+    private String name;
+    private Integer score;
     private Date regDate;
 }

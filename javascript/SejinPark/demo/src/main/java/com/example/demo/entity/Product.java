@@ -9,10 +9,11 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Board {
-    private Integer boardNo;
-    private String title;
-    private String content;
-    private String writer;
+public class Product {
+    private Integer productNo;
+    private String product_name;
+    private String description;
+    private String producer;
+    private int price;
     private Date regDate;
 }
