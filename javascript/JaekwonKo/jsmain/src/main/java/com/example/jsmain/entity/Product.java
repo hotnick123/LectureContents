@@ -9,9 +9,11 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Member {
-    private Integer memberNo;
-    private String id;
-    private String pw;
+public class Product {
+    private Integer productNo;
+    private String product_name;
+    private String description;
+    private String producer;
+    private Integer price;
     private Date regDate;
 }
