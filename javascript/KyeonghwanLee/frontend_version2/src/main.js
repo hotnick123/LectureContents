@@ -5,6 +5,7 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 
 import 'materialize-css/dist/css/materialize.min.css'
+import 'material-design-icons/iconfont/material-icons.css'
 
 
 Vue.config.productionTip = false
