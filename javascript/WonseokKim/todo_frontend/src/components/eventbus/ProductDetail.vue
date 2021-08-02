@@ -37,6 +37,7 @@ export default {
 </script>
 
 <style scoped>
+/*
 div {
     background: #ff4081;
     color: white;
@@ -46,4 +47,5 @@ div {
 ul {
     list-style: none;
 }
+*/
 </style>

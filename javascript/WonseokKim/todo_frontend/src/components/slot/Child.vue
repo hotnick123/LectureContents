@@ -14,9 +14,10 @@
 </template>
 
 <style scoped>
-
+/*
 p {
    border: 3px solid teal;
    padding: 4px;
 }
+*/
 </style>

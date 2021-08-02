@@ -25,7 +25,6 @@ import {
     ALLOC_RANDOM_DUNGEON,
      // 학생 성적표
     SCORE_MANAGEMENT,
-    FETCH_STUDENT,
      // 크롤링
     CRAWL_START
 } from './mutation-types'
@@ -138,12 +137,6 @@ export default {
         return axios.get('http://localhost:7777/vuescore/scoreManagement')
                 .then((res) => {
                     commit(SCORE_MANAGEMENT, res.data)
-                })
-    },
-    fetchStudent ({ commit }, studentNo) {
-        return axios.get(`http://localhost:7777/vuestudent/${studentNo}`)
-                .then((res) => {
-                    commit(FETCH_STUDENT, res.data)
                 })
     },
     // 크롤링

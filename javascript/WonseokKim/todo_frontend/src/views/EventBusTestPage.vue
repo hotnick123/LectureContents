@@ -19,6 +19,7 @@ export default {
 </script>
 
 <style scoped>
+/*
 ul {
     list-style-type: none;
     background: #3399ff;
@@ -28,4 +29,5 @@ ul li {
     background: #cce5ff;
     margin: 5px;
 }
+*/
 </style>

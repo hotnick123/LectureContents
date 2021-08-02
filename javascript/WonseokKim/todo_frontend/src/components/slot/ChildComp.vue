@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style scoped>
-
+/*
 .main {
     border: 4px solid blue;
 }
@@ -55,4 +55,5 @@ img {
     width: 100%;
     text-align: center;
 }
+*/
 </style>
