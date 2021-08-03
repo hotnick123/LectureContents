@@ -115,7 +115,16 @@
                     active-class="active">
                Vuetify 활용
             </router-link>
-           
+             <router-link :to="{ name: 'JPAMemberRegisterPage' }"
+                    class="nav-link"
+                    active-class="active">
+               jpa 활용 회원가입 페이지
+            </router-link>
+            <router-link :to="{ name: 'CoverFlowTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+              CoverFlow 테스트
+            </router-link>
         </div>
     </div>
 </template>
