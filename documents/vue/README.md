@@ -90,3 +90,21 @@ npm run serve
 npm install materialize-css@next --save-dev
 npm install material-design-icons --save-dev
 ```
+
+## Vuetify
+
+```make
+npm add vuetify
+```
+
+## CoverFlow
+
+```make
+npm add vue-coverflow
+```
+
+## Vue Awesome Swiper
+
+```make
+npm install vue-awesome-swiper --save-dev
+```
