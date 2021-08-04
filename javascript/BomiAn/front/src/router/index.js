@@ -61,6 +61,14 @@ import JPAMemberRegisterPage from '@/views/JPAMemberRegisterPage.vue'
 //coverflow
 import CoverFlowTestPage from '@/views/CoverFlowTestPage.vue'
 
+//vue-awsome-swiper test
+import AwsomeSwiperTestPage from '@/views/AwsomeSwiperTestPage.vue'
+import LikesFacebookPage from '@/views/LikesFacebookPage.vue'
+import ImageGalleryTestPage from '@/views/ImageGalleryTestPage.vue'
+
+import CalendarTestPage from '@/views/CalendarTestPage.vue'
+
+
 
 Vue.use(VueRouter)
 
@@ -305,6 +313,34 @@ const routes = [
     name: 'CoverFlowTestPage',
     components: {
       default: CoverFlowTestPage
+    }
+  },
+  {
+    path: '/awsomeSwiper',
+    name: 'AwsomeSwiperTestPage',
+    components: {
+      default: AwsomeSwiperTestPage
+    }
+  },
+  {
+    path: '/facebook',
+    name: 'LikesFacebookPage',
+    components: {
+      default: LikesFacebookPage
+    }
+  },
+  {
+    path: '/imgGallery',
+    name: 'ImageGalleryTestPage',
+    components: {
+      default: ImageGalleryTestPage
+    }
+  },
+  {
+    path: '/calender',
+    name: 'CalendarTestPage',
+    components: {
+      default: CalendarTestPage
     }
   },
 ]
