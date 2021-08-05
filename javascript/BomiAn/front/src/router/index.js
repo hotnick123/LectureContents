@@ -68,6 +68,8 @@ import ImageGalleryTestPage from '@/views/ImageGalleryTestPage.vue'
 
 import CalendarTestPage from '@/views/CalendarTestPage.vue'
 
+import MemberJoinColumnTestPage from '@/views/MemberJoinColumnTestPage.vue'
+import MemberJoinColumnTestForm from '@/components/member/MemberJoinColumnTestForm.vue'
 
 
 Vue.use(VueRouter)
@@ -341,6 +343,20 @@ const routes = [
     name: 'CalendarTestPage',
     components: {
       default: CalendarTestPage
+    }
+  },
+  {
+    path: '/memberJoinColumn',
+    name: 'MemberJoinColumnTestPage',
+    components: {
+      default: MemberJoinColumnTestPage
+    }
+  },
+  {
+    path: '/memberJoinColumnForm',
+    name: 'MemberJoinColumnTestForm',
+    components: {
+      default: MemberJoinColumnTestForm
     }
   },
 ]
