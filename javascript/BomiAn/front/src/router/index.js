@@ -70,6 +70,9 @@ import CalendarTestPage from '@/views/CalendarTestPage.vue'
 
 import MemberJoinColumnTestPage from '@/views/MemberJoinColumnTestPage.vue'
 import MemberJoinColumnTestForm from '@/components/member/MemberJoinColumnTestForm.vue'
+import VuetifyMemberLoginPage from '@/views/VuetifyMemberLoginPage.vue'
+
+
 
 
 Vue.use(VueRouter)
@@ -357,6 +360,13 @@ const routes = [
     name: 'MemberJoinColumnTestForm',
     components: {
       default: MemberJoinColumnTestForm
+    }
+  },
+  {
+    path: '/memberLogin',
+    name: 'VuetifyMemberLoginPage',
+    components: {
+      default: VuetifyMemberLoginPage
     }
   },
 ]
