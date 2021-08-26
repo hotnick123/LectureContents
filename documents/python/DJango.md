@@ -24,4 +24,16 @@ git clone repo만든URL
 # 가상 환경에서 실행하기
 
 ```make
+1) 프로젝트 위치로 이동한다.
+2) venv/Scripts/activate.bat # 가상 환경 실행
+3) pip list
+4) deactivate # 가상 환경 종료
+```
+
+# Django Install
+
+```make
+1) pip install django
+2) pip list
+3) Check django version >= 3.0
 ```
