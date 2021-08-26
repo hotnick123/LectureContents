@@ -29,4 +29,6 @@
 3) password:
 4) password(again):
 5) python manage.py runserver
+6) http://127.0.0.1:8000/admin/
+7) 접속해서 users를 보면 가입 아이디가 보임
 ```
