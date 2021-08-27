@@ -32,3 +32,14 @@
 6) http://127.0.0.1:8000/admin/
 7) 접속해서 users를 보면 가입 아이디가 보임
 ```
+
+# Pycharm Based Commit
+
+```make
+1) Pycharm Setting 열기
+2) Language & Frameworks 누름
+3) Django 클릭
+4) Enable Django Support 체크
+5) Django Project root 설정
+6) Settings에 프로젝트 루트 내부의 settings.py 배치
+```
