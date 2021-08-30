@@ -66,3 +66,12 @@ class Post(models.Model):
   
   created_at = models.DateTimeField()
 ```
+
+## Timing
+
+```make
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'Asia/Seoul'
+...
+USE_TZ = False
+```
