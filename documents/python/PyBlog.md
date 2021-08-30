@@ -67,11 +67,19 @@ class Post(models.Model):
   created_at = models.DateTimeField()
 ```
 
-## Timing
+## Timing (settings.py)
 
 ```make
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Seoul'
 ...
 USE_TZ = False
+```
+
+## When change model
+
+```make
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
 ```
