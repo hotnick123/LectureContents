@@ -26,7 +26,9 @@ import {
     // 성적 관리
     SCORE_MANAGEMENT,
     // 크롤링
-    CRAWL_START
+    CRAWL_START,
+    // 세션
+    FETCH_SESSION
 } from './mutation-types'
 
 import axios from 'axios'
@@ -141,7 +143,7 @@ export default {
     },
     // 크롤링
     async crawlFind ({ commit }, category) {
-        axios.get('http://localhost:7777/' + `${category}`)
+        axios.get('http://localhost:7777/daumCrawler' + `${category}`)
                 .then(({ data }) => {
                     commit(CRAWL_START, data)
 
@@ -149,5 +151,9 @@ export default {
                         router.push('/daumNewsCrawler')
                     }
                 })
+    },
+    // Session
+    fetchSession ({ commit }) {
+        commit(FETCH_SESSION)
     }
 }

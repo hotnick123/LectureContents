@@ -145,6 +145,45 @@
                     active-class="active">
                 Member Join Column Test
             </router-link>
+            <router-link :to="{ name: 'VuetifyMemberLoginPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Member 로그인 Test
+            </router-link><br/>
+            <router-link :to="{ name: 'FileUploadPage' }"
+                    class="nav-link"
+                    active-class="active">
+                파일 업로드 Test
+            </router-link><br/>
+            <router-link :to="{ name: 'AccountRegisterPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Account 회원 가입
+            </router-link>
+            <router-link :to="{ name: 'SessionLoginPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Account 로그인 Test
+            </router-link>
+            <router-link :to="{ name: 'ImgTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Image Test
+            </router-link><br/>
+
+            <!-- Python Test -->
+            <router-link :to="{ name: 'PythonLoginTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Python Login Test
+            </router-link><br/>
+
+            <!-- Kakao Login Test -->
+            <router-link :to="{ name: 'KakaoLoginPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Kakao Login
+            </router-link>
         </div>
     </div>
 </template>

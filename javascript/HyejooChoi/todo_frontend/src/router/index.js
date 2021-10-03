@@ -75,6 +75,22 @@ import CalendarTestPage from '@/views/CalendarTestPage.vue'
 // JPA Test Page
 import VuetifyMemberRegisterPage from '@/views/VuetifyMemberRegisterPage.vue'
 import MemberJoinColumnTestPage from '@/views/MemberJoinColumnTestPage.vue'
+import VuetifyMemberLoginPage from '@/views/VuetifyMemberLoginPage.vue'
+
+import SessionLoginPage from '@/views/SessionLoginPage.vue'
+import AccountRegisterPage from '@/views/AccountRegisterPage.vue'
+
+// File Upload
+import FileUploadPage from '@/views/FileUploadPage.vue'
+
+// Image Test
+import ImgTestPage from '@/views/ImgTestPage.vue'
+
+// Python Login Test
+import PythonLoginTestPage from '@/views/PythonLoginTestPage.vue'
+
+// Kakao Login
+import KakaoLoginPage from '@/views/KakaoLoginPage.vue'
 
 Vue.use(VueRouter)
 
@@ -347,6 +363,55 @@ const routes = [
     name: 'MemberJoinColumnTestPage',
     components: {
       default: MemberJoinColumnTestPage
+    }
+  },
+  {
+    path: '/memberLogin',
+    name: 'VuetifyMemberLoginPage',
+    components: {
+      default: VuetifyMemberLoginPage
+    }
+  },
+  {
+    path: '/fileUpload',
+    name: 'FileUploadPage',
+    components: {
+      default: FileUploadPage
+    }
+  },
+  {
+    path: '/sessionLogin',
+    name: 'SessionLoginPage',
+    components: {
+      default: SessionLoginPage
+    }
+  },
+  {
+    path: '/accountRegister',
+    name: 'AccountRegisterPage',
+    components: {
+      default: AccountRegisterPage
+    }
+  },
+  {
+    path: '/imgTest',
+    name: 'ImgTestPage',
+    components: {
+      default: ImgTestPage
+    }
+  },
+  {
+    path: '/pyLogin',
+    name: 'PythonLoginTestPage',
+    components: {
+      default: PythonLoginTestPage
+    }
+  },
+  {
+    path: '/kakaoLogin',
+    name: 'KakaoLoginPage',
+    components: {
+      default: KakaoLoginPage
     }
   }
 ]
