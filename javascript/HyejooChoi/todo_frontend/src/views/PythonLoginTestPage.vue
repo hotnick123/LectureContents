@@ -38,7 +38,7 @@ export default {
     methods: {
         onSubmit () {
             const { id, pw } = this
-            axios.post('http://localhost:5000/login', { userId: id, password: pw })
+            axios.post('http://localhost:8080/login', { userId: id, password: pw })
                     .then(res => {
                         if (res.data != "") {
                             alert('로그인 성공! - ' + JSON.stringify(res.data))

@@ -183,7 +183,14 @@
                     class="nav-link"
                     active-class="active">
                 Kakao Login
-            </router-link>
+            </router-link><br/>
+
+      <!-- Order Test -->
+      <router-link :to="{ name: 'OrderTestPage' }"
+                   class="nav-link"
+                   active-class="active">
+        Order Test
+      </router-link><br/>
         </div>
     </div>
 </template>

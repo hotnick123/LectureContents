@@ -129,6 +129,7 @@ export default {
         state.lists = payload
     },
     [FETCH_SESSION] (state) {
+      // eslint-disable-next-line no-undef
         state.session = this.$cookies.get(userSession)
     }
 }
